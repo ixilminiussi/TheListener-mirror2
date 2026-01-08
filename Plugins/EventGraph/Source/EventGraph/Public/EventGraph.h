@@ -1,0 +1,21 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+
+#pragma once
+
+#include "CoreMinimal.h"
+#include "Modules/ModuleManager.h"
+#include "Styling/SlateStyle.h"
+
+class FEventGraphModule : public IModuleInterface
+{
+public:
+
+	/** IModuleInterface implementation */
+	virtual void StartupModule() override;
+	virtual void ShutdownModule() override;
+
+private:
+	TSharedPtr<FSlateStyleSet> StyleSet = nullptr;
+	TSharedPtr<struct FEventPinFactory> PinFactory = nullptr;
+	TSharedPtr<struct FGraphPanelNodeFactory> EventNodeFactory = nullptr;
+};

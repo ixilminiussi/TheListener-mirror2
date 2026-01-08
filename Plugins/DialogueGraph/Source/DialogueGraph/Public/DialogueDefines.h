@@ -1,0 +1,5 @@
+﻿#define PluginName TEXT("DialogueGraph")
+#define DialogueGraphTab1 TEXT("DialogueGraphMainTab")
+#define DialogueGraphAppModeName TEXT("DialogueGraphAppMode")
+#define DialogueGraphCategoryKey FName("DialogueGraph")
+#define DialogueGraphEditorStyle TEXT("DialogueGraphEditorStyle")
