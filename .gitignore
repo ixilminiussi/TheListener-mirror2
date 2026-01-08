@@ -81,9 +81,9 @@ DerivedDataCache/*
 Plugins/WwiseSoundEngine/ThirdParty/**/*.pdb
 !Plugins/WwiseSoundEngine/ThirdParty/**/*.dll
 !Plugins/WwiseSoundEngine/ThirdParty/**/*.lib
-Plugins/WwiseSoundEngine/Source/WwiseSoundEngine/Public/Generated/
-Plugins/WwiseSoundEngine/Intermediate/
-TheListener_WwiseProject/GeneratedSoundBanks/
-TheListener_WwiseProject/.cache/
+Plugins/WwiseSoundEngine/Source/WwiseSoundEngine/Public/Generated/*
+Plugins/WwiseSoundEngine/Intermediate/*
+TheListener_WwiseProject/GeneratedSoundBanks/*
+TheListener_WwiseProject/.cache/*
 
 TheListener.uproject.DotSettings.*.user
