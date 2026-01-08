@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{4B9C005B-E9F5-41B8-821C-6FF1FDF65A1A}" SchemaVersion="123">
+	<GameParameters>
+		<WorkUnit Name="Default Work Unit" ID="{4B9C005B-E9F5-41B8-821C-6FF1FDF65A1A}" PersistMode="Standalone">
+			<ChildrenList>
+				<GameParameter Name="Radio_Noise" ID="{4D28134F-C733-4323-9F65-8B90516A0BCC}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+						<Property Name="Max" Type="Real64" Value="1"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="Music_Station" ID="{4C1F45CD-80FE-4C12-B296-46468556FB22}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+						<Property Name="Max" Type="Real64" Value="1"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="Spatialized_Sound" ID="{D5A6E57B-004F-4752-A79D-05F0245610C1}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+						<Property Name="Max" Type="Real64" Value="5000"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="MasterBus" ID="{DA9BAD3F-81EC-4C8E-8241-8A6E3E71C259}"/>
+				<GameParameter Name="StaticRadioBus" ID="{A1E17893-96D3-4899-8F36-6FAA5CA87865}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="MusicBus" ID="{4041C018-65A2-4F10-ADE8-F68B5DD706A2}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="RadioBus" ID="{0F5E3895-9282-48DC-A31D-B18A007974EF}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="SFXBus" ID="{77F4EC71-C000-4D68-863E-1B22055F0AA3}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="LukaBus" ID="{50E14302-E78D-442D-8A2C-B15F3FB63C2C}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="AmbientBus" ID="{471B655D-3E2F-4127-A8DC-27171A2BE201}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+					</PropertyList>
+				</GameParameter>
+			</ChildrenList>
+		</WorkUnit>
+	</GameParameters>
+</WwiseDocument>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{B7908AEF-86FD-4FCD-B7E0-B564E08461C7}" SchemaVersion="123" RootDocumentID="{F5518E82-AF38-49C8-92F8-5226EA1B8214}" ParentDocumentID="{F5518E82-AF38-49C8-92F8-5226EA1B8214}">
+	<Events>
+		<WorkUnit Name="Menu Work Unit" ID="{B7908AEF-86FD-4FCD-B7E0-B564E08461C7}" OwnerID="{F5518E82-AF38-49C8-92F8-5226EA1B8214}" PersistMode="Nested">
+			<ChildrenList>
+				<Folder Name="main_menu" ID="{069EB162-EAD4-4060-8592-C12C370AF77B}" ShortID="485576997">
+					<ChildrenList>
+						<Event Name="stop_menu_music" ID="{758F4258-7BFC-44A1-8C68-C49AECCA9A92}">
+							<ChildrenList>
+								<Action Name="" ID="{7A5B72A6-65B1-464F-9FCA-6D1F97EE3699}" ShortID="293129966">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="main_menu_music" ID="{231C0501-EB89-4579-BEF7-CB3A42347137}" WorkUnitID="{2FA6665B-FEA7-4CFD-B953-8A44BAF4CB83}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="play_menu_music" ID="{D087B708-907F-4B1E-9015-6A2492F5CBB5}">
+							<ChildrenList>
+								<Action Name="" ID="{FB8EA4A9-EF12-4A24-A99B-30C216CABFDC}" ShortID="778936064">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="main_menu_music" ID="{231C0501-EB89-4579-BEF7-CB3A42347137}" WorkUnitID="{2FA6665B-FEA7-4CFD-B953-8A44BAF4CB83}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="play_menu_sfx" ID="{540B3378-9F2A-44A0-AD1C-5FB3076E7D47}">
+							<ChildrenList>
+								<Action Name="" ID="{8776E7C0-DAD4-4D5C-B22B-F377F3169539}" ShortID="975461716">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="main_menu_intro_sfx" ID="{FEE63A78-9C9A-4200-A4DD-7A3DCE9010FD}" WorkUnitID="{2FA6665B-FEA7-4CFD-B953-8A44BAF4CB83}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="pause_game_audio" ID="{C52AEB9C-4801-4DDF-873D-94A20EA64041}">
+							<ChildrenList>
+								<Action Name="" ID="{858A1287-A11B-45B3-A3F2-7073EBB25154}" ShortID="857108214">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="7"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="stations" ID="{AAC500AE-754A-49D2-AFC4-622281209439}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{8CB8DC41-6E6C-4DD3-8E1A-D2CA867166C2}" ShortID="555689540">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="7"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="sfx" ID="{A225F6D7-0B96-4F97-A9AA-8DE711946649}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{AFD60848-92CF-4B96-B1D5-BCE653E0246E}" ShortID="178599648">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="7"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="ambient" ID="{281C5B8A-9F04-45B2-8D52-2F39AFFB0D38}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="resume_game_audio" ID="{C0257BFF-5E5E-4954-9BAF-34DFECC835A7}">
+							<ChildrenList>
+								<Action Name="" ID="{66CF182B-C147-4AEF-8EDA-C63934019773}" ShortID="150829520">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="9"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="stations" ID="{AAC500AE-754A-49D2-AFC4-622281209439}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{F8FF571D-E7D1-43D4-83E7-36609115C9D4}" ShortID="109097047">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="9"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="sfx" ID="{A225F6D7-0B96-4F97-A9AA-8DE711946649}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{745863E9-7A21-4A87-9B04-3BB3B54E35ED}" ShortID="200413798">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="9"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="ambient" ID="{281C5B8A-9F04-45B2-8D52-2F39AFFB0D38}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>
