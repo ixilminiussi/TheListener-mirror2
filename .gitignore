@@ -84,5 +84,6 @@ Plugins/WwiseSoundEngine/ThirdParty/**/*.pdb
 Plugins/WwiseSoundEngine/Source/WwiseSoundEngine/Public/Generated/
 Plugins/WwiseSoundEngine/Intermediate/
 TheListener_WwiseProject/GeneratedSoundBanks/
+TheListener_WwiseProject/.cache/
 
 TheListener.uproject.DotSettings.*.user
