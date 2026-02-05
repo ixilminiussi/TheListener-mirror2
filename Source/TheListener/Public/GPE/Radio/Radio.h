@@ -23,11 +23,15 @@ class THELISTENER_API ARadio : public AToy
 protected:
 	ARadio();
 	virtual void BeginPlay() override;
+	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
 	virtual void Tick(float DeltaSeconds) override;
 	virtual void SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) override;;
 	virtual void Destroyed() override;
 	virtual void PossessedBy(AController* NewController) override;
 	virtual void UnPossessed() override;
+
+	UFUNCTION()
+	void KnobUpdate(float ShiftDelta);
 
 	void StartRadio();
 	void StopRadio();
@@ -62,7 +66,7 @@ protected:
 	UPROPERTY(EditDefaultsOnly, Category = "Toy|Radio|Stations")
 	TObjectPtr<class USceneComponent> SoundPosition = nullptr;
 
-	UPROPERTY()
+	UPROPERTY(EditDefaultsOnly, Category = "Toy|Radio")
 	TObjectPtr<class UAkComponent> RadioAkComponent = nullptr;
 	UPROPERTY(EditDefaultsOnly, Category = "Toy|Radio")
 	TObjectPtr<class UAkAudioEvent> NoiseStartEvent = nullptr;
@@ -86,9 +90,8 @@ protected:
 	TObjectPtr<class UInputAction> InputActionShiftFrequency = nullptr;
 	UPROPERTY(EditDefaultsOnly, Category = "Toy|Enhanced Input")
 	TObjectPtr<class UInputAction> InputActionAnswer = nullptr;
-
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Toy|Enhanced Input")
-	class UInputMappingContext* DeactivateRadioInputMappingContext;
+	UPROPERTY(EditDefaultsOnly, Category = "Toy|Enhanced Input")
+	TObjectPtr<class UInputAction> InputActionChangeBand = nullptr;
 
 	// Triggers
 	UPROPERTY(EditDefaultsOnly, Category = "Toy|Radio|Controls|Triggers",
@@ -98,18 +101,19 @@ protected:
 
 	// Frequency Begin ========================
 public:
-	FVector2d GetFrequencyRange() const;
+	void SetFrequencyRange(FVector2D const &InRange, float Location);
+	
 	UFUNCTION(BlueprintCallable, Category = "Toy|Radio")
 	float GetFrequency() const;
+	UFUNCTION(BlueprintCallable, Category = "Toy|Radio")
+	void SetFrequency(float Frequency) const;
 
 protected:
 	void ShiftFrequency(const struct FInputActionValue& Value);
+	void ChangeBand(const struct FInputActionValue& Value);
 	void HandleAnswer(const struct FInputActionValue& Value);
 
-	UPROPERTY(EditDefaultsOnly, Category = "Toy|Radio", meta = (ClampMin = "0.0", ClampMax = "20000.0"))
-	float StartFrequency = 10000.f;
-	UPROPERTY(EditDefaultsOnly, Category = "Toy|Radio", meta = (ClampMin = "0.0", ClampMax = "20000.0"))
-	FVector2D FrequencyRange{};
+	FVector2D Range{};
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Toy|Radio")
 	TObjectPtr<class UKnobComponent> KnobComponent{nullptr};

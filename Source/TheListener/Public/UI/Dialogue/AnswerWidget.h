@@ -3,11 +3,11 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "AnswerDataAsset.h"
+#include "DialogueLineDataFuture.h"
 #include "CommonUserWidget.h"
 #include "AnswerWidget.generated.h"
 
-DECLARE_DYNAMIC_DELEGATE_OneParam(FOnAnswer, FAnswer, Answer);
+DECLARE_DYNAMIC_DELEGATE_OneParam(FOnAnswer, UAnswer*, Answer);
 
 USTRUCT()
 struct FAnswerOptionsContainer
@@ -20,7 +20,11 @@ struct FAnswerOptionsContainer
 	FTimerHandle ProgressHandle;
 	FTimerHandle TimeoutHandle;
 
-	FAnswerList AnswerList;
+	UPROPERTY()
+	TArray<UAnswer*> AnswerList;
+
+	UPROPERTY()
+	float Duration;
 };
 /**
  * 
@@ -33,7 +37,7 @@ class THELISTENER_API UAnswerWidget : public UCommonUserWidget
 public:
 	virtual void NativeConstruct() override;
 
-	int32 Ask(struct FAnswerList const &);
+	int32 Ask(const class UDialogueLineData* LineData);
 
 	void Toggle(int32 QuestionID);
 	void Collapse();

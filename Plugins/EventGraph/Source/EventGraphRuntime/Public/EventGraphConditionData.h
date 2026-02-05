@@ -172,7 +172,7 @@ public:
 
 	virtual EEventGraphConditionType GetType() const override {return Event;}
 
-	virtual bool IsValidated() override;;
+	virtual bool IsValidated() override;
 
 	FName GetEventName() const {return EventName;}
 	FString GetEventNameAsString() const {return EventName.ToString();}

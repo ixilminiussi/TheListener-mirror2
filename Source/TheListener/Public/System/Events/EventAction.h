@@ -27,6 +27,22 @@ protected:
 };
 
 UCLASS()
+class THELISTENER_API UAllowBandsAction : public UEventGraphActionData
+{
+	GENERATED_BODY()
+
+public:
+	virtual void LaunchEvent(const UObject* InWorldContextObject) override;
+
+	virtual struct FActionKey GetKey() const override;
+	static struct FActionKey GenerateKey(TArray<int> InAllowed);
+	
+protected:
+	UPROPERTY(Category = "Action", EditAnywhere)
+	TArray<int> AllowedBands = {0, 1, 2};
+};
+
+UCLASS()
 class THELISTENER_API URingPhoneAction : public UEventGraphActionData
 {
 	GENERATED_BODY()
@@ -35,11 +51,11 @@ public:
 	virtual void LaunchEvent(const UObject* InWorldContextObject) override;
 
 	virtual struct FActionKey GetKey() const override;
-	static struct FActionKey GenerateKey(class UDialogueTreeData* Story);
+	static struct FActionKey GenerateKey(class UDialogueGraphAsset* Story);
 	
 protected:
 	UPROPERTY(Category = "Action", EditAnywhere)
-	class UDialogueTreeData* DialogueTree = nullptr;
+	class UDialogueGraphAsset* DialogueAsset = nullptr;
 
 	UPROPERTY(Category = "Action", EditAnywhere)
 	bool bIsImportant = false;
@@ -60,12 +76,12 @@ public:
 	virtual void LaunchEvent(const UObject* InWorldContextObject) override;
 
 	virtual struct FActionKey GetKey() const override;
-	static struct FActionKey GenerateKey(TArray<int> Number, class UDialogueTreeData* DialogueTree);
+	static struct FActionKey GenerateKey(TArray<int> Number, class UDialogueGraphAsset* DialogueTree);
 
 protected:
 	/** Number Should be no more or less than 6 digits otherwise they will never be found by the phone **/
 	UPROPERTY(Category = "Action", EditAnywhere)
-	TObjectPtr<class UDialogueTreeData> DialogueTree;
+	TObjectPtr<class UDialogueGraphAsset> DialogueAsset;
 	
 	UPROPERTY(Category = "Action", EditAnywhere)
 	TArray<int> NumberToCall;

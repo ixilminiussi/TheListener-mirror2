@@ -23,17 +23,24 @@ public:
 	virtual class USettingsMenuWidget* GetSettingsMenuWidget() const;
 
 protected:
-	UPROPERTY()
+	UPROPERTY(BlueprintReadWrite)
 	UBaseMenuWidget* PreviousWidgetInstance = nullptr;
 
-	UPROPERTY()
+	UPROPERTY(BlueprintReadWrite)
 	USettingsMenuWidget* SettingsMenuWidgetInstance = nullptr;
 
-	UPROPERTY(EditAnywhere, Category = "Widget|Menus")
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Widget|Menus")
 	TSubclassOf<class UBaseMenuWidget> PreviousWidgetClass;
-	UPROPERTY(EditAnywhere, Category = "Widget|Menus")
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Widget|Menus")
 	TSubclassOf<class USettingsMenuWidget> SettingsMenuWidgetClass;
 
 	UPROPERTY()
 	bool bIsPaused{false};
+
+
+public:
+	UFUNCTION(BlueprintImplementableEvent)
+	void OpenSettingsInBlueprint();
+	UFUNCTION(BlueprintImplementableEvent)
+	void CloseSettingsInBlueprint();
 };

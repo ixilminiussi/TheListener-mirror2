@@ -4,19 +4,16 @@
 #include "EnhancedInputSubsystems.h"
 #include "Camera/CameraComponent.h"
 #include "Player/LukaCharacter.h"
-#include "GPE/Interactable.h"
 #include "GPE/Toy.h"
 #include "Kismet/GameplayStatics.h"
-#include "Player/Components/InspectingComponent.h"
-#include "Slate/SceneViewport.h"
+#include "Player/Components/PickupComponent.h"
 #include "Structs/PlayerData.h"
-#include "Tests/AutomationCommon.h"
 #include "UI/LukaHUD.h"
+#include "UI/Prompt/HoverPromptComponent.h"
+#include "UserSettings/EnhancedInputUserSettings.h"
 
 ALukaController::ALukaController()
 {
-	InspectingComponent = CreateDefaultSubobject<UInspectingComponent>("Reading");
-	check(InspectingComponent);
 }
 
 void ALukaController::BeginPlay()
@@ -36,6 +33,13 @@ void ALukaController::SetupInputComponent()
 	{
 		return;
 	}
+	
+	UEnhancedInputUserSettings* UserSettings = EnhancedInputSubsystem->GetUserSettings();
+	if (UserSettings)
+	{
+		UserSettings->LoadOrCreateSettings(GetLocalPlayer());
+		UserSettings->ApplySettings();
+	}
 
 	EnhancedInputSubsystem->ClearAllMappings();
 	EnhancedInputSubsystem->AddMappingContext(GlobalInputMappingContext, 0);
@@ -48,9 +52,6 @@ void ALukaController::SetupInputComponent()
 
 	EnhancedInputComponent->ClearActionBindings();
 
-	check(InspectingComponent);
-	InspectingComponent->SetupInput(EnhancedInputComponent, EnhancedInputSubsystem);
-
 	if (ensure(InputActionInteract != nullptr))
 	{
 		EnhancedInputComponent->BindAction(InputActionInteract, ETriggerEvent::Triggered, this,
@@ -60,7 +61,7 @@ void ALukaController::SetupInputComponent()
 	{
 		EnhancedInputComponent->BindAction(InputActionReturn, ETriggerEvent::Triggered, this, &ALukaController::Return);
 	}
-	if (ensure(InputActionDrop != nullptr))
+	if (ensure(InputActionReturn != nullptr))
 	{
 		EnhancedInputComponent->BindAction(InputActionDrop, ETriggerEvent::Triggered, this, &ALukaController::Drop);
 	}
@@ -105,22 +106,17 @@ void ALukaController::Interact(const FInputActionValue& Value)
 {
 	check(Luka != nullptr);
 
-	if (Luka->GetInteractableInView())
-	{
-		Luka->Interact();
-		return;
-	}
-
 	if (AToy* Toy = Luka->GetToyInView())
 	{
 		PossessToy(Toy);
+	} else
+	{
+		Luka->Interact();
 	}
 }
 
 void ALukaController::Return(const FInputActionValue& Value)
 {
-	check(Luka != nullptr);
-
 	if (bTransitionMutex)
 	{
 		return;
@@ -129,15 +125,19 @@ void ALukaController::Return(const FInputActionValue& Value)
 	if (AToy* Toy = Cast<AToy>(GetPawn()))
 	{
 		ReleaseToy(Toy);
+	} else
+	{
+		check(Luka != nullptr);
+
+		Luka->Return();
 	}
 }
 
-void ALukaController::Drop(const struct FInputActionValue& Value)
+void ALukaController::Drop(const FInputActionValue& Value)
 {
-	check(Luka != nullptr);
-	if (Luka->HasObji())
+	if (Luka)
 	{
-		Luka->DropObji();
+		Luka->Drop();
 	}
 }
 
@@ -181,6 +181,11 @@ void ALukaController::PossessToy(AToy* Toy)
 		return;
 	}
 
+	if (UHoverPromptComponent *HoverComponent = Toy->GetComponentByClass<UHoverPromptComponent>(); HoverComponent)
+	{
+		HoverComponent->TogglePrompts(false);
+	}
+
 	if (Luka != nullptr)
 	{
 		if (Luka->IsPawnControlled())
@@ -193,8 +198,22 @@ void ALukaController::PossessToy(AToy* Toy)
 	PossessedToy = Toy;
 	PossessedToy->OnPossessToyTransition();
 	bTransitionMutex = true;
+
+	UPickupComponent *LukaPickupComponent = Luka->GetComponentByClass<UPickupComponent>();
+	UPickupComponent *ToyPickupComponent = Toy->GetComponentByClass<UPickupComponent>();
+
+	if (LukaPickupComponent && ToyPickupComponent)
+	{
+		LukaPickupComponent->Pass(ToyPickupComponent);
+	}
+	
 	GetWorldTimerManager().SetTimer(CameraDelayHandle, this, &ALukaController::EnactPossession, CameraBlendTime,
 	                                       false);
+
+	if (LukaHUD)
+	{
+		LukaHUD->ToggleCursorVisibility(false);
+	}
 }
 
 void ALukaController::EnactPossession()
@@ -225,8 +244,22 @@ void ALukaController::ReleaseToy(AToy* Toy)
 	SetViewTargetWithBlend(Luka, CameraBlendTime, VTBlend_EaseInOut, 3.0f);
 	PossessedToy = nullptr;
 	bTransitionMutex = true;
+
+	UPickupComponent *LukaPickupComponent = Luka->GetComponentByClass<UPickupComponent>();
+	UPickupComponent *ToyPickupComponent = Toy->GetComponentByClass<UPickupComponent>();
+
+	if (LukaPickupComponent && ToyPickupComponent)
+	{
+		ToyPickupComponent->Pass(LukaPickupComponent);
+	}
+	
 	GetWorldTimerManager().SetTimer(CameraDelayHandle, this, &ALukaController::EnactPossession, CameraBlendTime,
 	                                       false);
+	
+	if (LukaHUD)
+	{
+		LukaHUD->ToggleCursorVisibility(true);
+	}
 }
 
 void ALukaController::SetGlobalInputsStatus(bool IsRunning) const

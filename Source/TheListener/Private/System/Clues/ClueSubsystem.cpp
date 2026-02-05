@@ -9,6 +9,7 @@
 #include "GPE/Corkboard.h"
 #include "System/Core/ListenerWorldSettings.h"
 #include "System/Clues/ClueSubsystemData.h"
+#include "UI/LukaHUD.h"
 
 bool UClueSubsystem::ShouldCreateSubsystem(UObject* Outer) const
 {
@@ -91,8 +92,11 @@ void UClueSubsystem::GiveClue(UClueAsset* Clue)
 		Link->CheckClueState(false);
 	}
 	Corkboard->UpdateClue(Clue);
+	ALukaHUD* HUD = Cast<ALukaHUD>(GetWorld()->GetFirstPlayerController()->GetHUD());
+	HUD->NotifyClue();
+
 #if UE_EDITOR
-	DisplayClues();
+	//DisplayClues();
 #endif
 }
 
@@ -108,7 +112,7 @@ void UClueSubsystem::RemoveClue(class UClueAsset* Clue)
 	FoundClues.Remove(Clue);
 
 #if UE_EDITOR
-	DisplayClues();
+	//DisplayClues();
 #endif
 }
 
@@ -118,16 +122,10 @@ void UClueSubsystem::DisplayClues()
 	UE_LOG(LogTemp, Log, TEXT("Displaying Clues : "));
 	for (UClueAsset* Clue : CluesList)
 	{
-		UE_LOG(LogTemp, Log, TEXT("Clue Name : %s [%s]"), *Clue->Name, *UEnum::GetValueAsString(Clue->State));
 		UE_LOG(LogTemp, Log, TEXT(" | Hints Found : "));
 		if (Clue->Links.Num() > 0)
 		{
 			UE_LOG(LogTemp, Log, TEXT(" | Links : "));
-			for (UClueAsset* LinkedClue : Clue->Links)
-			{
-				UE_LOG(LogTemp, Log, TEXT(" | - %s [%s]"), *LinkedClue->Name,
-				       *UEnum::GetValueAsString(LinkedClue->State));
-			}
 		}
 	}
 	UE_LOG(LogTemp, Log, TEXT("==========================================================="));

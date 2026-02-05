@@ -6,6 +6,7 @@
 #include "UObject/Object.h"
 #include "DialogueGraphAsset.generated.h"
 
+DECLARE_MULTICAST_DELEGATE(FOnPreSave);
 /**
  * 
  */
@@ -15,8 +16,18 @@ class DIALOGUEGRAPHRUNTIME_API UDialogueGraphAsset : public UObject
 	GENERATED_BODY()
 
 public:
-	UPROPERTY(EditAnywhere,Category="Dialogue")
-	FString Name;
-
-	TArray<class UDialogueLineData*> Lines;
+	UPROPERTY()
+	TArray<class UDialogueLineData*> LineDatas;
+	UPROPERTY()
+	TArray<class UEventGraphConditionData*> ConditionDatas;
+	UPROPERTY()
+	class UDialogueLineData* Start;
+	UPROPERTY()
+	class UDialogueGraphData* Graph;
+	
+	#if  UE_EDITOR
+	FOnPreSave OnPreSave;
+    
+    virtual void PreSave(FObjectPreSaveContext SaveContext) override;
+    #endif
 };

@@ -8,11 +8,15 @@ class DialogueGraphEditorApp : public FWorkflowCentricApplication, public FEdito
 public:
 	virtual void RegisterTabSpawners(const TSharedRef<FTabManager>& TabManager) override;
 	void Init(const EToolkitMode::Type Mode, const TSharedPtr<class IToolkitHost>& InToolKitHost, UObject* inObject);
+	virtual void OnClose() override;
 
 	class UDialogueGraphAsset* GetAsset() const {return Asset;}
-	class UEdGraph* GetGraph() const {return Graph;}
+	class UDialogueEdGraph* GetGraph() const {return Graph;}
 	TSharedPtr<FUICommandList> GetToolkitCommand() const {return ToolkitCommands;}
 	TSharedPtr<SGraphEditor> GetSlateGraph() const {return SlateGraph;}
+
+	void OnGraphSelectionChanged(const FGraphPanelSelectionSet&);
+	void RefreshNodeVariables(const FPropertyChangedEvent&);
 
 	virtual FName GetToolkitFName() const override {return FName("DialogueGraphEditorApp");}
 	virtual FText GetBaseToolkitName() const override {return FText::FromString("DialogueGraphEditorApp");}
@@ -21,6 +25,8 @@ public:
 	virtual FString GetDocumentationLink() const override {return FString("https://www.notion.so/Dialogue-graph-tool-Tutorial-2b64a62bf94e80c9a7b6f51947eab643?source=copy_link");}
 	virtual void OnToolkitHostingStarted(const TSharedRef<IToolkit>& Toolkit) override {}
 	virtual void OnToolkitHostingFinished(const TSharedRef<IToolkit>& Toolkit) override {}
+
+	void SetSelecedNodePropertyView(TSharedPtr<IDetailsView> Details);
 
 	virtual void SaveAsset_Execute() override;
 
@@ -39,17 +45,24 @@ public:
 	void CutSelectedNodes();
 	bool CanCutSelectedNodes();
 
+	void SetNewStartNode(class UDialogueGraphNode* Node);
+
 private:
 	UPROPERTY()
 	class UDialogueGraphAsset* Asset;
 
 	UPROPERTY()
-	class UEdGraph* Graph;
+	class UDialogueEdGraph* Graph;
 
 	UPROPERTY()
 	TSharedPtr<FUICommandList> ToolkitCommand;
 	UPROPERTY()
 	TSharedPtr<SGraphEditor> SlateGraph;
+	UPROPERTY()
+	TSharedPtr<IDetailsView> PropertyView;
+
+	TObjectPtr<class UDialogueGraphNode> StartNode;
+	
 
 	void BindCommands();
 

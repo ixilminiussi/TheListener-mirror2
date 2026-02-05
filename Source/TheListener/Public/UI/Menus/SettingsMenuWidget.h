@@ -25,6 +25,7 @@ public:
 
 	virtual void NativeOnFocusLost(const FFocusEvent& InFocusEvent) override;
 
+	virtual bool NativeOnHandleBackAction() override;
 
 protected:
 	UPROPERTY(meta = (BindWidget))

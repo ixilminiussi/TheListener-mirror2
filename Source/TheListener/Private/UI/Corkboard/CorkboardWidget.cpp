@@ -28,8 +28,6 @@ void FNoteLink::Init(UCorkboardNoteWidget* CWA, UCorkboardNoteWidget* CWB, TObje
 	if (WidgetTree && ContentPanel)
 	{
 		FString Name = "Link";
-		Name.Append(CWA->Clue->Name);
-		Name.Append(CWB->Clue->Name);
 		Image = WidgetTree->ConstructWidget<UImage>(UImage::StaticClass(), FName(Name));
 		ContentPanel->AddChild(Image);
 
@@ -126,6 +124,7 @@ void UCorkboardWidget::UpdateClue(class UClueAsset* Clue)
 {
 	if (!NoteWidgets.Contains(Clue)) { return; }
 	UCorkboardNoteWidget* ActualClueWidget = NoteWidgets[Clue];
+
 	switch (Clue->State)
 	{
 	case EClueState::Hidden:
@@ -147,9 +146,11 @@ void UCorkboardWidget::UpdateClue(class UClueAsset* Clue)
 		break;
 	}
 	ActualClueWidget->UpdateStateImage(Clue->State);
+	if (!ActualClueWidget->bHasPin) { return; }
 	//Update Surrounding
 	for (UClueAsset* Link : Clue->Links)
 	{
+		if (!NoteWidgets[Link]->bHasPin) { continue; }
 		if (!NoteWidgets.Contains(Link)) { continue; }
 		NoteWidgets[Link]->UpdateStateImage(Link->State);
 		if (!(Clue->IsFound() && Link->IsFound())) { continue; }

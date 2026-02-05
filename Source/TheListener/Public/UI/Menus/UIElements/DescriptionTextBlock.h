@@ -10,17 +10,14 @@
  * 
  */
 UCLASS()
-class THELISTENER_API UDescriptionTextBlock : public UCommonActivatableWidget
+class THELISTENER_API UDescriptionTextBlock : public UCommonUserWidget
 {
 	GENERATED_BODY()
 
 public:
-	void UpdateDescription(const FText& Description, float Y) const;
+	class UCommonTextBlock* GetTextBlock();
 
 protected:
 	UPROPERTY(meta=(BindWidget))
 	class UCommonTextBlock* DescriptionTextBlock;
-
-	UPROPERTY(meta=(BindWidget))
-	class USizeBox* DescriptionBox;
 };

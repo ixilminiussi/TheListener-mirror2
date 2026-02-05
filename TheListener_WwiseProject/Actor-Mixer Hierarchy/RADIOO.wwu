@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{B26405AA-F6E8-4A0A-85A7-DE79AF14FDC4}" SchemaVersion="123" RootDocumentID="{268CC0FB-048E-4CF9-99B1-EE3D65440901}" ParentDocumentID="{268CC0FB-048E-4CF9-99B1-EE3D65440901}">
+	<AudioObjects>
+		<WorkUnit Name="RADIOO" ID="{B26405AA-F6E8-4A0A-85A7-DE79AF14FDC4}" OwnerID="{268CC0FB-048E-4CF9-99B1-EE3D65440901}" PersistMode="Nested">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="5"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<ActorMixer Name="RADIO" ID="{6E70BCFA-E200-4E96-AB59-0515EA5DFD09}" ShortID="443662236">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<WorkUnit Name="RADIO_AM" ID="{0C77C813-1DAB-42E5-B7FB-5EE117ABEC85}" PersistMode="Reference"/>
+						<WorkUnit Name="RADIO_FM" ID="{688F8ED9-926E-4A7C-B6C9-AEDCA70642F6}" PersistMode="Reference"/>
+						<WorkUnit Name="RADIO_FOL" ID="{5329720F-90DD-4E21-A00C-BAC66E1E9123}" PersistMode="Reference"/>
+					</ChildrenList>
+				</ActorMixer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

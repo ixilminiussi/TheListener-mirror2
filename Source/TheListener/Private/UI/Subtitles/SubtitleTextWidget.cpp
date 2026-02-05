@@ -2,10 +2,24 @@
 #include "Components/RichTextBlock.h"
 #include "Kismet/GameplayStatics.h"
 
+void USubtitleTextWidget::NativeConstruct()
+{
+	Super::NativeConstruct();
+
+	StyleTable = SubtitleText->GetTextStyleSet();
+}
+
 void USubtitleTextWidget::SetSubtitleInfo(FSubtitleInfo const* InSubtitleInfo)
 {
 	check(InSubtitleInfo);
 	SubtitleInfo = *InSubtitleInfo;
+	CurrentStyle = "DefaultName";
+	
+	if (FRichTextStyleRow* StyleRow = StyleTable->FindRow<FRichTextStyleRow>(FName(*SubtitleInfo.Speaker),""))
+	{
+		CurrentStyle = SubtitleInfo.Speaker;
+	}
+	
 }
 
 void USubtitleTextWidget::SetClarity(const float InClarity)
@@ -16,31 +30,46 @@ void USubtitleTextWidget::SetClarity(const float InClarity)
 void USubtitleTextWidget::NativeTick(const FGeometry& MyGeometry, float InDeltaTime)
 {
 	Super::NativeTick(MyGeometry, InDeltaTime);
-
+	if (SubtitleInfo.SubtitleEn.Len() == 0)
+	{
+		SubtitleText->SetText({});
+		return;
+	}
+	
+	
+	FString CurrentLine;
+	CurrentLine.Append("<");
+	CurrentLine.Append(CurrentStyle);
+	CurrentLine.Append(">");
+	CurrentLine.Append(SubtitleInfo.Speaker);
+	CurrentLine.Append("</>\n");
+	CurrentLine.Append(SubtitleInfo.SubtitleEn);
 	if (Clarity != 1.0f && SubtitleInfo.Source == ESource::ESRadio)
 	{
 		//Get a "Unique" Seed for each subtitle
-		int CurrentSeed = SubtitleInfo.SubtitleEn.Len();
+		int CurrentSeed = CurrentLine.Len();
 		const int Corruption = Clarity * 100;
 		FString ModifiedText;
 		bool NoCorrupt = false;
-		for (int i = 0; i < SubtitleInfo.SubtitleEn.Len(); i++)
+		for (int i = 0; i < CurrentLine.Len(); i++)
 		{
-			if (CurrentSeed == 0)
-			{
-				CurrentSeed = 10000;
-			}
-			
-			CurrentSeed = SubtitleInfo.SubtitleEn[i] * CurrentSeed % 1000000;
-			FMath::RandInit(CurrentSeed);
-
 			constexpr char Space = 32;
 			constexpr char RichTextTagIn = 60;
 			constexpr char RichTextTagOut = 62;
-			if (SubtitleInfo.SubtitleEn[i] == RichTextTagIn) {NoCorrupt = true;}
-			if (SubtitleInfo.SubtitleEn[i] == RichTextTagOut) {NoCorrupt = false;}
+			constexpr char Colon = 58;
+			if (CurrentLine[i] == RichTextTagIn) {NoCorrupt = true;}
+			if (CurrentLine[i] == RichTextTagOut) {NoCorrupt = false;}
+
+			if ((CurrentLine[i] == Colon || CurrentLine[i] == Space) || NoCorrupt)
+			{
+				ModifiedText.AppendChar(CurrentLine[i]);
+				continue;
+			}
 			
-			if (FMath::RandHelper(100) > Corruption && SubtitleInfo.SubtitleEn[i] != Space && !NoCorrupt)
+			CurrentSeed = CurrentLine[i] * CurrentSeed % 1000000;
+			FMath::RandInit(CurrentSeed);
+
+			if (FMath::RandHelper(100) > Corruption && CurrentLine[i] != Space)
 			{
 				FMath::RandInit(static_cast<int>((i + 1) * 10000 * UGameplayStatics::GetTimeSeconds(this)) % 100000);
 				char rChar = FMath::RandRange(65, 116);
@@ -49,7 +78,7 @@ void USubtitleTextWidget::NativeTick(const FGeometry& MyGeometry, float InDeltaT
 			}
 			else
 			{
-				ModifiedText.AppendChar(SubtitleInfo.SubtitleEn[i]);
+				ModifiedText.AppendChar(CurrentLine[i]);
 			}
 		}
 		
@@ -58,6 +87,6 @@ void USubtitleTextWidget::NativeTick(const FGeometry& MyGeometry, float InDeltaT
 	} else
 	{
 		if (!ensure(SubtitleText)) { return; }
-		SubtitleText->SetText(FText::FromString(SubtitleInfo.SubtitleEn));
+		SubtitleText->SetText(FText::FromString(CurrentLine));
 	}
 }

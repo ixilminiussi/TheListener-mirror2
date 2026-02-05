@@ -10,8 +10,12 @@ class THELISTENER_API UFrequencySubsystemData : public UDataAsset
 	GENERATED_BODY()
 
 public:
-	UPROPERTY(EditDefaultsOnly)
-	FVector2D GlobalRange{0,0};
+	UPROPERTY(VisibleAnywhere)
+	FVector2D LfRange{30,300};
+	UPROPERTY(VisibleAnywhere)
+	FVector2D MfRange{300,3000};
+	UPROPERTY(VisibleAnywhere)
+	FVector2D HfRange{3000,30000};
 
 	UPROPERTY(EditDefaultsOnly)
 	class UCurveLinearColorAtlas* CurveAtlas{nullptr};

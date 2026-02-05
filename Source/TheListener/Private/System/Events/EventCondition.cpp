@@ -40,12 +40,12 @@ struct FConditionKey UToyPossessedCondition::GetKey() const
 	return GenerateKey(ToyClass);
 }
 
-struct FConditionKey UInkpotCondition::GetKey() const
+struct FConditionKey UDialogueCondition::GetKey() const
 {
-	return GenerateKey(InkpotTagName);
+	return GenerateKey(DialogueTagName);
 }
 
-struct FConditionKey UInkpotCondition::GenerateKey(const FString& TagName)
+struct FConditionKey UDialogueCondition::GenerateKey(const FString& TagName)
 {
 	return FConditionKey(StaticClass(), TagName);
 }
@@ -114,7 +114,7 @@ struct FConditionKey UStationFinishedCondition::GetKey() const
 
 struct FConditionKey UStationFinishedCondition::GenerateKey(const UStationAsset* Station)
 {
-	if (ensure(Station))
+	if (Station)
 	{
 		return FConditionKey(StaticClass(), Station->GetName());
 	}

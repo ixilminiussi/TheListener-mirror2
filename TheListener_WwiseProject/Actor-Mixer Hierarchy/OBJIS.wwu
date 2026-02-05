@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{332B4E57-95A7-49DC-9B12-6432C586B70E}" SchemaVersion="123" RootDocumentID="{61CDF67E-D35C-4735-A80C-49ECCF7CE674}" ParentDocumentID="{61CDF67E-D35C-4735-A80C-49ECCF7CE674}">
+	<AudioObjects>
+		<WorkUnit Name="OBJIS" ID="{332B4E57-95A7-49DC-9B12-6432C586B70E}" OwnerID="{61CDF67E-D35C-4735-A80C-49ECCF7CE674}" PersistMode="Nested">
+			<ChildrenList>
+				<Sound Name="pickup_document" ID="{27D8FDBE-8287-4230-9107-809D8F2958AB}" ShortID="369808706">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1F16A1F8-60B8-4227-AF46-35E4F3C0380C}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="SFX" ID="{A225F6D7-0B96-4F97-A9AA-8DE711946649}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="pickup_document" ID="{C9E3284D-35FE-44C3-8637-8EC04E29DEFF}">
+							<PropertyList>
+								<Property Name="FadeInDuration" Type="Real64" Value="0.00801030938158331"/>
+								<Property Name="FadeOutDuration" Type="Real64" Value="0.0812474237274877"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimBegin" Type="Real64" Value="0.204835054186202"/>
+								<Property Name="VolumeOffset" Type="Real64">
+									<ValueList>
+										<Value>-15</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>Foleys\pickup_document.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="281843083"/>
+							</MediaIDList>
+						</AudioFileSource>
+						<AudioFileSource Name="pickup_document_01" ID="{B5F03A36-6856-4AE9-B79D-E7B6D61001F3}">
+							<Language>SFX</Language>
+							<AudioFile>SFX\Objis\Documents\pickup_document.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="706559956"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="pickup_document_01" ID="{B5F03A36-6856-4AE9-B79D-E7B6D61001F3}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="drop_document" ID="{A1D25D93-E8DB-443B-9706-AD7778A8D322}" ShortID="599699253">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1F16A1F8-60B8-4227-AF46-35E4F3C0380C}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="SFX" ID="{A225F6D7-0B96-4F97-A9AA-8DE711946649}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="drop_document" ID="{95E1B515-1C98-4D40-8BEC-46639CD773C6}">
+							<PropertyList>
+								<Property Name="FadeOutDuration" Type="Real64" Value="0.123835056467155"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimBegin" Type="Real64" Value="0.5075876490357"/>
+								<Property Name="TrimEnd" Type="Real64" Value="1.04511339113884"/>
+								<Property Name="VolumeOffset" Type="Real64">
+									<ValueList>
+										<Value>-15</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>Foleys\drop_document.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="691072205"/>
+							</MediaIDList>
+						</AudioFileSource>
+						<AudioFileSource Name="drop_document_01" ID="{00FCA2E0-6076-4915-9D45-298221362B34}">
+							<Language>SFX</Language>
+							<AudioFile>SFX\Objis\Documents\drop_document.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="492703979"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="drop_document_01" ID="{00FCA2E0-6076-4915-9D45-298221362B34}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="guitar_note" ID="{1FC9358E-672A-4AF7-B0BF-01ABF52CDD93}" ShortID="595926495">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-14</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1F16A1F8-60B8-4227-AF46-35E4F3C0380C}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="guitar-note-375696" ID="{D180E614-C38E-4C55-906E-3D19A0093D56}">
+							<Language>SFX</Language>
+							<AudioFile>guitar-note-375696.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="318007911"/>
+							</MediaIDList>
+						</AudioFileSource>
+						<AudioFileSource Name="guitar_note" ID="{589F22FE-5A1A-40CB-AE13-0BF2421A54F7}">
+							<Language>SFX</Language>
+							<AudioFile>SFX\Interactables\guitar_note.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="714486142"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="guitar_note" ID="{589F22FE-5A1A-40CB-AE13-0BF2421A54F7}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

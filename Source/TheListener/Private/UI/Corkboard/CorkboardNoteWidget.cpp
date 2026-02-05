@@ -3,26 +3,11 @@
 
 #include "UI/Corkboard/CorkboardNoteWidget.h"
 
-#include "CrossCompilerCommon.h"
-#include "imgui.h"
 #include "Components/CanvasPanel.h"
 #include "Components/CanvasPanelSlot.h"
 #include "Components/Image.h"
 #include "Components/RichTextBlock.h"
 #include "System/Clues/ClueAsset.h"
-
-void UCorkboardNoteWidget::SetTitleText(FString text)
-{
-	ClueTitleTextBox->SetText(FText::FromString(text));
-}
-
-void UCorkboardNoteWidget::SetShortDescriptionText(FString text)
-{
-	FString ShortDescText = "<ShortDesc>";
-	ShortDescText.Append(text);
-	ShortDescText.Append("</>");
-	ClueShortDescTextBox->SetText(FText::FromString(ShortDescText));
-}
 
 void UCorkboardNoteWidget::SetClueImage(UTexture2D* tex)
 {
@@ -34,29 +19,23 @@ void UCorkboardNoteWidget::LoadCLue()
 {
 	check(Clue);
 
-	SetTitleText(Clue->Name);
-
-	if (Clue->DisplayType == EClueDisplayType::Picture)
-	{
-		ClueShortDescTextBox->SetVisibility(ESlateVisibility::Collapsed);
-		SetClueImage(Clue->Image);
-	}
-	else
-	{
-		ClueImage->SetVisibility(ESlateVisibility::Collapsed);
-		SetShortDescriptionText(Clue->ShortDesc);
-	}
+	SetClueImage(ClueTexture);
 }
 
 void UCorkboardNoteWidget::NativeConstruct()
 {
 	Super::NativeConstruct();
 
-	check(ClueTitleTextBox)
-	check(ClueShortDescTextBox)
 	check(ClueImage)
 
-	PinImage->SetVisibility(ESlateVisibility::Collapsed);
+	if (!bHasPin)
+	{
+		PinImage->SetVisibility(ESlateVisibility::Collapsed);
+	}
+	else
+	{
+		PinImage->SetVisibility(ESlateVisibility::Visible);
+	}
 
 	LoadCLue();
 }
@@ -67,7 +46,10 @@ FVector2D UCorkboardNoteWidget::GetPinPosition() const
 
 	//Get Note Position
 	UCanvasPanelSlot* NoteSlot = Cast<UCanvasPanelSlot>(Slot);
+	//FVector2D Offset = FVector2D(400,300);
+	//Offset += FVector2D(0,GetRenderTransform().Scale)
 	FVector2D Position = NoteSlot->GetPosition();
+	//LOG("Pin Position : %s", *Position.ToString())
 	FWidgetTransform RTransform = GetRenderTransform();
 	FAnchors NoteSlotAnchors = NoteSlot->GetAnchors();
 	FVector2D Pivot = GetRenderTransformPivot();
@@ -81,6 +63,7 @@ FVector2D UCorkboardNoteWidget::GetPinPosition() const
 void UCorkboardNoteWidget::SetFakePin(UImage* Pin)
 {
 	FakePinImage = Pin;
+	Cast<UCanvasPanelSlot>(FakePinImage->Slot)->SetSize(FVector2D(50, 50));
 }
 
 UImage* UCorkboardNoteWidget::GetPin() const
@@ -88,7 +71,7 @@ UImage* UCorkboardNoteWidget::GetPin() const
 	return PinImage;
 }
 
-UImage* UCorkboardNoteWidget::GetFakePin()
+UImage* UCorkboardNoteWidget::GetFakePin() const
 {
 	return FakePinImage;
 }

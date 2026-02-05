@@ -26,6 +26,7 @@ public class DialogueGraph : ModuleRules
 			new string[]
 			{
 				"Core",
+				"InputCore" 
 				// ... add other public dependencies that you statically link with here ...
 			}
 			);
@@ -45,7 +46,8 @@ public class DialogueGraph : ModuleRules
 				"ToolMenus",
 				"GraphEditor",
 				"ApplicationCore", 
-				"DialogueGraphRuntime", "EventGraph"
+				"DialogueGraphRuntime", "EventGraph",
+				"BlueprintGraph"
 				// ... add private dependencies that you statically link with here ...	
 			}
 			);

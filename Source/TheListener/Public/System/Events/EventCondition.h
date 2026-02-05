@@ -50,8 +50,22 @@ protected:
 	FString ConditionName = "Name";
 };
 
-UCLASS(DisplayName = "Has Heard/Said", meta = (ToolTip = "is this Inkpot Tag registered ?"))
+UCLASS(DisplayName = "Has Heard/Said", meta = (ToolTip = "is this Dialogue Tag registered ?"))
 class THELISTENER_API UInkpotCondition : public UEventGraphBaseConditionData
+{
+	GENERATED_BODY()
+
+public:
+	virtual FText GetNodeTitle() const override {return FText::FromString("Dialogue Tag");}
+
+protected:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Condition")
+	FString InkpotTagName = "Name";
+};
+
+//We won't forget you UInkpotCondition 
+UCLASS(DisplayName = "Has Heard/Said", meta = (ToolTip = "is this Dialogue Tag registered ?"))
+class THELISTENER_API UDialogueCondition : public UEventGraphBaseConditionData
 {
 	GENERATED_BODY()
 
@@ -59,11 +73,11 @@ public:
 	virtual struct FConditionKey GetKey() const override;
 	static struct FConditionKey GenerateKey(const FString& TagName);
 
-	virtual FText GetNodeTitle() const override {return FText::FromString("Inkpot Tag");}
+	virtual FText GetNodeTitle() const override {return FText::FromString("Dialogue Tag");}
 
 protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Condition")
-	FString InkpotTagName = "Name";
+	FString DialogueTagName = "Name";
 };
 
 UCLASS(DisplayName = "Is Toy Possessed", meta = (ToolTip = "Is the selected toy currently possessed"))
@@ -95,7 +109,7 @@ public:
 
 protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Condition")
-	TSubclassOf<class AObji> ObjiClass;
+	TSubclassOf<class AActor> ObjiClass;
 };
 
 UCLASS(DisplayName = "Has Heard Station", meta = (ToolTip = "Did the player listened to this station"))

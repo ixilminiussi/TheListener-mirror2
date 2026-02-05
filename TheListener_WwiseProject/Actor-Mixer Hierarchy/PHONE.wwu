@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{A49BF57D-72B8-40FD-A09C-AB956AC5151D}" SchemaVersion="123" RootDocumentID="{61CDF67E-D35C-4735-A80C-49ECCF7CE674}" ParentDocumentID="{61CDF67E-D35C-4735-A80C-49ECCF7CE674}">
+	<AudioObjects>
+		<WorkUnit Name="PHONE" ID="{A49BF57D-72B8-40FD-A09C-AB956AC5151D}" OwnerID="{61CDF67E-D35C-4735-A80C-49ECCF7CE674}" PersistMode="Nested">
+			<ChildrenList>
+				<Sound Name="phone_ring" ID="{8084209E-B85F-4894-BE55-71BC73D029A0}" ShortID="477790018">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-35</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1F16A1F8-60B8-4227-AF46-35E4F3C0380C}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="SFX" ID="{A225F6D7-0B96-4F97-A9AA-8DE711946649}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="phone_ring" ID="{544C3270-F041-4724-8C75-3C4756F204F6}">
+							<PropertyList>
+								<Property Name="FadeInDuration" Type="Real64" Value="0.466529381853256"/>
+								<Property Name="FadeOutDuration" Type="Real64" Value="0.498483449103479"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimBegin" Type="Real64" Value="0.843587375405888"/>
+								<Property Name="TrimEnd" Type="Real64" Value="4.27545401188628"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>phone_ring.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="1072246635"/>
+							</MediaIDList>
+						</AudioFileSource>
+						<AudioFileSource Name="phone_ring_01" ID="{67F6B1F7-6BAF-406B-9497-9AD8FD82214A}">
+							<Language>SFX</Language>
+							<AudioFile>SFX\Phone\phone_ring.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="632716325"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="phone_ring_01" ID="{67F6B1F7-6BAF-406B-9497-9AD8FD82214A}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="phone_hangup" ID="{A7D54920-012D-4B3E-8802-4B36B791405B}" ShortID="638769909">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1F16A1F8-60B8-4227-AF46-35E4F3C0380C}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="SFX" ID="{A225F6D7-0B96-4F97-A9AA-8DE711946649}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="phone_hangup" ID="{03021D6D-CF5F-4F62-A733-2FB4CC7ECE14}">
+							<Language>SFX</Language>
+							<AudioFile>phone_hangup.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="73967360"/>
+							</MediaIDList>
+						</AudioFileSource>
+						<AudioFileSource Name="phone_hangup_01" ID="{D2483AE1-E47E-4ED7-88CC-BA24D2526B83}">
+							<Language>SFX</Language>
+							<AudioFile>SFX\Phone\phone_hangup.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="1053812167"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="phone_hangup_01" ID="{D2483AE1-E47E-4ED7-88CC-BA24D2526B83}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="phone_interact" ID="{75D7A1AB-27AA-4082-A639-B30DB531D2A8}" ShortID="181947976">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1F16A1F8-60B8-4227-AF46-35E4F3C0380C}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="SFX" ID="{A225F6D7-0B96-4F97-A9AA-8DE711946649}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="phone_interact" ID="{7298D0CB-0CC3-47F4-B414-87FB24F2FED6}">
+							<Language>SFX</Language>
+							<AudioFile>phone_interact.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="880702601"/>
+							</MediaIDList>
+						</AudioFileSource>
+						<AudioFileSource Name="phone_interact_01" ID="{8833560B-3008-43A7-BD80-D6EBE86A8AC2}">
+							<Language>SFX</Language>
+							<AudioFile>SFX\Phone\phone_interact.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="749402094"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="phone_interact_01" ID="{8833560B-3008-43A7-BD80-D6EBE86A8AC2}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

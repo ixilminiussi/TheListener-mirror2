@@ -22,9 +22,9 @@ protected:
 
 	// BEGIN - Widgets
 	UPROPERTY(EditDefaultsOnly, Category = "Toy|Files|UI", meta = (BindWidget))
-	class UCanvasPanel* ContentCanvasPanel;
+	TObjectPtr<class UCanvasPanel> ContentCanvasPanel;
 	UPROPERTY(EditDefaultsOnly, Category = "Toy|Files|UI", meta = (BindWidget))
-	class UImage* SelectorImage;
+	TObjectPtr<class UImage> SelectorImage;
 
 	TArray<class USelectorBox*> SelectorBoxes;
 

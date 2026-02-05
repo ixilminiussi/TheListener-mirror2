@@ -2,15 +2,10 @@
 
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
-#include "Components/TextRenderComponent.h"
 #include "GPE/Radio/KnobComponent.h"
-#include "GPE/Radio/PrimaryStation.h"
-#include "GPE/Radio/Radio.h"
-#include "GPE/Radio/StationDataAsset.h"
 #include "Kismet/GameplayStatics.h"
 #include "Miscellaneous/TLUtils.h"
 #include "Player/LukaController.h"
-#include "UI/Prompt/CommandHUDComponent.h"
 
 ADecoder::ADecoder()
 {
@@ -26,9 +21,6 @@ ADecoder::ADecoder()
 	RightKnobComponent = CreateDefaultSubobject<UKnobComponent>(TEXT("RightKnob"));
 	RightKnobComponent->SetupAttachment(BodyMesh);
 	check(RightKnobComponent);
-
-	CommandHUDComponent = CreateDefaultSubobject<UCommandHUDComponent>(TEXT("CommandHUDComponent"));
-	check(CommandHUDComponent);
 }
 
 void ADecoder::BeginPlay()
@@ -50,15 +42,11 @@ void ADecoder::BeginPlay()
 	}
 	RightKnobComponent->SetRange(ValuesRange);
 
-	check(CommandHUDComponent);
-	check(DecoderInputMappingContext);
-	CommandHUDComponent->Generate(DecoderInputMappingContext);
-
 	if (ensure(RunningMaterial) && ensure(BodyMesh))
 	{
 		RunningMaterialInstance = UMaterialInstanceDynamic::Create(RunningMaterial, this);
 	}
-	ResetMaterial();
+	//ResetMaterial();
 }
 
 void ADecoder::SetupPlayerInputComponent(UEnhancedInputComponent* EnhancedInputComponent)
@@ -77,7 +65,7 @@ void ADecoder::SetupPlayerInputComponent(UEnhancedInputComponent* EnhancedInputC
 
 void ADecoder::OnEndToyPossessEvent()
 {
-	SetActiveWidgetVisibility(false);
+	StopDecoder();
 }
 
 void ADecoder::Tick(float DeltaTime)
@@ -113,6 +101,8 @@ bool ADecoder::StartDecoder(const ALukaController* Controller, const float InTar
 		UEnhancedInputLocalPlayerSubsystem* InputSubsystem = Controller->GetLocalPlayer()->GetSubsystem<
 			UEnhancedInputLocalPlayerSubsystem>();
 		InputSubsystem->AddMappingContext(DecoderInputMappingContext, 10);
+
+		TogglePrompt(true);
 	}
 	
 	check(LeftKnobComponent);
@@ -133,10 +123,9 @@ bool ADecoder::StartDecoder(const ALukaController* Controller, const float InTar
 		RunningMaterialInstance->SetScalarParameterValue("IsDifficultyHard", bComplex ? 1 : 0);
 	}
 
-	OnLeftToggle(false);
-	OnRightToggle(false);
-
-	SetActiveWidgetVisibility(true);
+	OnLeftToggle(ELedState::Wrong);
+	OnRightToggle(ELedState::Wrong);
+	OnScreenToggle(true);
 
 	return true;
 }
@@ -145,7 +134,11 @@ void ADecoder::StopDecoder()
 {
 	RemoveMappingContext();
 
-	ResetMaterial();
+	OnLeftToggle(ELedState::Off);
+	OnRightToggle(ELedState::Off);
+	OnScreenToggle(false);
+	
+	//ResetMaterial();
 }
 
 void ADecoder::Toggle(bool bToggle)
@@ -159,7 +152,8 @@ void ADecoder::Toggle(bool bToggle)
 	check(RightKnobComponent);
 	RightKnobComponent->SetVisibility(bToggle);
 
-	OnToggle.Broadcast(bToggle);
+	ELedState CurrentLedState = bToggle ? ELedState::Right : ELedState::Wrong;
+	OnToggle.Broadcast(CurrentLedState);
 }
 
 void ADecoder::RemoveMappingContext() const
@@ -176,7 +170,7 @@ void ADecoder::RemoveMappingContext() const
 			UEnhancedInputLocalPlayerSubsystem>();
 		InputSubsystem->RemoveMappingContext(DecoderInputMappingContext);
 	}
-	SetActiveWidgetVisibility(false);
+	TogglePrompt(false);
 }
 
 void ADecoder::SpinLeftKnob(const struct FInputActionValue& Value)
@@ -204,12 +198,12 @@ void ADecoder::SpinLeftKnob(const struct FInputActionValue& Value)
 			IsLeftDone = CheckTarget(TargetLeft, LeftKnobComponent->GetValue());
 			if (IsLeftDone)
 			{
-				OnLeftToggle(true);
+				OnLeftToggle(ELedState::Right);
 				CheckAll(true);
 			}
 			else
 			{
-				OnLeftToggle(false);
+				OnLeftToggle(ELedState::Wrong);
 
 				GetWorldTimerManager().ClearTimer(DelayHandle);
 				DelayHandle.Invalidate();
@@ -253,12 +247,12 @@ void ADecoder::SpinRightKnob(const struct FInputActionValue& Value)
 			if (IsRightDone)
 			{
 
-				OnRightToggle(true);
+				OnRightToggle(ELedState::Right);
 				CheckAll(false);
 			}
 			else
 			{
-				OnRightToggle(false);
+				OnRightToggle(ELedState::Wrong);
 
 				GetWorldTimerManager().ClearTimer(DelayHandle);
 				DelayHandle.Invalidate();
@@ -325,15 +319,7 @@ void ADecoder::ResetMaterial() const
 	}
 }
 
-void ADecoder::SetActiveWidgetVisibility(const bool bIsVisible) const
+void ADecoder::TogglePrompt(bool bIsVisible) const
 {
-	check(CommandHUDComponent);
-	if (bIsVisible)
-	{
-		CommandHUDComponent->AddActiveToHUD();
-	}
-	else
-	{
-		CommandHUDComponent->RemoveActiveFromHUD();
-	}
+	UTLUtils::TogglePrompts(GetWorld(), ActivePrompts, bIsVisible);
 }

@@ -2,8 +2,8 @@
 
 #include "CoreMinimal.h"
 #include "Components/SceneComponent.h"
-#include "HandComponent.generated.h"
 
+/*
 UCLASS(ClassGroup=(Custom), meta=(BlueprintSpawnableComponent))
 class THELISTENER_API UHandComponent : public USceneComponent
 {
@@ -37,6 +37,8 @@ protected:
 	bool bObjiPreviewIsValid{false};
 	UPROPERTY()
 	class AObji* HeldObji;
+	UPROPERTY(EditDefaultsOnly, Category = "Hand")
+	float ThrowStrength;
 
 	UPROPERTY()
 	const class ALukaCharacter* LukaParent;
@@ -50,3 +52,4 @@ protected:
 	UPROPERTY(EditDefaultsOnly, Category = "Hand|Anchors", meta = (ClampMin = "0", ClampMax = "1000"))
 	float BottomAnchor{TNumericLimits<float>::Max()};
 };
+*/

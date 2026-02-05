@@ -1,0 +1,1423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{94E4A2E0-337E-482A-80EA-1BFC94B9FD31}" SchemaVersion="123" RootDocumentID="{29C5AB43-C928-4CD8-9FC7-35647B0068A2}" ParentDocumentID="{29C5AB43-C928-4CD8-9FC7-35647B0068A2}">
+	<AudioObjects>
+		<WorkUnit Name="Anton" ID="{94E4A2E0-337E-482A-80EA-1BFC94B9FD31}" OwnerID="{29C5AB43-C928-4CD8-9FC7-35647B0068A2}" PersistMode="Nested">
+			<ChildrenList>
+				<ActorMixer Name="antondialogues" ID="{F6E1B000-F11C-4D47-B78E-E077001BCE5D}" ShortID="963374408">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="STATIONS" ID="{AAC500AE-754A-49D2-AFC4-622281209439}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<RandomSequenceContainer Name="Anton_Call" ID="{FE40807E-0EAE-496D-AA07-8B65DD00E08C}" ShortID="925247599">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="OverridePositioning" Type="bool" Value="True"/>
+								<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+								<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+								<Property Name="RandomAvoidRepeating" Type="bool" Value="False"/>
+								<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="6"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="Attenuation_Radio_From_Headset" ID="{423CF66F-8692-453A-869B-5A6AAE50F993}" WorkUnitID="{1ACDCC54-A528-4C8B-947C-ECCD823AC5BA}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1F16A1F8-60B8-4227-AF46-35E4F3C0380C}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="AMBIENT" ID="{281C5B8A-9F04-45B2-8D52-2F39AFFB0D38}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="1_0_2_A_Anton" ID="{804ACC4A-3053-464B-A183-A511A47A4F89}" ShortID="284577772">
+									<PropertyList>
+										<Property Name="IsVoice" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="1_0_2_A_Anton" ID="{6D10C00A-A483-4774-8EA9-A253BB8BEE7B}">
+											<PropertyList>
+												<Property Name="LoopBegin" Type="Real64" Value="0"/>
+												<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+											</PropertyList>
+											<Language>English(US)</Language>
+											<AudioFile>DAY 1\Anton\1.0.2.A.Anton.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="456506256"/>
+											</MediaIDList>
+											<ObjectLists>
+												<ObjectList Name="Markers">
+													<Reference>
+														<Local>
+															<Marker Name="" ID="{60AF099F-AD0A-48A8-95FE-5859952AE0AF}">
+																<PropertyList>
+																	<Property Name="Label" Type="string" Value="1.0.2.A.S1"/>
+																	<Property Name="Time" Type="Real64" Value="0.165175498967653"/>
+																</PropertyList>
+															</Marker>
+														</Local>
+													</Reference>
+													<Reference>
+														<Local>
+															<Marker Name="" ID="{61142F3E-7084-4624-ACD0-BD8F5B6E1D16}">
+																<PropertyList>
+																	<Property Name="Label" Type="string" Value="MOD_EARLYANSWER"/>
+																	<Property Name="Time" Type="Real64" Value="0.376411543287327"/>
+																</PropertyList>
+															</Marker>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="1_0_2_A_Anton" ID="{6D10C00A-A483-4774-8EA9-A253BB8BEE7B}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="1_0_2_B_Anton" ID="{9D101A0A-28E6-4C39-9678-817EA20C9139}" ShortID="663691921">
+									<PropertyList>
+										<Property Name="IsVoice" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="1_0_2_B_Anton" ID="{218C9101-3947-400D-AD4A-EC4B0C5CC7E9}">
+											<PropertyList>
+												<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+											</PropertyList>
+											<Language>English(US)</Language>
+											<AudioFile>DAY 1\Anton\1.0.2.B.Anton.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="458488919"/>
+											</MediaIDList>
+											<ObjectLists>
+												<ObjectList Name="Markers">
+													<Reference>
+														<Local>
+															<Marker Name="" ID="{0DB06110-7CCC-4527-930E-C3528BA0009E}">
+																<PropertyList>
+																	<Property Name="Label" Type="string" Value="1.0.2.B.S1"/>
+																	<Property Name="Time" Type="Real64" Value="0.301456310679612"/>
+																</PropertyList>
+															</Marker>
+														</Local>
+													</Reference>
+													<Reference>
+														<Local>
+															<Marker Name="" ID="{F40CBAE4-435A-4F00-8E0E-F1D4F989916A}">
+																<PropertyList>
+																	<Property Name="Label" Type="string" Value="MOD_EARLYANSWER"/>
+																	<Property Name="Time" Type="Real64" Value="0.756587202007528"/>
+																</PropertyList>
+															</Marker>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="1_0_2_B_Anton" ID="{218C9101-3947-400D-AD4A-EC4B0C5CC7E9}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="1_0_2_C_Anton" ID="{CF83ED3A-0ADE-4F71-9301-04ADEF9A09E1}" ShortID="515497767">
+									<PropertyList>
+										<Property Name="IsVoice" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="1_0_2_C_Anton" ID="{0AE5AFF0-8B96-4F94-A6F2-091B1AEF2286}">
+											<PropertyList>
+												<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+											</PropertyList>
+											<Language>English(US)</Language>
+											<AudioFile>DAY 1\Anton\1.0.2.C.Anton.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="503164944"/>
+											</MediaIDList>
+											<ObjectLists>
+												<ObjectList Name="Markers">
+													<Reference>
+														<Local>
+															<Marker Name="" ID="{9EE43B9E-59D0-4683-BBD3-9D52621CDF41}">
+																<PropertyList>
+																	<Property Name="Label" Type="string" Value="1.0.2.C.S1"/>
+																	<Property Name="Time" Type="Real64" Value="0.184466019417476"/>
+																</PropertyList>
+															</Marker>
+														</Local>
+													</Reference>
+													<Reference>
+														<Local>
+															<Marker Name="" ID="{1560E9B2-D2F5-4E25-A294-35D5385C591A}">
+																<PropertyList>
+																	<Property Name="Label" Type="string" Value="MOD_EARLYANSWER"/>
+																	<Property Name="Time" Type="Real64" Value="0.652446675031368"/>
+																</PropertyList>
+															</Marker>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="1_0_2_C_Anton" ID="{0AE5AFF0-8B96-4F94-A6F2-091B1AEF2286}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="1_0_2_D_Anton" ID="{66AA075F-3144-43F5-B563-447B000C9364}" ShortID="845258354">
+									<PropertyList>
+										<Property Name="IsVoice" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="1_0_2_D_Anton" ID="{C8DE31CB-6DB9-4C65-B38A-04BBE0390555}">
+											<PropertyList>
+												<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+											</PropertyList>
+											<Language>English(US)</Language>
+											<AudioFile>DAY 1\Anton\1.0.2.D.Anton.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="534273712"/>
+											</MediaIDList>
+											<ObjectLists>
+												<ObjectList Name="Markers">
+													<Reference>
+														<Local>
+															<Marker Name="" ID="{EA377B06-09C6-4CF9-B224-74CFF4AA5F4C}">
+																<PropertyList>
+																	<Property Name="Label" Type="string" Value="1.0.2.D.S1"/>
+																	<Property Name="Time" Type="Real64" Value="0.310194174757282"/>
+																</PropertyList>
+															</Marker>
+														</Local>
+													</Reference>
+													<Reference>
+														<Local>
+															<Marker Name="" ID="{6CF1CB5B-F063-4673-86A0-BCC56C0B2FE8}">
+																<PropertyList>
+																	<Property Name="Label" Type="string" Value="MOD_EARLYANSWER"/>
+																	<Property Name="Time" Type="Real64" Value="0.694479297365119"/>
+																</PropertyList>
+															</Marker>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="1_0_2_D_Anton" ID="{C8DE31CB-6DB9-4C65-B38A-04BBE0390555}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<Sound Name="1_1_Anton_2" ID="{AA06CA08-BD51-49CD-8852-0EA3D1B40467}" ShortID="25871140">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="1_1_Anton_2" ID="{18670501-EC92-45E9-B3DB-7BC8311A1049}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Anton\1.1.Anton.2.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="879571457"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{761CE058-01A3-4541-9A15-7F598C87FD08}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S8"/>
+															<Property Name="Time" Type="Real64" Value="5.32038834951457"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{BCE5590B-84DB-4256-ABB1-A4286134AA87}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S10"/>
+															<Property Name="Time" Type="Real64" Value="12.5694174757282"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{B9114F5B-41A1-4C77-9EB2-B3D5B4F53C54}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S11"/>
+															<Property Name="Time" Type="Real64" Value="15.628640776699"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{D582A13F-8A82-40F2-B393-0BECBCA50B33}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S12"/>
+															<Property Name="Time" Type="Real64" Value="20.4169902912621"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{B00AB335-BF51-4ABD-A060-5DFE4D4B927F}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S13"/>
+															<Property Name="Time" Type="Real64" Value="22.4121359223301"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{CCF4DB3F-EEC2-4086-B001-4D55E04945CA}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S15"/>
+															<Property Name="Time" Type="Real64" Value="27.9320388349515"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{7F6B1721-D025-421E-91A4-6CE4F999C53E}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S16"/>
+															<Property Name="Time" Type="Real64" Value="32.3878640776699"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{F345DB8F-F552-4068-B8F7-C3700A9DFC3C}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S17"/>
+															<Property Name="Time" Type="Real64" Value="36.4446601941748"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{76FC1208-7857-4FD3-BC5D-32068A236004}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S21"/>
+															<Property Name="Time" Type="Real64" Value="48.0165048543689"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{14F1F44D-EBAC-4227-9060-957635256516}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S22"/>
+															<Property Name="Time" Type="Real64" Value="50.9427184466019"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{E5FBFDB0-62CB-49BE-B2C3-C8458E645BE6}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S24"/>
+															<Property Name="Time" Type="Real64" Value="54.9920283336869"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{073CF328-F33D-4717-A40F-898D4EF316E4}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S25"/>
+															<Property Name="Time" Type="Real64" Value="57.5622507262265"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{AC958288-305F-4EE1-B6A4-63B5DDB45122}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S26"/>
+															<Property Name="Time" Type="Real64" Value="60.161806778577"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{571642FC-E47F-4A6F-87DC-69936D569FF4}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S27"/>
+															<Property Name="Time" Type="Real64" Value="64.4494219207845"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="1_1_Anton_2" ID="{18670501-EC92-45E9-B3DB-7BC8311A1049}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="1_1_Anton_3" ID="{EBD6065C-F4B7-4ADD-9A73-EA45AB8ADDC4}" ShortID="138036195">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="1_1_Anton_3" ID="{853720EE-E72D-448A-BBB1-961560E1B0AD}">
+									<PropertyList>
+										<Property Name="LoopBegin" Type="Real64" Value="0"/>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Anton\1.1.Anton.3.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="85809869"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{70B89F25-A3E0-44C4-8422-AA9385E538D2}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S30"/>
+															<Property Name="Time" Type="Real64" Value="3.48009708737864"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{84A8208F-353D-480E-BE41-B1087D09B00F}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S28"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{1B4277CA-952C-4467-8B4D-98751B5E1F78}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S31"/>
+															<Property Name="Time" Type="Real64" Value="7.94708737864078"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{C033CBF6-A92A-42A2-9A5A-C7E7D8DFFBBF}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S34"/>
+															<Property Name="Time" Type="Real64" Value="14.2088850696468"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{29B559E3-B600-440D-8D71-62EC9C9CA496}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S35"/>
+															<Property Name="Time" Type="Real64" Value="17.7140156052376"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{C38B4761-33EB-47C5-A58B-C96916809023}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S36"/>
+															<Property Name="Time" Type="Real64" Value="20.6546694246701"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{2B6AC1EC-D41F-4768-B403-26CF4CFFC4EB}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S37"/>
+															<Property Name="Time" Type="Real64" Value="23.422600182253"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{5DEFB9FA-7F60-4769-93F4-89EB4181AC70}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S38"/>
+															<Property Name="Time" Type="Real64" Value="26.4652578139237"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{EE16561A-53A3-4A21-BE60-445B55DFD76F}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S40"/>
+															<Property Name="Time" Type="Real64" Value="31.2338881103933"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{044D4A43-0BBF-42F4-BDE3-17295BBDCB3D}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S41"/>
+															<Property Name="Time" Type="Real64" Value="33.7702715514111"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{E8F23FE2-F052-418D-9923-FDCDC900EE21}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S42"/>
+															<Property Name="Time" Type="Real64" Value="36.404277709642"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{B9397CE6-EE70-4F7E-A5C9-AB2670C11B54}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S43"/>
+															<Property Name="Time" Type="Real64" Value="40.5959145658472"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{FF0EFEE0-D5BB-4DD3-8215-4B12424B88DA}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S44"/>
+															<Property Name="Time" Type="Real64" Value="42.0296263129398"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{3488A583-3CC9-46CB-A540-28F434099599}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S47"/>
+															<Property Name="Time" Type="Real64" Value="50.881638538962"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="1_1_Anton_3" ID="{853720EE-E72D-448A-BBB1-961560E1B0AD}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="1_1_Anton" ID="{6D0F6983-CEF0-4E82-973E-B7ADE949A3C7}" ShortID="33079248">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="1_1_Anton" ID="{F16842D4-49F0-4F23-95DC-1A091E39B972}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Anton\1.1.Anton.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="918816955"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{37AB1EE8-9D6B-4AFA-891A-A4DA21F53BE9}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S1"/>
+															<Property Name="Time" Type="Real64" Value="6.03495145631068"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{A086C9F1-5EA0-4527-9C4B-EA7585AA52B8}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S3"/>
+															<Property Name="Time" Type="Real64" Value="14.2135922330097"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{9A984D54-3F9D-4C59-9D7C-3BAB5C3063FC}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S4"/>
+															<Property Name="Time" Type="Real64" Value="18.3611650485437"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{BF990A6D-5224-4E16-8FF5-897685215C39}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S5"/>
+															<Property Name="Time" Type="Real64" Value="21.6233009708738"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="1_1_Anton" ID="{F16842D4-49F0-4F23-95DC-1A091E39B972}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="1_1_C1_A_Anton" ID="{05486945-2847-4697-A7AC-38078807BF26}" ShortID="111944119">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="1_1_C1_A_Anton" ID="{44352074-5D3B-4582-95C8-A843FF45C68F}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Anton\1.1.C1.A.Anton.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="99676463"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{C61C43FD-88DB-4C2B-ADC2-61CCCE2581D0}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.C1.A.S3"/>
+															<Property Name="Time" Type="Real64" Value="6.1126213592233"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="1_1_C1_A_Anton" ID="{44352074-5D3B-4582-95C8-A843FF45C68F}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="1_1_C1_B_Anton" ID="{0A29EFEE-15A0-4A0A-BDAF-420C8BF382FE}" ShortID="90216808">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="1_1_C1_B_Anton" ID="{3B5D98F5-49EC-46A7-8D32-83D4D33EA4AB}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Anton\1.1.C1.B.Anton.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="460492791"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{DDB15C10-B699-47DC-B978-8449B2402338}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.C1.B.S2"/>
+															<Property Name="Time" Type="Real64" Value="2.46796116504854"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{DB64F75F-3B17-47D3-B730-76513793D42A}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.C1.B.S5"/>
+															<Property Name="Time" Type="Real64" Value="9.01407766990291"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{F5A53317-74C7-4ECF-8B20-DD694B411CDF}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.C1.B.S6"/>
+															<Property Name="Time" Type="Real64" Value="11.9334951456311"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="1_1_C1_B_Anton" ID="{3B5D98F5-49EC-46A7-8D32-83D4D33EA4AB}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="1_1_C1_C_Anton" ID="{46FBC216-EF31-4EFF-ACBA-99E0718DFE8B}" ShortID="215431011">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="1_1_C1_C_Anton" ID="{46C19498-9D35-4E9F-A07A-EBD13EACB815}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Anton\1.1.C1.C.Anton.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="360907700"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{E2A97E3E-6E3A-4DC5-9174-4C4B31BE3F08}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.C1.C.S2"/>
+															<Property Name="Time" Type="Real64" Value="3.37864077669903"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{D58CC96E-A5AF-4154-84B3-8BB5DB8A4F23}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.C1.C.S3"/>
+															<Property Name="Time" Type="Real64" Value="6.5242718446602"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{BE513B0B-0E10-4B29-A119-90C2E14DF26F}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.C1.C.S4"/>
+															<Property Name="Time" Type="Real64" Value="8.21359223300971"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{1A2748C1-2BCC-4CD4-A78E-688CE8F3E44E}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.C1.C.S6"/>
+															<Property Name="Time" Type="Real64" Value="13.0679611650485"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{0E02DC8E-9542-4067-AD00-A9E81F5A9A7C}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.C1.C.S7"/>
+															<Property Name="Time" Type="Real64" Value="16"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{A3D01D9D-EDFF-4631-B1A4-4667A93E7ED3}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.C1.C.S8"/>
+															<Property Name="Time" Type="Real64" Value="18.4660194174757"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="1_1_C1_C_Anton" ID="{46C19498-9D35-4E9F-A07A-EBD13EACB815}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="1_2_2_A_Anton_2" ID="{18B70100-38CC-43EC-A347-EF54DE20ABE0}" ShortID="1050584480">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="1_2_2_A_Anton_2" ID="{97FEA97D-401E-4F68-BE08-2E3D4EE9E31F}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Anton\1.2.2.A.Anton.2.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="408712635"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{1AE90091-0ACC-4D27-8B1B-F0A5E9F16ECC}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.C4.A.S2"/>
+															<Property Name="Time" Type="Real64" Value="5.04077669902913"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{2B1CA819-EDB3-43A7-B62D-F5B45E6F5D22}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.C4.A.S3"/>
+															<Property Name="Time" Type="Real64" Value="7.6252427184466"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{FA4DE96A-09A7-4919-9F83-48EC22C17FBF}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.C4.A.S4"/>
+															<Property Name="Time" Type="Real64" Value="9.9747572815534"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{69556537-8469-4A84-82EC-9A0123118241}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.C4.A.S5"/>
+															<Property Name="Time" Type="Real64" Value="13.4349514563107"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{055ACF08-A066-4BD9-B17C-608028269955}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.C4.A.S6"/>
+															<Property Name="Time" Type="Real64" Value="17.0446601941748"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{002C29F4-9413-424E-BB16-4FF254919CE8}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.C4.A.S7"/>
+															<Property Name="Time" Type="Real64" Value="18.9029126213592"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="1_2_2_A_Anton_2" ID="{97FEA97D-401E-4F68-BE08-2E3D4EE9E31F}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="1_2_2_A_Anton" ID="{5572399C-24ED-43C2-8D5D-DD3EDB3B90DA}" ShortID="518019717">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="1_2_2_A_Anton" ID="{F9036C21-13F5-44B9-B318-869CE181DB87}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Anton\1.2.2.A.Anton.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1004552935"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{73821958-4E97-4139-ADBE-3CF40FE3798D}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.C3.A.S2"/>
+															<Property Name="Time" Type="Real64" Value="3.9126213592233"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{81A40034-0246-4087-909D-A0BC04ACCDEA}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.C3.A.S3"/>
+															<Property Name="Time" Type="Real64" Value="7.62961165048544"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{D19CEFD4-71AE-423A-95A0-87CE71ADD276}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.C3.A.S4"/>
+															<Property Name="Time" Type="Real64" Value="11.6626213592233"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="1_2_2_A_Anton" ID="{F9036C21-13F5-44B9-B318-869CE181DB87}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="1_2_2_Anton_2" ID="{BCC6B44F-AC32-4963-AB03-F7830191B13E}" ShortID="991128027">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="1_2_2_Anton_2" ID="{855C4B35-E9CF-4DA8-AFA9-129AA98157C5}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Anton\1.2.2.Anton.2.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="804351184"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{FAD0FF6D-DD13-486A-9189-88DBFF53A9E6}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S53"/>
+															<Property Name="Time" Type="Real64" Value="1.68446601941748"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="1_2_2_Anton_2" ID="{855C4B35-E9CF-4DA8-AFA9-129AA98157C5}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="1_2_2_Anton_3" ID="{3CFD2EF5-A9D8-4C63-9FDD-236A62200F16}" ShortID="407176210">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="1_2_2_Anton_3" ID="{8D152EB6-4340-43D8-B395-BECD432E3824}">
+									<PropertyList>
+										<Property Name="LoopBegin" Type="Real64" Value="0"/>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Anton\1.2.2.Anton.3.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="299250242"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{7F357411-9AA8-46A8-8D72-46B657CF1047}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S55"/>
+															<Property Name="Time" Type="Real64" Value="0.319417475728155"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{6D88DD05-7E20-4496-8CBE-F2943BA0185B}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S56"/>
+															<Property Name="Time" Type="Real64" Value="4.06312698811623"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{EFF371E8-AE92-4D9A-8DC9-A52A5C9E6037}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S57"/>
+															<Property Name="Time" Type="Real64" Value="7.05488069479046"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{785BAC6A-02C0-4490-852B-E21DC31FE1AA}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S58"/>
+															<Property Name="Time" Type="Real64" Value="9.63983036067752"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{9B0D3CDC-FBAB-4943-AAE2-CF5493135E07}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S60"/>
+															<Property Name="Time" Type="Real64" Value="14.1147558425833"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{246CC1F3-268F-4814-933E-A195911D4E83}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S61"/>
+															<Property Name="Time" Type="Real64" Value="16.3028903736879"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{C5FFECBF-0BB7-46B9-8675-5DAB03AD5B6C}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S63"/>
+															<Property Name="Time" Type="Real64" Value="20.3020462884187"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="1_2_2_Anton_3" ID="{8D152EB6-4340-43D8-B395-BECD432E3824}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="1_2_2_Anton" ID="{143930AA-108D-4F05-8644-58586B77D476}" ShortID="918537897">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="1_2_2_Anton" ID="{92952709-82E4-461D-B6CF-0A694C15D06B}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Anton\1.2.2.Anton.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="415982050"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{08B8A009-22DD-41CD-9664-CB85ED31514A}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S51"/>
+															<Property Name="Time" Type="Real64" Value="5.42135922330097"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="1_2_2_Anton" ID="{92952709-82E4-461D-B6CF-0A694C15D06B}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="1_2_2_B_Anton_2" ID="{12990B22-5086-47AD-9752-47D82D1F46EA}" ShortID="670517215">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="1_2_2_B_Anton_2" ID="{3B6473F5-C6AC-4213-B8C1-6D4604B2E8CD}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Anton\1.2.2.B.Anton.2.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="649485532"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{7321D839-435F-4948-B0F4-0620FDB62319}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.C4.B.S3"/>
+															<Property Name="Time" Type="Real64" Value="4.25631067961165"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{71BE9E10-39DA-4F28-BCD0-CC63F1653ABC}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.C4.B.S4"/>
+															<Property Name="Time" Type="Real64" Value="8.01553398058252"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{FDCA5ABD-0481-496D-BA7F-AF7D1E8F7F7C}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.C4.B.S5"/>
+															<Property Name="Time" Type="Real64" Value="10.2834951456311"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{4D0B887F-405B-45E9-AC0A-A59F4AF7D168}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.C4.B.S6"/>
+															<Property Name="Time" Type="Real64" Value="13.6077669902913"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{FC980A4C-9875-48F6-85B2-4B09691081BA}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.C4.B.S7"/>
+															<Property Name="Time" Type="Real64" Value="15.7825242718447"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{14DDA67D-3914-4E44-A5B0-C3DAF8D19873}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.C4.B.S10"/>
+															<Property Name="Time" Type="Real64" Value="22.9174223470066"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{5CAFC05B-4474-4A6B-A35D-DA51230F51CF}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.C4.B.S11"/>
+															<Property Name="Time" Type="Real64" Value="27.0340704352652"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{DDFE1FB0-2930-4E86-9D73-3718EFE3660E}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.C4.B.S12"/>
+															<Property Name="Time" Type="Real64" Value="29.5592308605373"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="1_2_2_B_Anton_2" ID="{3B6473F5-C6AC-4213-B8C1-6D4604B2E8CD}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="1_2_2_B_Anton" ID="{33A7522F-E988-45DB-80AC-C49B05167C21}" ShortID="943412013">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="1_2_2_B_Anton" ID="{E24DE637-1B85-403C-BA91-F6FD787D9935}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Anton\1.2.2.B.Anton.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="207121399"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{DAE395A6-4DAC-4D27-B8A5-ABBC67C7AC38}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.C3.B.S2"/>
+															<Property Name="Time" Type="Real64" Value="1.53495145631068"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{3859A63E-6A21-40E6-B806-5884A4D5ECC6}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.C3.B.S5"/>
+															<Property Name="Time" Type="Real64" Value="11.5121359223301"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="1_2_2_B_Anton" ID="{E24DE637-1B85-403C-BA91-F6FD787D9935}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="1_3_1_Anton" ID="{28FB4EE9-D8C5-4FC4-A12F-6D10E2ABCFBF}" ShortID="1049976973">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="1_3_1_Anton" ID="{07D770EA-31A7-431B-83AE-63A1D9CD2753}">
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Anton\1.3.1.Anton.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="234442297"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="1_3_1_Anton" ID="{07D770EA-31A7-431B-83AE-63A1D9CD2753}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="1_2_2_Anton_01" ID="{F6539ADE-C776-411F-BDDD-53FB542C6273}" ShortID="1048288435">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="1_2_2_Anton_3" ID="{5A6CBC45-6036-4C59-B769-938CA7F4A928}">
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Anton\1.2.2.Anton.3.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="191617041"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="1_2_2_Anton_3" ID="{5A6CBC45-6036-4C59-B769-938CA7F4A928}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</ActorMixer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

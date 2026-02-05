@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{01343662-56F3-433E-B918-A874754BAEF8}" SchemaVersion="123" RootDocumentID="{29C5AB43-C928-4CD8-9FC7-35647B0068A2}" ParentDocumentID="{29C5AB43-C928-4CD8-9FC7-35647B0068A2}">
+	<AudioObjects>
+		<WorkUnit Name="Stations" ID="{01343662-56F3-433E-B918-A874754BAEF8}" OwnerID="{29C5AB43-C928-4CD8-9FC7-35647B0068A2}" PersistMode="Nested">
+			<ChildrenList>
+				<ActorMixer Name="music" ID="{E9DEF914-5A74-46BD-A125-E08A24F7CB95}" ShortID="674204029">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="STATIONS" ID="{AAC500AE-754A-49D2-AFC4-622281209439}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="S_MU_BBC" ID="{DAAD1324-2B7F-4ED8-A307-5C860A3B0ACA}" ShortID="953638850">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="S_MU_BBC" ID="{0415FA4D-ACFD-4701-94D2-7FCF8D395F43}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>DAY 1\Stations\S_MU_BBC.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="518293212"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{0F98704E-1F87-456B-ABCB-C1ADAD282925}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.BBC.1"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{3C1513CD-CCAA-4F69-80F0-44E7F670505B}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.BBC.2"/>
+															<Property Name="Time" Type="Real64" Value="182.266056394114"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{A934440F-F17C-4DF2-8E69-6C52D0CFD5B0}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.BBC.3"/>
+															<Property Name="Time" Type="Real64" Value="394.552404429612"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{5CB7CA58-F4E7-4824-A4C1-BF2351D47A87}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.BBC.4"/>
+															<Property Name="Time" Type="Real64" Value="589.684300098604"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="S_MU_BBC" ID="{0415FA4D-ACFD-4701-94D2-7FCF8D395F43}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="S_MU_JRT" ID="{01AF5E1D-CEE7-46CC-B979-15C29F0F8EC5}" ShortID="1060548061">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="S_MU_JRT" ID="{DB201E97-9EE4-4473-A6FA-2E0B39DCECCB}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>DAY 1\Stations\S_MU_JRT.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="960392764"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{AB10A031-39C7-40D0-9774-6FED11F43D08}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.JRT.1"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{509A74D1-8301-45E6-8E9B-BB3A0DA6A5D3}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.JRT.2"/>
+															<Property Name="Time" Type="Real64" Value="141.015475908298"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{F5DFE458-0A19-4A15-A784-D586ED42151F}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.JRT.3"/>
+															<Property Name="Time" Type="Real64" Value="268.876523093807"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="S_MU_JRT" ID="{DB201E97-9EE4-4473-A6FA-2E0B39DCECCB}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</ActorMixer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

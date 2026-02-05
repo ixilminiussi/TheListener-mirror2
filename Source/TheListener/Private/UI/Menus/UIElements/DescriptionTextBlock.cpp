@@ -3,14 +3,7 @@
 
 #include "UI/Menus/UIElements/DescriptionTextBlock.h"
 
-#include "CommonTextBlock.h"
-#include "Components/SizeBox.h"
-
-void UDescriptionTextBlock::UpdateDescription(const FText& Description, const float Y) const
+class UCommonTextBlock* UDescriptionTextBlock::GetTextBlock()
 {
-	DescriptionTextBlock->SetText(Description);
-
-	const float X = DescriptionBox->GetRenderTransform().Translation.X;
-
-	DescriptionBox->SetRenderTranslation(FVector2D(X, Y));
+	return DescriptionTextBlock;
 }

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{FF1CE967-811A-4496-AC7E-A0A0D91852B2}" SchemaVersion="123">
+	<AudioObjects>
+		<WorkUnit Name="MUSICS" ID="{FF1CE967-811A-4496-AC7E-A0A0D91852B2}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="SW_Music" ID="{0831A6AC-B4A1-4053-98F4-DA9688D98485}" ShortID="2707369">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="SW_Music" ID="{40804C87-B247-4260-80FB-0E157ACE24D6}">
+							<Language>SFX</Language>
+							<AudioFile>MUSICS\SW_Music.WAV</AudioFile>
+							<MediaIDList>
+								<MediaID ID="386343648"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="SW_Music" ID="{40804C87-B247-4260-80FB-0E157ACE24D6}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

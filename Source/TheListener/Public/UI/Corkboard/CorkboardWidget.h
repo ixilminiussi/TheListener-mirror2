@@ -10,9 +10,12 @@ USTRUCT()
 struct FNoteLink
 {
 	GENERATED_BODY()
+	UPROPERTY()
 	class UCorkboardNoteWidget* CLueWidgetA;
+	UPROPERTY()
 	class UCorkboardNoteWidget* CLueWidgetB;
 
+	UPROPERTY()
 	class UImage* Image;
 
 	bool operator==(TTuple<class UCorkboardNoteWidget*, class UCorkboardNoteWidget*>) const;

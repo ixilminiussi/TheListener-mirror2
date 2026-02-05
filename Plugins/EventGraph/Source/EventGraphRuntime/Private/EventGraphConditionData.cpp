@@ -35,7 +35,12 @@ void UEventGraphLogicConditionData::GetLeafs(TArray<UEventGraphConditionData*>& 
 {
 	for (UEventGraphConditionData* Condition : Conditions)
 	{
-		EventConditions.Add(Condition);
+		TArray<UEventGraphConditionData*> InConditions;
+		Condition->GetLeafs(InConditions);
+		for (UEventGraphConditionData* InCondition : InConditions)
+		{
+			EventConditions.Add(InCondition);
+		}
 	}
 }
 
@@ -106,8 +111,8 @@ bool UEventGraphBoolConditionData::IsValidated()
 	const UWorld* World = GEngine->GetWorldFromContextObjectChecked(WorldContextObject);
 	if (!ensure(World)) { return false; }
 
-	if (!ensure(World->GetSubsystem<UEventSubsystem>())) { return false; }
-	return World->GetSubsystem<UEventSubsystem>()->GetConditionValue(GetKey());
+	if (!ensure(World->GetGameInstance()->GetSubsystem<UEventSubsystem>())) { return false; }
+	return World->GetGameInstance()->GetSubsystem<UEventSubsystem>()->GetConditionValue(GetKey());
 }
 
 void UEventGraphBoolConditionData::GetLeafs(TArray<UEventGraphConditionData*>& EventConditions)
@@ -135,8 +140,8 @@ void UEventGraphBoolConditionData::SetConditionMet(const bool bIsMet) const
 	const UWorld* World = GEngine->GetWorldFromContextObjectChecked(WorldContextObject);
 	if (!ensure(World)) { return; }
 
-	if (!ensure(World->GetSubsystem<UEventSubsystem>())) { return; }
-	World->GetSubsystem<UEventSubsystem>()->SetConditionValue(GetKey(), bIsMet, true);
+	if (!ensure(World->GetGameInstance()->GetSubsystem<UEventSubsystem>())) { return; }
+	World->GetGameInstance()->GetSubsystem<UEventSubsystem>()->SetConditionValue(GetKey(), bIsMet, true);
 }
 
 void UEventGraphEventConditionData::ClearConnectedData()

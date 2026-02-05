@@ -21,6 +21,16 @@ void UPauseMenuWidget::NativeConstruct()
 	ResumeButton->OnClicked().AddUObject(this, &UPauseMenuWidget::OnResumeClicked);
 }
 
+void UPauseMenuWidget::NativeOnActivated()
+{
+	Super::NativeOnActivated();
+
+	if (ResumeButton)
+	{
+		ResumeButton->SetFocus();
+	}
+}
+
 FReply UPauseMenuWidget::NativeOnKeyDown(const FGeometry& InGeometry, const FKeyEvent& InKeyEvent)
 {
 	if (InKeyEvent.GetKey() == EKeys::Gamepad_FaceButton_Right)
@@ -48,7 +58,7 @@ void UPauseMenuWidget::OnSettingsClicked() const
 
 void UPauseMenuWidget::OnChangeLevelClicked_Implementation()
 {
-	Super::OnChangeLevelClicked();
+	OnChangeLevelClicked();
 }
 
 void UPauseMenuWidget::OnQuitClicked() const

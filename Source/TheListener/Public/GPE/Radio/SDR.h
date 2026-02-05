@@ -14,6 +14,9 @@ public:
 	UFUNCTION()
 	void Refresh() const;
 
+	UFUNCTION(BlueprintImplementableEvent)
+	void SetBand(int Band);
+
 protected:
 	virtual void BeginPlay() override;
 	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
@@ -27,12 +30,24 @@ protected:
 	
 	FTimerHandle RefreshTimer;
 
-	UPROPERTY(EditDefaultsOnly, Category = "Toy|SDR")
-	class UTextureRenderTarget2D* RenderTarget;
-	UPROPERTY(EditDefaultsOnly, Category = "Toy|SDR")
-	class UMaterial* ScreenMaterial;
+	UPROPERTY(EditDefaultsOnly, Category = "Toy|SDR|Bands")
+	class UTextureRenderTarget2D* LFRenderTarget;
+	UPROPERTY(EditDefaultsOnly, Category = "Toy|SDR|Bands")
+	class UMaterialInstance* LFRenderer;
 	UPROPERTY()
-	class UMaterialInstanceDynamic* ScreenMaterialDynamic;
+	class UMaterialInstanceDynamic* LFRendererDynamic;
+	UPROPERTY(EditDefaultsOnly, Category = "Toy|SDR|Bands")
+	class UTextureRenderTarget2D* MFRenderTarget;
+	UPROPERTY(EditDefaultsOnly, Category = "Toy|SDR|Bands")
+	class UMaterialInstance* MFRenderer;
+	UPROPERTY()
+	class UMaterialInstanceDynamic* MFRendererDynamic;
+	UPROPERTY(EditDefaultsOnly, Category = "Toy|SDR|Bands")
+	class UTextureRenderTarget2D* HFRenderTarget;
+	UPROPERTY(EditDefaultsOnly, Category = "Toy|SDR|Bands")
+	class UMaterialInstance* HFRenderer;
+	UPROPERTY()
+	class UMaterialInstanceDynamic* HFRendererDynamic;
 
 	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category = "Toy|SDR")
 	class UStaticMeshComponent* BaseMeshComponent;

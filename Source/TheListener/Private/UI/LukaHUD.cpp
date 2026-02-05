@@ -1,56 +1,44 @@
 #include "UI/LukaHUD.h"
 
 #include "AkGameplayStatics.h"
-#include "CommonActivatableWidget.h"
 #include "Blueprint/UserWidget.h"
 #include "Kismet/GameplayStatics.h"
-#include "Player/LukaCharacter.h"
-#include "Player/LukaController.h"
 #include "UI/CursorWidget.h"
 #include "UI/PlayWidget.h"
 #include "UI/Menus/PauseMenuWidget.h"
 #include "UI/Menus/SettingsMenuWidget.h"
 
+FInteractiveInView ALukaHUD::InteractiveInView;
+FOnShowCursor ALukaHUD::OnShowCursor;
+FOnHideCursor ALukaHUD::OnHideCursor;
+
 void ALukaHUD::BeginPlay()
 {
 	Super::BeginPlay();
 
-	ALukaController* LukaController = Cast<ALukaController>(GetOwningPlayerController());
-	check(LukaController)
-	LukaController->SetInputMode(FInputModeGameOnly());
-
-	check(MainWidgetClass);
-	PlayWidget = CreateWidget<UPlayWidget>(LukaController, MainWidgetClass);
+	check(PlayWidgetClass);
+	PlayWidget = CreateWidget<UPlayWidget>(GetWorld()->GetFirstPlayerController(), PlayWidgetClass);
 	PlayWidget->AddToViewport();
 
-	LukaController->OnPossessToyTransition.AddDynamic(this, &ALukaHUD::OnBeginToyPossessEvent);
-	LukaController->OnUnpossessToyTransition.AddDynamic(this, &ALukaHUD::OnEndToyPossessEvent);
-
-	if (ALukaCharacter* Luka = Cast<ALukaCharacter>(LukaController->GetLukaCharacter()))
+	OnShowCursor.BindLambda([this]()
 	{
-		Luka->OnBeginAnyInView.AddDynamic(this, &ALukaHUD::OnBeginInteractiveInViewEvent);
-		Luka->OnEndAnyInView.AddDynamic(this, &ALukaHUD::OnEndInteractiveInViewEvent);
-	}
-
-	if (ensure(PreviousWidgetClass) && ensure(LukaController))
-	{
-		PreviousWidgetInstance = CreateWidget<UBaseMenuWidget>(LukaController, PreviousWidgetClass);
-	}
-	if (ensure(SettingsMenuWidgetClass) && ensure(LukaController))
-	{
-		SettingsMenuWidgetInstance = CreateWidget<USettingsMenuWidget>(LukaController, SettingsMenuWidgetClass);
-	}
-
-	if (ensure(EndPanelWidgetClass) && ensure(LukaController))
-	{
-		EndPanelWidgetInstance = CreateWidget<UCommonActivatableWidget>(LukaController, EndPanelWidgetClass);
-
-		if (ensure(EndPanelWidgetInstance))
+		if (this)
 		{
-			EndPanelWidgetInstance->AddToViewport(10);
-			EndPanelWidgetInstance->SetVisibility(ESlateVisibility::Collapsed);
+			check(PlayWidget);
+			check(PlayWidget->GetCursorWidget());
+			PlayWidget->GetCursorWidget()->SetVisibility(ESlateVisibility::Visible);
 		}
-	}
+	});
+	OnHideCursor.BindLambda([this]()
+	{
+		if (this)
+		{
+			check(PlayWidget);
+			check(PlayWidget->GetCursorWidget());
+			PlayWidget->GetCursorWidget()->SetVisibility(ESlateVisibility::Collapsed);
+		}
+	});
+	InteractiveInView.BindUFunction(this, FName("InViewUpdate"));
 }
 
 UBaseMenuWidget* ALukaHUD::GetPreviousWidget()
@@ -73,12 +61,8 @@ class UCommonActivatableWidget* ALukaHUD::GetEndPanelWidget() const
 
 void ALukaHUD::PauseGame()
 {
-	if (PreviousWidgetInstance)
-	{
-		PreviousWidgetInstance->AddToViewport(TOP_LEVEL);
-		PreviousWidgetInstance->GetFocusedButton()->SetFocus();
-	}
-
+	PauseGameInBlueprint();
+	
 	if (ensure(PauseEvent)) 
 	{
 		FOnAkPostEventCallback NullCallback;
@@ -91,11 +75,7 @@ void ALukaHUD::PauseGame()
 
 void ALukaHUD::ResumeGame()
 {
-	if (PreviousWidgetInstance)
-	{
-		// TODO Change to stack
-		PreviousWidgetInstance->RemoveFromParent();
-	}
+	ResumeGameInBlueprint();
 
 	UGameplayStatics::SetGamePaused(GetWorld(), false);
 	GetOwningPlayerController()->SetInputMode(FInputModeGameOnly());
@@ -111,78 +91,65 @@ void ALukaHUD::HandleAnswerInput_Implementation() const
 {
 }
 
-void ALukaHUD::OnBeginInteractiveInViewEvent()
+void ALukaHUD::ToggleCursorVisibility(bool bVisible) const
 {
-	check(PlayWidget);
-	check(PlayWidget->GetCursorWidget());
-	PlayWidget->GetCursorWidget()->OnEnterPossibleInteraction();
-}
+	check(PlayWidget)
+	UCursorWidget *Cursor = PlayWidget->GetCursorWidget();
+	check(Cursor)
 
-void ALukaHUD::OnEndInteractiveInViewEvent()
-{
-	check(PlayWidget);
-	check(PlayWidget->GetCursorWidget());
-	PlayWidget->GetCursorWidget()->OnExitPossibleInteraction();
-}
-
-void ALukaHUD::OnBeginToyPossessEvent()
-{
-	check(PlayWidget);
-	check(PlayWidget->GetCursorWidget());
-	PlayWidget->GetCursorWidget()->SetCursorVisibility(false);
-}
-
-void ALukaHUD::OnEndToyPossessEvent()
-{
-	check(PlayWidget);
-	check(PlayWidget->GetCursorWidget());
-	PlayWidget->GetCursorWidget()->SetCursorVisibility(true);
+	if (bVisible)
+	{
+		Cursor->SetVisibility(ESlateVisibility::Visible);
+	} else
+	{
+		Cursor->SetVisibility(ESlateVisibility::Collapsed);
+	}
 }
 
 USubtitlesWidget* ALukaHUD::GetSubtitlesWidget() const
 {
-	check(PlayWidget);
+	check(PlayWidget)
 	return PlayWidget->GetSubtitlesWidget();
 }
 
 UAnswerWidget* ALukaHUD::GetAnswerWidget() const
 {
-	check(PlayWidget);
+	check(PlayWidget)
 	return PlayWidget->GetAnswerWidget();
 }
 
 UCanvasPanel* ALukaHUD::GetInspectablePanel() const
 {
-	check(PlayWidget);
+	check(PlayWidget)
 	return PlayWidget->GetInspectablePanel();
 }
 
 UPromptsHolder* ALukaHUD::GetPromptsHolder() const
 {
-	check(PlayWidget);
+	check(PlayWidget)
 	return PlayWidget->GetPromptsHolder();
 }
 
-void ALukaHUD::AddHoverCommandWidget(UHoverCommandWidget* HoverCommandWidget) const
+void ALukaHUD::NotifyClue() const
 {
-	check(PlayWidget);
-	PlayWidget->AddHoverCommandWidget(HoverCommandWidget);
+	check(PlayWidget)
+	PlayWidget->NotifyClue();
 }
 
-void ALukaHUD::RemoveHoverCommandWidget(UHoverCommandWidget* HoverCommandWidget) const
+void ALukaHUD::InViewUpdate(bool bToggle)
 {
-	check(PlayWidget);
-	PlayWidget->RemoveHoverCommandWidget(HoverCommandWidget);
-}
+	check(PlayWidget)
+	UCursorWidget * Cursor = PlayWidget->GetCursorWidget();
+	check(Cursor)
+	
+	if (bInView && !bToggle)
+	{
+		Cursor->Shrink();
+	}
+	if (!bInView && bToggle)
+	{
+		Cursor->Grow();
+	}
 
-void ALukaHUD::AddActiveCommandWidget(UActiveCommandWidget* ActiveCommandWidget) const
-{
-	check(PlayWidget);
-	PlayWidget->AddActiveCommandWidget(ActiveCommandWidget);
-}
-
-void ALukaHUD::RemoveActiveCommandWidget(UActiveCommandWidget* ActiveCommandWidget) const
-{
-	check(PlayWidget);
-	PlayWidget->RemoveActiveCommandWidget(ActiveCommandWidget);
+	bInView = bToggle;
 }

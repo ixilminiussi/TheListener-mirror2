@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{94849E9E-C141-4799-B021-7527B39D5CE7}" SchemaVersion="123" RootDocumentID="{268CC0FB-048E-4CF9-99B1-EE3D65440901}" ParentDocumentID="{268CC0FB-048E-4CF9-99B1-EE3D65440901}">
+	<AudioObjects>
+		<WorkUnit Name="AMB" ID="{94849E9E-C141-4799-B021-7527B39D5CE7}" OwnerID="{268CC0FB-048E-4CF9-99B1-EE3D65440901}" PersistMode="Nested">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="4"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<ActorMixer Name="AMB" ID="{F620AF17-3CEC-48A4-ABE0-435659A6B589}" ShortID="100680735">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<WorkUnit Name="INDOOR" ID="{7E953B92-27EC-448A-A5B2-CDC4AF4E4837}" PersistMode="Reference"/>
+						<WorkUnit Name="OUTDOOR" ID="{29CE129C-D577-4070-8A15-18E84107652F}" PersistMode="Reference"/>
+					</ChildrenList>
+				</ActorMixer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

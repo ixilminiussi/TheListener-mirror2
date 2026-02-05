@@ -1,5 +1,6 @@
 #include "GPE/Radio/SDR.h"
 
+#include "DataWrappers/ChaosVDParticleDataWrapper.h"
 #include "Kismet/KismetRenderingLibrary.h"
 #include "System/Frequency/FrequencySubsystem.h"
 
@@ -25,12 +26,24 @@ void ASDR::BeginPlay()
 	TimerDel.BindUFunction(this, FName("Refresh"));
 	GetWorldTimerManager().SetTimer(RefreshTimer, TimerDel, RefreshRate, true);
 
-	if (!ensure(ScreenMaterial))
+	if (!ensure(LFRenderer))
 	{
 		return;
 	}
-	ScreenMaterialDynamic = UMaterialInstanceDynamic::Create(ScreenMaterial, this);
-	check(ScreenMaterialDynamic)
+	LFRendererDynamic = UMaterialInstanceDynamic::Create(LFRenderer, this);
+	check(LFRendererDynamic)
+	if (!ensure(MFRenderer))
+	{
+		return;
+	}
+	MFRendererDynamic = UMaterialInstanceDynamic::Create(MFRenderer, this);
+	check(MFRendererDynamic)
+	if (!ensure(HFRenderer))
+	{
+		return;
+	}
+	HFRendererDynamic = UMaterialInstanceDynamic::Create(LFRenderer, this);
+	check(HFRendererDynamic)
 
 	UFrequencySubsystem* FrequencySubsystem = GetWorld()->GetSubsystem<UFrequencySubsystem>();
 	if (!FrequencySubsystem)
@@ -39,7 +52,10 @@ void ASDR::BeginPlay()
 		return;
 	}
 
-	FrequencySubsystem->RegisterReceiver(ScreenMaterialDynamic);
+	FrequencySubsystem->RegisterReceiver(LFRendererDynamic);
+	FrequencySubsystem->RegisterReceiver(MFRendererDynamic);
+	FrequencySubsystem->RegisterReceiver(HFRendererDynamic);
+	FrequencySubsystem->RegisterReceiver(this);
 }
 
 void ASDR::EndPlay(const EEndPlayReason::Type EndPlayReason)
@@ -51,15 +67,29 @@ void ASDR::EndPlay(const EEndPlayReason::Type EndPlayReason)
 
 void ASDR::Refresh() const
 {
-	if (!ensure(RenderTarget) || !ensure(ScreenMaterialDynamic))
+	if (!ensure(LFRenderTarget) || !ensure(LFRendererDynamic))
 	{
 		return;
 	}
-	UKismetRenderingLibrary::DrawMaterialToRenderTarget(GetWorld(), RenderTarget, ScreenMaterialDynamic);
+	UKismetRenderingLibrary::DrawMaterialToRenderTarget(GetWorld(), LFRenderTarget, LFRendererDynamic);
+	if (!ensure(MFRenderTarget) || !ensure(MFRendererDynamic))
+	{
+		return;
+	}
+	UKismetRenderingLibrary::DrawMaterialToRenderTarget(GetWorld(), MFRenderTarget, MFRendererDynamic);
+	if (!ensure(HFRenderTarget) || !ensure(HFRendererDynamic))
+	{
+		return;
+	}
+	UKismetRenderingLibrary::DrawMaterialToRenderTarget(GetWorld(), HFRenderTarget, HFRendererDynamic);
 }
 
 void ASDR::Clear() const
 {
-	check(RenderTarget)
-	UKismetRenderingLibrary::ClearRenderTarget2D(GetWorld(), RenderTarget, ClearColor);
+	check(LFRenderTarget)
+	UKismetRenderingLibrary::ClearRenderTarget2D(GetWorld(), LFRenderTarget, ClearColor);
+	check(MFRenderTarget)
+	UKismetRenderingLibrary::ClearRenderTarget2D(GetWorld(), MFRenderTarget, ClearColor);
+	check(HFRenderTarget)
+	UKismetRenderingLibrary::ClearRenderTarget2D(GetWorld(), HFRenderTarget, ClearColor);
 }

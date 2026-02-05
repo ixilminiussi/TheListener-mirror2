@@ -145,7 +145,7 @@ void APrimaryStation::OnStationFinished()
 
 	const FConditionKey Key = UStationListenedCondition::GenerateKey(StationData);
 
-	const auto EventSubsystem = GetWorld()->GetSubsystem<UEventSubsystem>();
+	const auto EventSubsystem = GetWorld()->GetGameInstance()->GetSubsystem<UEventSubsystem>();
 	check(EventSubsystem);
 	EventSubsystem->SetConditionValue(Key, true);
 }

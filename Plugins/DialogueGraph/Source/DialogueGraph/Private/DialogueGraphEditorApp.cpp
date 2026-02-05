@@ -1,13 +1,18 @@
 ﻿#include "DialogueGraphEditorApp.h"
 #include "DialogueDefines.h"
+#include "DialogueEdGraph.h"
 #include "DialogueGraphAppMode.h"
 #include "DialogueGraphAsset.h"
+#include "DialogueGraphData.h"
+#include "DialogueGraphSchema.h"
 #include "EdGraphUtilities.h"
 #include "GraphEditorActions.h"
 #include "SNodePanel.h"
+#include "Chaos/Deformable/MuscleActivationConstraints.h"
 #include "Framework/Commands/GenericCommands.h"
 #include "Kismet2/BlueprintEditorUtils.h"
 #include "Windows/WindowsPlatformApplicationMisc.h"
+#include "WorldPartition/DataLayer/DataLayerType.h"
 
 void DialogueGraphEditorApp::RegisterTabSpawners(const TSharedRef<FTabManager>& InTabManager)
 {
@@ -23,18 +28,25 @@ void DialogueGraphEditorApp::Init(const EToolkitMode::Type Mode, const TSharedPt
 	BindCommands();
 
 	Asset = Cast<UDialogueGraphAsset>(inObject);
+	Asset->OnPreSave.AddRaw(this,&DialogueGraphEditorApp::SaveAsset_Execute);
 
-	Graph = FBlueprintEditorUtils::CreateNewGraph(
+	Graph = Cast<UDialogueEdGraph>(FBlueprintEditorUtils::CreateNewGraph(
 		Asset,
 		NAME_None,
-		UEdGraph::StaticClass(),
-		UEdGraphSchema::StaticClass()
-	);
+		UDialogueEdGraph::StaticClass(),
+		UDialogueGraphSchema::StaticClass()
+	));
+	Graph->InitializeData();
+	
 
+	SGraphEditor::FGraphEditorEvents GraphEvents;
+	GraphEvents.OnSelectionChanged.BindRaw(this, &DialogueGraphEditorApp::OnGraphSelectionChanged);
+	
 	SlateGraph = SNew(SGraphEditor)
 		.IsEnabled(true)
 		.GraphToEdit(GetGraph())
-		.AdditionalCommands(GetToolkitCommand());
+		.AdditionalCommands(GetToolkitCommand())
+		.GraphEvents(GraphEvents);
 	
 	InitAssetEditor(
 		Mode,
@@ -51,6 +63,40 @@ void DialogueGraphEditorApp::Init(const EToolkitMode::Type Mode, const TSharedPt
 	LoadGraph();
 }
 
+void DialogueGraphEditorApp::OnClose()
+{
+	FWorkflowCentricApplication::OnClose();
+	Asset->OnPreSave.RemoveAll(this);
+}
+
+void DialogueGraphEditorApp::OnGraphSelectionChanged(const FGraphPanelSelectionSet& Set)
+{
+	TArray<UObject*> SelectedNodeProperties;
+	for (UObject* Selected : Set)
+	{
+		if (UDialogueGraphNode* NodeSelected = Cast<UDialogueGraphNode>(Selected))
+		{
+			SelectedNodeProperties.Add(NodeSelected->GetData());
+		}
+	}
+	if (SelectedNodeProperties.Num() == 0) {PropertyView->SetObject(nullptr);}
+	//PropertyView->SetObjects(SelectedNodeProperties);
+}
+
+void DialogueGraphEditorApp::RefreshNodeVariables(const FPropertyChangedEvent&)
+{
+	if (SlateGraph.IsValid())
+	{
+		SlateGraph->NotifyGraphChanged();
+	}
+}
+
+
+void DialogueGraphEditorApp::SetSelecedNodePropertyView(TSharedPtr<IDetailsView> Details)
+{
+	PropertyView = Details;
+	PropertyView->OnFinishedChangingProperties().AddRaw(this, &DialogueGraphEditorApp::RefreshNodeVariables);
+}
 
 void DialogueGraphEditorApp::SaveAsset_Execute()
 {
@@ -60,10 +106,140 @@ void DialogueGraphEditorApp::SaveAsset_Execute()
 
 void DialogueGraphEditorApp::LoadGraph()
 {
+	if (Asset == nullptr || Asset->Graph == nullptr ) {return;}
+	Graph->Modify();
+	TMap<FGuid,UEdGraphPin*> PinIndex;
+	TMap<FGuid,FGuid> Connections;
+	
+	for (UDialogueGraphNodeRuntime* RuntimeNode : Asset->Graph->Nodes)
+	{
+		
+		UDialogueGraphBaseNode* NewNode = NewObject<UDialogueGraphBaseNode>(Graph,
+			RuntimeNode->NodeClass,
+			NAME_None,
+			RF_Transactional);
+		NewNode->Modify();
+		FVector2D NodeLocation = FVector2D(RuntimeNode->Position);
+		NewNode->Setup(Graph, nullptr, NodeLocation, false, false);
+		for (UDialogueGraphPinRuntime* RuntimePin : RuntimeNode->InputPins)
+		{
+			UEdGraphPin* Pin = NewNode->CreateCustomPin(EGPD_Input,RuntimePin->PinGuid,RuntimePin->PinCategory);
+			Pin->PinName = RuntimePin->PinName;
+			PinIndex.Add(RuntimePin->PinGuid,Pin);
+		}
+		for (UDialogueGraphPinRuntime* RuntimePin : RuntimeNode->OutputPins)
+		{
+			UEdGraphPin* Pin = NewNode->CreateCustomPin(EGPD_Output,RuntimePin->PinGuid,RuntimePin->PinCategory);
+			Pin->PinName = RuntimePin->PinName;
+			PinIndex.Add(RuntimePin->PinGuid,Pin);
+			for (UDialogueGraphPinRuntime* LinkPin : RuntimePin->Connection)
+			{
+				Connections.Add(RuntimePin->PinGuid,LinkPin->PinGuid);
+			}
+		}
+		NewNode->SetData(RuntimeNode->NodeData);
+	}
+	for (const TPair<FGuid,FGuid>& Connection : Connections)
+	{
+		UEdGraphPin* PinFrom = PinIndex[Connection.Key];
+		UEdGraphPin* PinTo = PinIndex[Connection.Value];
+		
+		Graph->GetSchema()->TryCreateConnection(PinFrom,PinTo);
+		PinFrom->GetOwningNode()->NodeConnectionListChanged();
+		PinTo->GetOwningNode()->NodeConnectionListChanged();
+	}
+	Graph->NotifyGraphChanged();
 }
 
 void DialogueGraphEditorApp::SaveGraph()
 {
+	TMap<FGuid,UDialogueGraphPinRuntime*> PinIndex;
+	TMap<FGuid,FGuid> PinConnections;
+	
+	Asset->LineDatas.Empty();
+	Asset->ConditionDatas.Empty();
+	Asset->Start = nullptr;
+	Asset->Graph = nullptr;
+	
+	UDialogueGraphData* GraphData = NewObject<UDialogueGraphData>(Asset);
+	
+	for (UEdGraphNode* Node : Graph->Nodes)
+	{
+		UDialogueGraphBaseNode* BaseNode = Cast<UDialogueGraphBaseNode>(Node);
+		UDialogueGraphNodeRuntime* RuntimeNode = NewObject<UDialogueGraphNodeRuntime>(GraphData);
+		RuntimeNode->Position = BaseNode->GetPosition();
+		
+		UClass* DataClass = BaseNode->GetDataClass();
+		UObject* Data = DuplicateObject(BaseNode->GetData(),RuntimeNode);
+		RuntimeNode->NodeClass = BaseNode->GetClass();
+		RuntimeNode->NodeData = Data;
+		BaseNode->SaveDataAdditional(RuntimeNode);
+		
+		for (FEdGraphPinReference InputPinRef : BaseNode->GetInputPins())
+		{
+			UDialogueGraphPinRuntime* RuntimePin = NewObject<UDialogueGraphPinRuntime>(RuntimeNode);
+			UEdGraphPin* Pin = InputPinRef.Get();
+			RuntimePin->PinCategory = Pin->PinType.PinSubCategory;
+			RuntimePin->PinGuid = Pin->PinId;
+			RuntimePin->PinName = Pin->PinName;
+			PinIndex.Add(RuntimePin->PinGuid,RuntimePin);
+			
+			RuntimeNode->InputPins.Add(RuntimePin);
+		}
+		for (FEdGraphPinReference OutputPinRef : BaseNode->GetOutputPins())
+		{
+			UDialogueGraphPinRuntime* RuntimePin = NewObject<UDialogueGraphPinRuntime>(RuntimeNode);
+			UEdGraphPin* Pin = OutputPinRef.Get();
+			RuntimePin->PinCategory = Pin->PinType.PinSubCategory;
+			RuntimePin->PinGuid = Pin->PinId;
+			RuntimePin->PinName = Pin->PinName;
+			PinIndex.Add(RuntimePin->PinGuid,RuntimePin);
+			
+			RuntimeNode->OutputPins.Add(RuntimePin);
+			
+			//Only need the output links (as it gives the input)
+			for (UEdGraphPin* PinLink : Pin->LinkedTo)
+			{
+				PinConnections.Add(Pin->PinId,PinLink->PinId);
+			}
+		}
+		GraphData->Nodes.Add(RuntimeNode);
+	}
+	for (UDialogueGraphNodeRuntime* Node : GraphData->Nodes)
+	{
+		if (UDialogueLineData* DialogueData = Cast<UDialogueLineData>(Node->NodeData))
+		{
+			check(DialogueData != nullptr);
+			Asset->LineDatas.Add(DialogueData);
+			for (UAnswer* Answer : DialogueData->Next)
+			{
+				if (PinIndex.Contains(Answer->PinGuid))
+				{
+					UDialogueGraphPinRuntime* LinkedPin = PinIndex[Answer->PinGuid];
+					UDialogueGraphNodeRuntime* LinkedNode = Cast<UDialogueGraphNodeRuntime>(LinkedPin->GetOuter());
+					check(LinkedNode != nullptr);
+					Answer->NextLine = Cast<UDialogueLineData>(LinkedNode->NodeData);
+					continue;
+				}
+				Answer->NextLine = nullptr;
+			}
+			if (DialogueData->IsStart)
+			{
+				Asset->Start = DialogueData;
+			}
+		}
+	}
+	for (const TPair<FGuid,FGuid>& Connection : PinConnections)
+	{
+		UDialogueGraphPinRuntime* PinFrom = PinIndex[Connection.Key];
+		UDialogueGraphPinRuntime* PinTo = PinIndex[Connection.Value];
+		
+		PinFrom->Connection.Add(PinTo);
+	}
+	Asset->Graph = GraphData;
+	Asset->Modify();
+	Asset->MarkPackageDirty();
+	UE_LOG(LogTemp, Warning, TEXT("Dirty: %d"), Asset->GetOutermost()->IsDirty());
 }
 
 void DialogueGraphEditorApp::DeleteSelectedNodes()
@@ -79,6 +255,10 @@ void DialogueGraphEditorApp::DeleteSelectedNodes()
 			{
 				Graph->Modify();
 				Node->Modify();
+				if (UDialogueGraphBaseNode* CastNode = Cast<UDialogueGraphBaseNode>(Node))
+				{
+					GetGraph()->OnNodeDestroyed(CastNode);
+				}
 				Graph->RemoveNode(Node);
 			}
 		}
@@ -185,6 +365,20 @@ void DialogueGraphEditorApp::CutSelectedNodes()
 bool DialogueGraphEditorApp::CanCutSelectedNodes()
 {
 	return CanCopySelectedNodes() && CanDeleteNodes();
+}
+
+void DialogueGraphEditorApp::SetNewStartNode(class UDialogueGraphNode* Node)
+{
+	for (UEdGraphNode* Node : GetGraph()->Nodes)
+	{
+		if (UDialogueGraphNode* DNode = Cast<UDialogueGraphNode>(Node))
+		{
+			DNode->SetIsStartNode(false);
+		}
+	}
+	Node->SetIsStartNode(true);
+	StartNode = Node;
+	Graph->NotifyGraphChanged();
 }
 
 void DialogueGraphEditorApp::BindCommands()

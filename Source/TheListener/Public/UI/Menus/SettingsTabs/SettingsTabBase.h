@@ -18,11 +18,16 @@ class THELISTENER_API USettingsTabBase : public UCommonActivatableWidget
 public:
 	virtual void SetupSettingsValues(class USettingsSave* SettingSave);
 
-	class UVerticalBox* GetVerticalBox() const;
+	class UScrollBox* GetScrollBox() const;
+
+	virtual void NativeOnActivated() override;
+
+	UPROPERTY(EditAnywhere)
+	bool bIsKeyBind = false;
 
 protected:
 	virtual void NativeConstruct() override;
 
 	UPROPERTY(meta=(BindWidget))
-	class UVerticalBox* VerticalBox;
+	class UScrollBox* ScrollBox;
 };

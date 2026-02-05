@@ -12,10 +12,6 @@ void UMainMenuWidget::NativeConstruct()
 {
 	Super::NativeConstruct();
 
-	FInputModeUIOnly InputMode;
-	InputMode.SetWidgetToFocus(this->TakeWidget());
-	InputMode.SetLockMouseToViewportBehavior(EMouseLockMode::DoNotLock);
-
 	check(GymButton);
 	GymButton->OnClicked().AddUObject(this, &UMainMenuWidget::OnGymClicked);
 }
@@ -38,31 +34,4 @@ void UMainMenuWidget::OnSettingsClicked() const
 void UMainMenuWidget::OnGymClicked() const
 {
 	UGameplayStatics::OpenLevelBySoftObjectPtr(GetWorld(), GymLevel);
-}
-
-void UMainMenuWidget::SetFocusOnMainMenu()
-{
-	PreMenuOverlay->SetVisibility(ESlateVisibility::Collapsed);
-
-	APlayerController* PlayerController = GetWorld()->GetFirstPlayerController();
-	if (!PlayerController)
-	{
-		return;
-	}
-
-	PlayerController->FlushPressedKeys();
-
-	FTimerHandle Handle;
-	GetWorld()->GetTimerManager().SetTimer(
-		Handle,
-		[this]()
-		{
-			if (APlayerController* PlayerController = GetWorld()->GetFirstPlayerController(); PlayerController)
-			{
-				PlayerController->SetInputMode(FInputModeUIOnly().SetWidgetToFocus(GetFocusedButton()->TakeWidget()));
-			}
-		},
-		0.01f,
-		false
-	);
 }

@@ -1,0 +1,53 @@
+// Copyright (c) 2025 ArtFX. Created by Team FalseStart. All rights reserved.
+
+#pragma once
+
+#include "CoreMinimal.h"
+#include "Toy.h"
+#include "CorkboardDiegetic.generated.h"
+
+UCLASS()
+class THELISTENER_API ACorkboardDiegetic : public AToy
+{
+	GENERATED_BODY()
+
+	ACorkboardDiegetic();
+	
+	virtual void BeginPlay() override;
+	virtual void SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) override;
+
+	virtual void Tick(float DeltaSeconds) override;
+
+protected:
+
+	UPROPERTY(EditDefaultsOnly, Category = "Toy|Corkboard|Mesh")
+	class UStaticMeshComponent* BoardMeshComponent;
+	UPROPERTY(EditDefaultsOnly, Category = "Toy|Corkboard|Mesh")
+	class UStaticMeshComponent* CameraPlaneMeshComponent;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Toy|Corkboard|Enhanced Input")
+	class UInputAction* InputActionZoom = nullptr;
+	UPROPERTY(EditDefaultsOnly, Category = "Toy|Corkboard|Enhanced Input")
+	class UInputAction* InputActionMove = nullptr;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Toy|Corkboard|Translation")
+	float CurrentZoomScale = 0.5f;
+	UPROPERTY(EditDefaultsOnly, Category = "Toy|Corkboard|Translation")
+	float ZoomScaleSpeed = 0.5f;
+	UPROPERTY(EditDefaultsOnly, Category = "Toy|Corkboard|Translation")
+	TObjectPtr<UCurveFloat> FOVCurve;
+	UPROPERTY(EditDefaultsOnly, Category = "Toy|Corkboard|Translation")
+	TObjectPtr<UCurveFloat> CamSpeedCurve;
+
+	FVector2D LastMoveInputValue;
+	FVector2D MoveRelativeLimitX;
+	FVector2D MoveRelativeLimitY;
+
+	float LastZoomInputValue;
+
+public:
+	void UpdateClue(class UClueAsset* Clue);
+
+	void MoveInput(const struct FInputActionValue& Value);
+	void ZoomInput(const struct FInputActionValue& Value);
+};

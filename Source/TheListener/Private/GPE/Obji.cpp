@@ -13,10 +13,11 @@
 #include "Kismet/KismetMathLibrary.h"
 #include "System/Events/EventCondition.h"
 
+/*
 // Sets default values
 AObji::AObji(const FObjectInitializer& ObjectInitializer) : Super{ObjectInitializer}
 {
-	CreateTimelines();
+	// CreateTimelines();
 }
 
 void AObji::CheckAcceptableDropZone(FDropZoneInfo& DropZoneInfo, const FVector& RayCheckBegin,
@@ -140,18 +141,21 @@ bool AObji::CheckValidity(const FVector& Location, const FQuat& QuatRotation) co
 
 TArray<TSubclassOf<AInteractable>> AObji::GetInteractablesAllowed() const
 {
-	return AllowedInteractables;
+	// return AllowedInteractables;
+	return {};
 }
 
 TArray<TSubclassOf<AToy>> AObji::GetToysAllowed() const
 {
-	return AllowedToys;
+	// return AllowedToys;
+	return {};
 }
 
-void AObji::Interact(const ALukaCharacter* Luka)
+void AObji::Interact()
 {
-	Super::Interact(Luka);
+	Super::Interact();
 
+	/*
 	if (auto HandComponent = Luka->GetHandComponent())
 	{
 		check(StaticMeshComponent);
@@ -163,36 +167,38 @@ void AObji::Interact(const ALukaCharacter* Luka)
 		MoveTo(HandComponent);
 		RotateTo(HandComponent);
 
-		SetHoverWidgetVisibility(false);
-		SetActiveWidgetVisibility(true);
+		// SetHoverWidgetVisibility(false);
+		// SetActiveWidgetVisibility(true);
 	}
 }
 
-bool AObji::Drop()
+bool AObji::Drop(FVector3d const &From, FVector3d const &Impulse)
 {
+	// Ignores from and Impulse, this is all temporary for now honestly
+	
 	if (!LastDropZoneInfo.IsValid())
 	{
 		LastDropZoneInfo.Fail(); // reset
 		return false;
 	}
 
-	FTimeline* MoveTimeline = MoveTo(LastDropZoneInfo.Location);
-	FTimeline* RotateTimeline = RotateTo(LastDropZoneInfo.Rotation);
+	// FTimeline* MoveTimeline = MoveTo(LastDropZoneInfo.Location);
+	// FTimeline* RotateTimeline = RotateTo(LastDropZoneInfo.Rotation);
 
 	const auto LambdaFunc = FOnTimelineEventStatic::CreateLambda([this]
 	{
 		OnDrop();
 	});
-	if (MoveTimeline->GetTimelineLength() > RotateTimeline->GetTimelineLength())
-	{
-		MoveTimeline->SetTimelineFinishedFunc(LambdaFunc);
-	}
-	else
-	{
-		RotateTimeline->SetTimelineFinishedFunc(LambdaFunc);
-	}
+	// if (MoveTimeline->GetTimelineLength() > RotateTimeline->GetTimelineLength())
+	// {
+	// 	MoveTimeline->SetTimelineFinishedFunc(LambdaFunc);
+	// }
+	// else
+	// {
+	// 	RotateTimeline->SetTimelineFinishedFunc(LambdaFunc);
+	// }
 
-	SetActiveWidgetVisibility(false);
+	// SetActiveWidgetVisibility(false);
 	return true;
 }
 
@@ -200,16 +206,24 @@ void AObji::SetupInput(UEnhancedInputComponent* EnhancedInputComponent)
 {
 	if (InputActionPreviewRotation)
 	{
-		EnhancedInputComponent->BindAction(InputActionPreviewRotation, ETriggerEvent::Triggered, this,
-		                                   &AObji::RotatePreview);
+		// EnhancedInputComponent->BindAction(InputActionPreviewRotation, ETriggerEvent::Triggered, this,
+		//                                    &AObji::RotatePreview);
 	}
 }
 
-void AObji::OnInteract(AController* NewController)
+void AObji::OnInteract()
 {
-	Super::OnInteract(NewController);
+	Super::OnInteract();
 
-	if (!ensure(InputMappingContext))
+	if (UEventSubsystem* EventSubsystem = GetWorld()->GetGameInstance()->GetSubsystem<UEventSubsystem>(); ensure(EventSubsystem))
+	{
+		const FConditionKey Key = UObjiHeldCondition::GenerateKey(GetClass());
+		EventSubsystem->SetConditionValue(Key, true, true);
+	}
+
+	OnPickup_();
+
+	if (!InputMappingContext)
 	{
 		return;
 	}
@@ -223,15 +237,6 @@ void AObji::OnInteract(AController* NewController)
 	{
 		SetupInput(EnhancedInputComponent); // TODO: Move to Begin Play
 	}
-
-	if (UEventSubsystem* EventSubsystem = GetWorld()->GetSubsystem<UEventSubsystem>(); ensure(EventSubsystem))
-	{
-		const FConditionKey Key = UObjiHeldCondition::GenerateKey(GetClass());
-		EventSubsystem->SetConditionValue(Key, true, true);
-	}
-
-	OnPickup_();
-	
 }
 
 void AObji::OnDrop()
@@ -240,6 +245,8 @@ void AObji::OnDrop()
 	StaticMeshComponent->SetEnableGravity(true);
 	StaticMeshComponent->SetSimulatePhysics(true);
 	StaticMeshComponent->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
+
+	StaticMeshComponent->SetCollisionResponseToChannel(ECollisionChannel::ECC_Pawn, ECR_Ignore);
 
 	if (!InputMappingContext)
 	{
@@ -265,6 +272,8 @@ void AObji::BeginPlay()
 {
 	Super::BeginPlay();
 
+	OnDrop();
+
 	if (!RotateBlendTimeline || !MoveBlendTimeline)
 	{
 		CreateTimelines();
@@ -287,7 +296,8 @@ void AObji::EndPlay(const EEndPlayReason::Type EndPlayReason)
 	}
 }
 
-struct FTimeline* AObji::MoveTo(const UHandComponent* TargetComponent, bool bTeleport)
+/*
+FTimeline* AObji::MoveTo(const UHandComponent* TargetComponent, bool bTeleport)
 {
 	check(StaticMeshComponent);
 	StaticMeshComponent->SetSimulatePhysics(false);
@@ -310,6 +320,10 @@ struct FTimeline* AObji::MoveTo(const UHandComponent* TargetComponent, bool bTel
 	BeginLocation = GetRootComponent()->GetRelativeLocation();
 	TargetLocationComponent = TargetComponent;
 
+	if (!ensure(MoveBlendTimeline))
+	{
+		return nullptr;
+	}
 	MoveBlendTimeline->PlayFromStart();
 	GetWorldTimerManager().SetTimer(MoveBlendTimer, this, &AObji::TickMoveBlendTimeline, 0.001f, true, 0.0f);
 
@@ -488,3 +502,4 @@ void AObji::CreateTimelines()
 		RotateBlendTimeline->AddInterpFloat(RotateBlendCurve, ProgressFunctionRotate, FName{TEXT("EffectLerp")});
 	}
 }
+*/

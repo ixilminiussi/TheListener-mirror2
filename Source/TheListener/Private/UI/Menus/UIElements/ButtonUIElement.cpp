@@ -16,36 +16,49 @@ void UButtonUIElement::NativeConstruct()
 
 	SetNavigationRuleExplicit(EUINavigation::Up, UpUIElement);
 	SetNavigationRuleExplicit(EUINavigation::Down, DownUIElement);
+
+	if (DescriptionRow.IsNull())
+	{
+		DescriptionTextBlock->RemoveFromParent();
+		return;
+	}
+
+	UpdateDescriptionText();
+
+	if (DescriptionTextBlock)
+	{
+		DescriptionTextBlock->SetVisibility(ESlateVisibility::Hidden);
+	}
 }
 
 void UButtonUIElement::NativeOnHovered()
 {
 	Super::NativeOnHovered();
+	if (DescriptionTextBlock)
+	{
+		DescriptionTextBlock->SetVisibility(ESlateVisibility::Visible);
+		UpdateDescriptionText();
+	}
+}
+
+void UButtonUIElement::NativeOnUnhovered()
+{
+	Super::NativeOnUnhovered();
+
+	if (DescriptionTextBlock)
+	{
+		DescriptionTextBlock->SetVisibility(ESlateVisibility::Hidden);
+		DescriptionTextBlock->GetTextBlock()->SetText(FText::GetEmpty());
+	}
 }
 
 void UButtonUIElement::UpdateDescriptionText() const
 {
-	TArray<UUserWidget*> Widgets{};
-	UWidgetBlueprintLibrary::GetAllWidgetsOfClass(GetWorld(), Widgets, UDescriptionTextBlock::StaticClass(), false);
-
-	if (Widgets.Num() > 0)
+	if (FSettingsDescriptions* SettingsDescription = DescriptionRow.GetRow<FSettingsDescriptions>(
+		TEXT("Loading Settings Description")))
 	{
-		if (UDescriptionTextBlock* DescriptionTextBlock = Cast<UDescriptionTextBlock>(Widgets[0]))
-		{
-			if (FSettingsDescriptions* SettingsDescription = DescriptionRow.GetRow<FSettingsDescriptions>(
-				TEXT("Loading Settings Description")); SettingsDescription)
-			{
-				check(DescriptionTextBlock);
-				const FText Description = SettingsDescription->EnglishDescription;
-
-				const FVector2D Absolute = GetCachedGeometry().GetAbsolutePosition();
-				const FVector2D Relative = GetParent()->GetCachedGeometry().AbsoluteToLocal(Absolute);
-
-				const FVector2D Size = GetCachedGeometry().GetAbsoluteSize();
-
-
-				DescriptionTextBlock->UpdateDescription(Description, Relative.Y);
-			}
-		}
+		check(DescriptionTextBlock);
+		const FText Description = SettingsDescription->EnglishDescription;
+		DescriptionTextBlock->GetTextBlock()->SetText(Description);
 	}
 }

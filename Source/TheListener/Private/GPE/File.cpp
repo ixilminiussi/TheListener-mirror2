@@ -11,6 +11,7 @@
 #include "UI/LukaHUD.h"
 #include "UI/PlayWidget.h"
 
+/*
 AFile::AFile(const FObjectInitializer& ObjectInitializer) : Super{ObjectInitializer}
 {
 	PrimaryActorTick.bCanEverTick = true;
@@ -136,3 +137,4 @@ void AFile::OnDrop()
 	StaticMeshComponent->SetEnableGravity(false);
 	StaticMeshComponent->SetSimulatePhysics(false);
 }
+*/

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{89CC77A7-D930-4206-AF71-5CE1C044BFF1}" SchemaVersion="123" RootDocumentID="{B7908AEF-86FD-4FCD-B7E0-B564E08461C7}" ParentDocumentID="{B7908AEF-86FD-4FCD-B7E0-B564E08461C7}">
+	<Events>
+		<WorkUnit Name="Pause Menu" ID="{89CC77A7-D930-4206-AF71-5CE1C044BFF1}" OwnerID="{B7908AEF-86FD-4FCD-B7E0-B564E08461C7}" PersistMode="Nested">
+			<ChildrenList>
+				<Event Name="pause_game_audio" ID="{C52AEB9C-4801-4DDF-873D-94A20EA64041}">
+					<ChildrenList>
+						<Action Name="" ID="{858A1287-A11B-45B3-A3F2-7073EBB25154}" ShortID="857108214">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="7"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="STATIONS" ID="{AAC500AE-754A-49D2-AFC4-622281209439}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{8CB8DC41-6E6C-4DD3-8E1A-D2CA867166C2}" ShortID="555689540">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="7"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SFX" ID="{A225F6D7-0B96-4F97-A9AA-8DE711946649}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{AFD60848-92CF-4B96-B1D5-BCE653E0246E}" ShortID="178599648">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="7"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="AMBIENT" ID="{281C5B8A-9F04-45B2-8D52-2F39AFFB0D38}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="resume_game_audio" ID="{C0257BFF-5E5E-4954-9BAF-34DFECC835A7}">
+					<ChildrenList>
+						<Action Name="" ID="{66CF182B-C147-4AEF-8EDA-C63934019773}" ShortID="150829520">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="9"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="STATIONS" ID="{AAC500AE-754A-49D2-AFC4-622281209439}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{F8FF571D-E7D1-43D4-83E7-36609115C9D4}" ShortID="109097047">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="9"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SFX" ID="{A225F6D7-0B96-4F97-A9AA-8DE711946649}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{745863E9-7A21-4A87-9B04-3BB3B54E35ED}" ShortID="200413798">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="9"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="AMBIENT" ID="{281C5B8A-9F04-45B2-8D52-2F39AFFB0D38}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

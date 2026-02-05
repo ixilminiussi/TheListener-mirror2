@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{8EBA046C-25AE-4367-8B69-2AA0F43D32DB}" SchemaVersion="123">
+	<Events>
+		<WorkUnit Name="DAY 2" ID="{8EBA046C-25AE-4367-8B69-2AA0F43D32DB}" PersistMode="Standalone">
+			<ChildrenList>
+				<WorkUnit Name="Stations_D2" ID="{10357709-212A-475E-BF6E-A37649CE482E}" PersistMode="Reference"/>
+				<WorkUnit Name="Anton" ID="{F235B362-B9EF-492C-A5D0-6B5E56FBB73D}" PersistMode="Reference"/>
+				<WorkUnit Name="Natalya" ID="{279A5096-AC03-4449-B12C-D98B027D8F3F}" PersistMode="Reference"/>
+				<WorkUnit Name="Phone_D2" ID="{0B3F1888-C871-47BC-B612-B8051F47550F}" PersistMode="Reference"/>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

@@ -31,6 +31,8 @@ void UCogPlottingSubsystem::Initialize(FSubsystemCollectionBase& Collection)
 	CogSubsystem = Collection.InitializeDependency<UCogSubsystem>();
 	Collection.InitializeDependency<UCogConfigurationSubsystem>();
 	Heistogram = heistogram_create();
+	
+	
 #endif
 }
 

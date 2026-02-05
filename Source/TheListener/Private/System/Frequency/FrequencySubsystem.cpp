@@ -4,10 +4,11 @@
 #include "Curves/CurveLinearColor.h"
 #include "Curves/CurveLinearColorAtlas.h"
 #include "GPE/Radio/Radio.h"
+#include "GPE/Radio/SDR.h"
 #include "GPE/Radio/Station.h"
 #include "GPE/Radio/StationDataAsset.h"
 #include "GPE/Radio/StationListDataAsset.h"
-#include "Kismet/GameplayStatics.h"
+#include "Miscellaneous/TLUtils.h"
 #include "System/Core/ListenerWorldSettings.h"
 #include "System/Frequency/FrequencySubsystemData.h"
 
@@ -51,6 +52,8 @@ void UFrequencySubsystem::Initialize(FSubsystemCollectionBase& Collection)
 {
 	Super::Initialize(Collection);
 
+	AllowedBands = {0, 1, 2};
+
 	auto World = GetWorld();
 	if (!World || !World->IsGameWorld())
 	{
@@ -64,9 +67,13 @@ void UFrequencySubsystem::Initialize(FSubsystemCollectionBase& Collection)
 
 	if (UFrequencySubsystemData* FrequencySubsystemData = WorldSettings->FrequencySubsystemData.LoadSynchronous())
 	{
-		this->GlobalRange = FrequencySubsystemData->GlobalRange;
-		this->CurveAtlas = FrequencySubsystemData->CurveAtlas;
-		this->FrequencyColorCurve = FrequencySubsystemData->FrequencyColorCurve;
+		ReceptionBands.Emplace(FrequencySubsystemData->LfRange);
+		ReceptionBands.Emplace(FrequencySubsystemData->MfRange);
+		ReceptionBands.Emplace(FrequencySubsystemData->HfRange);
+
+		FrequencyColorCurve = FrequencySubsystemData->FrequencyColorCurve;
+		CurveAtlas = FrequencySubsystemData->CurveAtlas;
+		
 		this->StartingStationList = FrequencySubsystemData->StartingStationList;
 
 		ClearAndZeroCurve(FrequencyColorCurve->FloatCurves);
@@ -101,20 +108,28 @@ void UFrequencySubsystem::Deinitialize()
 void UFrequencySubsystem::RegisterReceiver(UMaterialInstanceDynamic* Material)
 {
 	ReceiverRegister.Push(Material);
-	Material->SetScalarParameterValue("P_FreqBegin", GlobalRange.X);
-	Material->SetScalarParameterValue("P_FreqEnd", GlobalRange.Y);
-	CurveFlush(CurveAtlas);
 }
 
 void UFrequencySubsystem::RegisterReceiver(class ARadio* Radio)
 {
 	check(Radio);
-	Radios.Add(Radio);
+	Radios.Add(Radio) = {-1.f, -1.f, -1.f};
 
 	for (UStationAsset *StationAsset : StationDataAssets) 
 	{
 		Radio->CreateStationObject(StationAsset);
 	}
+
+	check(ReceptionBands.Num() > static_cast<int>(Band))
+	Radio->SetFrequencyRange(ReceptionBands[Band], -1.f);
+}
+
+void UFrequencySubsystem::RegisterReceiver(class ASDR* SDR)
+{
+	check(SDR);
+	SDRs.Push(SDR);
+
+	SDR->SetBand(Band);
 }
 
 void UFrequencySubsystem::RefreshCurveAtlas() const
@@ -146,7 +161,7 @@ void UFrequencySubsystem::AddStation(UStationAsset* StationData)
 	{
 		return;
 	}
-	for (ARadio *Radio : Radios)
+	for (auto const &[Radio, Freq] : Radios)
 	{
 		if (ensure(Radio))
 		{
@@ -163,7 +178,7 @@ void UFrequencySubsystem::DestroyStation(const UStationAsset* StationData) const
 {
 	check(StationData);
 
-	for (ARadio *Radio : Radios)
+	for (auto const &[Radio, Freq] : Radios)
 	{
 		if (!ensure(Radio)) { return; }
 
@@ -179,7 +194,7 @@ void UFrequencySubsystem::ForgetStation(AStation* Station)
 {
 	check(Station);
 
-	for (ARadio *Radio : Radios)
+	for (auto const &[Radio, Freq] : Radios)
 	{
 		if (ensure(Radio))
 		{
@@ -195,6 +210,105 @@ void UFrequencySubsystem::ForgetStation(AStation* Station)
 	StationDataAssets.Remove(Station->GetStationData());
 	RemoveFrequencyFomCurve(FrequencyColorCurve->FloatCurves, Station->GetStationData());
 	CurveFlush(CurveAtlas);
+}
+
+bool UFrequencySubsystem::IsFrequencyAllowed(float Value) const
+{
+	for (const int Bandino : AllowedBands)
+	{
+		if (Value >= ReceptionBands[Bandino].X && Value <= ReceptionBands[Bandino].Y)
+		{
+			return true;
+		}
+	}
+
+	return false;
+}
+
+bool UFrequencySubsystem::NextBand()
+{
+	int ID = AllowedBands.Find(Band);
+	
+	if (ID < AllowedBands.Num() - 1)
+	{
+		SetBand(AllowedBands[ID + 1]);
+		return true;
+	}
+	return false;
+}
+
+bool UFrequencySubsystem::LastBand()
+{
+	int ID = AllowedBands.Find(Band);
+	
+	if (ID > 0)
+	{
+		SetBand(AllowedBands[ID - 1]);
+		return true;
+	}
+	return false;
+}
+
+void UFrequencySubsystem::SetAllowedBands(TArray<int> InAllowedBands)
+{
+	check(InAllowedBands.Num() <= 3 && InAllowedBands.Num() > 0) // TODO: NO SUPPORT FOR 0 BANDS YET
+	
+	for (int i : InAllowedBands)
+	{
+		if (!ensure(i == 0 || i == 1 || i == 2)) // INVALID BANDS, MUST BE EITHER 0, 1, 2
+		{
+			return;
+		}
+	}
+	
+	AllowedBands = InAllowedBands;
+	AllowedBands.Sort();
+
+	if (!AllowedBands.Contains(Band))
+	{
+		SetBand(AllowedBands[0]);
+	}
+}
+
+void UFrequencySubsystem::AllowBand(int InBand)
+{
+	AllowedBands.Add(InBand);
+	SetBand(InBand);
+}
+
+void UFrequencySubsystem::SetBandFromFrequency(float Frequency)
+{
+	for (int Bandino : AllowedBands)
+	{
+		if (Frequency >= ReceptionBands[Bandino].X && Frequency <= ReceptionBands[Bandino].Y)
+		{
+			SetBand(Bandino);
+			return;
+		}
+	}
+
+	check(false) // very not good
+}
+
+void UFrequencySubsystem::SetBand(const uint32 InBand)
+{
+	for (auto &[Radio, Freq] : Radios)
+	{
+		Freq[Band] = Radio->GetFrequency();
+	}
+
+	Band = InBand;
+
+	check(ReceptionBands.Num() > static_cast<int>(Band));
+	
+	for (auto const &[Radio, Freq] : Radios)
+	{
+		Radio->SetFrequencyRange(ReceptionBands[Band], Freq[Band]);
+	}
+	for (ASDR *SDR : SDRs)
+	{
+		SDR->SetBand(InBand);
+	}
 }
 
 void UFrequencySubsystem::ClearAndZeroCurve(FRichCurve* Curve)
@@ -264,18 +378,35 @@ void UFrequencySubsystem::AddFrequencyToCurve(FRichCurve* Curve, const UStationA
 		return;
 	}
 
-	const float FullRange = FMath::Abs(GlobalRange.Y - GlobalRange.X);
-	const float NormalizedRelativeFrequency = (StationData->Frequency - GlobalRange.X) / FullRange;
-	const float NormalizedReceptionBand = (StationData->ReceptionBand / 2.0f) / FullRange;
+	const float Frequency = StationData->Frequency;
+	const float ReceptionBand = StationData->ReceptionBand / 2.;
 
-	if (NormalizedRelativeFrequency < 0.f || NormalizedRelativeFrequency > 1.0f)
+	const float BeginRange = UTLUtils::FrequencyStep(Frequency, -ReceptionBand);
+	const float EndRange = UTLUtils::FrequencyStep(Frequency, ReceptionBand);
+
+	for (int i = 0; i < ReceptionBands.Num(); i++)
 	{
-		return;
-	}
+		const float Min = ReceptionBands[i].X;
+		const float Max = ReceptionBands[i].Y;
+		if (Frequency > Min && Frequency < Max)
+		{
+			const FVector2D LogRange = {FMath::Log2(Min), FMath::Log2(Max)};
+	
+			auto NormalizeLog = [&LogRange, &i](const float Value) -> float
+			{
+				const float LogValue = FMath::Log2(Value);
 
-	Curve->AddKey(NormalizedRelativeFrequency + NormalizedReceptionBand, 0.0f, false, StationData->CurveKeys[0]);
-	Curve->AddKey(NormalizedRelativeFrequency, 1.0f, false, StationData->CurveKeys[1]);
-	Curve->AddKey(NormalizedRelativeFrequency - NormalizedReceptionBand, 0.0f, false, StationData->CurveKeys[2]);
+				float Norm = (LogValue - LogRange.X) / (LogRange.Y - LogRange.X);
+				return Norm / 3.f + (i / 3.f);
+			};	
+
+			Curve->AddKey(NormalizeLog(BeginRange), 0.0f, false, StationData->CurveKeys[0]);
+			Curve->AddKey(NormalizeLog(Frequency), 1.0f, false, StationData->CurveKeys[1]);
+			Curve->AddKey(NormalizeLog(EndRange), 0.0f, false, StationData->CurveKeys[2]);
+
+			break;
+		}
+	}
 }
 
 void UFrequencySubsystem::RemoveFrequencyFomCurve(FRichCurve* Curve, const UStationAsset* StationData) const

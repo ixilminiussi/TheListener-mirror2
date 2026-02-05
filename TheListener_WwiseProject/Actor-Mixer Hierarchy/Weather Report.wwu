@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{9F0E491A-BA6A-46D3-9F5E-CF62F220F15B}" SchemaVersion="123" RootDocumentID="{29C5AB43-C928-4CD8-9FC7-35647B0068A2}" ParentDocumentID="{29C5AB43-C928-4CD8-9FC7-35647B0068A2}">
+	<AudioObjects>
+		<WorkUnit Name="Weather Report" ID="{9F0E491A-BA6A-46D3-9F5E-CF62F220F15B}" OwnerID="{29C5AB43-C928-4CD8-9FC7-35647B0068A2}" PersistMode="Nested">
+			<ChildrenList>
+				<ActorMixer Name="weather_report" ID="{DA28AB55-30EA-4679-A313-26001741DB3D}" ShortID="383411454">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1F16A1F8-60B8-4227-AF46-35E4F3C0380C}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="STATIONS" ID="{AAC500AE-754A-49D2-AFC4-622281209439}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="1_1_E1_A" ID="{774E7839-0064-41A8-969A-8EAEE14EE0E5}" ShortID="380631538">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="1_1_E1_A" ID="{8BE75680-C932-4829-80CC-10C0A784F5CF}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Weather Report\1.1.E1.A.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="410790496"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{10A63EB6-A291-4BDF-9F78-26C802C21E8E}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.E1.A.S2"/>
+															<Property Name="Time" Type="Real64" Value="2.48155339805825"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{9FD301EB-B3CC-4729-BE02-58D5CD58F579}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.E1.A.S3"/>
+															<Property Name="Time" Type="Real64" Value="5.4"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{FB09137D-474E-4AA7-809F-84566BF3ADF1}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.E1.A.S4"/>
+															<Property Name="Time" Type="Real64" Value="7.21747572815534"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{89870AC4-AC6E-4611-AF16-EF40BE8A727D}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.E1.A.S5"/>
+															<Property Name="Time" Type="Real64" Value="8.98252427184466"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{251445AF-E344-403C-8537-F1FF07401E12}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.E1.A.S6"/>
+															<Property Name="Time" Type="Real64" Value="11.3592233009709"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{D59596FA-1D26-4CF2-92FD-E55487F13459}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.E1.A.S7"/>
+															<Property Name="Time" Type="Real64" Value="14.5572815533981"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="1_1_E1_A" ID="{8BE75680-C932-4829-80CC-10C0A784F5CF}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="1_1_E1_B" ID="{417FCD4F-5113-41A1-99A3-0947D474380C}" ShortID="997295447">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="1_1_E1_B" ID="{3281F75D-473D-4A70-A187-41F0D3EAA379}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Weather Report\1.1.E1.B.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1031279047"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{3C2A383F-728A-4DBD-8BA0-CE8B58C4CC3D}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.E1.B.S2"/>
+															<Property Name="Time" Type="Real64" Value="2.39320388349515"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{C124EA1E-6372-4BA5-91B0-E25321BBB488}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.E1.B.S3"/>
+															<Property Name="Time" Type="Real64" Value="5.33106796116505"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{A76157AA-EB59-485A-A8D4-14CC8E26EB86}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.E1.B.S4"/>
+															<Property Name="Time" Type="Real64" Value="7.17961165048544"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{B47450D7-DC97-4ECE-A5A9-7413D3E9121E}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.E1.B.S5"/>
+															<Property Name="Time" Type="Real64" Value="9.3747572815534"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{3C13796E-B0C6-4D7A-9260-FB4ACDDA0BF2}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.E1.B.S6"/>
+															<Property Name="Time" Type="Real64" Value="12.8407766990291"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{0CCE2F29-9150-402A-AD95-39C732BFBD65}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.E1.B.S7"/>
+															<Property Name="Time" Type="Real64" Value="14.5242718446602"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="1_1_E1_B" ID="{3281F75D-473D-4A70-A187-41F0D3EAA379}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="1_1_E1_C" ID="{63695408-283F-4CC4-A5BC-87445C18E82D}" ShortID="483407135">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="1_1_E1_C" ID="{EBCECF89-9785-47D3-98CA-1AB68D640E88}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Weather Report\1.1.E1.C.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="810972138"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{94AF41C6-408C-412D-B25E-3BF1770BEA93}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.E1.C.S2"/>
+															<Property Name="Time" Type="Real64" Value="1.83495145631068"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{F897B876-A550-4B38-8640-7AC667A0B140}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.E1.C.S3"/>
+															<Property Name="Time" Type="Real64" Value="4.12864077669903"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{CE519FFC-53E4-4476-BA93-6CE463FA215C}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.E1.C.S4"/>
+															<Property Name="Time" Type="Real64" Value="5.88495145631068"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{E3A2A0A0-D14D-4FF8-BEE0-91745CF876D5}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.E1.C.S5"/>
+															<Property Name="Time" Type="Real64" Value="9.48932038834952"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{F47CB51D-C044-438C-84D0-E79F0FEFC3DF}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.E1.C.S6"/>
+															<Property Name="Time" Type="Real64" Value="11.5339805825243"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="1_1_E1_C" ID="{EBCECF89-9785-47D3-98CA-1AB68D640E88}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="1_1_E1_D" ID="{C3F7752F-6833-4E38-9FD2-D3EA057050AF}" ShortID="659657569">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="1_1_E1_D" ID="{72C94672-42E9-4659-9ED3-8A94768ECA9D}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Weather Report\1.1.E1.D.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="64619021"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{2B870DA8-1EF9-4F0F-84C1-86099F33E007}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.E1.D.S2"/>
+															<Property Name="Time" Type="Real64" Value="1.59514563106796"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{4035F3D1-DE7E-45C1-A49F-9C24B535B83E}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.E1.D.S3"/>
+															<Property Name="Time" Type="Real64" Value="3.65679611650485"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{7248718D-611F-4DD5-BC89-27A3C9C2110C}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.E1.D.S4"/>
+															<Property Name="Time" Type="Real64" Value="5.95922330097087"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{66ABCD50-CE7C-4999-8AD3-DBE034F9DEE7}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.E1.D.S5"/>
+															<Property Name="Time" Type="Real64" Value="8.87864077669903"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{ABFE15E8-9647-45F5-AA1B-D9B9FC068EFE}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.E1.D.S6"/>
+															<Property Name="Time" Type="Real64" Value="12.0388349514563"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="1_1_E1_D" ID="{72C94672-42E9-4659-9ED3-8A94768ECA9D}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="1_1_E1" ID="{A55A115A-FCC8-4389-A73B-E9B59401C831}" ShortID="921998777">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="1_1_E1" ID="{123B00A0-EA04-45A6-AD50-D9ECD72266FA}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Weather Report\1.1.E1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="79292645"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{035D78F4-F527-4DD2-A69B-5E55790C3D68}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.E1.S1"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{1A588B07-266B-4AF7-BB09-D7DA4DCB5DCD}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.E1.S2"/>
+															<Property Name="Time" Type="Real64" Value="2.93143976955478"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{7075DAD1-FAC8-4FA0-BD61-CEDE4A800BF0}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.E1.S3"/>
+															<Property Name="Time" Type="Real64" Value="5.95356675714489"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{05A4EF9E-8EAA-4C34-9E26-147864AC393A}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.E1.S4"/>
+															<Property Name="Time" Type="Real64" Value="8.66215289916852"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{18685286-63BF-4305-864A-2790DE3CD3C1}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.E1.S5"/>
+															<Property Name="Time" Type="Real64" Value="10.3912583815733"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{A2B92DDF-9F2E-4618-8AA1-F6E9EC9EDF85}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.E1.S6"/>
+															<Property Name="Time" Type="Real64" Value="12.8417520919007"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{02F87E2C-2374-4ED1-8F3D-598F67B0304D}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="MOD_EARLYANSWER"/>
+															<Property Name="Time" Type="Real64" Value="0.146045336463674"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="1_1_E1" ID="{123B00A0-EA04-45A6-AD50-D9ECD72266FA}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="1_1_E1_2" ID="{B2C71338-DB20-4BF6-98AC-2A77C4FEE27A}" ShortID="960656368">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="1_1_E1_2" ID="{447E9F55-96A4-4519-92B9-7DA286458E4B}">
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Weather Report\1.1.E1.2.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="813296516"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="1_1_E1_2" ID="{447E9F55-96A4-4519-92B9-7DA286458E4B}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</ActorMixer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

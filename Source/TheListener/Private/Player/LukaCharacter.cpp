@@ -3,19 +3,19 @@
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "Camera/CameraComponent.h"
-#include "Player/Components/HandComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/SpringArmComponent.h"
-#include "GPE/Interactable.h"
-#include "GPE/Obji.h"
 #include "GPE/Toy.h"
-#include "Kismet/GameplayStatics.h"
 #include "Player/LukaController.h"
+#include "Player/Components/InspectingComponent.h"
+#include "Player/Components/InteractComponent.h"
+#include "Player/Components/PickupComponent.h"
 #include "Structs/PlayerData.h"
 #include "System/Core/BaseGameInstance.h"
-#include "UI/Menus/SettingsDataAsset.h"
+#include "UI/LukaHUD.h"
 #include "UI/Menus/SettingsSave.h"
+#include "UI/Prompt/HoverPromptComponent.h"
 
 ALukaCharacter::ALukaCharacter()
 {
@@ -23,24 +23,27 @@ ALukaCharacter::ALukaCharacter()
 
 	SpringArmComponent = CreateDefaultSubobject<USpringArmComponent>("Spring Arm");
 	CameraComponent = CreateDefaultSubobject<UCameraComponent>("Camera");
-	HandComponent = CreateDefaultSubobject<UHandComponent>("Hand");
+	PickupComponent = CreateDefaultSubobject<UPickupComponent>("Pickup");
+	InteractComponent = CreateDefaultSubobject<UInteractComponent>("Interact");
+	DropComponent = CreateDefaultSubobject<USceneComponent>("Drop");
 	check(RootComponent);
 	check(SpringArmComponent);
 	check(CameraComponent);
-	check(HandComponent);
+	check(PickupComponent);
+	check(InteractComponent);
+	check(DropComponent);
 
 	SpringArmComponent->SetupAttachment(RootComponent);
 
 	CameraComponent->SetupAttachment(SpringArmComponent);
 	CameraComponent->bUsePawnControlRotation = true;
-
-	HandComponent->SetupAttachment(CameraComponent);
+	DropComponent->SetupAttachment(CameraComponent);
+	PickupComponent->SetupAttachment(CameraComponent);
 }
 
 void ALukaCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-
 
 	if (PlayerData)
 	{
@@ -88,7 +91,6 @@ void ALukaCharacter::PossessedBy(AController* NewController)
 			}
 		}
 	}
-	if (AToy* CurrentToyInView = GetToyInView()) { CurrentToyInView->SetHoverWidgetVisibility(true); }
 }
 
 void ALukaCharacter::UnPossessed()
@@ -217,36 +219,14 @@ void ALukaCharacter::HandleStopMoving(const FInputActionValue& Value)
 	OnStopMoving.Broadcast();
 }
 
-TObjectPtr<class UHandComponent> ALukaCharacter::GetHandComponent() const
+USceneComponent* ALukaCharacter::GetDrop() const
 {
-	return HandComponent;
-}
-
-bool ALukaCharacter::HasObji() const
-{
-	check(HandComponent);
-	return HandComponent->HasObji();
-}
-
-AObji* ALukaCharacter::GetHeldObji() const
-{
-	check(HandComponent);
-	return HandComponent->GetHeldObji();
+	return DropComponent;
 }
 
 void ALukaCharacter::InteractiveRayCheck()
 {
-	
-	if (HasObji() && HandComponent->GetHeldObji()->GetInteractablesAllowed().Num() == 0 )
-	{
-		return;
-	}
-	
-	
-	AToy* PreviousToyInView = ToyInView;
-	AInteractable* PreviousInteractableInView = InteractableInView;
-	InteractableInView = nullptr;
-	ToyInView = nullptr;
+	AActor* NewActorInView = nullptr;
 
 	// Check if hitting Hitbox == BEGIN =====================
 	TArray<FHitResult> HitResults;
@@ -258,180 +238,120 @@ void ALukaCharacter::InteractiveRayCheck()
 
 	FCollisionQueryParams TraceParams(SCENE_QUERY_STAT(LineTrace), true, this);
 
-	check(HandComponent);
-	HandComponent->PrepareTraceParams(TraceParams);
-
 	bool bHit = GetWorld()->LineTraceMultiByObjectType(HitResults, StartLocation, EndLocation, ObjectQueryParams,
 	                                                   TraceParams);
-	// Check if hitting Hitbox == END =======================
 
-	// Check if hitting Walls == BEGIN ======================
-	FHitResult WallHitResult;
-	const bool bWallHit = GetWorld()->LineTraceSingleByChannel(WallHitResult, StartLocation, EndLocation,
-	                                                           ECC_WorldStatic,
-	                                                           TraceParams);
-
-	const float WallDistance = bWallHit ? WallHitResult.Distance : TNumericLimits<float>::Max();
-	// Check if hitting Walls == END ========================
-
-	// Check if we already had an object in view to avoid calling unnecessary "OnEnter" events
-	const bool bHadInteractableInView = PreviousInteractableInView != nullptr;
-	const bool bHadToyInView = PreviousToyInView != nullptr;
-
-	float ClosestToyDistance = TNumericLimits<float>::Max();
-	float ClosestInteractableDistance = TNumericLimits<float>::Max();
-
-	for (const FHitResult& HitResult : HitResults)
+	if (!bHit)
 	{
-		AActor* HitActor = HitResult.GetActor();
+		ALukaHUD::InteractiveInView.Execute(false);
+	} else
+	{
+		FHitResult WallHitResult;
+		const bool bWallHit = GetWorld()->LineTraceSingleByChannel(WallHitResult, StartLocation, EndLocation,
+																   ECC_WorldStatic,
+																   TraceParams);
 
-		if (HitResult.Distance > WallDistance)
+		if (bWallHit)
 		{
-			UE_LOG(LogTemp, Warning, TEXT("%f, %f"), HitResult.Distance, WallDistance);
-			continue;
-		}
-		if (AInteractable* NewInteractableInView = Cast<AInteractable>(HitActor))
-		{
-			if (HitResult.Distance < ClosestInteractableDistance && NewInteractableInView->IsEnabled())
+			const int Index = HitResults.IndexOfByPredicate([&WallHitResult](const FHitResult& Hit) { return Hit.Distance > WallHitResult.Distance; });
+			if (Index >= 0)
 			{
-				ClosestInteractableDistance = HitResult.Distance;
-				InteractableInView = NewInteractableInView;
-				if (ToyInView)
+				HitResults.RemoveAt(Index, HitResults.Num() - Index);
+			}
+		}
+	
+		// Check if hitting Walls == END ========================
+		NewActorInView = PickupComponent->CheckAndFilterHitResults(&HitResults);
+		if (!NewActorInView && HitResults.Num() > 0)
+		{
+			NewActorInView = InteractComponent->CheckHitResults(&HitResults, PickupComponent->GetHeld());
+			if (!NewActorInView && HitResults.Num() > 0)
+			{
+				TArray<FHitResult> Filtered = HitResults.FilterByPredicate([](const FHitResult& Hit)
 				{
-					ToyInView = nullptr;
+					AToy *Toy = Cast<AToy>(Hit.GetActor());
+					if (Toy != nullptr)
+					{
+						return Toy->IsEnabled();
+					} return false;
+				});
+				if (Filtered.Num() > 0)
+				{
+					NewActorInView = Filtered[0].GetActor();
 				}
 			}
 		}
-
-		if (AToy* NewToyInView = Cast<AToy>(HitActor))
-		{
-			if (HitResult.Distance < ClosestToyDistance && NewToyInView->IsEnabled())
-			{
-				ClosestToyDistance = HitResult.Distance;
-				ToyInView = NewToyInView;
-			}
-		}
 	}
+	
+	ALukaHUD::InteractiveInView.Execute(NewActorInView != nullptr);
 
-	const bool bHasInteractableInView = InteractableInView != nullptr;
-	const bool bHasToyInView = ToyInView != nullptr;
-
-	if (HasObji())
+	if (NewActorInView != ActorInView)
 	{
-		TArray<TSubclassOf<AInteractable>> InteractablesAllowed =  HandComponent->GetHeldObji()->GetInteractablesAllowed();
-		TArray<TSubclassOf<AToy>> ToysAllowed =  HandComponent->GetHeldObji()->GetToysAllowed();
-		if (bHasInteractableInView){
-			if (!InteractablesAllowed.Contains(InteractableInView->GetClass()))
-			{
-				InteractableInView = nullptr;
-				return;
-			}
-		}
-		else if (bHasToyInView) {
-			if (!ToysAllowed.Contains(ToyInView->GetClass()))
-			{
-				ToyInView = nullptr;
-				return;
-			}
-		}
+		TryShowHoverPrompt(NewActorInView);
+		TryHideHoverPrompt(ActorInView);
 	}
 
-	if ((!bHadInteractableInView && bHasInteractableInView)
-		|| (!bHadToyInView && bHasToyInView)
-		|| (bHasToyInView && !bHasInteractableInView && bHadInteractableInView))
-	{
-		if (bHasInteractableInView)
-		{
-			check(InteractableInView);
-			OnBeginAnyInView.Broadcast();
-		}
-		else if (bHasToyInView)
-		{
-			check(ToyInView);
-			OnBeginAnyInView.Broadcast();
-		}
-	}
-	if (InteractableInView != PreviousInteractableInView)
-	{
-		if (InteractableInView)
-		{
-			InteractableInView->SetHoverWidgetVisibility(true);
-		}
-		if (PreviousInteractableInView)
-		{
-			PreviousInteractableInView->SetHoverWidgetVisibility(false);
-		}
-	}
-	if (ToyInView != PreviousToyInView)
-	{
-		if (ToyInView)
-		{
-			ToyInView->SetHoverWidgetVisibility(true);
-			// ToyInView->Highlight(true);
-		}
-		if (PreviousToyInView)
-		{
-			PreviousToyInView->SetHoverWidgetVisibility(false);
-			// PreviousToyInView->Highlight(false);
-		}
-	}
-	if ((!bHasInteractableInView && !bHasToyInView) && (bHadInteractableInView || bHadToyInView))
-	{
-		OnEndAnyInView.Broadcast();
-	}
+	ActorInView = NewActorInView;
 }
 
 AToy* ALukaCharacter::GetToyInView() const
 {
-	return ToyInView;
+	if (ActorInView == nullptr)
+	{
+		return nullptr;
+	}
+	return Cast<AToy>(ActorInView);
 }
 
-void ALukaCharacter::Interact()
+void ALukaCharacter::TryShowHoverPrompt(AActor* Actor)
 {
-	if (InteractableInView)
+	if (!Actor)
 	{
-		
-		if (AObji* Obji = Cast<AObji>(InteractableInView))
-		{
-			if (!HasObji())
-			{
-				PickupObji(Obji);
-			}
-		}
-		else
-		{
-			InteractableInView->Interact(this);
-		}
+		return;
+	}
+	UHoverPromptComponent *HoverPromptComponent = Actor->FindComponentByClass<UHoverPromptComponent>();
+
+	if (HoverPromptComponent)
+	{
+		HoverPromptComponent->TogglePrompts(true);
 	}
 }
 
-void ALukaCharacter::PickupObji(AObji* Obji)
+void ALukaCharacter::TryHideHoverPrompt(AActor* Actor)
 {
-	check(HandComponent);
-	check(Obji);
-	Obji->Interact(this);
-	HandComponent->PickupObji(Obji);
-	OnEndAnyInView.Broadcast();
-	OnEndSpecificInView.Broadcast(Obji);
-}
-
-AInteractable* ALukaCharacter::GetInteractableInView() const
-{
-	return InteractableInView;
-}
-
-AObji* ALukaCharacter::DropObji()
-{
-	check(HandComponent);
-
-	InteractableInView = nullptr;
-	ToyInView = nullptr;
-
-	if (AObji* Obji = HandComponent->ReleaseObji())
+	if (!Actor)
 	{
-		return Obji;
+		return;
 	}
-	return nullptr;
+	UHoverPromptComponent *HoverPromptComponent = Actor->FindComponentByClass<UHoverPromptComponent>();
+
+	if (HoverPromptComponent)
+	{
+		HoverPromptComponent->TogglePrompts(false);
+	}
+}
+
+void ALukaCharacter::Interact() const
+{
+	check(InteractComponent);
+	check(PickupComponent);
+	if (InteractComponent->Interact(ActorInView, PickupComponent->GetHeld()))
+	{
+		PickupComponent->Consume();
+	} else
+	{
+		PickupComponent->TryPickup(ActorInView);
+	}
+}
+
+void ALukaCharacter::Return() const
+{
+}
+
+void ALukaCharacter::Drop() const
+{
+	check(PickupComponent);
+	PickupComponent->TryDrop();
 }
 
 void ALukaCharacter::SnapToGround(const float DistanceCheck)
@@ -487,5 +407,10 @@ void ALukaCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 	if (ensure(InputActionLook != nullptr))
 	{
 		EnhancedInput->BindAction(InputActionLook, ETriggerEvent::Triggered, this, &ALukaCharacter::Look);
+	}
+
+	if (UInspectingComponent *InspectingComponent = GetComponentByClass<UInspectingComponent>())
+	{
+		InspectingComponent->SetupInput(EnhancedInput);
 	}
 }

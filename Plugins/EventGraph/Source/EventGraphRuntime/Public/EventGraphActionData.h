@@ -40,3 +40,20 @@ public:
 	virtual struct FActionKey GetKey() const;
 	static struct FActionKey GenerateKey(FString DebugString);
 };
+
+UCLASS()
+class EVENTGRAPHRUNTIME_API ULoadEventAction : public UEventGraphActionData
+{
+	GENERATED_BODY()
+
+public:
+	virtual void LaunchEvent(const UObject* InWorldContextObject) override;
+
+	virtual struct FActionKey GetKey() const override;
+	static struct FActionKey GenerateKey(class UEventGraphAsset* DayToLoad);
+
+protected:
+	/** Number Should be no more or less than 6 digits otherwise they will never be found by the phone **/
+	UPROPERTY(Category = "Action", EditAnywhere)
+	TObjectPtr<class UEventGraphAsset> EventAsset;
+};

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{7EF74C82-5FF4-476F-B331-D2111AE61714}" SchemaVersion="123" RootDocumentID="{268CC0FB-048E-4CF9-99B1-EE3D65440901}" ParentDocumentID="{268CC0FB-048E-4CF9-99B1-EE3D65440901}">
+	<AudioObjects>
+		<WorkUnit Name="X_DEV" ID="{7EF74C82-5FF4-476F-B331-D2111AE61714}" OwnerID="{268CC0FB-048E-4CF9-99B1-EE3D65440901}" PersistMode="Nested">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="21"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<ActorMixer Name="X_DEV" ID="{CC6032AF-3DC5-428C-BC8C-D586A7437931}" ShortID="115744229">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+				</ActorMixer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

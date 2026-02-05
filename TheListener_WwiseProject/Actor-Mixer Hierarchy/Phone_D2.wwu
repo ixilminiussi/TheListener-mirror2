@@ -1,0 +1,2173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{E67931F0-E341-4C0F-911A-32838CB2A2F6}" SchemaVersion="123" RootDocumentID="{6A19845C-C453-494D-AD8C-79E434BC2E8F}" ParentDocumentID="{6A19845C-C453-494D-AD8C-79E434BC2E8F}">
+	<AudioObjects>
+		<WorkUnit Name="Phone_D2" ID="{E67931F0-E341-4C0F-911A-32838CB2A2F6}" OwnerID="{6A19845C-C453-494D-AD8C-79E434BC2E8F}" PersistMode="Nested">
+			<ChildrenList>
+				<Sound Name="2_4_2_Ministry" ID="{5CBD76D7-7FB3-404F-BAD7-DDEEE83A0F2D}" ShortID="443751876">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{4BCF3FD9-6931-49C0-9E45-AB28E834001C}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="582408248"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{C5E76EF4-4965-4C75-9856-C89D404A540C}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.4.2.Ministry.S1"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{E28B6781-755E-46CA-BF2E-FB0A3EC7CD91}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.4.2.Ministry.S2"/>
+													<Property Name="Time" Type="Real64" Value="3.26325446566136"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{584241BE-FB61-486B-BEA7-6A0DDC1121F4}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_END"/>
+													<Property Name="Time" Type="Real64" Value="18.1482748353448"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{04ECB812-0FF6-4485-AAAC-97D6693F9814}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.4.2.Ministry.S3"/>
+													<Property Name="Time" Type="Real64" Value="7.09900971477207"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{49B9A66F-6AB5-4CB6-9029-BD9F0550502F}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.4.2.Ministry.S4"/>
+													<Property Name="Time" Type="Real64" Value="10.6485145721581"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{04EAE2D3-9D93-46C5-B8FC-4015BF58CE89}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.4.2.Ministry.S5"/>
+													<Property Name="Time" Type="Real64" Value="14.3697696645789"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{8B96C465-6EB8-433A-880B-63A49A63C62F}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="CD_Clue_Military_UnitDontExist"/>
+													<Property Name="Time" Type="Real64" Value="13.5081618686476"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{4BCF3FD9-6931-49C0-9E45-AB28E834001C}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="2_4_2_Archives" ID="{EA401079-21F8-43ED-80B9-8F4F424EB5AB}" ShortID="513521467">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{C6842993-A6CA-45B9-B637-0E277FAF0BF9}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="448874190"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{A38E3100-CC0B-40E1-A540-D0D015A8D4C4}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.4.2.Archives.S1"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{35D098B9-3A83-4174-850E-E70472BB97B6}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.4.2.Archives.S2"/>
+													<Property Name="Time" Type="Real64" Value="3.26325446566136"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{1C2CD1B8-0B19-41BA-A9F0-D615C6ACA72E}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_END"/>
+													<Property Name="Time" Type="Real64" Value="40.0178047631103"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{94835080-6B06-4A90-A7FF-B5EEF5B1A70B}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.4.2.Archives.S3"/>
+													<Property Name="Time" Type="Real64" Value="7.04175963642713"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{1DA33ABB-D32B-4C51-8F38-D2FF92F4D55E}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.4.2.Archives.S4"/>
+													<Property Name="Time" Type="Real64" Value="10.6485145721581"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{2A63B2A4-BCF7-4446-9F48-923B058EB948}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.4.2.Archives.S5"/>
+													<Property Name="Time" Type="Real64" Value="14.3697696645789"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{C212A375-BFD6-43F7-BE8A-6B9A8C2BC03F}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.4.2.Archives.S6"/>
+													<Property Name="Time" Type="Real64" Value="17.8047743652751"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{EBE2D32A-FE3E-4F2C-BADE-DF85A385310B}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.4.2.Archives.S7"/>
+													<Property Name="Time" Type="Real64" Value="21.3542792226611"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{860AFEC6-FD0A-4C22-90B9-90F0AF1524F3}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.4.2.Archives.S8"/>
+													<Property Name="Time" Type="Real64" Value="24.9610341583921"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{4DD8109A-AE49-4341-8AC0-593348443ACB}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.4.2.Archives.S9"/>
+													<Property Name="Time" Type="Real64" Value="28.3387887807433"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{40370E29-2F7E-400A-9CE1-A56E0CC9748D}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.4.2.Archives.S10"/>
+													<Property Name="Time" Type="Real64" Value="32.0027937948192"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{B01BD6B7-B846-4439-B656-2A19DAE9A3FF}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.4.2.Archives.S11"/>
+													<Property Name="Time" Type="Real64" Value="35.4377984955154"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{4FFEB80F-C41A-4B36-987F-DE5B49F0B0B3}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="CD_Clue_Signal_DocumentDestroyed"/>
+													<Property Name="Time" Type="Real64" Value="19.9058522405343"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{C6842993-A6CA-45B9-B637-0E277FAF0BF9}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="2_5_2_TownHall" ID="{6E581F11-31E0-443D-8004-C57202F9C7DF}" ShortID="218466746">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{8747DE4A-571D-4B65-AA6C-99B5152A1D5F}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="598464728"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{24DDEFDF-E715-4AAA-ABC0-84706B4075D0}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.TownHall.S1"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{40191E7C-8AB3-48B2-AB33-8644B69D8939}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.TownHall.S2"/>
+													<Property Name="Time" Type="Real64" Value="3.26325446566136"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{924C7D4F-D732-4201-9BA1-43D0010578FF}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_END"/>
+													<Property Name="Time" Type="Real64" Value="35.4950485738604"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{A4594114-31D6-4779-A6A7-FF71D6B4F002}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.TownHall.S3"/>
+													<Property Name="Time" Type="Real64" Value="7.04175963642713"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{DD6DE7C5-F0AF-4258-8F41-FAFD2C6A594C}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.TownHall.S4"/>
+													<Property Name="Time" Type="Real64" Value="10.6485145721581"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{3EE79283-3A3A-45BE-931E-297E06814299}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.TownHall.S5"/>
+													<Property Name="Time" Type="Real64" Value="14.3697696645789"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{98873078-0E2F-47CC-BE7F-E406F7720801}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.TownHall.S6"/>
+													<Property Name="Time" Type="Real64" Value="17.8047743652751"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{C57C99DF-4F06-4348-A3A3-216BBC15DFC0}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.TownHall.S7"/>
+													<Property Name="Time" Type="Real64" Value="21.3542792226611"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{4D26CB24-7CB7-42B5-A3C8-7EFD89744E97}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.TownHall.S8"/>
+													<Property Name="Time" Type="Real64" Value="24.9610341583921"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{073DA2F3-068E-4F31-BC78-B54B21950E8F}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.TownHall.S9"/>
+													<Property Name="Time" Type="Real64" Value="28.3387887807433"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{DC493EE8-A358-4DD8-BD0B-AEA33CC339C7}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.TownHall.S10"/>
+													<Property Name="Time" Type="Real64" Value="32.1172939515091"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{6161E696-6F90-4473-A5E5-24849D11429C}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="CD_CalledTownHall"/>
+													<Property Name="Time" Type="Real64" Value="30.4570416795059"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{8747DE4A-571D-4B65-AA6C-99B5152A1D5F}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="2_5_2_TouristOffice" ID="{F5DBF1BA-94AA-4977-A901-DE50834CFDA1}" ShortID="193746759">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{6BE9CAFF-139A-4348-ABE2-DA7260CDBA38}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="660318888"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{4A50EF5F-FB05-41AF-943F-E5872FE9F49E}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.TouristOffice.S1"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{1BBDDC46-005E-472B-859E-113AE30B65A8}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.TouristOffice.S2"/>
+													<Property Name="Time" Type="Real64" Value="3.26325446566136"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{65F94FA8-D890-4DCE-B909-94A392E4C5B2}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_END"/>
+													<Property Name="Time" Type="Real64" Value="25.075534315082"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{1EAD90CC-25DB-49E4-9407-99E877CE6B75}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.TouristOffice.S3"/>
+													<Property Name="Time" Type="Real64" Value="7.09900971477207"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{E63C6B57-6789-452F-A5A2-DD203EFBBA07}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.TouristOffice.S4"/>
+													<Property Name="Time" Type="Real64" Value="10.6485145721581"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{AC038351-B621-4DAA-A6C7-B6E7D9F4014D}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.TouristOffice.S5"/>
+													<Property Name="Time" Type="Real64" Value="14.3697696645789"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{FABCC970-5531-41F2-A196-F936AD53D0DE}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.TouristOffice.S6"/>
+													<Property Name="Time" Type="Real64" Value="17.8047743652751"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{453F0D85-04C5-4B81-8829-4CCE493DC063}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.TouristOffice.S7"/>
+													<Property Name="Time" Type="Real64" Value="20.8962785959016"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{8A4E36EB-E884-4B88-BE28-8E674756A00F}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="CD_UnlockDoctor"/>
+													<Property Name="Time" Type="Real64" Value="23.9305327481833"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{6BE9CAFF-139A-4348-ABE2-DA7260CDBA38}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="2_5_2_Hospital" ID="{C878A4EB-71BC-453A-94BE-2F997CA606E0}" ShortID="1052469847">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{40D01722-962E-4E35-BED7-15B1F4A61D8D}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="985026091"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{AF5E5C49-3759-430E-A0CC-AB8331A617A9}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Hospital.S1"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{1848F115-1333-47CE-96D4-B3E84AFD97F3}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Hospital.S2"/>
+													<Property Name="Time" Type="Real64" Value="3.26325446566136"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{AFF42DE3-680B-48D0-9245-05E3BBCA4D6B}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_EARLYANSWER"/>
+													<Property Name="Time" Type="Real64" Value="10.1905139453987"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{317CB541-4E7B-44F1-9C7C-7868FDA81119}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Hospital.S3"/>
+													<Property Name="Time" Type="Real64" Value="7.04175963642713"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{40D01722-962E-4E35-BED7-15B1F4A61D8D}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="2_5_2_Hospital_A" ID="{2D231A93-0739-4329-A49E-4DC2F712F46A}" ShortID="561798652">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{6CA3190C-434B-4D7B-9C7B-F20561103FBA}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="922626343"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{E975EAC0-3B2B-4CCC-8F7A-CE590CF8FAB6}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Hospital.A.S1"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{09DD77D0-4653-4D01-92EA-448D854696E1}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Hospital.A1.S2"/>
+													<Property Name="Time" Type="Real64" Value="3.26325446566136"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{7D1FEB0F-7235-4BAB-8C2B-D5C53A44EC1F}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_EARLYANSWER"/>
+													<Property Name="Time" Type="Real64" Value="8.07226104663603"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{6CA3190C-434B-4D7B-9C7B-F20561103FBA}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="2_5_2_Hospital_A_A" ID="{78AC8826-5ED4-4028-9773-89A219A79293}" ShortID="108560198">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{0D3E8AB2-50E8-4DAF-B622-528123642282}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="366467437"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{16D17A0A-81F1-4A8F-9AF1-19562BB29E8E}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Hospital.A.A.S1"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{C1DA843D-85E4-4E47-B5DB-2616E3E1119F}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Hospital.A.A.S2"/>
+													<Property Name="Time" Type="Real64" Value="3.43500470069617"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{962FCD72-5D43-457D-84D8-9BC0241B3255}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_END"/>
+													<Property Name="Time" Type="Real64" Value="30.1135412094364"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{1C04990F-70F5-403E-B548-A360A5023ACD}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Hospital.A.A.S3"/>
+													<Property Name="Time" Type="Real64" Value="7.27075994980687"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{A5A1426C-A917-471D-875E-1EF0A74E9B27}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Hospital.A.A.S4"/>
+													<Property Name="Time" Type="Real64" Value="10.763014728848"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{216AFA4D-644C-4AF8-B23E-043AA7BC6415}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Hospital.A.A.S5"/>
+													<Property Name="Time" Type="Real64" Value="14.0835192728543"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{2085C4C5-1ED8-4EF6-92AE-0CC2A832B92B}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Hospital.A.A.S6"/>
+													<Property Name="Time" Type="Real64" Value="17.8047743652751"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{3289E013-022E-4930-B73D-E91592FC8F65}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Hospital.A.A.S7"/>
+													<Property Name="Time" Type="Real64" Value="21.6405296143858"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{79A166B6-2191-4CDF-9BE4-6ECFCCB7E50B}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Hospital.A.A.S8"/>
+													<Property Name="Time" Type="Real64" Value="26.1060357252908"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{7946D2AD-0F1A-4A94-AAA3-95C4A76E1A80}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="CD_End"/>
+													<Property Name="Time" Type="Real64" Value="28.9112895641927"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{0D3E8AB2-50E8-4DAF-B622-528123642282}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="2_5_2_Hospital_A_B" ID="{AFC4C538-7998-41C7-B135-C5E5CB722A93}" ShortID="707337775">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{EA1D1C20-81B2-4B19-9776-DF82588AE67E}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="279265017"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{28CDD2E5-4D32-4E2E-AF84-79730AE79499}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Hospital.A.B.S1"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{8FD72533-7B0A-4938-BF6B-9DCBB4C1EFF0}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Hospital.A.B.S2"/>
+													<Property Name="Time" Type="Real64" Value="3.43500470069617"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{673E6F46-73D2-411F-A544-208C05D2B5E4}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_END"/>
+													<Property Name="Time" Type="Real64" Value="26.2777859603257"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{C1C31319-B21C-4BDF-A14F-8237C43FB139}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Hospital.A.B.S3"/>
+													<Property Name="Time" Type="Real64" Value="7.27075994980687"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{0FE706F9-14A1-4D8A-88F0-9B7FC52EFE47}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Hospital.A.B.S4"/>
+													<Property Name="Time" Type="Real64" Value="10.763014728848"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{047981CC-44CC-438F-86A9-37713A489243}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Hospital.A.B.S5"/>
+													<Property Name="Time" Type="Real64" Value="14.0835192728543"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{1530964A-2AC9-4EF3-B5F6-976F4F2CF376}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Hospital.A.B.S6"/>
+													<Property Name="Time" Type="Real64" Value="17.8047743652751"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{F63EF8BA-F6C7-4C61-9F96-4961DA60E81D}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Hospital.A.B.S7"/>
+													<Property Name="Time" Type="Real64" Value="21.6405296143858"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{2EFF00BB-ECE5-445F-8C2A-E9C115BC6F75}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="CD_End"/>
+													<Property Name="Time" Type="Real64" Value="25.3617847068067"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{EA1D1C20-81B2-4B19-9776-DF82588AE67E}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="2_5_2_Hospital_A_C" ID="{6D817BB0-EFA0-433E-843B-C33D82711EB9}" ShortID="123244948">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{4C2DED05-C2EB-4141-99E1-24DD237A76E5}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="240846732"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{F5B14145-D6AA-4450-B962-C85B4C8C3FF2}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Hospital.A.C.S1"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{46D150D4-886C-4C19-95C1-A292B756FAC1}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Hospital.A.C.S2"/>
+													<Property Name="Time" Type="Real64" Value="3.43500470069617"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{9FB03832-B037-49C4-8037-F1720E91271F}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_END"/>
+													<Property Name="Time" Type="Real64" Value="12.1370166091265"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{32A3359F-E748-4C34-AF6B-2FE57556CAE9}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Hospital.A.C.S3"/>
+													<Property Name="Time" Type="Real64" Value="7.27075994980687"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{49549D10-974F-4481-AE4A-FE14C1212BFA}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="CD_End"/>
+													<Property Name="Time" Type="Real64" Value="11.3355155122973"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{4C2DED05-C2EB-4141-99E1-24DD237A76E5}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="2_5_2_Hospital_B" ID="{596665A5-76DB-4798-8D21-5F2080099561}" ShortID="299398075">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{093D2046-DF6E-488F-B99D-7C5ECE4C87DD}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="473502655"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{DFD80F90-C031-4605-87A5-CED5EE4F4B99}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Hospital.B.S1"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{0B5E0A34-041F-4EC4-A8CF-0A3288D1D0C6}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Hospital.B.S2"/>
+													<Property Name="Time" Type="Real64" Value="3.26325446566136"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{C91AFB0E-8A57-4440-9842-7FC55A7D7DCA}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_EARLYANSWER"/>
+													<Property Name="Time" Type="Real64" Value="6.1257583829082"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{093D2046-DF6E-488F-B99D-7C5ECE4C87DD}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="2_5_2_Hospital_B_A" ID="{3EBF08D6-3651-4B36-AB7A-FBC413B2FA83}" ShortID="144875200">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{439DD387-02A8-442B-ACC7-E813016A44AD}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="39395560"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{73C22BE8-C596-4ACC-9727-D38F9D7E41FF}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Hospital.B.A.S1"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{4ECB226B-EEC8-4F88-974A-E233FF6A2829}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Hospital.B.A.S2"/>
+													<Property Name="Time" Type="Real64" Value="3.26325446566136"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{42F47301-3583-442B-A26E-F61932061E14}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_EARLYANSWER"/>
+													<Property Name="Time" Type="Real64" Value="9.6180131619493"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{925FE8A7-A01A-4B6B-9456-ADDB94357966}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Hospital.B.A.S3"/>
+													<Property Name="Time" Type="Real64" Value="6.87000940139232"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{439DD387-02A8-442B-ACC7-E813016A44AD}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="2_5_2_Hospital_B_A_A" ID="{6770F67C-3BC3-4DE4-AD47-3D2A27414012}" ShortID="513507022">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{14D1357D-9C13-457D-A3F2-9B11C2690FEC}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="76465946"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{CF731953-8EF5-4C90-9607-C2CC8B9A8D09}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Hospital.B.A.A.S1"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{86DC5025-3131-4514-BEF6-3D0F46B9D022}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Hospital.B.A.A.S2"/>
+													<Property Name="Time" Type="Real64" Value="3.26325446566136"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{E935A514-B1B4-48B4-805F-5F26D88BDEBF}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_END"/>
+													<Property Name="Time" Type="Real64" Value="22.5565308679048"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{187258BE-B432-4719-8B60-7F7F8ADD8848}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Hospital.B.A.A.S3"/>
+													<Property Name="Time" Type="Real64" Value="6.87000940139232"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{B926C2A4-DE8F-439C-A9F6-9BCAFDFAE86A}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Hospital.B.A.A.S4"/>
+													<Property Name="Time" Type="Real64" Value="11.0492651205727"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{A34FDA0F-DCC5-4A42-B1C3-C70AFFC3DE6A}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Hospital.B.A.A.S5"/>
+													<Property Name="Time" Type="Real64" Value="14.9422704480283"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{C8996B37-08A5-4F57-A324-4794D10A4D59}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Hospital.B.A.A.S6"/>
+													<Property Name="Time" Type="Real64" Value="18.4917753054143"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{3FE1E7A5-AC18-446F-8334-C53964332044}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="CD_End"/>
+													<Property Name="Time" Type="Real64" Value="21.3542792226611"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{14D1357D-9C13-457D-A3F2-9B11C2690FEC}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="2_5_2_Hospital_B_A_B" ID="{13DB477C-0A4C-48E7-A76A-94A73274F6CD}" ShortID="816521528">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{C5F4BF7E-1A9F-44CD-86C3-76A87194AF7C}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="391642291"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{3A4E2AA3-E23A-4A91-8E4F-05E8F0D5767C}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Hospital.B.A.B.S1"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{D1F04CA0-1320-4CC7-9206-DA5F0D3527F0}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Hospital.B.A.B.S2"/>
+													<Property Name="Time" Type="Real64" Value="3.26325446566136"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{19294E07-39AB-4807-B303-137188489E10}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_END"/>
+													<Property Name="Time" Type="Real64" Value="6.98450955808225"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{74C98299-1A44-454F-9CFC-76DC67B1FF48}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="CD_End"/>
+													<Property Name="Time" Type="Real64" Value="6.29750861794296"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{C5F4BF7E-1A9F-44CD-86C3-76A87194AF7C}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="2_5_2_Hospital_B_B" ID="{8CD95DD1-C4D0-4394-93A6-07418D295AD7}" ShortID="1012535730">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{1EED4DB7-2C41-40E3-9EC5-FF8F0ED61F88}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="746096388"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{8B862D66-55B5-45C3-8451-4DD8F911838E}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Hospital.B.B.S1"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{806F177E-9FA4-4D59-BC4D-27BDD8225D9C}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Hospital.B.B.S2"/>
+													<Property Name="Time" Type="Real64" Value="3.26325446566136"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{5BAF8BD0-A68B-4A6C-81ED-5B83FA0FC6E0}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_END"/>
+													<Property Name="Time" Type="Real64" Value="19.6367768723131"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{3AE3A2B0-3753-4FDB-9869-8A48EC73EADA}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Hospital.B.B.S3"/>
+													<Property Name="Time" Type="Real64" Value="6.87000940139232"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{9B42C74F-D4CD-4AE5-8B09-AF30C9BD2A36}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Hospital.B.B.S4"/>
+													<Property Name="Time" Type="Real64" Value="9.96151363201887"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{CBF05DC1-48DF-4E56-8ADE-1BC06F328B69}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Hospital.B.B.S5"/>
+													<Property Name="Time" Type="Real64" Value="13.0530178626454"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{5CE382BC-A757-4F32-92EA-E4594EDC8EF9}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Hospital.B.B.S6"/>
+													<Property Name="Time" Type="Real64" Value="16.2017721716169"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{F5409607-498A-411A-B6E3-AB716B626380}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="CD_End"/>
+													<Property Name="Time" Type="Real64" Value="18.778025697139"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{1EED4DB7-2C41-40E3-9EC5-FF8F0ED61F88}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="2_5_2_Hospital_B_C" ID="{C555737A-7F63-4FD8-ADAA-11EECACD47F5}" ShortID="19854683">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{8C746833-7245-4999-AF91-B8068F60C0AC}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="1026721840"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{C94F9887-1153-4908-8923-22145A36E47C}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Hospital.B.C.S1"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{9ED5C9BD-4122-48B9-8C0F-9E445BF3EB6A}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Hospital.B.C.S2"/>
+													<Property Name="Time" Type="Real64" Value="3.26325446566136"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{1A17B93D-37D7-40D9-A0DE-229166D05813}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_END"/>
+													<Property Name="Time" Type="Real64" Value="10.1332638670537"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{4DB653C6-AAFF-4D38-B747-B1AB4867EB47}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Hospital.B.C.S3"/>
+													<Property Name="Time" Type="Real64" Value="6.87000940139232"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{11E5290E-B547-4BDA-973E-2722928828CE}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="CD_End"/>
+													<Property Name="Time" Type="Real64" Value="9.38901284856951"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{8C746833-7245-4999-AF91-B8068F60C0AC}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="2_5_2_Doctor" ID="{3FA8B6DF-0651-4AC9-96EA-165D27FACC79}" ShortID="537125664">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{6AF2B18F-920C-4E68-B9E3-35E051BDCB1C}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="142890947"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{8A8B4DAC-CD52-4ED8-866F-5C376B2F3E48}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Doctor.S1"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{6674D1D3-0603-465C-AB49-67BCDD466979}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Doctor.S2"/>
+													<Property Name="Time" Type="Real64" Value="3.26325446566136"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{A4A2A712-73C4-46E9-B618-4BBC39BE3791}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_EARLYANSWER"/>
+													<Property Name="Time" Type="Real64" Value="9.50351300525943"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{BEDDDBD3-9108-4DDA-9470-9A14EDCC9623}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Doctor.S3"/>
+													<Property Name="Time" Type="Real64" Value="6.52650893132271"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{6AF2B18F-920C-4E68-B9E3-35E051BDCB1C}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="2_5_2_Doctor_A" ID="{C8AEDB59-8E68-44D9-81AB-4E44229C0FC9}" ShortID="594971745">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{BD4DA3FB-A85D-41EA-8EAA-D73AE4680494}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="167275838"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{7621A7A7-DC24-457D-A781-51B7DF92F759}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Doctor.A.S1"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{8D107952-EE94-4359-8401-4DC919AD55EF}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Doctor.A.S2"/>
+													<Property Name="Time" Type="Real64" Value="3.26325446566136"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{5CC85EB9-190E-4094-A3EB-A4B8667F444A}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_END"/>
+													<Property Name="Time" Type="Real64" Value="28.9685396425377"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{1C60B341-6945-4FB5-9D79-96455D545D6A}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Doctor.A.S3"/>
+													<Property Name="Time" Type="Real64" Value="6.52650893132271"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{1578C477-5987-440C-8F3A-93EC220FCB4A}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Doctor.A.S4"/>
+													<Property Name="Time" Type="Real64" Value="10.0187637103638"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{5411E269-9373-4ABA-B96E-58D4F5B1A3E4}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Doctor.A.S5"/>
+													<Property Name="Time" Type="Real64" Value="13.5110184894049"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{8C6A9E41-D6A6-4B34-917A-0875652B3654}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Doctor.A.S6"/>
+													<Property Name="Time" Type="Real64" Value="17.4040238168606"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{BF7B8F3F-44CA-44E5-970D-81DF54342049}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Doctor.A.S7"/>
+													<Property Name="Time" Type="Real64" Value="21.5832795360409"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{B2A5DC76-D06C-4121-866F-8674038D846E}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Doctor.A.S8"/>
+													<Property Name="Time" Type="Real64" Value="25.5907850201864"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{E556AB97-82FA-4A8A-BE94-FCCD74F5D84F}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="CD_End"/>
+													<Property Name="Time" Type="Real64" Value="28.2242886240535"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{BD4DA3FB-A85D-41EA-8EAA-D73AE4680494}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="2_5_2_Doctor_B" ID="{E54B1C5B-C36A-4FFB-A889-67E81AB4150B}" ShortID="1034263786">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{4C24AED8-53DB-47EE-8B2F-53E9B686754F}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="224746325"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{61BBDFAA-F0F7-4266-A7DC-6788BDB79396}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Doctor.B.S1"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{1F1DAAAE-D10A-43ED-8CD7-03F5F4CC0555}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Doctor.B.S2"/>
+													<Property Name="Time" Type="Real64" Value="3.26325446566136"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{445597E7-3E71-4AF1-82D7-183429D77547}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_EARLYANSWER"/>
+													<Property Name="Time" Type="Real64" Value="6.1257583829082"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{4C24AED8-53DB-47EE-8B2F-53E9B686754F}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="2_5_2_Doctor_B_A" ID="{996F7F85-967C-4F07-9399-F9931B81A325}" ShortID="835974962">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{4FC32347-A3CC-4AAC-A628-5B594980CAB0}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="105627993"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{B62644C9-877F-4F06-A9A9-BDBDFC45515F}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Doctor.B.A.S1"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{EF08C573-4046-42B2-A61E-50117E6EC052}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Doctor.B.A.S2"/>
+													<Property Name="Time" Type="Real64" Value="3.26325446566136"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{E85E1262-5494-4813-9BFD-49B93ECBADCD}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_EARLYANSWER"/>
+													<Property Name="Time" Type="Real64" Value="6.1257583829082"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{4FC32347-A3CC-4AAC-A628-5B594980CAB0}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="2_5_2_Doctor_B_A_A" ID="{6FD03234-F703-40E6-8890-67F8BCC7A0FC}" ShortID="1066280971">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{95A609C9-D683-4EB1-90E5-6641980C6C8D}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="219785871"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{FFE99CC7-9A92-4711-AE8B-D10A39EA307E}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Doctor.B.A.A.S1"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{107C9B79-7436-403E-84C1-E5A938A20381}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Doctor.B.A.A.S2"/>
+													<Property Name="Time" Type="Real64" Value="3.26325446566136"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{829BF456-9C4B-40F7-BDBC-311A9435194F}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_END"/>
+													<Property Name="Time" Type="Real64" Value="17.1179919368854"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{265A60C8-A512-4E40-9871-033AFD6DE715}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Doctor.B.A.A.S3"/>
+													<Property Name="Time" Type="Real64" Value="6.92725947973726"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{3AC6227B-4E54-4414-9C53-235229126BFA}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Doctor.B.A.A.S4"/>
+													<Property Name="Time" Type="Real64" Value="10.1905139453986"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{0D5B9CFC-8BD7-4E93-A318-9FEB8B4FEC6A}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Doctor.B.A.A.S5"/>
+													<Property Name="Time" Type="Real64" Value="13.6255186460948"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{A5E8AB89-EA4D-4164-B08C-C802F3BAA529}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="CD_End"/>
+													<Property Name="Time" Type="Real64" Value="15.9727718582372"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{95A609C9-D683-4EB1-90E5-6641980C6C8D}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="2_5_2_Doctor_B_A_B" ID="{1833C27C-9C40-4604-A906-A19F63437722}" ShortID="176793246">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{BE448744-7CC6-4406-B346-13D0799D0612}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="632666319"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{C95FFC41-5F2C-42C9-A66E-6643FCD794A0}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Doctor.B.A.B.S1"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{CA7E7471-92F5-43DD-9671-42F700D345A3}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Doctor.B.A.B.S2"/>
+													<Property Name="Time" Type="Real64" Value="3.26325446566136"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{0C829E42-943A-40F6-81EC-14EAB9C00FD5}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_END"/>
+													<Property Name="Time" Type="Real64" Value="6.92725947973731"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{3D050605-8A34-4B1C-ABE7-A3EA2EC09559}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="CD_End"/>
+													<Property Name="Time" Type="Real64" Value="6.18300846125309"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{BE448744-7CC6-4406-B346-13D0799D0612}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="2_5_2_Doctor_B_B" ID="{0004292E-EDD9-4DBB-BD20-A47B996877DB}" ShortID="622728450">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{880E78DA-826E-4A0B-937C-6A7A1FA93657}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="122870511"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{07301195-7293-4864-AAEE-488344C495EB}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Doctor.B.B.S1"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{4C1D8813-5F39-4F4E-A516-0CE7D8A33544}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Doctor.B.B.S2"/>
+													<Property Name="Time" Type="Real64" Value="3.26325446566136"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{88BB4E7C-820A-4F9F-B3CD-43C3B5715829}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_END"/>
+													<Property Name="Time" Type="Real64" Value="16.144522093272"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{1104BCBD-2827-477C-945E-8BC45B12722B}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Doctor.B.B.S3"/>
+													<Property Name="Time" Type="Real64" Value="6.46925885297777"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{5E5AB591-944F-4A86-9F38-18A1D9A4FDFC}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Doctor.B.B.S4"/>
+													<Property Name="Time" Type="Real64" Value="10.0187637103638"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{A213BFD7-B46F-4AE4-BD3D-879299905A81}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Doctor.B.B.S5"/>
+													<Property Name="Time" Type="Real64" Value="13.5682685677498"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{5FE94993-7CD2-4278-9575-DA45DD5DDC4D}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="CD_End"/>
+													<Property Name="Time" Type="Real64" Value="15.4002710747878"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{880E78DA-826E-4A0B-937C-6A7A1FA93657}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="2_5_2_Doctor_B_C" ID="{DECDDE68-ECD8-4F6C-9AFD-4AF4CB18F272}" ShortID="432274032">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{D79C28EA-DEE6-4EA0-AEF5-52817884D62D}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="779984392"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{56CE9468-07AA-4C58-B2DA-30F56B516B27}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Doctor.B.C.S1"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{9CF605EC-EBA3-4B17-818B-719946770445}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Doctor.B.C.S2"/>
+													<Property Name="Time" Type="Real64" Value="3.26325446566136"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{BF5318A7-B3E9-44EF-AF25-4BD89D518965}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_END"/>
+													<Property Name="Time" Type="Real64" Value="27.766287997294"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{F370983A-D943-4802-93A0-DE0FED85A9F1}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Doctor.B.C.S3"/>
+													<Property Name="Time" Type="Real64" Value="6.46925885297777"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{8970BA8C-5736-49BD-B716-31DE6DEB7E76}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Doctor.B.C.S4"/>
+													<Property Name="Time" Type="Real64" Value="10.0187637103638"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{B5DDE4BB-FC75-425E-B087-E3C9285A03A8}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Doctor.B.C.S5"/>
+													<Property Name="Time" Type="Real64" Value="13.5682685677498"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{CC95B58E-AFF8-4B67-8404-E860876CF5DC}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Doctor.B.C.S6"/>
+													<Property Name="Time" Type="Real64" Value="16.8315230334112"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{64B1FF4E-7622-4154-8391-971C58BF601C}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Doctor.B.C.S7"/>
+													<Property Name="Time" Type="Real64" Value="20.3237778124523"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{1D41351E-A111-4784-A202-FB6AA0DFCD75}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="2.5.2.Doctor.B.C.S8"/>
+													<Property Name="Time" Type="Real64" Value="24.5602836099776"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{52B5D6EE-7FD2-4163-B5C4-90FB64DFD33C}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="CD_End"/>
+													<Property Name="Time" Type="Real64" Value="26.9075368221199"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{D79C28EA-DEE6-4EA0-AEF5-52817884D62D}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

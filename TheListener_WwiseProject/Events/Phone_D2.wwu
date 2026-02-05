@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{0B3F1888-C871-47BC-B612-B8051F47550F}" SchemaVersion="123" RootDocumentID="{8EBA046C-25AE-4367-8B69-2AA0F43D32DB}" ParentDocumentID="{8EBA046C-25AE-4367-8B69-2AA0F43D32DB}">
+	<Events>
+		<WorkUnit Name="Phone_D2" ID="{0B3F1888-C871-47BC-B612-B8051F47550F}" OwnerID="{8EBA046C-25AE-4367-8B69-2AA0F43D32DB}" PersistMode="Nested">
+			<ChildrenList>
+				<Event Name="play_2_4_2_Ministry" ID="{F1668ECA-6D75-40B8-8D58-AB572E00C104}">
+					<ChildrenList>
+						<Action Name="" ID="{DE22DFA8-2C8B-4546-9A9D-CF1DB79DE4E5}" ShortID="608595322">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="2_4_2_Ministry" ID="{5CBD76D7-7FB3-404F-BAD7-DDEEE83A0F2D}" WorkUnitID="{E67931F0-E341-4C0F-911A-32838CB2A2F6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="play_2_4_2_Archives" ID="{87604468-D417-4487-B3D1-9AC3B51105E9}">
+					<ChildrenList>
+						<Action Name="" ID="{A0D580B8-17CF-40A8-BBAB-2811029156B2}" ShortID="1044299313">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="2_4_2_Archives" ID="{EA401079-21F8-43ED-80B9-8F4F424EB5AB}" WorkUnitID="{E67931F0-E341-4C0F-911A-32838CB2A2F6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="play_2_5_2_TownHall" ID="{AA43A3A0-D1D2-4EDC-B032-F96BDA383378}">
+					<ChildrenList>
+						<Action Name="" ID="{46E234A3-4D92-48DE-857F-DB9C8E52C834}" ShortID="428874841">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="2_5_2_TownHall" ID="{6E581F11-31E0-443D-8004-C57202F9C7DF}" WorkUnitID="{E67931F0-E341-4C0F-911A-32838CB2A2F6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="play_2_5_2_TouristOffice" ID="{DD229C9A-11CB-46DB-9099-2A9AD17C3DBA}">
+					<ChildrenList>
+						<Action Name="" ID="{685D2E67-4D55-4F65-B65F-62419D942145}" ShortID="748405986">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="2_5_2_TouristOffice" ID="{F5DBF1BA-94AA-4977-A901-DE50834CFDA1}" WorkUnitID="{E67931F0-E341-4C0F-911A-32838CB2A2F6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="play_2_5_2_Hospital" ID="{AD0A4612-A35E-487D-9CD1-C34CB6CFDA79}">
+					<ChildrenList>
+						<Action Name="" ID="{8B434793-89E2-4483-BD02-9E4164A7E89D}" ShortID="99504140">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="2_5_2_Hospital" ID="{C878A4EB-71BC-453A-94BE-2F997CA606E0}" WorkUnitID="{E67931F0-E341-4C0F-911A-32838CB2A2F6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="play_2_5_2_Hospital_A" ID="{F31B337A-1C30-408A-AF1C-8FA237D5813B}">
+					<ChildrenList>
+						<Action Name="" ID="{1CF22F10-1237-4D8C-980D-CA0D5089DEC8}" ShortID="414428755">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="2_5_2_Hospital_A" ID="{2D231A93-0739-4329-A49E-4DC2F712F46A}" WorkUnitID="{E67931F0-E341-4C0F-911A-32838CB2A2F6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="play_2_5_2_Hospital_A_A" ID="{59EB3485-248A-4C2E-86C7-C1B992FAFA65}">
+					<ChildrenList>
+						<Action Name="" ID="{25627E15-976D-4117-B53F-7E0DF540103C}" ShortID="173337146">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="2_5_2_Hospital_A_A" ID="{78AC8826-5ED4-4028-9773-89A219A79293}" WorkUnitID="{E67931F0-E341-4C0F-911A-32838CB2A2F6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="play_2_5_2_Hospital_A_B" ID="{71EF53A9-781D-41DD-A2E4-61A9C8C2A8A4}">
+					<ChildrenList>
+						<Action Name="" ID="{50E1BEED-44A9-4F6D-B501-75879BF28AEA}" ShortID="482201098">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="2_5_2_Hospital_A_B" ID="{AFC4C538-7998-41C7-B135-C5E5CB722A93}" WorkUnitID="{E67931F0-E341-4C0F-911A-32838CB2A2F6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="play_2_5_2_Hospital_A_C" ID="{A1947C23-6226-4C6B-A675-7EF749358989}">
+					<ChildrenList>
+						<Action Name="" ID="{6A3A0DF2-3819-4162-800B-4B692A89400C}" ShortID="28877935">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="2_5_2_Hospital_A_C" ID="{6D817BB0-EFA0-433E-843B-C33D82711EB9}" WorkUnitID="{E67931F0-E341-4C0F-911A-32838CB2A2F6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="play_2_5_2_Hospital_B" ID="{0D84649A-958B-4B07-B7D3-2DFEAA2502A9}">
+					<ChildrenList>
+						<Action Name="" ID="{686086E5-A6FE-4CD7-83EE-12F8A87ED10C}" ShortID="1002299472">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="2_5_2_Hospital_B" ID="{596665A5-76DB-4798-8D21-5F2080099561}" WorkUnitID="{E67931F0-E341-4C0F-911A-32838CB2A2F6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="play_2_5_2_Hospital_B_A" ID="{6D537681-7281-44DC-B640-B3F328AB7F9C}">
+					<ChildrenList>
+						<Action Name="" ID="{33F7F66E-B32D-4AA4-853A-B50E354191B6}" ShortID="898447020">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="2_5_2_Hospital_B_A" ID="{3EBF08D6-3651-4B36-AB7A-FBC413B2FA83}" WorkUnitID="{E67931F0-E341-4C0F-911A-32838CB2A2F6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="play_2_5_2_Hospital_B_A_A" ID="{0A3A6AF8-7640-4C46-B157-9B7E22CE4E1F}">
+					<ChildrenList>
+						<Action Name="" ID="{0917DECF-1B42-4E14-9B5F-F88F200A5984}" ShortID="78527395">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="2_5_2_Hospital_B_A_A" ID="{6770F67C-3BC3-4DE4-AD47-3D2A27414012}" WorkUnitID="{E67931F0-E341-4C0F-911A-32838CB2A2F6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="play_2_5_2_Hospital_B_A_B" ID="{D8B61F4A-FC50-41A9-9BB4-6CD90A13AC85}">
+					<ChildrenList>
+						<Action Name="" ID="{197F4786-C2CE-46EB-95B4-DAD1041A28CA}" ShortID="459538869">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="2_5_2_Hospital_B_A_B" ID="{13DB477C-0A4C-48E7-A76A-94A73274F6CD}" WorkUnitID="{E67931F0-E341-4C0F-911A-32838CB2A2F6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="play_2_5_2_Hospital_B_B" ID="{4C90A936-F3FB-46CF-8D2F-97F1EEE1D159}">
+					<ChildrenList>
+						<Action Name="" ID="{D0B52007-7D97-4343-8C67-6935723DC0CA}" ShortID="73632652">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="2_5_2_Hospital_B_B" ID="{8CD95DD1-C4D0-4394-93A6-07418D295AD7}" WorkUnitID="{E67931F0-E341-4C0F-911A-32838CB2A2F6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="play_2_5_2_Hospital_B_C" ID="{5B59EA26-D830-4580-BE85-A52385852FFD}">
+					<ChildrenList>
+						<Action Name="" ID="{EF1CF771-D40E-441E-9323-78A08BEF86F2}" ShortID="728813916">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="2_5_2_Hospital_B_C" ID="{C555737A-7F63-4FD8-ADAA-11EECACD47F5}" WorkUnitID="{E67931F0-E341-4C0F-911A-32838CB2A2F6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="play_2_5_2_Doctor" ID="{DB1530AB-EB0A-4898-A681-293474E8501A}">
+					<ChildrenList>
+						<Action Name="" ID="{11637589-0062-4510-9FAC-850375806AEC}" ShortID="380337135">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="2_5_2_Doctor" ID="{3FA8B6DF-0651-4AC9-96EA-165D27FACC79}" WorkUnitID="{E67931F0-E341-4C0F-911A-32838CB2A2F6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="play_2_5_2_Doctor_A" ID="{2DC5E686-232C-428A-8E7C-52F903F5DC39}">
+					<ChildrenList>
+						<Action Name="" ID="{D8B09316-C2D6-4255-958C-B3BE3A55492A}" ShortID="699420584">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="2_5_2_Doctor_A" ID="{C8AEDB59-8E68-44D9-81AB-4E44229C0FC9}" WorkUnitID="{E67931F0-E341-4C0F-911A-32838CB2A2F6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="play_2_5_2_Doctor_B" ID="{38047A26-86A5-478C-AE87-0D1CDF63F715}">
+					<ChildrenList>
+						<Action Name="" ID="{E83137CE-CDFC-4D71-800D-AF2DB22CEBCA}" ShortID="778263041">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="2_5_2_Doctor_B" ID="{E54B1C5B-C36A-4FFB-A889-67E81AB4150B}" WorkUnitID="{E67931F0-E341-4C0F-911A-32838CB2A2F6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="play_2_5_2_Doctor_B_A" ID="{2FCBFC87-F218-4EFE-9459-0836D2869E73}">
+					<ChildrenList>
+						<Action Name="" ID="{7811B75F-FC84-4B89-B4CC-D98813323198}" ShortID="882187305">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="2_5_2_Doctor_B_A" ID="{996F7F85-967C-4F07-9399-F9931B81A325}" WorkUnitID="{E67931F0-E341-4C0F-911A-32838CB2A2F6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="play_2_5_2_Doctor_B_A_A" ID="{910A8427-8C40-41FA-990B-6351E054B50B}">
+					<ChildrenList>
+						<Action Name="" ID="{BC927881-3D53-497C-BAC0-23B2659B74A6}" ShortID="871360336">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="2_5_2_Doctor_B_A_A" ID="{6FD03234-F703-40E6-8890-67F8BCC7A0FC}" WorkUnitID="{E67931F0-E341-4C0F-911A-32838CB2A2F6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="play_2_5_2_Doctor_B_A_B" ID="{AE35C712-DC29-4566-9F22-CFC1168C410A}">
+					<ChildrenList>
+						<Action Name="" ID="{13190DFF-C3CA-4E86-989C-0FF818FB3989}" ShortID="849424171">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="2_5_2_Doctor_B_A_B" ID="{1833C27C-9C40-4604-A906-A19F63437722}" WorkUnitID="{E67931F0-E341-4C0F-911A-32838CB2A2F6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="play_2_5_2_Doctor_B_B" ID="{1DF51AFB-4DC5-45A1-9936-E165C186ADA7}">
+					<ChildrenList>
+						<Action Name="" ID="{8160AC57-ACF0-40AB-8115-C35173E40A4B}" ShortID="5699875">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="2_5_2_Doctor_B_B" ID="{0004292E-EDD9-4DBB-BD20-A47B996877DB}" WorkUnitID="{E67931F0-E341-4C0F-911A-32838CB2A2F6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="play_2_5_2_Doctor_B_C" ID="{49083942-0A28-4A65-A4D2-802C4E286AA5}">
+					<ChildrenList>
+						<Action Name="" ID="{F7D23334-A90A-4983-844F-F74B73953C94}" ShortID="372809623">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="2_5_2_Doctor_B_C" ID="{DECDDE68-ECD8-4F6C-9AFD-4AF4CB18F272}" WorkUnitID="{E67931F0-E341-4C0F-911A-32838CB2A2F6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

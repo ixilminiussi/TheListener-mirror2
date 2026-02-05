@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{4F92CC5B-C405-457B-BE6E-33FBF50D3A4D}" SchemaVersion="123" RootDocumentID="{61CDF67E-D35C-4735-A80C-49ECCF7CE674}" ParentDocumentID="{61CDF67E-D35C-4735-A80C-49ECCF7CE674}">
+	<AudioObjects>
+		<WorkUnit Name="RADIO" ID="{4F92CC5B-C405-457B-BE6E-33FBF50D3A4D}" OwnerID="{61CDF67E-D35C-4735-A80C-49ECCF7CE674}" PersistMode="Nested">
+			<ChildrenList>
+				<Sound Name="radio_interact" ID="{1E905654-C904-4172-ADD7-16BF6783BBE1}" ShortID="408061883">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1F16A1F8-60B8-4227-AF46-35E4F3C0380C}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="SFX" ID="{A225F6D7-0B96-4F97-A9AA-8DE711946649}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="radio_interact" ID="{30852458-13FC-41E2-AAF3-513FD5AC0BB1}">
+							<Language>SFX</Language>
+							<AudioFile>radio_interact.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="134976047"/>
+							</MediaIDList>
+						</AudioFileSource>
+						<AudioFileSource Name="radio_interact_01" ID="{1805BEE2-F270-4001-AE3B-6DED96DD9677}">
+							<Language>SFX</Language>
+							<AudioFile>SFX\Radio\radio_interact.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="979050188"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="radio_interact_01" ID="{1805BEE2-F270-4001-AE3B-6DED96DD9677}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="radio_interference" ID="{D75AFED3-DD55-478D-9434-244A8D8CDC79}" ShortID="721306111">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-27</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1F16A1F8-60B8-4227-AF46-35E4F3C0380C}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="SFX" ID="{A225F6D7-0B96-4F97-A9AA-8DE711946649}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="radio_inference" ID="{966FCCD7-8F6A-4BF9-9EBF-A4C4C20C9C20}">
+							<PropertyList>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimEnd" Type="Real64" Value="16.5652891141022"/>
+								<Property Name="VolumeOffset" Type="Real64">
+									<ValueList>
+										<Value>9</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>Radio\radio_inference.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="136133489"/>
+							</MediaIDList>
+						</AudioFileSource>
+						<SourcePlugin Name="Audio Input" ID="{059D2467-6C3F-49CD-96E9-FD2489278366}" ShortID="411019570" PluginName="Wwise Audio Input" CompanyID="0" PluginID="200">
+							<Language>SFX</Language>
+						</SourcePlugin>
+						<AudioFileSource Name="radio_interference" ID="{60648300-8AD2-43C5-9B05-0BC10819B636}">
+							<Language>SFX</Language>
+							<AudioFile>SFX\Radio\radio_interference.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="758676801"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists>
+						<ObjectList Name="RTPC">
+							<Reference>
+								<Local>
+									<RTPC Name="" ID="{E4A64B5A-EBE7-43A0-A0E4-109B8A496C0D}" ShortID="861449858">
+										<PropertyList>
+											<Property Name="PropertyName" Type="string" Value="Highpass"/>
+										</PropertyList>
+										<ReferenceList>
+											<Reference Name="ControlInput">
+												<ObjectRef Name="Radio_Noise" ID="{4D28134F-C733-4323-9F65-8B90516A0BCC}" WorkUnitID="{4B9C005B-E9F5-41B8-821C-6FF1FDF65A1A}"/>
+											</Reference>
+											<Reference Name="Curve">
+												<Custom>
+													<Curve Name="" ID="{521CA28A-1445-44F1-AE8D-E9B72D3D9056}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="65537"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>0</YPos>
+																<Flags>5</Flags>
+															</Point>
+															<Point>
+																<XPos>1</XPos>
+																<YPos>55</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</RTPC>
+								</Local>
+							</Reference>
+						</ObjectList>
+					</ObjectLists>
+					<ActiveSourceList>
+						<ActiveSource Name="radio_interference" ID="{60648300-8AD2-43C5-9B05-0BC10819B636}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="radio_leave" ID="{D96FD389-90C7-483F-9F2B-709722B2DB55}" ShortID="445568207">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1F16A1F8-60B8-4227-AF46-35E4F3C0380C}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="SFX" ID="{A225F6D7-0B96-4F97-A9AA-8DE711946649}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="radio_leave" ID="{E6D7D071-2E72-42DE-BF16-5D0A0D998D53}">
+							<Language>SFX</Language>
+							<AudioFile>radio_leave.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="710932472"/>
+							</MediaIDList>
+						</AudioFileSource>
+						<AudioFileSource Name="radio_leave_01" ID="{DB9269A7-7AD1-4042-8E4D-F0CC5D64EDAF}">
+							<Language>SFX</Language>
+							<AudioFile>SFX\Radio\radio_leave.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="761527525"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="radio_leave_01" ID="{DB9269A7-7AD1-4042-8E4D-F0CC5D64EDAF}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="click" ID="{0CC09BD8-BB93-4D03-9ABF-8D628BB3B145}" ShortID="626722441">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="click" ID="{C4C94DEF-5FDB-4766-B897-266F86BD8147}">
+							<Language>SFX</Language>
+							<AudioFile>SFX\Radio\click.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="140500645"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="click" ID="{C4C94DEF-5FDB-4766-B897-266F86BD8147}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{C15F8AF5-05CD-4E7D-9488-0EBB82173526}" SchemaVersion="123" RootDocumentID="{268CC0FB-048E-4CF9-99B1-EE3D65440901}" ParentDocumentID="{7E953B92-27EC-448A-A5B2-CDC4AF4E4837}">
+	<AudioObjects>
+		<WorkUnit Name="IN_D01" ID="{C15F8AF5-05CD-4E7D-9488-0EBB82173526}" OwnerID="{169E5408-BD84-4BED-822B-895748F6A4C7}" PersistMode="Nested">
+			<ChildrenList>
+				<ActorMixer Name="SP" ID="{06C3A0F1-FE69-465B-A22C-B0E1491BE14B}" ShortID="372259033">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+				</ActorMixer>
+				<ActorMixer Name="PAD" ID="{52A8CB88-4137-41FA-AEA2-EC415B3B8495}" ShortID="877290507">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+				</ActorMixer>
+				<ActorMixer Name="RFX" ID="{5A142B34-A00E-457E-B6BE-D837CDAEE27D}" ShortID="55518349">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+				</ActorMixer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

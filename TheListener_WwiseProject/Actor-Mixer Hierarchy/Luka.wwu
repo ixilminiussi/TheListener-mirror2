@@ -1,0 +1,1674 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{A15E14DC-476F-401A-B44A-3CE3C8E900E3}" SchemaVersion="123" RootDocumentID="{29C5AB43-C928-4CD8-9FC7-35647B0068A2}" ParentDocumentID="{29C5AB43-C928-4CD8-9FC7-35647B0068A2}">
+	<AudioObjects>
+		<WorkUnit Name="Luka" ID="{A15E14DC-476F-401A-B44A-3CE3C8E900E3}" OwnerID="{29C5AB43-C928-4CD8-9FC7-35647B0068A2}" PersistMode="Nested">
+			<ChildrenList>
+				<ActorMixer Name="lukadialogues" ID="{35BDAA7E-E747-4B4C-8BC9-1420C7F753EA}" ShortID="779780715">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1F16A1F8-60B8-4227-AF46-35E4F3C0380C}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="1_0_2 Luka" ID="{B68781F7-4ED9-4011-9C86-5CB9088A5B89}" ShortID="283238692">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="1_0_2 Luka" ID="{CDF1EBE5-0CCC-40CD-911A-812800E52FE3}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Luka\1.0.2 Luka.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="430977179"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{7C84E582-985B-41A7-8293-B31C9C7C567F}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.0.2.S2"/>
+															<Property Name="Time" Type="Real64" Value="0.41747572815534"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="1_0_2 Luka" ID="{CDF1EBE5-0CCC-40CD-911A-812800E52FE3}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="1_1_A_Luka_2" ID="{F2EA3F41-9514-4D4B-858F-248ACF06C5DB}" ShortID="565087370">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="1_1_A_Luka_2" ID="{8996D2CF-0CB9-4AAA-BC97-6A8BCA16DEED}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Luka\1.1.A.Luka.2.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="992043058"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{624FB262-A340-46EC-9D4D-49F5C6A98DDE}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.C2.A.S1"/>
+															<Property Name="Time" Type="Real64" Value="0.454368932038835"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{B343ABA4-8816-4162-9229-9D64B5066AA4}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.C2.A.S2"/>
+															<Property Name="Time" Type="Real64" Value="3.12815533980583"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="1_1_A_Luka_2" ID="{8996D2CF-0CB9-4AAA-BC97-6A8BCA16DEED}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="1_1_A_Luka" ID="{098A823F-5D68-402D-B7B5-1F29AB96E9E8}" ShortID="292864298">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="1_1_A_Luka" ID="{5143E231-007B-453E-936B-EE32501DAA46}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Luka\1.1.A.Luka.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="122043333"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{BD8466D3-3FEE-4FBC-AB11-33E0E2426E74}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.C1.A.S1"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{C2C0DF88-90A7-49B0-B561-AEA4C7C01411}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.C1.A.S2"/>
+															<Property Name="Time" Type="Real64" Value="3.87961165048544"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="1_1_A_Luka" ID="{5143E231-007B-453E-936B-EE32501DAA46}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="1_1_B_Luka_2" ID="{0B07BAE8-0645-4B55-8FD0-4971AE7A2817}" ShortID="879004197">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="1_1_B_Luka_2" ID="{FDC16ADD-3B40-458F-85F1-19686C167BFD}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Luka\1.1.B.Luka.2.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="653713353"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{E0429D79-F1ED-4A02-9955-75BA528305EC}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.C2.B.S1"/>
+															<Property Name="Time" Type="Real64" Value="0.210679611650485"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="1_1_B_Luka_2" ID="{FDC16ADD-3B40-458F-85F1-19686C167BFD}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="1_1_B_Luka" ID="{0BD8EA82-87F3-4B8C-A9A2-F2CD91843BBD}" ShortID="813916770">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="1_1_B_Luka" ID="{0963BB6D-CB76-41A7-9B70-5AAD949E0920}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Luka\1.1.B.Luka.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="597377986"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{01854F17-00FF-4112-9EDB-9CC0B7239D85}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.C1.B.S1"/>
+															<Property Name="Time" Type="Real64" Value="0.122330097087379"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{B539060C-57EC-4EB5-9B1D-4775AB5C04B8}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.C1.B.S3"/>
+															<Property Name="Time" Type="Real64" Value="4.74466019417476"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{B9EB0041-A0DE-4483-8A6F-525D742A6B9E}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.C1.B.S4"/>
+															<Property Name="Time" Type="Real64" Value="6.95533980582524"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="1_1_B_Luka" ID="{0963BB6D-CB76-41A7-9B70-5AAD949E0920}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="1_1_C_Luka" ID="{54524A1C-BE86-48A6-A1D1-9BD78F0B10D3}" ShortID="20762124">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="1_1_C_Luka" ID="{79DAD9DB-5E4B-4749-84E1-61CD8A2A7E4F}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Luka\1.1.C.Luka.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="217424591"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{45F8E434-1B67-4428-AD59-3C7867480132}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.C1.C.S1"/>
+															<Property Name="Time" Type="Real64" Value="0.315533980582524"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{7BED6DAC-6356-4EF1-9435-08E69D57CCC7}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.C1.C.S5"/>
+															<Property Name="Time" Type="Real64" Value="10.4368932038835"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="1_1_C_Luka" ID="{79DAD9DB-5E4B-4749-84E1-61CD8A2A7E4F}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="1_1_E1_Luka_2A" ID="{B16C55AF-0304-4552-A7D9-FB51BCF109E2}" ShortID="700641767">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="1_1_E1_Luka_2A" ID="{0AE6BBC7-0C42-4C3C-908B-43E19EDA660B}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Luka\1.1.E1.Luka.2A.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="121673245"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{459F0AC5-05FF-4328-BF7C-7E2B639CDE43}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.E1.A.S1"/>
+															<Property Name="Time" Type="Real64" Value="0.274271844660194"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="1_1_E1_Luka_2A" ID="{0AE6BBC7-0C42-4C3C-908B-43E19EDA660B}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="1_1_E1_Luka_2B" ID="{BA97847A-3583-4462-87C0-A5F2FD536C2F}" ShortID="201996515">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="1_1_E1_Luka_2B" ID="{CCEB3552-04E7-4A90-8DF2-F8335F935BCD}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Luka\1.1.E1.Luka.2B.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="270973"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{1237F0CB-D003-4B54-B3FD-3882FBBE5011}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.E1.B.S1"/>
+															<Property Name="Time" Type="Real64" Value="0.489320388349515"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="1_1_E1_Luka_2B" ID="{CCEB3552-04E7-4A90-8DF2-F8335F935BCD}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="1_1_E1_Luka_2C" ID="{84EC50AD-D4BD-4B3F-9141-6346AE725BFD}" ShortID="278403394">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="1_1_E1_Luka_2C" ID="{2CCA7C35-F310-4BF9-9062-EC31C28B2FF9}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Luka\1.1.E1.Luka.2C.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="264069548"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{F4308FFA-F54D-4916-AE7B-74382C5D472C}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.E1.C.S1"/>
+															<Property Name="Time" Type="Real64" Value="0.276699029126214"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="1_1_E1_Luka_2C" ID="{2CCA7C35-F310-4BF9-9062-EC31C28B2FF9}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="1_1_E1_Luka_2D" ID="{B8BA9A01-7327-4CA5-8DE7-179C10365307}" ShortID="571751298">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="1_1_E1_Luka_2D" ID="{9FE64A4D-4118-47AA-89E1-B8AAD90DE9FC}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Luka\1.1.E1.Luka.2D.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="955010801"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{3E843EAD-6CA2-40BD-8F9B-843E67B94483}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.E1.D.S1"/>
+															<Property Name="Time" Type="Real64" Value="0.200970873786408"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="1_1_E1_Luka_2D" ID="{9FE64A4D-4118-47AA-89E1-B8AAD90DE9FC}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="1_1_E1_Luka_3A" ID="{D2A8260B-FD84-4C43-9EA7-3E2A7917CB5B}" ShortID="842627301">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="1_1_E1_Luka_3A" ID="{8B656BC3-FD3B-42A4-81DC-05B211ACD8C1}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Luka\1.1.E1.Luka.3A.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="150985233"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{710C94EC-887F-418A-83D2-1F64B9AAD922}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.E1.A.S8"/>
+															<Property Name="Time" Type="Real64" Value="17.7203883495146"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="1_1_E1_Luka_3A" ID="{8B656BC3-FD3B-42A4-81DC-05B211ACD8C1}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="1_1_E1_Luka_3B" ID="{D2F29242-4447-44F3-A4D2-948D31B89FF1}" ShortID="979540734">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="1_1_E1_Luka_3B" ID="{BEE81147-256D-449B-9C17-99284FE0A5A0}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Luka\1.1.E1.Luka.3B.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="853028543"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{C11EEDDE-105E-4E91-A786-5296DC592D7A}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.E1.Z.S1"/>
+															<Property Name="Time" Type="Real64" Value="15.6082524271845"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="1_1_E1_Luka_3B" ID="{BEE81147-256D-449B-9C17-99284FE0A5A0}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="1_1_E1_Luka_3C" ID="{B959C5F5-A23F-401E-B854-72AEC2CC4A12}" ShortID="932883470">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="1_1_E1_Luka_3C" ID="{BB989542-E03C-4631-9CE0-0109419ECA26}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Luka\1.1.E1.Luka.3C.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="170449004"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{6A15676F-1478-4C5E-9C90-C96AFEA2AF81}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.E1.Z.S1"/>
+															<Property Name="Time" Type="Real64" Value="13.6645631067961"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="1_1_E1_Luka_3C" ID="{BB989542-E03C-4631-9CE0-0109419ECA26}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="1_1_E1_Luka_3D" ID="{04D61A64-BF37-456C-8CED-4224FDB2E528}" ShortID="804380074">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="1_1_E1_Luka_3D" ID="{0D15E065-6178-43C3-BBF6-27F5C2D28826}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Luka\1.1.E1.Luka.3D.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="961962992"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{CA35B0F1-E33E-4FB5-B7A4-BCFEC298E6A7}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.E1.Z.S1"/>
+															<Property Name="Time" Type="Real64" Value="15.6621359223301"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="1_1_E1_Luka_3D" ID="{0D15E065-6178-43C3-BBF6-27F5C2D28826}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="1_1_E1_Luka" ID="{8370F7C1-690A-4A0D-8013-EDC25452758B}" ShortID="402457775">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="1_1_E1_Luka" ID="{BF5FF52F-A83F-4461-8F92-B1398882BB64}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Luka\1.1.E1.Luka.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="662103663"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{D782B8EA-96C0-406E-8AD7-D8B35CF8BF16}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.E1.S7"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{84D066D5-0E7A-474F-9AA6-794ADCDB073F}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.E1.S8"/>
+															<Property Name="Time" Type="Real64" Value="4.26601941747573"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="1_1_E1_Luka" ID="{BF5FF52F-A83F-4461-8F92-B1398882BB64}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="1_1_Luka_2" ID="{008B3E85-7245-4372-8499-712FFDC687A1}" ShortID="1018988536">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="1_1_Luka_2" ID="{1F7B4359-FA4E-4257-B716-8DC32FAACE73}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Luka\1.1.Luka.2.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="819348143"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{2963BE03-096D-49F3-890B-10D6215A1FA8}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S6"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{EE24CBCA-F146-4830-B49F-5B3096DED2FC}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S7"/>
+															<Property Name="Time" Type="Real64" Value="2.65866102520095"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{53381DB1-FE5E-436A-9AA8-7B18B7A53BC3}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S9"/>
+															<Property Name="Time" Type="Real64" Value="10.4204794309454"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{88ABDB04-CE60-4FE0-94E8-FCD67F3837F0}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S14"/>
+															<Property Name="Time" Type="Real64" Value="23.9462780030631"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{F28BABE1-04FF-48AB-A94A-4A0515698534}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S18"/>
+															<Property Name="Time" Type="Real64" Value="39.9342044336689"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{9F9C4ED6-2569-4D94-9E46-9DCF0BA4C4C1}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S19"/>
+															<Property Name="Time" Type="Real64" Value="43.3255295658942"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{0613CB2D-E0BF-41FF-A554-2BF1BCCDBA68}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S20"/>
+															<Property Name="Time" Type="Real64" Value="45.9700283965129"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{7E998EBB-3727-418F-A3B2-324EB2573345}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S23"/>
+															<Property Name="Time" Type="Real64" Value="53.8095234621753"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="1_1_Luka_2" ID="{1F7B4359-FA4E-4257-B716-8DC32FAACE73}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="1_1_Luka_3" ID="{4D751873-01E6-43D4-8A19-B2008A8683A9}" ShortID="1053539319">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="1_1_Luka_3" ID="{92B68828-0EE9-450F-8EB9-049B32ECAC0D}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Luka\1.1.Luka.3.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1037865668"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{71680A38-E523-4FC3-BDA5-B95F309C3449}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S29"/>
+															<Property Name="Time" Type="Real64" Value="1.1747572815534"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{481B1697-8939-4FA6-9EF5-A2045843B6E8}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S32"/>
+															<Property Name="Time" Type="Real64" Value="10.2791262135922"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{573DB2F7-5DA0-458B-96EE-2995F4644EDE}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S33"/>
+															<Property Name="Time" Type="Real64" Value="11.6506119900302"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{649C02E2-9C61-4086-AE92-C455C32039A8}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S39"/>
+															<Property Name="Time" Type="Real64" Value="28.9252178200894"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{E6EAF520-59E6-4E39-A084-E9D36ED28CBB}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S45"/>
+															<Property Name="Time" Type="Real64" Value="45.9090965416987"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{D2ABE47F-F215-4718-B54B-FB7BF34F0692}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S46"/>
+															<Property Name="Time" Type="Real64" Value="47.7064631617814"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{C2609AFA-5449-4C12-8456-6C3C6980F9D1}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S48"/>
+															<Property Name="Time" Type="Real64" Value="53.7026823520912"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{763F443B-A5C9-43A4-8C49-B9603E4A3B43}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S49"/>
+															<Property Name="Time" Type="Real64" Value="57.9136945061949"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="1_1_Luka_3" ID="{92B68828-0EE9-450F-8EB9-049B32ECAC0D}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="1_1_Luka" ID="{2E4A7122-7017-4038-84F2-473B0AEE1FA0}" ShortID="148997194">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="1_1_Luka" ID="{1AE05F0F-9F73-4E68-B524-1FAF98A9E2D3}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Luka\1.1.Luka.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="358666327"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{7B185A11-7426-4C7D-BC86-739AEAA00426}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.0.2.S2"/>
+															<Property Name="Time" Type="Real64" Value="0.285436893203883"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{23B0294E-7B5F-4B43-9E23-75901B5A8086}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S2"/>
+															<Property Name="Time" Type="Real64" Value="9.97669902912621"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="1_1_Luka" ID="{1AE05F0F-9F73-4E68-B524-1FAF98A9E2D3}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="1_2_2_A_Luka_2" ID="{581F2CE0-275A-4A3D-9C9B-DC530EA1370B}" ShortID="765830861">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="1_2_2_A_Luka_2" ID="{7AC77B6A-16D1-4CD8-9667-09A4FC1733CE}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Luka\1.2.2.A.Luka.2.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="816482131"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{1BBB70F5-EDB8-40FC-ADB1-456D45757E55}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.C4.A.S1"/>
+															<Property Name="Time" Type="Real64" Value="0.553398058252427"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{315239FB-6B10-4193-98D5-D76A61A37722}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.C4.A.S8"/>
+															<Property Name="Time" Type="Real64" Value="22.1941747572816"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{B43BC22E-CBC7-43D5-9AD6-D5BAE506AD83}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.C4.A.S9"/>
+															<Property Name="Time" Type="Real64" Value="26.2718446601942"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="1_2_2_A_Luka_2" ID="{7AC77B6A-16D1-4CD8-9667-09A4FC1733CE}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="1_2_2_A_Luka" ID="{400004C3-55F6-4DB3-A053-0713A3BE6C09}" ShortID="219254004">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="1_2_2_A_Luka" ID="{F523FB65-A2EB-4FDB-A2D9-7376570AF483}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Luka\1.2.2.A.Luka.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="419695671"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{97E06445-8568-4D8E-A172-5CF02684DD25}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.C3.A.S1"/>
+															<Property Name="Time" Type="Real64" Value="0.387378640776699"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{93E0E9DC-57FF-49D4-959B-C6A3737EDEBC}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.C3.A.S5"/>
+															<Property Name="Time" Type="Real64" Value="16.1038834951456"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="1_2_2_A_Luka" ID="{F523FB65-A2EB-4FDB-A2D9-7376570AF483}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="1_2_2_B_Luka_2" ID="{C957903F-92B9-4BCF-9B82-CCACBEB37A9E}" ShortID="39083715">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="1_2_2_B_Luka_2" ID="{34CF81FA-0DE8-404F-907E-88D496CBB027}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Luka\1.2.2.B.Luka.2.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="243885844"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{86BF7AB3-87E5-48C3-8834-491BB947F290}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.C4.B.S1"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{648FF4FC-DCA7-4D58-BC1C-E32003A6C857}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.C4.B.S2"/>
+															<Property Name="Time" Type="Real64" Value="1.63009708737864"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{CCF6A6AC-768D-4B8F-A193-456310A115B3}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.C4.B.S8"/>
+															<Property Name="Time" Type="Real64" Value="18.2436893203884"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{BEF7F807-EBEA-46F2-B973-3FA72F77B5E8}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.C4.B.S9"/>
+															<Property Name="Time" Type="Real64" Value="20.5660194174757"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="1_2_2_B_Luka_2" ID="{34CF81FA-0DE8-404F-907E-88D496CBB027}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="1_2_2_B_Luka" ID="{7A3DD06D-4127-4FA5-ACBF-C8981040F8CC}" ShortID="223065386">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="1_2_2_B_Luka" ID="{4CC89704-EB6D-4C91-A781-439781DCD026}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Luka\1.2.2.B.Luka.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="223783514"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{1A43B6CA-0911-4A97-ABA3-BE29F2AA3C5B}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.C3.B.S1"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{AD66B1F0-B4F2-4C4C-9ADF-E757200AE6E5}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.C3.B.S3"/>
+															<Property Name="Time" Type="Real64" Value="3.42815533980583"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{19654E25-0904-4A13-8524-84E9B39C486E}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.C3.B.S4"/>
+															<Property Name="Time" Type="Real64" Value="6.01272815533981"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="1_2_2_B_Luka" ID="{4CC89704-EB6D-4C91-A781-439781DCD026}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="1_2_2_Luka_2" ID="{2BB3CD53-3F4C-4409-A652-3D9901BFE392}" ShortID="196500534">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="1_2_2_Luka_2" ID="{92F990D0-96F2-4DD8-BFFA-A610EC569187}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Luka\1.2.2.Luka.2.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="768256835"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{2D454709-1BBC-4F5B-91A7-6D9D10F1236F}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S52"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{7F196DB9-0C80-4ED8-8FC0-D17CF92F405B}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S54"/>
+															<Property Name="Time" Type="Real64" Value="5.21941747572816"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="1_2_2_Luka_2" ID="{92F990D0-96F2-4DD8-BFFA-A610EC569187}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="1_2_2_Luka_3" ID="{D8F2A565-DC6C-4BE2-BC9B-B65612D16CB8}" ShortID="425659826">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="1_2_2_Luka_3" ID="{487EDAF7-C95A-4007-9933-2C05D30784BC}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Luka\1.2.2.Luka.3.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="56189433"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{D3054E66-1168-4392-8C86-BFDDB601E5F2}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S59"/>
+															<Property Name="Time" Type="Real64" Value="12.0004854368932"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{E5B97BAF-9317-4089-AD04-BD2F6EFD3E6D}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S62"/>
+															<Property Name="Time" Type="Real64" Value="17.9577669902913"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{EF3C295D-D619-470F-B4BB-DB0C65D2D4DD}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S64"/>
+															<Property Name="Time" Type="Real64" Value="24.1155339805825"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{6BE4E935-A38B-4580-BC1F-0884C9FEB867}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S65"/>
+															<Property Name="Time" Type="Real64" Value="26.55"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="1_2_2_Luka_3" ID="{487EDAF7-C95A-4007-9933-2C05D30784BC}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="1_2_2_Luka" ID="{618AAA33-B0F6-4503-BC3A-A2F382C76EEF}" ShortID="57612403">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="1_2_2_Luka" ID="{97973213-0ADB-456E-AD78-26511D6B7783}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Luka\1.2.2.Luka.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1082859"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{7D9EF77E-8D52-41E6-8AC0-B9C82BB2592F}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S50"/>
+															<Property Name="Time" Type="Real64" Value="0.12621359223301"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="1_2_2_Luka" ID="{97973213-0ADB-456E-AD78-26511D6B7783}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="1_3_1_Luka" ID="{1393325A-E66E-4AC3-9981-A00855067046}" ShortID="885616242">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="1_3_1_Luka" ID="{D0E1CF3D-A7A4-42F4-9C70-EA7CBFDFF332}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Luka\1.3.1.Luka.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="156408501"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{80BDB36A-89DC-4DDB-8716-F3D52F3E9C9E}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S67"/>
+															<Property Name="Time" Type="Real64" Value="6.12482873861072"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{CF3A50DA-F6AC-46CE-9E2C-5600876FA7EF}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S68"/>
+															<Property Name="Time" Type="Real64" Value="10.2568902321232"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{92A83570-4575-4BB3-834A-77ABEE181510}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S66"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{C97E5E46-C410-4CF2-A984-E7421681B31A}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S69"/>
+															<Property Name="Time" Type="Real64" Value="13.6856221097187"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{CFBC5F75-F2D8-4E89-8C29-577BD9E5B716}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.S70"/>
+															<Property Name="Time" Type="Real64" Value="18.345180815169"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="1_3_1_Luka" ID="{D0E1CF3D-A7A4-42F4-9C70-EA7CBFDFF332}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="1_Luka" ID="{06473138-8A7F-489E-B26C-FC55793D92D0}" ShortID="524646398">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="1_Luka" ID="{549E5CF6-228D-4810-A7B3-5AD914E71D31}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Luka\1.Luka.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="927377294"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{B1BF6D79-F34A-47F5-B8E8-4CA0C423A544}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.S1"/>
+															<Property Name="Time" Type="Real64" Value="2.43883495145631"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="1_Luka" ID="{549E5CF6-228D-4810-A7B3-5AD914E71D31}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="LL_LukaChoice1" ID="{0E3FF7E3-11ED-4E25-A431-3720ABF539BD}" ShortID="325487478">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="LL_LukaChoice1" ID="{D5F8F8FD-C696-486B-B599-E31A2FBCF3DD}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Luka\LL_LukaChoice1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="539303688"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{0B162A12-37A7-4808-BF1E-F83839E4687E}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.C1.1"/>
+															<Property Name="Time" Type="Real64" Value="0.378409039395527"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{FFE3CCC4-DF7A-40F4-BE14-24FAE92049BF}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.C1.2"/>
+															<Property Name="Time" Type="Real64" Value="4.72710974609968"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="LL_LukaChoice1" ID="{D5F8F8FD-C696-486B-B599-E31A2FBCF3DD}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="LL_LukaChoice2" ID="{8064D422-0166-40CC-872B-B97B460B6135}" ShortID="169065786">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="LL_LukaChoice2" ID="{A17EA0BF-C27B-4BAE-AE29-2014D2683FF1}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Luka\LL_LukaChoice2.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="843619502"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{67D82008-F82E-4336-B617-9970886AB4A9}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.C4.1"/>
+															<Property Name="Time" Type="Real64" Value="0.31105702594646"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{95608F2D-2177-4275-B83E-C203692B2B80}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.C4.2"/>
+															<Property Name="Time" Type="Real64" Value="3.99708278341201"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="LL_LukaChoice2" ID="{A17EA0BF-C27B-4BAE-AE29-2014D2683FF1}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="LL_LukaChoice3" ID="{ACA2ABDE-DEEA-4139-8AB9-EB489D8421A8}" ShortID="538358948">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="LL_LukaChoice3" ID="{F13A1C9A-0036-4C3A-87AF-A30C4A8930FC}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Luka\LL_LukaChoice3.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1016932516"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{D29A9A4F-FD04-402B-9E3D-9A27E648BECF}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.C3.1"/>
+															<Property Name="Time" Type="Real64" Value="0.296436532955725"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{087F6BB0-2608-47D2-A940-A3F12CC4AE3F}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.C3.2"/>
+															<Property Name="Time" Type="Real64" Value="2.31472782116492"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="LL_LukaChoice3" ID="{F13A1C9A-0036-4C3A-87AF-A30C4A8930FC}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</ActorMixer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

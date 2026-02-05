@@ -24,7 +24,7 @@ public:
 
 	virtual void NativeOnUnhovered() override;
 	
-	protected:
+protected:
 	UPROPERTY(EditAnywhere, Category="System|Dialogue|TextStyle")
 	TSubclassOf<UCommonTextStyle> NormalTextStyle;
 	UPROPERTY(EditAnywhere, Category="System|Dialogue|TextStyle")

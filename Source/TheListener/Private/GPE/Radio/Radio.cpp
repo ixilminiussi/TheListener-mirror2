@@ -35,6 +35,7 @@ ARadio::ARadio()
 
 	KnobComponent = CreateDefaultSubobject<UKnobComponent>("Knob");
 	KnobComponent->SetupAttachment(BaseMeshComponent);
+	KnobComponent->bRatioBased = true;
 	check(KnobComponent);
 
 	DecoderComponent = CreateDefaultSubobject<UChildActorComponent>("DecoderComponent");
@@ -67,6 +68,9 @@ void ARadio::BeginPlay()
 	if (ensure(FrequencySubsystem))
 	{
 		FrequencySubsystem->RegisterReceiver(this);
+	} else
+	{
+		return;
 	}
 
 	// Setup Knob
@@ -76,9 +80,7 @@ void ARadio::BeginPlay()
 		       TEXT("Missing Knob Component"));
 		return;
 	}
-
-	KnobComponent->SetRange(FrequencyRange);
-	KnobComponent->SetValue(StartFrequency);
+	KnobComponent->OnShiftFrequency.AddUniqueDynamic(this,&ARadio::ARadio::KnobUpdate);
 
 	if (!ensure(ScreenComponent))
 	{
@@ -107,6 +109,8 @@ void ARadio::BeginPlay()
 		RefRadioText->SetRadioText(NewText);
 	}
 
+	StartRadio();
+
 	if (!ensure(DecoderComponent))
 	{
 		return;
@@ -125,16 +129,28 @@ void ARadio::BeginPlay()
 	LukaController->OnUnpossessToyTransition.AddDynamic(Decoder, &ADecoder::OnEndToyPossessEvent);
 }
 
+void ARadio::EndPlay(const EEndPlayReason::Type EndPlayReason)
+{
+	Super::EndPlay(EndPlayReason);
+
+	StopRadio();
+
+	auto It = Stations.begin();
+	while (!Stations.IsEmpty())
+	{
+		AStation* Station = Stations[0];
+		Stations.Remove(Station);
+		Station->Destroy();
+	}
+}
+
 void ARadio::Tick(float DeltaSeconds)
 {
 	Super::Tick(DeltaSeconds);
-	
-	if (bIsPossessed)
-	{
-		UpdateVisuals();
-		UpdateStations();
-	}
 
+	UpdateVisuals();
+
+#if !UE_BUILD_SHIPPING
 	if (bIsPossessed)
 	{
 		APlayerController* PlayerController = GetWorld()->GetFirstPlayerController();
@@ -150,6 +166,7 @@ void ARadio::Tick(float DeltaSeconds)
 			Lock(false);
 		}
 	}
+#endif
 }
 
 void ARadio::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
@@ -163,11 +180,23 @@ void ARadio::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 		return;
 	}
 
-	EnhancedInputComponent->BindAction(InputActionShiftFrequency, ETriggerEvent::Triggered, this,
-	                                   &ARadio::ShiftFrequency);
+	if (ensure(InputActionShiftFrequency))
+	{
+		EnhancedInputComponent->BindAction(InputActionShiftFrequency, ETriggerEvent::Triggered, this,
+										   &ARadio::ShiftFrequency);
+	}
 
-	EnhancedInputComponent->BindAction(InputActionAnswer, ETriggerEvent::Triggered, this,
-									   &ARadio::HandleAnswer);
+	if (ensure(InputActionAnswer))
+	{
+		EnhancedInputComponent->BindAction(InputActionAnswer, ETriggerEvent::Triggered, this,
+										   &ARadio::HandleAnswer);
+	}
+
+	if (ensure(InputActionChangeBand))
+	{
+		EnhancedInputComponent->BindAction(InputActionChangeBand, ETriggerEvent::Triggered, this,
+										   &ARadio::ChangeBand);
+	}
 
 	if (ensure(Decoder))
 	{
@@ -196,6 +225,7 @@ void ARadio::Destroyed()
 void ARadio::PossessedBy(AController* NewController)
 {
 	Super::PossessedBy(NewController);
+	/*
 	if (ALukaController* LukaController = Cast<ALukaController>(NewController))
 	{
 		StartRadio();
@@ -206,12 +236,22 @@ void ARadio::PossessedBy(AController* NewController)
 	{
 		return;
 	}
+	*/
 }
 
 void ARadio::UnPossessed()
 {
 	Super::UnPossessed();
-	StopRadio();
+	for (AStation* Station : StationsInRange)
+	{
+		Station->PlayerQuitRadio();
+	}
+	// StopRadio();
+}
+
+void ARadio::KnobUpdate(float ShiftDelta)
+{
+	UpdateStations();
 }
 
 AStation* ARadio::CreateStationObject(UStationAsset* StationData)
@@ -234,6 +274,8 @@ AStation* ARadio::CreateStationObject(UStationAsset* StationData)
 									  FAttachmentTransformRules::KeepRelativeTransform);
 		NewStation->SetupStation(StationData, this);
 		Stations.Add(NewStation);
+	
+		UpdateStations();
 		return NewStation;
 	}
 
@@ -259,6 +301,8 @@ void ARadio::ForgetStationObject(AStation* Station)
 
 	Stations.Remove(Station);
 	StationsInRange.Remove(Station);
+	
+	UpdateStations();
 }
 
 void ARadio::StartRadio()
@@ -343,7 +387,9 @@ void ARadio::UpdateStations()
 			continue;
 		}
 
-		if (Station->IsInRange(Frequency))
+		const float StationClarity = Station->ComputeRawClarity(Frequency);
+
+		if (StationClarity > 0)
 		{
 			if (!StationsInRange.Contains(Station))
 			{
@@ -359,8 +405,6 @@ void ARadio::UpdateStations()
 				Station->LeaveRange();
 			}
 		}
-
-		const float StationClarity = Station->ComputeRawClarity(Frequency);
 
 		if (ensure(AudioCorruptionCurve))
 		{
@@ -488,12 +532,29 @@ void ARadio::ShiftFrequency(const FInputActionValue& Value)
 	KnobComponent->ClockwiseRotate(RelativeValue, GetWorld()->GetDeltaSeconds());
 }
 
+void ARadio::ChangeBand(const struct FInputActionValue& Value)
+{
+	UFrequencySubsystem *FrequencySubsystem = GetWorld()->GetSubsystem<UFrequencySubsystem>();
+	check(FrequencySubsystem);
+
+	if (Value.Get<float>() < 0)
+	{
+		FrequencySubsystem->LastBand();
+	} else
+	{
+		FrequencySubsystem->NextBand();
+	}
+	
+	UpdateStations();
+}
+
 void ARadio::HandleAnswer(const struct FInputActionValue& Value)
 {
 	for (AStation *Station : GetStationsInRange())
 	{
 		if (Station->ProposeAnswer()) // First one to be waiting for an answer gets it (later, probably better to pick the closest)
 		{
+			Lock(true,Station);
 			return;
 		}
 	}
@@ -505,9 +566,22 @@ ADecoder* ARadio::GetDecoder() const
 	return Decoder;
 }
 
-FVector2d ARadio::GetFrequencyRange() const
+void ARadio::SetFrequencyRange(FVector2D const& InRange, const float Location) 
 {
-	return FrequencyRange;
+	Range = InRange;
+
+	check(KnobComponent)
+	KnobComponent->SetRange(Range);
+
+	if (Location == -1.f)
+	{
+		const float MidPoint = FMath::Sqrt(Range.X * Range.Y); // Geometric middle
+	
+		KnobComponent->SetValue(MidPoint);
+	} else
+	{
+		KnobComponent->SetValue(Location);
+	}
 }
 
 float ARadio::GetFrequency() const
@@ -518,6 +592,27 @@ float ARadio::GetFrequency() const
 	}
 	
 	return -1.f;
+}
+
+void ARadio::SetFrequency(const float Frequency) const
+{
+	UFrequencySubsystem *FrequencySubsystem = GetWorld()->GetSubsystem<UFrequencySubsystem>();
+	if (!ensure(FrequencySubsystem))
+	{
+		return;
+	}
+	
+	if (!ensure(FrequencySubsystem->IsFrequencyAllowed(Frequency))) // THAT FREQUENCY IS OUTSIDE THE ALLOWED RANGES
+	{
+		return;
+	}
+
+	FrequencySubsystem->SetBandFromFrequency(Frequency);
+	
+	if (ensure(KnobComponent))
+	{
+		KnobComponent->SetValue(Frequency);
+	}
 }
 
 void ARadio::UpdateVisuals() const
@@ -532,8 +627,11 @@ void ARadio::UpdateVisuals() const
 void ARadio::UpdateText() const
 {
 	check(WidgetComponent);
-
-	const FText NewText = FText::FromString(FString::Printf(TEXT("%.0f Hz"), GetFrequency()));
+	float CurrentFrequency = GetFrequency();
+	FString Suffix = "kHz";
+	//if (CurrentFrequency > 1000.0f) {CurrentFrequency /= 1000.0f; Suffix = "MHz";}
+	
+	const FText NewText = FText::FromString(FString::Printf(TEXT("%.1f %s"), CurrentFrequency, *Suffix));
 	if (UUserWidget const *Widget = WidgetComponent->GetWidget(); ensure(Widget))
 	{
 		const URadioText* RadioText = Cast<URadioText>(Widget);

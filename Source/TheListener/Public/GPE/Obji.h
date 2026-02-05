@@ -5,6 +5,7 @@
 #include "GameFramework/Actor.h"
 #include "Obji.generated.h"
 
+/*
 enum class EInteractionsTypes : uint8;
 
 struct FDropZoneInfo
@@ -41,20 +42,20 @@ public:
 
 	void CheckAcceptableDropZone(FDropZoneInfo& DropZoneInfo, const FVector& RayCheckBegin,
 	                             const FVector& RayCheckEnd, FCollisionQueryParams QueryParams = {});
-	AObji* CreatePreview() const;
+	virtual AObji* CreatePreview() const;
 	bool CheckValidity(const FVector& Location, const FQuat& QuatRotation) const;
 
 	TArray<TSubclassOf<AInteractable>> GetInteractablesAllowed() const;
 	TArray<TSubclassOf<class AToy>> GetToysAllowed() const;
 
-	virtual void Interact(const class ALukaCharacter* Luka) override;
-	[[nodiscard]] virtual bool Drop();
+	virtual void Interact() override;
+	[[nodiscard]] virtual bool Drop(FVector3d const &From, FVector3d const &Impulse = {});
 
 protected:
 	virtual void CustomCheck(FDropZoneInfo& DropZoneInfo, const FVector& RayCheckBegin,
 	                         const FVector& RayCheckEnd, FCollisionQueryParams QueryParams = {});
 
-	virtual void OnInteract(class AController* NewController) override;
+	virtual void OnInteract() override;
 	virtual void OnDrop();
 
 	UFUNCTION(BlueprintImplementableEvent, Category = "Obji")
@@ -91,10 +92,10 @@ protected:
 
 	// Transitions Begin =================================
 public:
-	struct FTimeline* MoveTo(const class UHandComponent* TargetComponent, bool bTeleport = false);
-	struct FTimeline* MoveTo(const FVector& Location, bool bTeleport = false);
-	struct FTimeline* RotateTo(const class UHandComponent* Rotation, bool bTeleport = false);
-	struct FTimeline* RotateTo(const FRotator& Rotation, bool bTeleport = false);
+	// struct FTimeline* MoveTo(const class UHandComponent* TargetComponent, bool bTeleport = false);
+	// struct FTimeline* MoveTo(const FVector& Location, bool bTeleport = false);
+	// struct FTimeline* RotateTo(const class UHandComponent* Rotation, bool bTeleport = false);
+	// struct FTimeline* RotateTo(const FRotator& Rotation, bool bTeleport = false);
 
 	void TickMoveBlendTimeline();
 	void TickRotateBlendTimeline();
@@ -104,7 +105,7 @@ public:
 
 protected:
 	UPROPERTY()
-	const class UHandComponent* TargetLocationComponent;
+	// const class UHandComponent* TargetLocationComponent;
 	FVector TargetLocation;
 	FVector BeginLocation;
 
@@ -126,7 +127,7 @@ protected:
 	void CreateTimelines();
 
 	UPROPERTY()
-	const class UHandComponent* TargetRotationComponent;
+	// const class UHandComponent* TargetRotationComponent;
 	FRotator TargetRotation;
 	FRotator BeginRotation;
 
@@ -139,3 +140,4 @@ protected:
 	bool bRotating{false};
 	// Transitions End ===================================
 };
+*/

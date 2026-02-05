@@ -18,13 +18,11 @@ class THELISTENER_API AMainMenuHUD : public ABaseHUD
 protected:
 	virtual void BeginPlay() override;
 
-	UFUNCTION()
-	void HandleInputMethodChanged(ECommonInputType NewInputType) const;
-
 public:
 	virtual USettingsMenuWidget* GetSettingsMenuWidget() const override;
 
-	
 	virtual UBaseMenuWidget* GetPreviousWidget() override;
-	
+
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
+	void ShowMainMenu();
 };

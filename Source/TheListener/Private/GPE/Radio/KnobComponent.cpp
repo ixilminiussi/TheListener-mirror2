@@ -1,11 +1,12 @@
 #include "GPE/Radio/KnobComponent.h"
 #include "AkComponent.h"
+#include "Miscellaneous/TLUtils.h"
 
 UKnobComponent::UKnobComponent(const FObjectInitializer& ObjectInitializer): ValueSensitivity(0),
                                                                              Flip(false),
                                                                              Value(0),
                                                                              Range(TNumericLimits<float>::Min(),
-	                                                                             TNumericLimits<float>::Max()),
+                                                                                   TNumericLimits<float>::Max()),
                                                                              ClickAngle(0),
                                                                              ClickAkComponent(nullptr),
                                                                              StartClickAudioEvent(nullptr)
@@ -24,23 +25,27 @@ void UKnobComponent::ClockwiseRotate(float Amount, const float DeltaTime)
 
 	Amount *= RotationSensitivity * DeltaTime;
 
-	float ValueAmount = Amount * ValueSensitivity;
-	ValueAmount = FMath::Min(Range.Y - Value, ValueAmount);
-	ValueAmount = FMath::Max(Range.X - Value, ValueAmount);
-	if (FMath::Abs(ValueAmount) <= 0.0001f)
+	float ValueStep = Amount * ValueSensitivity;
+	if (bRatioBased)
+	{
+		const float Target = UTLUtils::FrequencyStep(Value, ValueStep);
+		ValueStep = Target - Value;
+	}
+	ValueStep = FMath::Min(Range.Y - Value, ValueStep);
+	ValueStep = FMath::Max(Range.X - Value, ValueStep);
+	if (FMath::Abs(ValueStep) <= 0.0001f)
 	{
 		return;
 	}
 
-	Amount = ValueAmount / ValueSensitivity;
-
 	FRotator AddRotator{};
 	AddRotator.Roll = Flip ? -Amount : Amount;
 	AddRelativeRotation(AddRotator);
+	Value += ValueStep;
 
-	Value += ValueAmount;
 	ApplyClamp();
 	ClickTest();
+	OnShiftFrequency.Broadcast(ValueStep);
 }
 
 void UKnobComponent::SetRange(const FVector2D& NewRange)

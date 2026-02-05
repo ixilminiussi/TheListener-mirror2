@@ -7,12 +7,12 @@
 #include "Components/SceneComponent.h"
 #include "Camera/CameraComponent.h"
 #include "Engine/LocalPlayer.h"
-#include "UI/Prompt/CommandHUDComponent.h"
 #include "EventSubsystem.h"
-#include "Kismet/GameplayStatics.h"
-#include "Player/LukaCharacter.h"
+#include "Miscellaneous/TLUtils.h"
 #include "Player/LukaController.h"
+#include "Player/Components/InspectingComponent.h"
 #include "System/Events/EventCondition.h"
+#include "TheListener/TheListener.h"
 
 AToy::AToy()
 {
@@ -28,8 +28,6 @@ AToy::AToy()
 	check(CameraComponent);
 
 	CameraComponent->SetupAttachment(CollisionComponent);
-
-	CommandHUDComponent = CreateDefaultSubobject<UCommandHUDComponent>("CommandHUDComponent");
 
 	AkComponent = CreateDefaultSubobject<UAkComponent>("AkComponent");
 	AkComponent->SetupAttachment(RootComponent);
@@ -47,9 +45,19 @@ void AToy::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 		return;
 	}
 
-	if (ensure(InputActionLook))
+	if (InputActionCameraZoom)
 	{
-		EnhancedInput->BindAction(InputActionLook, ETriggerEvent::Triggered, this, &AToy::Look);
+		EnhancedInput->BindAction(InputActionCameraZoom, ETriggerEvent::Triggered, this, &AToy::Zoom);
+	}
+
+	if (InputActionCameraLook)
+	{
+		EnhancedInput->BindAction(InputActionCameraLook, ETriggerEvent::Triggered, this, &AToy::Look);
+	}
+
+	if (UInspectingComponent *InspectingComponent = GetComponentByClass<UInspectingComponent>())
+	{
+		InspectingComponent->SetupInput(EnhancedInput);
 	}
 }
 
@@ -76,7 +84,7 @@ void AToy::Lock(const bool bEnable)
 				UEnhancedInputLocalPlayerSubsystem>();
 
 			InputSubsystem->RemoveMappingContext(InputMappingContext);
-			SetActiveWidgetVisibility(false);
+			ShowActivePrompts(false);
 		}
 	}
 	else // bring back InputMappingContext
@@ -88,7 +96,7 @@ void AToy::Lock(const bool bEnable)
 				UEnhancedInputLocalPlayerSubsystem>();
 
 			InputSubsystem->AddMappingContext(InputMappingContext, 1);
-			SetActiveWidgetVisibility(true);
+			ShowActivePrompts(true);
 		}
 	}
 }
@@ -154,14 +162,12 @@ void AToy::BeginPlay()
 {
 	Super::BeginPlay();
 
-	check(CommandHUDComponent);
-
 	if (CameraComponent)
 	{
 		StartingRotation = CameraComponent->GetRelativeRotation();
+		StartingZoom = CameraComponent->FieldOfView;
+		TargetZoom = StartingZoom / ZoomAmount;
 	}
-	
-	CommandHUDComponent->Generate(InputMappingContext);
 }
 
 void AToy::PossessedBy(AController* NewController)
@@ -185,14 +191,15 @@ void AToy::PossessedBy(AController* NewController)
 	UEnhancedInputLocalPlayerSubsystem* InputSubsystem = PlayerController->GetLocalPlayer()->GetSubsystem<UEnhancedInputLocalPlayerSubsystem>();
 	InputSubsystem->AddMappingContext(InputMappingContext, 2);
 	InputSubsystem->AddMappingContext(FunMappingContext, 1);
+	ShowActivePrompts(true);
 
-	if (UEventSubsystem* EventSubsystem = GetWorld()->GetSubsystem<UEventSubsystem>(); ensure(EventSubsystem))
+	if (UEventSubsystem* EventSubsystem = GetWorld()->GetGameInstance()->GetSubsystem<UEventSubsystem>(); ensure(EventSubsystem))
 	{
 		const FConditionKey Key = UToyPossessedCondition::GenerateKey(GetClass());
 		EventSubsystem->SetConditionValue(Key, true, true);
 	}
 
-	SetActiveWidgetVisibility(true);
+	OnPossessAfterTransition();
 }
 
 void AToy::UnPossessed()
@@ -212,11 +219,11 @@ void AToy::UnPossessed()
 
 		const FConditionKey Key = UToyPossessedCondition::GenerateKey(GetClass());
 
-		const auto EventSubsystem = GetWorld()->GetSubsystem<UEventSubsystem>();
+		const auto EventSubsystem = GetWorld()->GetGameInstance()->GetSubsystem<UEventSubsystem>();
 		check(EventSubsystem);
 		EventSubsystem->SetConditionValue(Key, false, true);
 	}
-
+	OnUnPossessAfterTransition();
 	Super::UnPossessed();
 }
 
@@ -234,6 +241,22 @@ void AToy::Tick(float DeltaTime)
 
 			CameraComponent->SetRelativeRotation(DiffRotation);
 		}
+
+		float FOV = CameraComponent->FieldOfView;
+		if (!FMath::IsNearlyEqual(FOV, TargetZoom))
+		{
+			float NewFOV;
+			
+			if (bZooming)
+			{
+				NewFOV = FMath::FInterpTo(FOV, TargetZoom, DeltaTime, ZoomLerpStrength);
+			} else
+			{
+				NewFOV = FMath::FInterpTo(FOV, StartingZoom, DeltaTime, ZoomLerpStrength);
+			}
+
+			CameraComponent->SetFieldOfView(NewFOV);
+		}
 	}
 
 	if (!bLooking)
@@ -241,6 +264,12 @@ void AToy::Tick(float DeltaTime)
 		TargetRotation = StartingRotation; 
 	}
 	bLooking = false;
+}
+
+void AToy::Zoom(const struct FInputActionValue& Value)
+{
+	LOG("testing %f", Value.Get<float>());
+	bZooming = Value.IsNonZero();
 }
 
 void AToy::Look(const struct FInputActionValue& Value)
@@ -259,53 +288,62 @@ float AToy::GetCameraDistanceBack() const
 
 void AToy::OnPossessToyTransition()
 {
-	SetHoverWidgetVisibility(false);
 	if (OnPossessTransitionAkEvent)
 	{
 		check(AkComponent);
 		FOnAkPostEventCallback NullCallback;
 		AkComponent->PostAkEvent(OnPossessTransitionAkEvent, 0, NullCallback);
 	}
+	OnPossessBeforeTransition();
 }
 
 void AToy::OnUnpossessToyTransition()
 {
-	SetActiveWidgetVisibility(false);
-	if (OnUnpossessTransitionAkEvent)
+	ShowActivePrompts(false);
+	OnUnPossessBeforeTransition();
+}
+
+void AToy::ShowActivePrompts(const bool bIsVisible) const
+{
+	if (bIsVisible)
 	{
-		check(AkComponent);
-		FOnAkPostEventCallback NullCallback;
-		AkComponent->PostAkEvent(OnUnpossessTransitionAkEvent, 0, NullCallback);
+		FTimerDelegate TimerDelegate;
+		TWeakObjectPtr<UWorld> World = GetWorld();
+		TimerDelegate.BindLambda([World, this]()
+		{
+			if (World.IsValid())
+			{
+				UTLUtils::TogglePrompts(World.Get(), OnActivePrompts, true);
+			}
+		});
+		GetWorldTimerManager().SetTimerForNextTick(TimerDelegate);
+	} else
+	{
+		FTimerDelegate TimerDelegate;
+		TWeakObjectPtr<UWorld> World = GetWorld();
+		TimerDelegate.BindLambda([World, this]()
+		{
+			if (World.IsValid())
+			{
+				UTLUtils::TogglePrompts(World.Get(), OnActivePrompts, false);
+			}
+		});
+		GetWorldTimerManager().SetTimerForNextTick(TimerDelegate);
 	}
 }
 
-void AToy::SetHoverWidgetVisibility(const bool bIsVisible) const
+void AToy::OnUnPossessAfterTransition_Implementation()
 {
-	if (!bEnabled)
-	{
-		return;
-	}
-
-	check(CommandHUDComponent);
-	if (bIsVisible)
-	{
-		CommandHUDComponent->AddHoverToHUD();
-	}
-	else
-	{
-		CommandHUDComponent->RemoveHoverFromHUD();
-	}
 }
 
-void AToy::SetActiveWidgetVisibility(const bool bIsVisible) const
+void AToy::OnUnPossessBeforeTransition_Implementation()
 {
-	check(CommandHUDComponent);
-	if (bIsVisible)
-	{
-		CommandHUDComponent->AddActiveToHUD();
-	}
-	else
-	{
-		CommandHUDComponent->RemoveActiveFromHUD();
-	}
+}
+
+void AToy::OnPossessAfterTransition_Implementation()
+{
+}
+
+void AToy::OnPossessBeforeTransition_Implementation()
+{
 }

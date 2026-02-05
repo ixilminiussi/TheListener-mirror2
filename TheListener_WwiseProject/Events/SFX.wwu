@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{106A3FEF-5776-41DE-B9B1-BE4675AD4EAD}" SchemaVersion="123">
+	<Events>
+		<WorkUnit Name="SFX" ID="{106A3FEF-5776-41DE-B9B1-BE4675AD4EAD}" PersistMode="Standalone">
+			<ChildrenList>
+				<WorkUnit Name="Radio" ID="{400A9D1D-384D-4875-9053-215589FA83F3}" PersistMode="Reference"/>
+				<WorkUnit Name="Door" ID="{2660A1EA-0B11-42B6-A2CF-1C91AE26A47A}" PersistMode="Reference"/>
+				<WorkUnit Name="Phone" ID="{540AC76E-9A80-4D01-A607-E86E6B727E1B}" PersistMode="Reference"/>
+				<WorkUnit Name="Objis" ID="{706B9E97-DDA0-498A-8D30-04AC2F8AD422}" PersistMode="Reference"/>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

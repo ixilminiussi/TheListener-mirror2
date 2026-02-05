@@ -7,12 +7,19 @@
 #include "Components/SceneComponent.h"
 #include "Components/TextRenderComponent.h"
 #include "GPE/Dialogue.h"
-#include "System/Events/EventAction.h"
+#include "DialogueGraphRuntime/Public/DialogueGraphAsset.h"
 #include "Miscellaneous/TLUtils.h"
 #include "Player/LukaController.h"
+#include "TheListener/TheListener.h"
 
 APhone::APhone()
 {
+#if !UE_BUILD_SHIPPING
+	AActor::SetActorTickEnabled(true);
+#else
+	AActor::SetActorTickEnabled(false);
+#endif
+	
 	PhoneBaseMeshComponent = CreateDefaultSubobject<UStaticMeshComponent>("Phone Base");
 	check(PhoneBaseMeshComponent);
 
@@ -22,9 +29,6 @@ APhone::APhone()
 	PhoneDialNumbersContainer = CreateDefaultSubobject<USceneComponent>(
 		"Phone Dial number Container");
 	check(PhoneDialNumbersContainer);
-
-	check(PhoneDialNumbersContainer);
-
 
 	PhoneBaseMeshComponent->SetupAttachment(CollisionComponent);
 	PhoneDialMeshComponent->SetupAttachment(PhoneBaseMeshComponent);
@@ -101,7 +105,7 @@ void APhone::EndPlay(const EEndPlayReason::Type EndPlayReason)
 	}
 	for (auto &[Number, CallInfo] : UnlockedCalls)
 	{
-		for (auto &[Dialogue, Time] : CallInfo)
+		for (auto &[Dialogue,WaitTime] : CallInfo)
 		{
 			Dialogue->Destroy();
 		}
@@ -109,6 +113,27 @@ void APhone::EndPlay(const EEndPlayReason::Type EndPlayReason)
 	}
 	UnlockedCalls.Empty();
 }
+
+#if !UE_BUILD_SHIPPING
+void APhone::Tick(float DeltaSeconds)
+{
+	Super::Tick(DeltaSeconds);
+
+	if (bIsPossessed)
+	{
+		APlayerController* PlayerController = GetWorld()->GetFirstPlayerController();
+		if (PlayerController->WasInputKeyJustPressed(EKeys::Enter)) {
+			if (StandbyDialogue)
+			{
+				StandbyDialogue->Skip(PlayerController->IsInputKeyDown(EKeys::LeftShift));
+			}
+		}
+		if (PlayerController->WasInputKeyJustPressed(EKeys::U)) {
+			Lock(false);
+		}
+	}
+}
+#endif
 
 void APhone::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
@@ -127,13 +152,14 @@ void APhone::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 	}
 }
 
-void APhone::PushCall(UDialogueTreeData* DialogueTree, const bool bImportant, const float RingDuration, const bool bSkipQueue)
+void APhone::PushCall(UDialogueGraphAsset* DialogueAsset, const bool bImportant, const float RingDuration, const bool bSkipQueue)
 {
 	FActorSpawnParameters SpawnParameters;
 	SpawnParameters.Owner = this;
+	checkf(DialogueAsset != nullptr,TEXT("Dialogue Asset is currently null"));
 	
 	ADialogue *Dialogue = GetWorld()->SpawnActor<ADialogue>(SpawnParameters);
-	Dialogue->SetupDialogue(DialogueTree, this);
+	Dialogue->SetupDialogue(DialogueAsset, this);
 
 	if (bSkipQueue)
 	{
@@ -149,24 +175,25 @@ void APhone::PushCall(UDialogueTreeData* DialogueTree, const bool bImportant, co
 	}
 }
 
-void APhone::UnlockCall(TArray<int> const& Number, UDialogueTreeData* DialogueTree, float InWaitTime,
+void APhone::UnlockCall(TArray<int> const& Number, UDialogueGraphAsset* DialogueAsset, float InWaitTime,
 						bool bOverrideAll)
 {
 	if (UnlockedCalls.Contains(Number) && bOverrideAll)
 	{
-		for (auto &[Dialogue, Time] : UnlockedCalls[Number])
+		for (auto &[Dialogue, WaitTime] : UnlockedCalls[Number])
 		{
 			Dialogue->Destroy();
 		}
+		UnlockedCalls[Number].Empty();
 	}
 	
 	FActorSpawnParameters SpawnParameters;
 	SpawnParameters.Owner = this;
 
-	ADialogue *Dialogue = GetWorld()->SpawnActor<ADialogue>(SpawnParameters);
-	Dialogue->SetupDialogue(DialogueTree, this);
-
-	UnlockedCalls.FindOrAdd(Number).Add({Dialogue, InWaitTime});
+	TObjectPtr<ADialogue> Dialogue = GetWorld()->SpawnActor<ADialogue>(SpawnParameters);
+	Dialogue->SetupDialogue(DialogueAsset, this);
+	
+	UnlockedCalls.FindOrAdd(Number).Add(TPair<TObjectPtr<ADialogue>, float>(Dialogue,InWaitTime));
 }
 
 void APhone::StartCall(ADialogue* Dialogue)
@@ -196,6 +223,7 @@ void APhone::RingPhone()
 	AkComponent->PostAkEvent(RingPlayEvent);
 
 	FCallInfo &Info = CallQueue.First();
+	CallQueue.PopFirst();
 
 	GetWorldTimerManager().SetTimer(CallTimerHandle, [this, &Info]()
 	{
@@ -203,6 +231,7 @@ void APhone::RingPhone()
 	}, Info.CallTime, false);
 
 	StandbyDialogue = Info.Dialogue;
+	CurrentCallInfo = Info;
 }
 
 void APhone::EndRing(FCallInfo const &Info)
@@ -223,10 +252,15 @@ void APhone::EndRing(FCallInfo const &Info)
 	{
 		Info.Dialogue->Destroy();
 	}
+	CurrentCallInfo = FCallInfo();
 }
 
 void APhone::EndDialogue(ADialogue *Dialogue)
 {
+	if (CurrentCallInfo.IsValid())
+	{
+		CurrentCallInfo = FCallInfo();
+	}
 	KickPlayer();
 
 	if (Dialogue)
@@ -234,7 +268,8 @@ void APhone::EndDialogue(ADialogue *Dialogue)
 		bCallMutex = false;
 	}
 
-	StandbyDialogue = nullptr; 
+	StandbyDialogue = nullptr;
+	
 }
 
 void APhone::QueueNext()
@@ -252,7 +287,7 @@ void APhone::QueueNext()
 void APhone::RotateDial(const FInputActionValue& Value)
 {
 	const FVector2d RecordedValue = Value.Get<FVector2D>();
-	const float Length = RecordedValue.Length();
+	LOG("Rotate Input : %s", *RecordedValue.ToString());
 	float Angle = UTLUtils::GetAngleFrom2DVector(RecordedValue) - StartInputAngle;
 	if (Angle < 0)
 	{
@@ -295,21 +330,28 @@ void APhone::ReleaseDial(const FInputActionValue& Value)
 
 		if (UnlockedCalls.Contains(CurrentNumberInput))
 		{
-			if (UnlockedCalls[CurrentNumberInput].Num() > 0)
+			if (!UnlockedCalls[CurrentNumberInput].IsEmpty())
 			{
-				auto &[Dialogue, Time] = UnlockedCalls[CurrentNumberInput][0];
-				UnlockedCalls[CurrentNumberInput].RemoveAt(0);
+				TPair<TObjectPtr<ADialogue> ,float> DialogueData;
+				DialogueData = UnlockedCalls[CurrentNumberInput].Last();
+				UnlockedCalls[CurrentNumberInput].Pop();
+				TObjectPtr<ADialogue> Dialogue = DialogueData.Key;
+				float Delay = DialogueData.Value;
 				
 				Lock(true);
 				AkComponent->PostAkEvent(RingPlayEvent);
 
+				TArray<int> CurrentInput = TArray<int>(CurrentNumberInput);
+
 				GetWorldTimerManager().SetTimer(PeopleAnswerTimerHandle, [this, Dialogue]()
 				{
 					StartCall(Dialogue);
-				}, Time, false);
+					
+				}, Delay, false);
 			}
 		} else
 		{
+			return;
 		}
 	}
 }

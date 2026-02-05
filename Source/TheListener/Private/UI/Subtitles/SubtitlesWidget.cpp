@@ -47,9 +47,15 @@ void USubtitlesWidget::UpdateSubtitle(const int32 ID, FString const& Tag)
 		const FSubtitleInfo *SubtitleInfo = SubtitlesDataTable->FindRow<FSubtitleInfo>(FName(Tag), TEXT("Loading Subtitle"));
 		if (SubtitleInfo)
 		{
-			Subtitles[ID]->SetSubtitleInfo(SubtitleInfo);
-		}
+			if (SubtitleInfo->SubtitleEn.Len() > 0)
+			{
+				Subtitles[ID]->SetVisibility(ESlateVisibility::Visible);
+				Subtitles[ID]->SetSubtitleInfo(SubtitleInfo);
+				return;
+			}
+		} 
 	}
+	Subtitles[ID]->SetVisibility(ESlateVisibility::Collapsed);
 }
 
 void USubtitlesWidget::UpdateSubtitle(const int32 ID, const float Clarity)

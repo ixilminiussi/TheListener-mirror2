@@ -3,8 +3,19 @@
 
 #include "UI/Menus/SettingsTabs/SettingsTabBase.h"
 
-#include "CommonTextBlock.h"
-#include "UI/Menus/UIElements/ButtonUIElement.h"
+#include "Components/ScrollBox.h"
+#include "Components/VerticalBox.h"
+
+void USettingsTabBase::NativeOnActivated()
+{
+	Super::NativeOnActivated();
+
+	UWidget* WidgetToFocus = ScrollBox->GetChildAt(0);
+	if (WidgetToFocus)
+	{
+		WidgetToFocus->SetFocus();
+	}
+}
 
 void USettingsTabBase::NativeConstruct()
 {
@@ -15,7 +26,7 @@ void USettingsTabBase::SetupSettingsValues(USettingsSave* SettingSave)
 {
 }
 
-class UVerticalBox* USettingsTabBase::GetVerticalBox() const
+class UScrollBox* USettingsTabBase::GetScrollBox() const
 {
-	return VerticalBox;
+	return ScrollBox;
 }

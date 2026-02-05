@@ -19,10 +19,10 @@ void FCogStoryWindow_Events::Initialize()
 	FCogWindow::Initialize();
 
 #if ENABLE_COG
+	
 	bHasMenu = true;
 
 	Config = GetConfig<UCogNarrationConfig_Events>();
-
 	AGameModeBase* GameModeBase = UGameplayStatics::GetGameMode(GetWorld());
 	if (GameModeBase == nullptr)
 	{
@@ -49,7 +49,7 @@ void FCogStoryWindow_Events::RenderContent()
 	FCogWindow::RenderContent();
 
 #if ENABLE_COG
-	check(GetWorld()->GetSubsystem<UEventSubsystem>()); // window shouldnt even be initialized otherwise
+	check(GetWorld()->GetGameInstance()->GetSubsystem<UEventSubsystem>()); // window shouldnt even be initialized otherwise
 
 	if (ImGui::BeginTabBar(""))
 	{
@@ -106,7 +106,7 @@ void FCogStoryWindow_Events::RenderTick(float DeltaSeconds)
 void FCogStoryWindow_Events::RenderConditionsTab()
 {
 #if ENABLE_COG
-	UEventSubsystem* EventSubsystem = GetWorld()->GetSubsystem<UEventSubsystem>();
+	UEventSubsystem* EventSubsystem = GetWorld()->GetGameInstance()->GetSubsystem<UEventSubsystem>();
 	check(EventSubsystem);
 
 	RenderConditionsTable();
@@ -141,6 +141,11 @@ void FCogStoryWindow_Events::RenderConditionsTab()
 			}
 		}
 	}
+	if (ImGui::Button("Reset Subsystem"))
+	{
+		EventSubsystem->ResetSubsystem(true);
+		
+	}
 #endif
 }
 
@@ -164,18 +169,20 @@ void FCogStoryWindow_Events::RenderConditionsTable()
 			ImGui::TableHeadersRow();
 		}
 
-		UEventSubsystem* EventSubsystem = GetWorld()->GetSubsystem<UEventSubsystem>();
+		UEventSubsystem* EventSubsystem = GetWorld()->GetGameInstance()->GetSubsystem<UEventSubsystem>();
 		check(EventSubsystem);
 
 		// Sorts elements according to table begin
 		static TArray<TPair<const FConditionKey&, bool&>> SortedConditions;
+		SortedConditions.Empty();
+		for (auto& [Key, bState] : EventSubsystem->ConditionsMap)
+		{
+			SortedConditions.Add({Key, bState});
+		}
+		
 		if (ImGuiTableSortSpecs* SortSpecs = ImGui::TableGetSortSpecs(); SortSpecs->SpecsDirty)
 		{
-			SortedConditions.Empty();
-			for (auto& [Key, bState] : EventSubsystem->ConditionsMap)
-			{
-				SortedConditions.Add({Key, bState});
-			}
+			
 
 			if (SortSpecs->SpecsDirty)
 			{
@@ -233,11 +240,16 @@ void FCogStoryWindow_Events::RenderConditionsTable()
 			ImGui::TableNextRow();
 			ImGui::TableSetColumnIndex(0);
 
+			const char* ColumnText = TCHAR_TO_UTF8(*FString("Error"));
+			if (Key.ConditionType != nullptr)
+			{
 #if WITH_EDITORONLY_DATA
-			const char* ColumnText = TCHAR_TO_UTF8(*Key.ConditionType->GetDisplayNameText().ToString());
+				ColumnText = TCHAR_TO_UTF8(*Key.ConditionType->GetDisplayNameText().ToString());
 #else
-			const char* ColumnText = TCHAR_TO_UTF8(*Key.ConditionType->GetName());
+				ColumnText = TCHAR_TO_UTF8(*Key.ConditionType->GetName());
 #endif
+			}
+
 			ImGui::Text(ColumnText, "");
 
 			ImGui::TableSetColumnIndex(1);
@@ -344,7 +356,7 @@ void FCogStoryWindow_Events::RenderConditionTreeNode(UEventGraphConditionData* C
 void FCogStoryWindow_Events::RenderActionsTab() const
 {
 #if ENABLE_COG
-	UEventSubsystem* EventSubsystem = GetWorld()->GetSubsystem<UEventSubsystem>();
+	UEventSubsystem* EventSubsystem = GetWorld()->GetGameInstance()->GetSubsystem<UEventSubsystem>();
 	check(EventSubsystem);
 
 	// Current Events
@@ -461,12 +473,12 @@ void FCogStoryWindow_Events::RenderConditionKeyTooltip(const FConditionKey& Key)
 		ImGui::TableNextColumn();
 		ImGui::Text("%s", TCHAR_TO_ANSI(*Key.ConditionType->GetName()));
 
-		if (Key.ConditionType == UInkpotCondition::StaticClass())
+		if (Key.ConditionType == UDialogueCondition::StaticClass())
 		{
-			// Inkpot Tag
+			// Dialogue Tag
 			ImGui::TableNextRow();
 			ImGui::TableNextColumn();
-			ImGui::TextColored(TextColor, "Inkpot Tag");
+			ImGui::TextColored(TextColor, "Dialogue Tag");
 			ImGui::TableNextColumn();
 			ImGui::Text("%s", TCHAR_TO_ANSI(*Key.Data));
 		}

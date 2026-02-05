@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{2660A1EA-0B11-42B6-A2CF-1C91AE26A47A}" SchemaVersion="123" RootDocumentID="{F5518E82-AF38-49C8-92F8-5226EA1B8214}" ParentDocumentID="{106A3FEF-5776-41DE-B9B1-BE4675AD4EAD}">
+	<Events>
+		<WorkUnit Name="Door" ID="{2660A1EA-0B11-42B6-A2CF-1C91AE26A47A}" OwnerID="{106A3FEF-5776-41DE-B9B1-BE4675AD4EAD}" PersistMode="Nested">
+			<ChildrenList>
+				<Event Name="play_close_door" ID="{DE4058F0-A34D-43C5-95A7-94CF5F6E55F8}">
+					<ChildrenList>
+						<Action Name="" ID="{D1B52603-6920-4450-9A84-D5C9D9AAF25B}" ShortID="411193327">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="CloseDoor" ID="{9CA3C043-4662-48FD-8D1B-F4F1817FE436}" WorkUnitID="{971FED9A-43E6-49B7-83AF-E8C048F326F4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="play_open_door" ID="{0F6936F4-EC3F-44B6-B70C-A27CE31EBB31}">
+					<ChildrenList>
+						<Action Name="" ID="{ABED5375-D4E7-40B8-A5EA-3BCA11186195}" ShortID="1027448388">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="OpenDoor" ID="{5667E938-2A63-403F-B127-4668708D2253}" WorkUnitID="{971FED9A-43E6-49B7-83AF-E8C048F326F4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

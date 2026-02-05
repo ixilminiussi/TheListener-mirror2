@@ -8,11 +8,6 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnMove, float, MoveSpeed);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnLook);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnStartMoving);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnStopMoving);
-DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnBeginAnyInView);
-DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnEndAnyInView);
-
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnEndSpecificInView, AObji*, Obji);
-
 
 UCLASS()
 class THELISTENER_API ALukaCharacter : public ACharacter
@@ -88,24 +83,20 @@ protected:
 	TObjectPtr<class USpringArmComponent> SpringArmComponent;
 	UPROPERTY(EditDefaultsOnly, Category = "Luka", BlueprintReadOnly)
 	TObjectPtr<class UCameraComponent> CameraComponent;
-	UPROPERTY(EditDefaultsOnly, Category = "Luka")
-	TObjectPtr<class UHandComponent> HandComponent;
-
-public:
-	TObjectPtr<class UHandComponent> GetHandComponent() const;
 	// Basic Controls End
 
-	// Interactives Begin
-	float GetInteractiveMaxRange() const { return InteractionMaxRange; }
-	bool HasObji() const;
-	class AObji* GetHeldObji() const;
-
-	UPROPERTY(BlueprintAssignable, Category = "Luka|Events")
-	FOnBeginAnyInView OnBeginAnyInView;
-	UPROPERTY(BlueprintAssignable, Category = "Luka|Events")
-	FOnEndAnyInView OnEndAnyInView;
-	UPROPERTY(BlueprintAssignable, Category = "Luka|Events")
-	FOnEndSpecificInView OnEndSpecificInView;
+public:
+	class USceneComponent* GetDrop() const;
+	
+protected:
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Luka|Interaction")
+	TObjectPtr<class UPickupComponent> PickupComponent;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Luka|Interaction")
+	TObjectPtr<class UInteractComponent> InteractComponent;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Luka|Interaction")
+	TObjectPtr<class USceneComponent> DropComponent;
 	
 protected:
 	UPROPERTY(EditDefaultsOnly, Category = "Luka|Interaction")
@@ -121,24 +112,14 @@ public:
 
 protected:
 	UPROPERTY()
-	TObjectPtr<class AToy> ToyInView;
+	TObjectPtr<class AActor> ActorInView;
 	// Toys End
+	void TryShowHoverPrompt(AActor *Actor);
+	void TryHideHoverPrompt(AActor *Actor);
 
-	// Interactables Begin
-
-	void Interact();
-
-public:
-	UFUNCTION(BlueprintCallable, Category = "Luka|Obji")
-	void PickupObji(class AObji* Obji);
-	UFUNCTION(BlueprintCallable, Category = "Luka|Obji")
-	AObji* DropObji();
-	class AInteractable* GetInteractableInView() const;
-
-protected:
-	UPROPERTY()
-	class AInteractable* InteractableInView;
-	// Interactables End
+	void Interact() const;
+	void Return() const;
+	void Drop() const;
 
 	// Snap to Ground Begin
 public:

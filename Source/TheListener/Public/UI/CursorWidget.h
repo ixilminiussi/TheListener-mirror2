@@ -1,19 +1,19 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "CommonActivatableWidget.h"
 #include "CommonUserWidget.h"
 #include "CursorWidget.generated.h"
 
 UCLASS()
-class THELISTENER_API UCursorWidget : public UCommonUserWidget
+class THELISTENER_API UCursorWidget : public UCommonActivatableWidget
 {
 	GENERATED_BODY()
 
 public:
 	UFUNCTION(BlueprintCallable)
-	void SetCursorVisibility(bool bIsVisible);
-	void OnEnterPossibleInteraction();
-	void OnExitPossibleInteraction();
+	void Grow();
+	void Shrink();
 	
 protected:
 	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))

@@ -1,4 +1,6 @@
 ﻿#include "DialogueGraphAction.h"
+
+#include "DialogueEdGraph.h"
 #include "DialogueGraphAsset.h"
 #include "DialogueGraphEditorApp.h"
 
@@ -28,6 +30,19 @@ void DialogueGraphAction::OpenAssetEditor(const TArray<UObject*>& InObjects,
 	EToolkitMode::Type mode = EditWithinLevelEditor.IsValid() ? EToolkitMode::WorldCentric : EToolkitMode::Standalone;
 	for (UObject* Object : InObjects)
 	{
+		if (Object == nullptr)
+		{
+			continue;
+		}
+		UDialogueGraphAsset* Asset = Cast<UDialogueGraphAsset>(Object);
+		if (Asset == nullptr) {continue;}
+		UPackage* AssetPackage = Asset->GetPackage();
+		if (!AssetPackage->IsFullyLoaded())
+		{
+			UE_LOG(LogTemp, Warning, TEXT("Dialogue Asset wasnt fully loaded !!!"));
+			Asset->GetPackage()->FullyLoad();
+		}
+		
 		if (UDialogueGraphAsset* DialogueAsset = Cast<UDialogueGraphAsset>(Object))
 		{
 			TSharedRef<DialogueGraphEditorApp> Editor (new DialogueGraphEditorApp());

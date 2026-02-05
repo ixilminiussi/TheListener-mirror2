@@ -9,7 +9,7 @@ public class TheListener : ModuleRules
 		PublicDependencyModuleNames.AddRange(new[]
 		{
 			"Core", "CoreUObject", "Engine", "InputCore", "EnhancedInput", "UMG", "CommonUI", "CommonInput", "AkAudio",
-			"WwiseSoundEngine", "Inkpot", "InkPlusPlus", "Slate", "SlateCore", "CogCommon",
+			"WwiseSoundEngine", "Slate", "SlateCore", "CogCommon",
 			"EngineCameras", "WindowsDualsense_ds5w",
 			"EventGraphRuntime", "AudioSynesthesia", "Niagara","DialogueGraphRuntime"
 		});

@@ -19,6 +19,8 @@ public:
 
 	virtual void NativeConstruct() override;
 
+	virtual void NativeOnActivated() override;
+
 	virtual FReply NativeOnKeyDown(const FGeometry& InGeometry, const FKeyEvent& InKeyEvent) override;
 
 	// Buttons Functions
@@ -34,6 +36,6 @@ public:
 
 
 	// Widgets Buttons
-	UPROPERTY(meta = (BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta = (BindWidget))
 	UButtonPrimary* ResumeButton;
 };

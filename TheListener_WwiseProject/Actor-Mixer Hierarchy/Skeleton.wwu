@@ -1,0 +1,2374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{52775D9F-AC75-427D-8A62-406F5C522633}" SchemaVersion="123" RootDocumentID="{29C5AB43-C928-4CD8-9FC7-35647B0068A2}" ParentDocumentID="{29C5AB43-C928-4CD8-9FC7-35647B0068A2}">
+	<AudioObjects>
+		<WorkUnit Name="Skeleton" ID="{52775D9F-AC75-427D-8A62-406F5C522633}" OwnerID="{29C5AB43-C928-4CD8-9FC7-35647B0068A2}" PersistMode="Nested">
+			<ChildrenList>
+				<Sound Name="audio_1_0_4_C" ID="{9C416B44-9EE1-4962-A605-366DBCD19D8A}" ShortID="252182373">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{FAB98832-68A7-4A12-A70E-95830C9F63D2}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="72176017"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{7ABD1DCD-1CC7-41FE-986C-562F61161703}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.4.C.S1"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{1A7FC4FF-441C-461D-8BAC-B707667377D4}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.4.C.S2"/>
+													<Property Name="Time" Type="Real64" Value="2.5"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{95ED9263-0561-438E-85B5-F9D1D0903AD0}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.4.C.S3"/>
+													<Property Name="Time" Type="Real64" Value="5.83333333333333"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{DA0DA5BB-AF15-4724-8E15-8D436E02C3F9}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_EARLYANSWER"/>
+													<Property Name="Time" Type="Real64" Value="8.75"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{FAB98832-68A7-4A12-A70E-95830C9F63D2}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="audio_1_0_6_C" ID="{A3746D8C-2CB8-432B-A827-2C13D29F16C0}" ShortID="343253639">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{8BF94277-E64D-4F4B-8483-2422509DF63B}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="147738382"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{57FB79BF-4A64-4CE4-B8C9-E35EF3906533}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.6.C"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{76C22C64-5A84-4076-8C0A-A0101B53E240}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_EARLYANSWER"/>
+													<Property Name="Time" Type="Real64" Value="4.58333333333333"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{8BF94277-E64D-4F4B-8483-2422509DF63B}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="audio_1_0_8_B" ID="{2F0B83AA-1568-43A6-9103-A390A6EE494D}" ShortID="43656572">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{CDFCBFC4-5F5E-4E6E-ADA4-8B1384BFEBB0}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="226583746"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{6880FEC9-8C2C-4612-9EB3-E06076791C28}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.8.B.S1"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{234FE232-0274-409A-9CB0-25565202C3F9}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.8.B.S2"/>
+													<Property Name="Time" Type="Real64" Value="1.25"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{DAD96C54-34EC-47B4-9472-0BCB96991E4F}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.8.B.S3"/>
+													<Property Name="Time" Type="Real64" Value="5.41666666666667"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{C8E0A6C1-DC0B-4855-ABEA-3F595E2A4FEE}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.8.B.S4"/>
+													<Property Name="Time" Type="Real64" Value="8.33333333333333"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{61CF20EA-A882-4192-A712-8B6996A66C8E}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_EARLYANSWER"/>
+													<Property Name="Time" Type="Real64" Value="9.58333333333333"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{CDFCBFC4-5F5E-4E6E-ADA4-8B1384BFEBB0}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="audio_1_0_8_A" ID="{74467246-2FD4-4780-B139-3F711AA47AA5}" ShortID="401151114">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{56C43BC3-A138-4616-BA5B-570CA49D951E}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="225683231"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{06E19F12-E651-469E-B42A-FDD662FDB3C8}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.8.A.S1"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{7DF5BDE6-914F-4036-BCE1-8A6CE13C600A}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.8.A.S2"/>
+													<Property Name="Time" Type="Real64" Value="2.08333333333333"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{033DF6BC-5C39-46B7-8D9B-998D4A5D98AC}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.8.A.S3"/>
+													<Property Name="Time" Type="Real64" Value="5"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{8BC3FC0D-2090-47AE-AD3C-A3DE46CCF508}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.8.A.S4"/>
+													<Property Name="Time" Type="Real64" Value="7.5"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{6BF13AC8-6C13-4304-BD8D-533944D2D022}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_EARLYANSWER"/>
+													<Property Name="Time" Type="Real64" Value="9.58333333333333"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{56C43BC3-A138-4616-BA5B-570CA49D951E}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="audio_1_0_5_A" ID="{251B6C96-6253-4061-B402-6D2CBB2A54CB}" ShortID="566417473">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{B7E34109-1C90-40B2-ACE9-CA8958D62225}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="75699364"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{DB7BC4DE-67E3-4C09-BDE3-7BE4BCCE299F}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.5.A.S1"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{EF99011D-5094-4C4A-96FE-0837821302E9}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.5.A.S2"/>
+													<Property Name="Time" Type="Real64" Value="4.58333333333333"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{7F2C57D7-A427-4A52-BD68-31A6D1C4066A}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_EARLYANSWER"/>
+													<Property Name="Time" Type="Real64" Value="9.16666666666667"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{B7E34109-1C90-40B2-ACE9-CA8958D62225}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="audio_1_0_17_A" ID="{1A38DA0C-1D81-4686-B059-9F0C5E23D998}" ShortID="20958060">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{2FD1FC5E-EDC0-4587-B74F-4939A2100699}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="270280194"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{9397CE02-3C8C-42F1-93BA-B438194FD908}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.17.A"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{FD6D796E-2FF3-4C28-8499-29961B9A865F}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_EARLYANSWER"/>
+													<Property Name="Time" Type="Real64" Value="2.5"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{2FD1FC5E-EDC0-4587-B74F-4939A2100699}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="audio_1_0_7" ID="{48539820-56F9-4C31-98C6-8FF909C997C1}" ShortID="648136753">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{3D345F4E-6DE2-46E0-A8F9-B0B0F33A9534}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="173025612"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{F70C3821-EE0F-41A7-BB5C-69ECF11E4E05}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.7.S1"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{C47A8BAC-CC24-4FD8-9BC9-CBC76C9BEAB5}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.7.S2"/>
+													<Property Name="Time" Type="Real64" Value="4.16666666666667"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{DF3A53D6-B273-4C70-873B-A4F393D8A753}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_EARLYANSWER"/>
+													<Property Name="Time" Type="Real64" Value="6.25"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{3D345F4E-6DE2-46E0-A8F9-B0B0F33A9534}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="audio_1_0_10_A" ID="{DE25B8C2-6842-4587-859F-26E374FAE211}" ShortID="468440183">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{B9EE7B3B-3B87-46E7-9416-076C2BB16D1B}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="242454899"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{64F4DCC2-F07F-4953-98DD-2FEDCFA21762}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.10.A"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{00AE7141-D1EB-4A3D-9E16-679B8E6BED18}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_EARLYANSWER"/>
+													<Property Name="Time" Type="Real64" Value="2.08333333333333"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{B9EE7B3B-3B87-46E7-9416-076C2BB16D1B}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="audio_1_0_18_B" ID="{7DF79D0B-8B03-4831-B2A9-8787EA927928}" ShortID="861752367">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{5B24918C-E924-4CD7-A398-C87F9893B44D}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="329964742"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{2A5320DA-A1F8-493B-95CA-0883B77BD2F6}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.18.B"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{A5844E81-7B12-46FD-A1D3-1AB55BE7CBE1}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_EARLYANSWER"/>
+													<Property Name="Time" Type="Real64" Value="2.91666666666667"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{5B24918C-E924-4CD7-A398-C87F9893B44D}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="audio_1_1_0" ID="{05A9F38A-B58F-4FF8-A7ED-8F4A3DA17A15}" ShortID="278210143">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{71A42AD2-6779-45A9-8E7F-2090AB0322DA}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="440866993"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{76B63C6F-91B1-410D-873C-55777B48ACFD}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.1.0.S1"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{A8AD7A61-7624-400F-9D45-8A66DD1E89B8}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.1.0.S2"/>
+													<Property Name="Time" Type="Real64" Value="0.833333333333333"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{F7A9A49A-350C-43B8-A3F8-E0DBCACF9921}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.1.0.S3"/>
+													<Property Name="Time" Type="Real64" Value="1.25"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{7909F278-A5B4-4950-B763-BE41898F2021}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.1.0.S4"/>
+													<Property Name="Time" Type="Real64" Value="2.08333333333333"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{9627A607-35D3-40D1-AA46-2CDDF41832B2}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.1.0.S5"/>
+													<Property Name="Time" Type="Real64" Value="2.5"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{D360A6AF-6906-4F9C-B4A9-8FCF0CEA036D}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.1.0.S6"/>
+													<Property Name="Time" Type="Real64" Value="3.33333333333333"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{64634F0F-819F-4D87-90E2-7D33976C5D45}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.1.0.S7"/>
+													<Property Name="Time" Type="Real64" Value="3.75"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{02D74D94-277F-4391-A2A6-E7E79A77EA56}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.1.0.S8"/>
+													<Property Name="Time" Type="Real64" Value="7.5"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{CC240421-C47A-49E8-AA16-CD9BAC25FF32}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_EARLYANSWER"/>
+													<Property Name="Time" Type="Real64" Value="8.75"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{71A42AD2-6779-45A9-8E7F-2090AB0322DA}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="audio_1_0_17_B" ID="{A0C3F797-2937-4D9E-8E9D-0969672EFF97}" ShortID="688481613">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{53E4CC32-16BF-4906-B432-C7622C97F26F}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="284085993"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{71FA2C89-1678-45D9-8532-A68C5C3B492C}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.17.B"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{BE685D81-F429-4CD9-A288-AB62D1D4340E}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_EARLYANSWER"/>
+													<Property Name="Time" Type="Real64" Value="0.833333333333333"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{53E4CC32-16BF-4906-B432-C7622C97F26F}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="audio_1_0_5_B" ID="{3EB0F546-1968-4A86-AE20-C24A336AB6C7}" ShortID="777604832">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{71FFDC6B-8DC0-4401-B0AF-D4E1CF5ACF52}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="75940384"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{1E59A83F-B260-4E2D-8866-C09BB1927A5A}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.5.B.S1"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{C4BD110C-1D07-482C-9BDD-DF52B5C1CB0E}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.5.B.S2"/>
+													<Property Name="Time" Type="Real64" Value="2.91666666666667"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{DCF5D694-91ED-4B18-AB14-C8988D89F5A6}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_EARLYANSWER"/>
+													<Property Name="Time" Type="Real64" Value="6.25"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{71FFDC6B-8DC0-4401-B0AF-D4E1CF5ACF52}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="audio_1_0_24" ID="{667BF9B1-874A-473D-9B84-001C73419457}" ShortID="630356374">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{99F93D83-8880-4AB8-AF69-2D46D1D4C367}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="403389648"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{3B39D698-A4EF-48F0-9969-DF15FCA2FCC9}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.24.S1"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{AAF9185C-EBFD-4DF8-B70A-1F51FBD38BE4}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.24.S2"/>
+													<Property Name="Time" Type="Real64" Value="3.33333333333333"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{5886CA07-34BE-43B7-9963-BF5381F0716C}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.24.S3"/>
+													<Property Name="Time" Type="Real64" Value="5.41666666666667"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{4196C73A-4654-4C86-9D32-E6E04DD2A69A}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.24.S4"/>
+													<Property Name="Time" Type="Real64" Value="8.33333333333333"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{86FD7410-28A6-418F-B598-6545DE00A97C}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_EARLYANSWER"/>
+													<Property Name="Time" Type="Real64" Value="11.6666666666667"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{99F93D83-8880-4AB8-AF69-2D46D1D4C367}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="audio_1_0_6_A" ID="{4DDB1018-A16B-4784-8EF1-6D30A71AB75E}" ShortID="397969">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{E33B93F5-4C5C-4ACA-85F7-6D98D33B0646}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="79053073"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{9F7828E0-98CD-4F23-AE23-64F90D5B3ABC}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.6.A.S1"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{E03D3C33-2F47-4359-9620-8D1F4788BB12}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.6.A.S2"/>
+													<Property Name="Time" Type="Real64" Value="3.75"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{0A884187-E004-48E4-A294-E100E02AD6E4}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.6.A.S3"/>
+													<Property Name="Time" Type="Real64" Value="8.33333333333333"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{EA343535-1A23-4F88-B04D-BEE28ABEB960}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_EARLYANSWER"/>
+													<Property Name="Time" Type="Real64" Value="11.6666666666667"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{E33B93F5-4C5C-4ACA-85F7-6D98D33B0646}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="audio_1_0_6_B" ID="{FCF8B31F-1BA9-4221-A80B-0AE96D2D5C2F}" ShortID="1052182194">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{08676820-7B6C-4FC6-B110-38CB60E74EBD}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="100888465"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{CFDDF054-AB32-499E-B29F-2BAE5DD6EAC7}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.6.B"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{A61E1A88-85A6-4630-AA20-012A7CCC4A19}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_EARLYANSWER"/>
+													<Property Name="Time" Type="Real64" Value="2.91666666666667"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{08676820-7B6C-4FC6-B110-38CB60E74EBD}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="audio_1_0_10_B" ID="{8308A04B-32DA-4BED-9F6E-1F21FED8724E}" ShortID="627732281">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{0A869624-0093-4B9C-A1A4-D642ACEA868A}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="244529462"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{092019B4-1529-4908-85C6-5E96A57848AA}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.10.B"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{28784EE3-B26C-49CB-9451-3B55501E4342}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_EARLYANSWER"/>
+													<Property Name="Time" Type="Real64" Value="4.16666666666667"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{0A869624-0093-4B9C-A1A4-D642ACEA868A}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="audio_1_0_19" ID="{4B9251E3-79A8-4B1D-AA6A-FE70AC8BF741}" ShortID="288059408">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{BA7B5DDB-B5B4-45B0-9FE5-18482EB9EBD0}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="341647957"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{F6D108A2-7EA0-4722-8E29-FFFD29B83347}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.19.S1"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{ACB91E28-AE82-4A18-99BF-E95203B0F29C}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.19.S2"/>
+													<Property Name="Time" Type="Real64" Value="4.58333333333333"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{1506A19F-D7CF-4F4A-A9BA-4D424A9B6F35}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_EARLYANSWER"/>
+													<Property Name="Time" Type="Real64" Value="8.33333333333333"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{BA7B5DDB-B5B4-45B0-9FE5-18482EB9EBD0}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="audio_1_0_21" ID="{80061894-58BC-45A9-AF75-96FC2B542FAC}" ShortID="609634610">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{CEF73887-11E9-4C91-AD57-7274FE12D0A2}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="374111829"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{C4D4682F-C7EB-420E-8CD8-32A0D5F6F58A}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.21.S1"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{5713E2BF-90EA-4168-91F8-3AFDA9BCA54C}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.21.S2"/>
+													<Property Name="Time" Type="Real64" Value="2.91666666666667"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{17B29BFB-E4F6-44E7-97E2-7CB95E60557B}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.21.S3"/>
+													<Property Name="Time" Type="Real64" Value="6.25"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{874B1F84-913D-4B81-AF8F-0AB0F3D8D21C}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.21.S4"/>
+													<Property Name="Time" Type="Real64" Value="9.16666666666667"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{4E58038C-FA58-47EB-9504-C5836771200D}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.21.S5"/>
+													<Property Name="Time" Type="Real64" Value="12.0833333333333"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{3F24DFDA-E8BC-48CC-AFBC-AF44DD4D3841}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.21.S6"/>
+													<Property Name="Time" Type="Real64" Value="16.6666666666667"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{6390CDEF-155E-4A47-9DB1-1394453AD197}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_EARLYANSWER"/>
+													<Property Name="Time" Type="Real64" Value="19.1666666666667"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{CEF73887-11E9-4C91-AD57-7274FE12D0A2}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="audio_1_0_18_A" ID="{E82572D3-D7C5-4145-8738-1B1B1CB0044E}" ShortID="1041308792">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{43EEAD51-C54E-472A-A55C-A1D6B77D84F0}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="318919972"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{BB1265F7-A481-4EFC-9565-B05E0C267A58}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.18.A"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{095E2B34-C703-457E-B13C-6EFC30761F9C}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_EARLYANSWER"/>
+													<Property Name="Time" Type="Real64" Value="3.75"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{43EEAD51-C54E-472A-A55C-A1D6B77D84F0}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="audio_1_0_11" ID="{396BA6C4-FF18-44C4-A553-3BA36348D415}" ShortID="103249102">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{5483B5CB-F61C-4AE4-B547-790AD62C5AC0}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="263169997"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{6C79FA8A-997F-4D17-B29E-7F6D2C00FE3B}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.11.S1"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{B604FE7C-47A6-40B7-BB27-73232B7B2C13}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.11.S2"/>
+													<Property Name="Time" Type="Real64" Value="4.58333333333333"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{97D1B8D6-B891-452B-ACE7-FEE6FEA83673}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.11.S3"/>
+													<Property Name="Time" Type="Real64" Value="7.08333333333333"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{52F632FF-DB54-4CD2-8837-32315881085A}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.11.S4"/>
+													<Property Name="Time" Type="Real64" Value="10.8333333333333"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{7694DEBA-3F67-4159-8A00-96802BF70B39}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_EARLYANSWER"/>
+													<Property Name="Time" Type="Real64" Value="14.5833333333333"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{5483B5CB-F61C-4AE4-B547-790AD62C5AC0}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="audio_1_0_22_B" ID="{4E5146BE-FDD7-4F7F-811C-60DE0DA2E947}" ShortID="956711125">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{2AD2269A-027D-41C6-AE06-DBE5C3D91BF2}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="394822416"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{677A8FA6-149E-4A50-B56D-A5C02B26DE4C}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.22.B.S1"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{EE18D0A8-9498-4E14-92A4-9E327F93DFD5}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.22.B.S2"/>
+													<Property Name="Time" Type="Real64" Value="2.08333333333333"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{054BB764-AC80-4936-B928-7B60C5D57926}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.22.B.S3"/>
+													<Property Name="Time" Type="Real64" Value="3.75"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{56A60EED-4EA2-4E25-B232-8793FEDBC370}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.22.B.S4"/>
+													<Property Name="Time" Type="Real64" Value="5.41666666666667"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{E48DE6C0-9638-4D11-A362-2EE4B2776FF6}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.22.B.S5"/>
+													<Property Name="Time" Type="Real64" Value="8.33333333333333"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{C80B58A4-F802-4996-97F8-625964CEC2F1}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_EARLYANSWER"/>
+													<Property Name="Time" Type="Real64" Value="12.9166666666667"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{2AD2269A-027D-41C6-AE06-DBE5C3D91BF2}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="audio_1_0_20_A" ID="{E622AF8D-DE0A-46EF-8CD7-CECFAA42AF62}" ShortID="843770056">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{4D69CBE6-6245-414D-A2F8-6667D6E65537}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="369080227"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{FC322555-2506-4766-BCDF-B57EF31EC8A0}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.20.A"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{BCB86393-7006-490B-BEFD-60294FA1D33B}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_EARLYANSWER"/>
+													<Property Name="Time" Type="Real64" Value="4.16666666666667"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{4D69CBE6-6245-414D-A2F8-6667D6E65537}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="audio_1_0_20_B" ID="{002C21E9-6296-4DB5-A85C-E3E8E11F74E3}" ShortID="482289181">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{CE946C91-3C7F-4E99-B8AE-6E2A43C3EFCF}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="373489852"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{3CF822DA-234B-452B-9933-9F35BC1DE932}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.20.B.S1"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{6480484B-094F-46BC-B029-31F57110E299}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.20.B.S2"/>
+													<Property Name="Time" Type="Real64" Value="4.16666666666667"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{FDD3426B-8A95-431C-9060-C870CCC3E011}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_EARLYANSWER"/>
+													<Property Name="Time" Type="Real64" Value="5.83333333333333"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{CE946C91-3C7F-4E99-B8AE-6E2A43C3EFCF}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="audio_1_0_22_A" ID="{C9108BE9-93E4-4A20-B0A4-3D5503ED8A49}" ShortID="844021918">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{98EEDE7C-3656-4E44-BBE3-DA80053DAEDF}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="380143772"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{35081F65-3C14-428C-B2A2-84DF1F2B1653}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.22.A.S1"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{38894586-BE09-4969-B79C-8C3ABDC84E18}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.22.A.S2"/>
+													<Property Name="Time" Type="Real64" Value="1.66666666666667"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{BDC9F03A-03A7-4333-8ABD-0E9FE749AE22}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.22.A.S3"/>
+													<Property Name="Time" Type="Real64" Value="5"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{944918B2-976A-4C1F-82E8-F5E2BAB31437}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.22.A.S4"/>
+													<Property Name="Time" Type="Real64" Value="7.91666666666667"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{442A5E9C-C54C-4749-99AB-380EBC13DEDD}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_EARLYANSWER"/>
+													<Property Name="Time" Type="Real64" Value="10"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{98EEDE7C-3656-4E44-BBE3-DA80053DAEDF}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="audio_1_0_9" ID="{97D518F9-FE88-439F-83BB-1EA359A7D6FC}" ShortID="82280448">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{2EC21C28-7687-4B28-8CE2-2E5331787A1E}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="238929103"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{45E61A34-6982-4E8C-912B-26FD406D0A97}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.9.S1"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{88127D64-6AD3-44B5-9762-D00E21BA1E04}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.9.S2"/>
+													<Property Name="Time" Type="Real64" Value="4.16666666666667"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{BD19017E-CA7B-4145-AFD3-38B219D14EE0}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_EARLYANSWER"/>
+													<Property Name="Time" Type="Real64" Value="5.41666666666667"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{2EC21C28-7687-4B28-8CE2-2E5331787A1E}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="audio_1_0_25" ID="{966A7C14-51DF-4699-8F4B-DCB3F3744DBB}" ShortID="721616245">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{A2212D82-09C0-4A49-827B-989AF0B855E8}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="414226299"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{5D255FCB-5512-4C2D-B852-EFA0CD149255}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.25.S1"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{9CBD1267-423D-4EA2-A6AF-1815BED4FB4D}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.25.S2"/>
+													<Property Name="Time" Type="Real64" Value="3.33333333333333"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{0D8F437D-4A3A-409E-90FE-4F8F1AC65354}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.25.S3"/>
+													<Property Name="Time" Type="Real64" Value="6.25"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{30FD93C9-7E92-424E-8C7A-3A0EEF1B01C9}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.25.S4"/>
+													<Property Name="Time" Type="Real64" Value="7.5"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{77B2F27D-4F74-4756-A235-183AD89522D9}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.25.S5"/>
+													<Property Name="Time" Type="Real64" Value="8.75"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{C3FB9C25-D5FA-4FC2-B954-D1B600E66DAC}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.25.S6"/>
+													<Property Name="Time" Type="Real64" Value="10.8333333333333"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{4C6B097D-682E-4D11-B4E6-FE8CEA38662D}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.25.S7"/>
+													<Property Name="Time" Type="Real64" Value="12.0833333333333"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{413B956E-ECCC-4B2D-A9B8-5323B15BCD28}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.25.S8"/>
+													<Property Name="Time" Type="Real64" Value="14.1666666666667"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{57F960EE-683C-4042-82E2-95617AF33713}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.25.S9"/>
+													<Property Name="Time" Type="Real64" Value="15.4166666666667"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{93FA8BF5-B3E8-4836-A8CB-99A7AEFE2D2C}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.25.S10"/>
+													<Property Name="Time" Type="Real64" Value="18.75"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{BF3B8DB1-3B54-4609-AFA5-009FBEA974CC}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.25.S11"/>
+													<Property Name="Time" Type="Real64" Value="23.3333333333333"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{5A3171A3-E54D-41F4-A07E-5EC3B0A80255}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.25.S12"/>
+													<Property Name="Time" Type="Real64" Value="25.4166666666667"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{573D4011-AE18-4F86-8D11-A9DC4E27BAB0}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.25.S13"/>
+													<Property Name="Time" Type="Real64" Value="29.1666666666667"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{2E62FADC-FB95-492D-BD09-C1114332A251}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.25.S14"/>
+													<Property Name="Time" Type="Real64" Value="30.8333333333333"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{01F3376F-ECA1-445F-9138-1D48993FDB63}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.25.S15"/>
+													<Property Name="Time" Type="Real64" Value="32.9166666666667"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{4D574A07-560A-4EDB-ACF4-725F46BFB832}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.25.S16"/>
+													<Property Name="Time" Type="Real64" Value="33.75"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{05A2DF83-4ED5-449C-875D-F83DA61C9C97}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.25.S17"/>
+													<Property Name="Time" Type="Real64" Value="37.5"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{D257FFF1-CE39-4705-AB2D-D0878DA80B7B}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.25.S18"/>
+													<Property Name="Time" Type="Real64" Value="40.8333333333333"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{19EC7293-7983-4A86-A2B0-DD20712A4F7B}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.25.S19"/>
+													<Property Name="Time" Type="Real64" Value="45"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{A4F4F031-04A0-4C26-B7C9-6286B43AD042}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.25.S20"/>
+													<Property Name="Time" Type="Real64" Value="47.9166666666667"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{DF0A5906-A999-4D1B-9340-7FC4382A9333}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.25.S21"/>
+													<Property Name="Time" Type="Real64" Value="52.0833333333333"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{E06DD681-2671-4B99-9578-C16D3B2D49E8}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_EARLYANSWER"/>
+													<Property Name="Time" Type="Real64" Value="54.5833333333333"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{A2212D82-09C0-4A49-827B-989AF0B855E8}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="audio_1_0_1" ID="{F7C36E81-A59D-4E41-80F7-60EC71DE5329}" ShortID="428710076">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{863A4F97-C811-455F-B1CB-5F23240DF6CD}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="34901921"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{81BC8659-0E09-4F21-83AD-DC2DFE27867E}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.1"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{5E76BBB0-692F-47D7-95BD-85AAC849BDDC}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_EARLYANSWER"/>
+													<Property Name="Time" Type="Real64" Value="0.649273311631362"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{863A4F97-C811-455F-B1CB-5F23240DF6CD}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="audio_1_0_2_A" ID="{594A1E62-F989-402D-AB42-7DFCDA3EF80F}" ShortID="36268508">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{31A0F3EC-8C98-4E52-92FE-052697C0EB6D}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="45867386"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{07BC1532-F5A4-4DB4-B623-9BA38AB21611}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.2.A"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{55A741B1-8980-4D52-BD9A-CC14B0065288}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_EARLYANSWER"/>
+													<Property Name="Time" Type="Real64" Value="1.66666666666667"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{31A0F3EC-8C98-4E52-92FE-052697C0EB6D}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="audio_1_0_0" ID="{148C5C11-D07D-4F54-AAB3-EE0E06D4A150}" ShortID="981508071">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{D43303C8-3ED7-43DB-BDB5-A00FF8BCDD90}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="2662693"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{8055B478-8DE9-46F7-810F-8B8F2999F2A0}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.0"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{EE167813-8591-4FE0-B8CB-4964D1FF8D1B}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_EARLYANSWER"/>
+													<Property Name="Time" Type="Real64" Value="2.08333333333333"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{D43303C8-3ED7-43DB-BDB5-A00FF8BCDD90}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="audio_1_0_2_B" ID="{BFE0F01C-A5EF-47E4-98F9-CCCDFDFF5405}" ShortID="563646636">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{DF5B01FD-8E0F-42A4-9369-FFD68C1A1A3F}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="50646217"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{6CB1B5D6-AA09-463C-9ADD-FAA741D1EFFC}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.2.B"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{F2AE8889-796F-4F4E-A385-51DF5BF51D9B}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_EARLYANSWER"/>
+													<Property Name="Time" Type="Real64" Value="2.08333333333333"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{DF5B01FD-8E0F-42A4-9369-FFD68C1A1A3F}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="audio_1_0_3_A" ID="{09FABD06-F2CF-44B6-832F-CA68C12F02A2}" ShortID="427502379">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{21979C20-773A-4358-82BA-7059987132C8}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="56122176"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{972EFA19-AF69-4244-9D01-A009A85406C9}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.3.A.S1"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{CFE9038B-00A1-4D64-94D1-BE8F39AE6885}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.3.A.S2"/>
+													<Property Name="Time" Type="Real64" Value="2.5"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{74AFF4F4-BC83-41C3-AB72-58E9267E46E4}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.3.A.S3"/>
+													<Property Name="Time" Type="Real64" Value="5.5"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{33E63A5D-7BBC-4467-970C-2D5AF0ADDC8D}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.3.A.S4"/>
+													<Property Name="Time" Type="Real64" Value="7.58333333333333"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{1987A012-A4A9-4B54-9C8D-0887BB9981CD}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.3.A.S5"/>
+													<Property Name="Time" Type="Real64" Value="13.4166666666667"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{DE034E3A-1D78-42BC-9E3E-9136910BA213}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.3.A.S6"/>
+													<Property Name="Time" Type="Real64" Value="16.3333333333333"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{B875BF85-44ED-4581-A117-91F05B1C88F9}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_EARLYANSWER"/>
+													<Property Name="Time" Type="Real64" Value="19.25"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{21979C20-773A-4358-82BA-7059987132C8}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="audio_1_0_3_B" ID="{D6834416-984F-4932-8D39-B4E457479C22}" ShortID="606268941">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{0491BBE8-DF32-41F8-8246-928AC33AE6F5}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="66563809"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{BA3B97BD-BFF0-41E2-8927-C271B2FC2FA3}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.3.B.S1"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{DC6E16F4-FDD0-4248-81B1-B49B84D11BB3}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.3.B.S2"/>
+													<Property Name="Time" Type="Real64" Value="1.25"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{35BC8292-5048-47F3-B7A6-47C94D25CC78}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.3.B.S3"/>
+													<Property Name="Time" Type="Real64" Value="2.08333333333333"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{DBA31981-0D2D-4A04-BC58-39A350F76205}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.3.B.S4"/>
+													<Property Name="Time" Type="Real64" Value="6.25"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{4F38DE0A-B828-48BA-A743-884E42C3C415}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.3.B.S5"/>
+													<Property Name="Time" Type="Real64" Value="10.8333333333333"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{1A5E3D65-C409-461D-AB9B-9BC16A0C5F5B}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_EARLYANSWER"/>
+													<Property Name="Time" Type="Real64" Value="13.3333333333333"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{0491BBE8-DF32-41F8-8246-928AC33AE6F5}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="audio_1_0_4_A" ID="{5AB19A45-28E7-46D5-A6AC-461CDB3A7B16}" ShortID="332987552">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{4D99DD3E-67EC-4963-AF20-A5ADC4A757B1}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="69644325"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{854BCA9F-7336-40EF-9F9B-9A92A89E0F32}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.4.A.S1"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{C24D87B1-C00A-421B-95DD-C07384EF6397}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.4.A.S2"/>
+													<Property Name="Time" Type="Real64" Value="1.25"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{FC440D36-5029-4871-BC8B-400AA4D37602}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_EARLYANSWER"/>
+													<Property Name="Time" Type="Real64" Value="5.83333333333333"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{4D99DD3E-67EC-4963-AF20-A5ADC4A757B1}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="audio_1_0_4_B" ID="{ED751579-6FA4-493E-8279-109DE87B6CF1}" ShortID="1016519655">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Silence_1min_PlaceHolder" ID="{C2445064-EA9C-4001-AF6E-7595A8E37FA8}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>DEBUG\Silence_1min_PlaceHolder.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="72045503"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{D959239F-7B42-4847-880E-C54D008983E4}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.4.B.S1"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{E0C4783F-5763-45BB-AC25-B7EF14D8457F}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.4.B.S2"/>
+													<Property Name="Time" Type="Real64" Value="2.91666666666667"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{1307313F-675E-4C95-868E-AA9211A7B8AB}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="1.0.4.B.S3"/>
+													<Property Name="Time" Type="Real64" Value="6.66666666666667"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<Marker Name="" ID="{24E5603C-A8E9-425C-8812-7F6C76EAC4B5}">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="MOD_EARLYANSWER"/>
+													<Property Name="Time" Type="Real64" Value="10"/>
+												</PropertyList>
+											</Marker>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Silence_1min_PlaceHolder" ID="{C2445064-EA9C-4001-AF6E-7595A8E37FA8}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{FF84CB73-3AA2-43CC-A2EC-DFC6A2DFAFBD}" SchemaVersion="123">
+	<AudioObjects>
+		<WorkUnit Name="UI" ID="{FF84CB73-3AA2-43CC-A2EC-DFC6A2DFAFBD}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="SW_MainMenuSFX" ID="{9D2D8F12-BE90-4EFF-9CA1-2134A7DA5D47}" ShortID="1021128459">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="SW_MainMenuSFX" ID="{58B4C49E-8AD0-459E-9A26-626C3DC163F7}">
+							<Language>SFX</Language>
+							<AudioFile>UI\SW_MainMenuSFX.WAV</AudioFile>
+							<MediaIDList>
+								<MediaID ID="618960622"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="SW_MainMenuSFX" ID="{58B4C49E-8AD0-459E-9A26-626C3DC163F7}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

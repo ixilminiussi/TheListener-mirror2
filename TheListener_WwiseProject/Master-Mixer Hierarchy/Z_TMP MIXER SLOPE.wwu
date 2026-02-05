@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{B13B0642-8120-42F0-9EEA-A2A7115277D5}" SchemaVersion="123" RootDocumentID="{537ECABC-443B-4304-910C-48B0CA31D4F5}" ParentDocumentID="{537ECABC-443B-4304-910C-48B0CA31D4F5}">
+	<Busses>
+		<WorkUnit Name="Z_TMP MIXER SLOPE" ID="{B13B0642-8120-42F0-9EEA-A2A7115277D5}" OwnerID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" PersistMode="Nested">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="13"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<Bus Name="Z_MISC" ID="{30AA717F-DB1C-4C7C-BAB0-C52281784672}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="14"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+				</Bus>
+				<Bus Name="Z_UI" ID="{38661457-1A29-4725-9EE7-EF2AB0C85A32}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="2"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+				</Bus>
+				<Bus Name="Z_X_DEV" ID="{05AC0C42-E155-4419-8FB8-A368B2B79BEE}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="7"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+				</Bus>
+				<Bus Name="Z_MC" ID="{EC8F82BE-1D20-4AAD-80B9-0D98D1F8B3C6}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="6"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+				</Bus>
+				<Bus Name="Z_SEND" ID="{2836405A-D7BD-4A85-AC8F-654D9DC4E4DB}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="15"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+				</Bus>
+				<Bus Name="Z_MUSIC" ID="{F1FD9440-9519-4E59-90F7-DA815464FDF6}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="8"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+				</Bus>
+				<Bus Name="Z_OBJIS" ID="{D2F49731-63D5-4D1E-8BEC-FCED57F8B3B7}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="26"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+				</Bus>
+				<Bus Name="Z_VOICE" ID="{500AB3B9-4618-4B31-B98F-545FF9780FE1}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="25"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+				</Bus>
+				<Bus Name="Z_RADIO" ID="{08BBB20C-55B2-449E-BADD-282546392170}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="5"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Bus Name="ARCHIVE" ID="{FDCD7D4E-556A-450B-83DB-FE03A0370283}"/>
+						<Bus Name="FOLEY" ID="{17DA104F-AC2B-4A9D-A00F-7D19CF6DE267}">
+							<ChildrenList>
+								<Bus Name="COMPONENTS" ID="{A9F9FDCD-80B5-49E0-AC0E-AF274BFE72B1}"/>
+								<Bus Name="MECHANICS" ID="{6A8D29CA-56B9-4188-9024-929EA3B479C3}"/>
+							</ChildrenList>
+						</Bus>
+						<Bus Name="MODEL" ID="{713F8EFF-58EB-4A9A-90F1-AE6BE8C72172}">
+							<ChildrenList>
+								<Bus Name="SPEAKER_RADIO" ID="{A3DEED2F-AAF1-4383-BD1F-4C0837814DDB}"/>
+							</ChildrenList>
+						</Bus>
+					</ChildrenList>
+				</Bus>
+				<Bus Name="Z_AMB" ID="{D31A2462-3307-45AB-8BE9-ED7BF0CD4D0B}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="4"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+				</Bus>
+			</ChildrenList>
+		</WorkUnit>
+	</Busses>
+</WwiseDocument>

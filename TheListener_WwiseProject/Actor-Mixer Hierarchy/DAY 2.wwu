@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{6A19845C-C453-494D-AD8C-79E434BC2E8F}" SchemaVersion="123">
+	<AudioObjects>
+		<WorkUnit Name="DAY 2" ID="{6A19845C-C453-494D-AD8C-79E434BC2E8F}" PersistMode="Standalone">
+			<ChildrenList>
+				<WorkUnit Name="Stations_D2" ID="{39A54B24-D7D7-4CD0-872A-510DE0E6C7E7}" PersistMode="Reference"/>
+				<WorkUnit Name="Anton_D2" ID="{E4705B36-5E11-4D0D-ACE4-CF57A5FE2E4E}" PersistMode="Reference"/>
+				<WorkUnit Name="Natalya_D2" ID="{227A4AB0-5384-4D87-B4DA-FC063A3A3AF5}" PersistMode="Reference"/>
+				<WorkUnit Name="Phone_D2" ID="{E67931F0-E341-4C0F-911A-32838CB2A2F6}" PersistMode="Reference"/>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

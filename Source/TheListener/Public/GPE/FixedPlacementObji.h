@@ -4,12 +4,10 @@
 
 #include "CoreMinimal.h"
 #include "GPE/Obji.h"
-#include "FixedPlacementObji.generated.h"
 
 class USphereComponent;
 /**
  * 
- */
 UCLASS()
 class THELISTENER_API AFixedPlacementObji : public AObji
 {
@@ -33,3 +31,4 @@ protected:
 
 	TArray<TObjectPtr<AActor>> DropLocations;
 };
+*/

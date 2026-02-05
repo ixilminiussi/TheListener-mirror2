@@ -4,9 +4,12 @@
 #include "UI/Menus/UIElements/SwitcherTabSettings.h"
 
 #include "Components/HorizontalBox.h"
+#include "Components/ScrollBox.h"
 #include "Components/VerticalBox.h"
+#include "UI/Menus/SettingsTabs/SettingsKeyBindWidget.h"
 #include "UI/Menus/SettingsTabs/SettingsTabBase.h"
-#include "UI/Menus/UIElements/GameSettingsSubsytem.h"
+#include "UI/Menus/UIElements/DescriptionTextBlock.h"
+#include "UI/Menus/UIElements/KeyBindButton.h"
 #include "UI/Menus/UIElements/WidgetTab.h"
 
 void USwitcherTabSettings::NativeConstruct()
@@ -45,7 +48,6 @@ void USwitcherTabSettings::SetIndex(int Index, float WaitingTime) const
 	}
 	check(CurrentWidget);
 	CurrentWidget->Toggle(true);
-
 	SetFocusOnElement(WaitingTime);
 }
 
@@ -60,7 +62,8 @@ void USwitcherTabSettings::ToRightTab() const
 {
 	const int32 NewIndex = (AnimatedSwitcher->GetActiveWidgetIndex() + TabHeaderBox->GetChildrenCount() + 1) %
 		TabHeaderBox->GetChildrenCount();
-	UCommonActivatableWidget* NewWidget = Cast<UCommonActivatableWidget>(AnimatedSwitcher->GetActiveWidget());
+	USettingsTabBase* NewWidget = Cast<USettingsTabBase>(AnimatedSwitcher->GetActiveWidget());
+	check(NewWidget);
 	NewWidget->ActivateWidget();
 	SetIndex(NewIndex, 0.25f);
 }
@@ -69,7 +72,8 @@ void USwitcherTabSettings::ToLeftTab() const
 {
 	const int32 NewIndex = (AnimatedSwitcher->GetActiveWidgetIndex() + TabHeaderBox->GetChildrenCount() - 1) %
 		TabHeaderBox->GetChildrenCount();
-	UCommonActivatableWidget* NewWidget = Cast<UCommonActivatableWidget>(AnimatedSwitcher->GetActiveWidget());
+	USettingsTabBase* NewWidget = Cast<USettingsTabBase>(AnimatedSwitcher->GetActiveWidget());
+	check(NewWidget);
 	NewWidget->ActivateWidget();
 	SetIndex(NewIndex, 0.25f);
 }
@@ -90,11 +94,15 @@ void USwitcherTabSettings::SetFocusOnElement(float WaitingTime) const
 		[this]()
 		{
 			USettingsTabBase* CurrentWidget = Cast<USettingsTabBase>(AnimatedSwitcher->GetActiveWidget());
-			if (!CurrentWidget)
+			check(CurrentWidget);
+			if (Cast<USettingsKeyBindWidget>(CurrentWidget))
 			{
-				return;
+				CurrentWidget->GetScrollBox()->GetChildAt(1)->SetFocus();
 			}
-			CurrentWidget->GetVerticalBox()->GetChildAt(0)->SetFocus();
+			else
+			{
+				CurrentWidget->GetScrollBox()->GetChildAt(0)->SetFocus();
+			}
 		},
 		WaitingTime,
 		false
@@ -121,6 +129,11 @@ USettingsTabBase* USwitcherTabSettings::GetAccessibilityTab() const
 	return AccessibilityTab;
 }
 
+/*USettingsTabBase* USwitcherTabSettings::GetKeyBindingTab() const
+{
+	return KeyBindingTab;
+}*/
+
 UWidgetTab* USwitcherTabSettings::GetGameplayTabHeader() const
 {
 	return GameplayTabHeader;
@@ -140,6 +153,11 @@ UWidgetTab* USwitcherTabSettings::GetAccessibilityTabHeader() const
 {
 	return AccessibilityTabHeader;
 }
+
+/*UWidgetTab* USwitcherTabSettings::GetKeyBindingTabHeader() const
+{
+	return KeyBindingTabHeader;
+}*/
 
 
 class UCommonAnimatedSwitcher* USwitcherTabSettings::GetAnimatedSwitcher() const

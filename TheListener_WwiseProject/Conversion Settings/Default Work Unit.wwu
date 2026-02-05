@@ -38,10 +38,10 @@
 					</PropertyList>
 					<ConversionPluginInfoList>
 						<ConversionPluginInfo Platform="Windows">
-							<ConversionPlugin Name="" ID="{841F6537-35BA-42B4-A98D-32A1E9E218CA}" PluginName="PCM" CompanyID="0" PluginID="1"/>
+							<ConversionPlugin Name="" ID="{9A0CE30C-6EA4-4D45-BCD7-CAAE09832D41}" PluginName="Vorbis" CompanyID="0" PluginID="4"/>
 						</ConversionPluginInfo>
 						<ConversionPluginInfo Platform="Mac">
-							<ConversionPlugin Name="" ID="{A08B543D-E0B9-4A45-A500-A7A3E8DE2072}" PluginName="PCM" CompanyID="0" PluginID="1"/>
+							<ConversionPlugin Name="" ID="{D2DFE58A-5C54-4050-8EBE-4C24DCEE6296}" PluginName="Vorbis" CompanyID="0" PluginID="4"/>
 						</ConversionPluginInfo>
 					</ConversionPluginInfoList>
 				</Conversion>

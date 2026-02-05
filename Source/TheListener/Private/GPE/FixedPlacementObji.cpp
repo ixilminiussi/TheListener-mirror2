@@ -5,6 +5,7 @@
 
 #include "Components/SphereComponent.h"
 
+/*
 void AFixedPlacementObji::EndPlay(const EEndPlayReason::Type EndPlayReason)
 {
 	for (TObjectPtr<AActor>& DropLocation : DropLocations)
@@ -25,13 +26,13 @@ void AFixedPlacementObji::CustomCheck(FDropZoneInfo& DropZoneInfo, const FVector
 		{
 			DropZoneInfo.Location = DropTransform->GetActorLocation();
 			DropZoneInfo.Rotation = DropTransform->GetActorRotation();
-			SetActiveWidgetVisibility(true);
+			// SetActiveWidgetVisibility(true);
 			DropZoneInfo.Succeed();
 			
 			return;
 		}
 	}
-	SetActiveWidgetVisibility(false);
+	// SetActiveWidgetVisibility(false);
 	DropZoneInfo.Fail();
 }
 
@@ -76,3 +77,4 @@ void AFixedPlacementObji::AddDropLocation(const FTransform NewDropLocation, cons
 		DropLocations.Add(DropActor);
 	}
 }
+*/

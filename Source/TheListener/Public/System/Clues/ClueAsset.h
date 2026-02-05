@@ -19,13 +19,6 @@ enum class EClueState : uint8
 	Missing
 };
 
-UENUM()
-enum class EClueDisplayType : uint8
-{
-	None,
-	Picture,
-	Text
-};
 
 UCLASS()
 class THELISTENER_API UClueAsset : public UDataAsset
@@ -41,21 +34,6 @@ protected:
 public:
 	UPROPERTY()
 	EClueState State;
-
-	UPROPERTY(EditAnywhere)
-	EClueDisplayType DisplayType;
-
-	UPROPERTY(EditAnywhere)
-	FString Name;
-
-	UPROPERTY(EditAnywhere)
-	FString Desc;
-
-	UPROPERTY(EditAnywhere)
-	UTexture2D* Image;
-
-	UPROPERTY(EditAnywhere)
-	FString ShortDesc;
 
 	UPROPERTY(EditAnywhere)
 	TArray<class UClueAsset*> Links;

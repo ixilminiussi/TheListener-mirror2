@@ -11,18 +11,22 @@ class THELISTENER_API AInteractable : public AActor
 
 public:
 	AInteractable(const FObjectInitializer& ObjectInitializer);
-	virtual void Interact(const class ALukaCharacter* Luka);
+	virtual bool Interact(AActor *Key);
 
 	bool IsEnabled() const;
 
 	UFUNCTION(BlueprintCallable, Category = "Interaction")
 	void Enable(bool bToggle);
 
+	bool TestKey(AActor *Key);
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Interaction")
+	TArray<AActor*> Keys;
 protected:
 	bool bEnabled{true};
 
 	virtual void BeginPlay() override;
-	virtual void OnInteract(class AController* NewController);
+	virtual void OnInteract();
 	UFUNCTION(BlueprintImplementableEvent, Category = "Interaction")
 	void OnInteract_();
 
@@ -39,19 +43,11 @@ public:
 protected:
 	UPROPERTY(EditDefaultsOnly, Category = "Interaction")
 	class UStaticMeshComponent* StaticMeshComponent;
-	UPROPERTY(EditDefaultsOnly, Category = "Interaction")
-	class UBoxComponent* CollisionComponent;
 	// Components End ====================================
 
 
 	// UI Begin ==========================================
 public:
 	class UInputMappingContext* GetInputMappingContext() const;
-	void SetHoverWidgetVisibility(const bool bIsVisible) const;
-	void SetActiveWidgetVisibility(const bool bIsVisible) const;
-
-protected:
-	UPROPERTY(EditDefaultsOnly)
-	class UCommandHUDComponent* CommandHUDComponent = nullptr;
 	// UI End =============================================
 };

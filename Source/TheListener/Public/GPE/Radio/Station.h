@@ -50,13 +50,18 @@ public:
 	friend class FCogGameplayWindow_Utilities;
 
 protected:
-	virtual bool IsHeard() override;
+	bool IsHeard() override;
 	bool bIsHeard = false;
-
-	void StartDecoder();
-	void StopDecoder();
 	
-	UFUNCTION(BlueprintNativeEvent, Category = "Station")
+
+	UFUNCTION(BlueprintCallable, Category = "Decoder")
+	void StartDecoder();
+	UFUNCTION(BlueprintCallable, Category = "Decoder")
+	void StopDecoder();
+	UFUNCTION(BlueprintCallable, Category = "Decoder")
+	void PreventEndDialogue();
+	
+	UFUNCTION(BlueprintNativeEvent, Category = "Decoder")
 	void OnDecoded();
 	virtual void OnDecoded_Implementation();
 
@@ -66,6 +71,9 @@ protected:
 	UFUNCTION(BlueprintNativeEvent, Category = "Station")
 	void OnLeavingStationRange();
 	virtual void OnLeavingStationRange_Implementation();
+	UFUNCTION(BlueprintNativeEvent, Category = "Station")
+	void OnModMarkerReceived(const FString& Marker);
+	virtual void OnModMarkerReceived_Implementation(const FString& Marker);
 	
 public:
 	UFUNCTION(BlueprintCallable, Category = "Station")
@@ -76,7 +84,7 @@ protected:
 	UPROPERTY(BlueprintReadOnly, Category = "Station")
 	TObjectPtr<class UStationAsset> StationAsset = nullptr;
 	
-	UPROPERTY()
+	UPROPERTY(BlueprintReadOnly)
 	TObjectPtr<class ARadio> Radio = nullptr;
 	// Station End ============================
 

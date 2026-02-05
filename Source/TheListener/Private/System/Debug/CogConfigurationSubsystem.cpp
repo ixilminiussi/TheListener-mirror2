@@ -19,6 +19,7 @@
 #include "CogSubsystem.h"
 #include "System/Debug/CogStoryWindow_Events.h"
 #include "System/Debug/CogGameplayWindow_Utilities.h"
+#include "EventSubsystem.h"
 #endif
 
 bool UCogConfigurationSubsystem::ShouldCreateSubsystem(UObject* Outer) const
@@ -58,7 +59,7 @@ void UCogConfigurationSubsystem::PostInitialize()
 	}
 
 	// Cog::AddAllWindows(*CogSubsystemPtr);
-
+	
 	CogSubsystemPtr->AddWindow<FCogEngineWindow_BuildInfo>("Engine.BuildInfo");
 	CogSubsystemPtr->AddWindow<FCogEngineWindow_CollisionViewer>("Engine.CollisionViewer");
 	CogSubsystemPtr->AddWindow<FCogEngineWindow_CommandBindings>("Engine.CommandBindings");
@@ -74,7 +75,9 @@ void UCogConfigurationSubsystem::PostInitialize()
 	CogSubsystemPtr->AddWindow<FCogInputWindow_Actions>("Input.Actions");
 	CogSubsystemPtr->AddWindow<FCogInputWindow_Gamepad>("Input.Gamepad");
 
-	if (GetWorld()->GetSubsystem<UEventSubsystem>())
+	UWorld* World = GetWorld();
+	UGameInstance* GI = World->GetGameInstance();
+	if (GI != nullptr && GI->GetSubsystem<UEventSubsystem>() != nullptr)
 	{
 		CogSubsystemPtr->AddWindow<FCogStoryWindow_Events>("Story.Event");
 	}

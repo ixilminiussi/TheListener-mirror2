@@ -85,6 +85,18 @@
 		{
 			"Name": "WindowsDualsense_ds5w",
 			"Enabled": true
+		},
+		{
+			"Name": "HoudiniEngine",
+			"Enabled": true
+		},
+		{
+			"Name": "HoudiniLiveLink",
+			"Enabled": false
+		},
+		{
+			"Name": "PCG",
+			"Enabled": true
 		}
 	]
 }

@@ -2,7 +2,6 @@
 
 #include "CoreMinimal.h"
 #include "AkGameplayTypes.h"
-#include "DialogueLineData.h"
 #include "GameFramework/Actor.h"
 #include "Dialogue.generated.h"
 
@@ -28,8 +27,9 @@ public:
 
 	UFUNCTION(BlueprintNativeEvent, Category = "Dialogue")
 	void Initialize();
-	
-	void SetupDialogue(class UDialogueTreeData* DialogueTree, class AToy* Parent);
+
+	UFUNCTION(BlueprintCallable, Category = "Dialogue")
+	void SetupDialogue(class UDialogueGraphAsset* DialogueAsset, class AToy* Parent);
 
 	UFUNCTION(BlueprintCallable, Category = "Station")
 	void Lock(bool bEnable);
@@ -42,7 +42,7 @@ protected:
 	FDialogueExit DialogueExit;
 	
 	UPROPERTY()
-	TObjectPtr<class UDialogueTreeData> DialogueTree;
+	TObjectPtr<class UDialogueGraphAsset> DialogueAsset;
 	
 	int32 QuestionID = INVALID_ID; 
 
@@ -85,7 +85,9 @@ public:
 	bool bWaitingForPromptCheck = false;
 	
 	UPROPERTY(EditDefaultsOnly, Category = "Station|Prompt")
-	FName PromptWidgetName = "PRT_RadioAnswer";
+	FName PromptName = "PRT_RadioAnswer";
+	void PlayerQuitRadio();
+
 	
 protected:
 	bool bEarlyDialogueFlag = false;
@@ -98,7 +100,7 @@ protected:
 	UFUNCTION(BlueprintCallable, Category = "Station|Dialogue")
 	void AskQuestion();
 
-	void EndDialogue();
+	void EndDialogue(bool bRepeat = false);
 	UFUNCTION(BlueprintNativeEvent, Category = "Station|Dialogue")
 	void OnEndDialogue();
 	virtual void OnEndDialogue_Implementation();
@@ -108,19 +110,21 @@ protected:
 	virtual void OnAnswerQuestion_Implementation();
 
 	UFUNCTION()
-	void OnAnswerSelected(FAnswer Answer);
+	void OnAnswerSelected(UAnswer* Answer);
 	UFUNCTION()
 	virtual void OnFinishDialogue();
 	UFUNCTION(BlueprintCallable, Category = "Dialogue")
 	[[nodiscard]] bool StepNextDialogue();
 	UFUNCTION(BlueprintCallable, Category = "Dialogue")
-	void StepIntoDialogue(int32 AnswerID);
+	void StepIntoDialogue(UDialogueLineData* AnswerID);
 
 	UPROPERTY()
 	TObjectPtr<class UDialogueLineData> DialogueData;
 
 	AkPlayingID IgnorePlayingID = INVALID_ID;
 
-private:
+protected:
 	void SetClarity(float Clarity);
+	float ClarityThreshold = 0.001f;
+	bool bCanHear = false;
 };

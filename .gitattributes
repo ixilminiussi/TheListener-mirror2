@@ -1,1 +1,5 @@
 TheListener_WwiseProject/Originals/Voices/English(US)/S_MU_BBC.wav filter=lfs diff=lfs merge=lfs -text
+TheListener_WwiseProject/Originals/SFX/DAY/[[:space:]]1/Stations/S_MU_BBC.wav filter=lfs diff=lfs merge=lfs -text
+Content/05_Environment/Inside/Textures/SM_Cuisine_bake02_standardSurface1_Normal.uasset filter=lfs diff=lfs merge=lfs -text
+Content/05_Environment/Inside/Textures/T_poele_normal.uasset filter=lfs diff=lfs merge=lfs -text
+TheListener_WwiseProject/Originals/SFX/DAY[[:space:]]1/Stations/S_MU_BBC.wav filter=lfs diff=lfs merge=lfs -text

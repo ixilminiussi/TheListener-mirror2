@@ -3,12 +3,18 @@
 
 #include "UI/BaseHUD.h"
 
+#include "GameFramework/GameUserSettings.h"
+#include "Kismet/GameplayStatics.h"
 #include "UI/Menus/SettingsMenuWidget.h"
 
 
 void ABaseHUD::BeginPlay()
 {
 	Super::BeginPlay();
+
+	UGameUserSettings* Settings = GEngine->GetGameUserSettings();
+	Settings->SetVSyncEnabled(true);
+	Settings->ApplySettings(false);
 }
 
 UBaseMenuWidget* ABaseHUD::GetPreviousWidget()

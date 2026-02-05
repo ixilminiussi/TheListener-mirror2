@@ -1,31 +1,16 @@
 #include "UI/CursorWidget.h"
 #include "Components/Image.h"
 
-void UCursorWidget::OnEnterPossibleInteraction()
+void UCursorWidget::Grow()
 {
 	StopAllAnimations();
 	if(!ensure(OnEnterPossibleInteractionAnim != nullptr)) return;
 	PlayAnimation(OnEnterPossibleInteractionAnim);
 }
 
-void UCursorWidget::OnExitPossibleInteraction()
+void UCursorWidget::Shrink()
 {
 	StopAllAnimations();
 	if(!ensure(OnExitPossibleInteractionAnim != nullptr)) return;
 	PlayAnimation(OnExitPossibleInteractionAnim);
-}
-
-void UCursorWidget::SetCursorVisibility(bool bIsVisible)
-{
-	StopAllAnimations();
-	if(!ensure(CursorImage != nullptr)) return;
-
-	if(bIsVisible)
-	{
-		CursorImage->SetVisibility(ESlateVisibility::Visible);
-	}
-	else
-	{
-		CursorImage->SetVisibility(ESlateVisibility::Collapsed);
-	}
 }

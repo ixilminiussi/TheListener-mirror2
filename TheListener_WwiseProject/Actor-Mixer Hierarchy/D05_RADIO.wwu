@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{7A656699-F14C-4BF9-B959-61DC47E40E9E}" SchemaVersion="123" RootDocumentID="{268CC0FB-048E-4CF9-99B1-EE3D65440901}" ParentDocumentID="{AE93F859-FD7E-4892-A389-03B6ADE62C77}">
+	<AudioObjects>
+		<WorkUnit Name="D05_RADIO" ID="{7A656699-F14C-4BF9-B959-61DC47E40E9E}" OwnerID="{7EE6D263-17F1-4A7F-974B-50A856DEC337}" PersistMode="Nested">
+			<ChildrenList>
+				<ActorMixer Name="D05_RADIO" ID="{D4686DA7-8464-4727-A39E-C1068E4129B5}" ShortID="676276802">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+				</ActorMixer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

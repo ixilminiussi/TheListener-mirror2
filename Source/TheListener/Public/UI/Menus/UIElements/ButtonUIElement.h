@@ -38,6 +38,8 @@ protected:
 
 	virtual void NativeOnHovered() override;
 
+	virtual void NativeOnUnhovered() override;
+
 	void UpdateDescriptionText() const;
 
 
@@ -52,4 +54,7 @@ protected:
 
 	UPROPERTY(EditAnywhere, Category="UIElement|Description")
 	FDataTableRowHandle DescriptionRow;
+
+	UPROPERTY(BlueprintReadOnly, meta = (BindWidget))
+	class UDescriptionTextBlock* DescriptionTextBlock;
 };

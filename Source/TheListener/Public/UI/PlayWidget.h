@@ -10,24 +10,17 @@ class THELISTENER_API UPlayWidget : public UCommonActivatableWidget
 	
 public:
 	class UCursorWidget* GetCursorWidget() const;
-	class UCanvasPanel* GetInspectablePanel();
+	class UCanvasPanel* GetInspectablePanel() const;
 	class USubtitlesWidget* GetSubtitlesWidget() const;
 	class UAnswerWidget* GetAnswerWidget() const;
 	class UPromptsHolder* GetPromptsHolder() const;
-	void AddHoverCommandWidget(class UHoverCommandWidget* HoverCommandWidget) const;
-	void RemoveHoverCommandWidget(class UHoverCommandWidget* HoverCommandWidget) const;
-	void AddActiveCommandWidget(class UActiveCommandWidget* ActiveCommandWidget) const;
-	void RemoveActiveCommandWidget(class UActiveCommandWidget* ActiveCommandWidget) const;
+
+	UFUNCTION(BlueprintNativeEvent)
+	void NotifyClue();
 	
 protected:
 	UPROPERTY(meta = (BindWidget))
 	TObjectPtr<class UCursorWidget> CursorWidget;
-
-	UPROPERTY(meta = (BindWidget))
-	TObjectPtr<class UVerticalBox> VerticalBox;
-
-	UPROPERTY(meta = (BindWidget))
-	TObjectPtr<class UVerticalBox> ActiveVerticalBox;
 
 	UPROPERTY(meta = (BindWidget))
 	TObjectPtr<class USubtitlesWidget> SubtitlesWidget;

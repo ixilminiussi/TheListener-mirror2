@@ -44,10 +44,10 @@ void FCogGameplayWindow_Utilities::RenderContent()
 
 		TArray<AActor*> OutActors{};
 		UGameplayStatics::GetAllActorsOfClass(GetWorld(), AStation::StaticClass(), OutActors);
-		int i = 0;
+		int i = 3;
 		for (const auto Station : OutActors)
 		{
-			if (const AStation* CurrentStation = Cast<AStation>(Station))
+			if (AStation* CurrentStation = Cast<AStation>(Station))
 			{
 				ImGui::PushID(i++);
 				ImGui::TableNextRow();
@@ -58,10 +58,7 @@ void FCogGameplayWindow_Utilities::RenderContent()
 				ImGui::TableSetColumnIndex(2);
 				if (ImGui::Button("End"))
 				{
-					if (CurrentStation->AkComponent)
-					{
-						CurrentStation->AkComponent->Stop();
-					}
+					CurrentStation->StopStation();
 				}
 				ImGui::PopID();
 			}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{4C2487CF-A8D9-47D3-B83B-5218ACE56724}" SchemaVersion="123" RootDocumentID="{268CC0FB-048E-4CF9-99B1-EE3D65440901}" ParentDocumentID="{268CC0FB-048E-4CF9-99B1-EE3D65440901}">
+	<AudioObjects>
+		<WorkUnit Name="MC" ID="{4C2487CF-A8D9-47D3-B83B-5218ACE56724}" OwnerID="{268CC0FB-048E-4CF9-99B1-EE3D65440901}" PersistMode="Nested">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="19"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<ActorMixer Name="MC" ID="{D1F92BA9-BAAE-47B4-9546-2A8DC1589BE6}" ShortID="516036732">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<WorkUnit Name="FOLEY" ID="{90162E02-1560-47B0-8557-0F5C624049C9}" PersistMode="Reference"/>
+						<WorkUnit Name="SFXX" ID="{2AB72808-ACC4-4388-9D8E-BD2352866FEA}" PersistMode="Reference"/>
+					</ChildrenList>
+				</ActorMixer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

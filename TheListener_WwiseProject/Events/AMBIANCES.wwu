@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{58FF3756-4EC3-46DD-AA7B-10F252810A34}" SchemaVersion="123">
+	<Events>
+		<WorkUnit Name="AMBIANCES" ID="{58FF3756-4EC3-46DD-AA7B-10F252810A34}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="fireplace_loop" ID="{7A7789F0-9D1E-4741-83A2-A526ED2107D2}">
+					<ChildrenList>
+						<Action Name="" ID="{BE2FFA8B-A215-4125-8A4E-8999602E4698}" ShortID="398728724">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="fireplace" ID="{DF24EF7D-30CB-41F8-8C78-8CF2E4F51D2C}" WorkUnitID="{C5B478CE-30C6-497D-BF7A-760F7A7109E2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="play_snowstorm_loop" ID="{9023A488-6D8D-4838-AD45-98F2399E5B34}">
+					<ChildrenList>
+						<Action Name="" ID="{E182440A-EA20-4610-A269-CAA53169CE23}" ShortID="864817364">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="snowstorm_loop" ID="{7CBF207E-9091-4B31-8249-171C7D580ECD}" WorkUnitID="{C5B478CE-30C6-497D-BF7A-760F7A7109E2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="play_snow_ambiance_exterior_loop" ID="{E46E2DBD-DC3B-4225-8846-04CB34DF90D5}">
+					<ChildrenList>
+						<Action Name="" ID="{5FE2DA15-9B18-4EC7-835E-D5535BBAA772}" ShortID="835418812">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="snow_outside" ID="{E98FBE4A-649B-48A0-BABA-7B8D9102E120}" WorkUnitID="{C5B478CE-30C6-497D-BF7A-760F7A7109E2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="stop_snow_ambiance_interorior_loop" ID="{A0B509EF-B954-4682-9B19-DF6E9ED08154}">
+					<ChildrenList>
+						<Action Name="" ID="{E783C1B2-A813-46A8-9D7D-D560C868887D}" ShortID="1037297780">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="snowstorm_loop" ID="{7CBF207E-9091-4B31-8249-171C7D580ECD}" WorkUnitID="{C5B478CE-30C6-497D-BF7A-760F7A7109E2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="stop_snow_ambiance_exterior" ID="{004A24A0-FA65-4DC2-9872-CE586AAB5B87}">
+					<ChildrenList>
+						<Action Name="" ID="{1D17BED2-BFFE-4224-AE3C-F98C2E1DF8D4}" ShortID="717870482">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="snow_outside" ID="{E98FBE4A-649B-48A0-BABA-7B8D9102E120}" WorkUnitID="{C5B478CE-30C6-497D-BF7A-760F7A7109E2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

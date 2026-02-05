@@ -22,14 +22,17 @@ public:
 	static int32 GetPlayPosition(const AkPlayingID PlayingID);
 
 	UFUNCTION(BlueprintCallable, Category = Statics)
-	static TArray<AActor*> GetAllActorsOfClass(UObject* WorldContextObject, TSubclassOf<AActor> Class);
+	static TArray<AActor*> GetAllActorsOfClass(UObject const *WorldContextObject, TSubclassOf<AActor> Class);
 
 	UFUNCTION(BlueprintCallable, Category = Statics)
-	static void TogglePrompt(UObject* WorldContextObject, FName const& PromptName, bool bToggle);
-
-	UFUNCTION(BlueprintCallable, Category = Statics)
-	static UWidget * GetPrompt(UObject* WorldContextObject, FName const& PromptName);
+	static void TogglePrompts(UObject* WorldContextObject, TArray<FName> const &PromptNames, bool bToggle);
 
 	UFUNCTION(BlueprintCallable, Category = Statics)
 	static void OpenLevel(UObject* WorldContextObject, FName const &LevelName);
+	
+	UFUNCTION(BlueprintCallable, Category = Statics)
+	static float FrequencyStep(float Start, float RelativeStep);
+
+	UFUNCTION(BlueprintCallable, Category = Statics)
+	static void AllowBand(UObject *WorldContextObject, int InBand);
 };

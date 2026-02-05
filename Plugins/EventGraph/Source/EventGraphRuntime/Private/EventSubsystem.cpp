@@ -1,5 +1,4 @@
 ﻿#include "EventSubsystem.h"
-#include "CogCommon.h"
 #include "EventGraphConditionData.h"
 #include "EventGraphActionData.h"
 #include "EventGraphAsset.h"
@@ -7,7 +6,102 @@
 
 bool UEventSubsystem::ShouldCreateSubsystem(UObject* Outer) const
 {
-	const auto World = Cast<UWorld>(Outer);
+	
+	return true;
+}
+
+void UEventSubsystem::Initialize(FSubsystemCollectionBase& Collection)
+{
+	Super::Initialize(Collection);
+
+	FWorldDelegates::OnPreWorldInitialization.AddUObject(this, &UEventSubsystem::OnPreWorldInitialization);
+	FWorldDelegates::OnPostWorldInitialization.AddUObject(this, &UEventSubsystem::OnPostWorldInitialization);
+	FWorldDelegates::OnWorldInitializedActors.AddUObject(this, &UEventSubsystem::OnActorsInitialized);
+
+	UE_LOG(LogTemp, Log, TEXT("UEventSubsystem Initialized"));
+}
+
+void UEventSubsystem::OnActorsInitialized(const FActorsInitializedParams& Params)
+{
+	if (ShouldLoadEvents())
+	{
+		GetWorld()->GetTimerManager().SetTimerForNextTick(FTimerDelegate::CreateUObject(this, &UEventSubsystem::ResetSubsystem,true));
+	}
+	UnPauseTimers();
+}
+
+void UEventSubsystem::OnPreWorldInitialization(UWorld* World, const UWorld::InitializationValues)
+{
+	PauseTimers();
+}
+
+void UEventSubsystem::OnPostWorldInitialization(UWorld* World, const UWorld::InitializationValues)
+{
+	UnPauseTimers();
+}
+
+
+void UEventSubsystem::InitEvents()
+{
+	const UEventGraphPluginSettings* Settings = GetDefault<UEventGraphPluginSettings>();
+	if (!Settings)
+	{
+		return;
+	}
+	if (Settings->StartEventGraph.IsValid())
+	{
+		AddEventList(Settings->StartEventGraph.Get()); // already loaded
+	}
+	else
+	{
+		AddEventList(Settings->StartEventGraph.LoadSynchronous()); // load now
+	}
+	bIsLoaded = true;
+}
+
+void UEventSubsystem::Tick(float DeltaTime)
+{
+	if (bShouldCheckConditions)
+	{
+		CheckCurrentEventsState();
+	}
+}
+
+void UEventSubsystem::Deinitialize()
+{
+	Super::Deinitialize();
+	InvalidateTimers();
+}
+
+void UEventSubsystem::InvalidateTimers()
+{
+	for (FTimerHandle& Event : TimerHandles)
+	{
+		GetWorld()->GetTimerManager().ClearTimer(Event);
+		Event.Invalidate();
+	}
+}
+
+void UEventSubsystem::PauseTimers()
+{
+	for (FTimerHandle& Event : TimerHandles)
+	{
+		GetWorld()->GetTimerManager().PauseTimer(Event);
+	}
+}
+
+void UEventSubsystem::UnPauseTimers()
+{
+	for (FTimerHandle& Event : TimerHandles)
+	{
+		GetWorld()->GetTimerManager().UnPauseTimer(Event);
+	}
+}
+
+bool UEventSubsystem::ShouldLoadEvents()
+{
+	if (bIsLoaded) {return false;}
+	const auto World = Cast<UWorld>(GetWorld());
 	if (!World)
 	{
 		return false;
@@ -42,74 +136,24 @@ bool UEventSubsystem::ShouldCreateSubsystem(UObject* Outer) const
 	return false;
 }
 
-void UEventSubsystem::Initialize(FSubsystemCollectionBase& Collection)
-{
-	Super::Initialize(Collection);
-
-	FWorldDelegates::OnWorldInitializedActors.AddUObject(this, &UEventSubsystem::OnActorsInitialized);
-
-	UE_LOG(LogTemp, Log, TEXT("UEventSubsystem Initialized"));
-}
-
-void UEventSubsystem::OnActorsInitialized(const FActorsInitializedParams& Params)
-{
-	GetWorld()->GetTimerManager().SetTimerForNextTick(FTimerDelegate::CreateUObject(this, &UEventSubsystem::InitEvents));
-}
-
-
-
-void UEventSubsystem::InitEvents()
-{
-	auto World = GetWorld();
-	if (!World || !World->IsGameWorld())
-	{
-		return;
-	}
-	const UEventGraphPluginSettings* Settings = GetDefault<UEventGraphPluginSettings>();
-	if (!Settings)
-	{
-		return;
-	}
-	if (Settings->StartEventGraph.IsValid())
-	{
-		AddEventList(Settings->StartEventGraph.Get()); // already loaded
-	}
-	else
-	{
-		AddEventList(Settings->StartEventGraph.LoadSynchronous()); // load now
-	}
-}
-
-void UEventSubsystem::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-	if (bShouldCheckConditions)
-	{
-		CheckCurrentEventsState();
-	}
-}
-
-void UEventSubsystem::Deinitialize()
-{
-	Super::Deinitialize();
-	InvalidateTimers();
-}
-
-void UEventSubsystem::InvalidateTimers()
-{
-	for (FTimerHandle& Event : TimerHandles)
-	{
-		GetWorld()->GetTimerManager().ClearTimer(Event);
-		Event.Invalidate();
-	}
-}
-
 void UEventSubsystem::AddEventList(UEventGraphAsset* EventAsset)
 {
+	//End all current events
+	TArray<UEventGraphEventConditionData*> EventToInvalidate;
+	for (UEventGraphEventConditionData* Event : CurrentEvents)
+	{
+		EventToInvalidate.Add(Event);
+	}
+	for (UEventGraphEventConditionData* Event : EventToInvalidate)
+	{
+		InvalidateEvent(Event);
+	}
+	
 	for (UEventGraphEventConditionData* Event : EventAsset->GraphData->Events)
 	{
 		AddEvent(Event);
 	}
+	DayCounter++;
 }
 
 void UEventSubsystem::AddEvent(UEventGraphEventConditionData* EventData)
@@ -124,9 +168,14 @@ void UEventSubsystem::AddEvent(UEventGraphEventConditionData* EventData)
 	}
 	CurrentEvents.AddUnique(EventData);
 	EventData->SetupWorldContext(this);
-
+	
 	if (EventData->GetCondition() == nullptr)
 	{
+		if (!EventData->IsConditionEnabled)
+		{
+			InvalidateEvent(EventData);
+			return;
+		}
 		LaunchEvent(EventData);
 		return;
 	}
@@ -143,6 +192,11 @@ void UEventSubsystem::AddEvent(UEventGraphEventConditionData* EventData)
 			}
 			BoolCondition->SetupWorldContext(this);
 		}
+	}
+	if (!EventData->IsConditionEnabled)
+	{
+		InvalidateEvent(EventData);
+		return;
 	}
 }
 
@@ -192,7 +246,7 @@ void UEventSubsystem::CheckCurrentEventsState()
 
 bool UEventSubsystem::GetConditionValue(const FConditionKey& Key) const
 {
-	if (!ensure(ConditionsMap.Contains(Key))) { return false; }
+	if (!ConditionsMap.Contains(Key)) { return false; }
 	return ConditionsMap[Key];
 }
 
@@ -208,6 +262,28 @@ void UEventSubsystem::SetConditionValue(const FConditionKey& Key, bool NewValue,
 	       (NewValue ? TEXT("true") : TEXT("false")));
 
 	bShouldCheckConditions = true;
+}
+
+void UEventSubsystem::ResetSubsystem(bool ForceLoad)
+{
+	ConditionsMap.Empty();
+	for (FTimerHandle& Handle : TimerHandles )
+	{
+		GetWorld()->GetTimerManager().ClearTimer(Handle);
+		Handle.Invalidate();
+	}
+	CurrentEvents.Empty();
+	CompletedEvents.Empty();
+	bShouldCheckConditions = false;
+
+	DayCounter = 0;
+	bIsLoaded = false;
+
+	if (ForceLoad)
+	{
+		InitEvents();
+	}
+	
 }
 
 

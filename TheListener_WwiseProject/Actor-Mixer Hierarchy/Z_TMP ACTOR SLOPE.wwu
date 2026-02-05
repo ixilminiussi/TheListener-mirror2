@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{268CC0FB-048E-4CF9-99B1-EE3D65440901}" SchemaVersion="123">
+	<AudioObjects>
+		<WorkUnit Name="Z_TMP ACTOR SLOPE" ID="{268CC0FB-048E-4CF9-99B1-EE3D65440901}" PersistMode="Standalone">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="13"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<WorkUnit Name="AMB" ID="{94849E9E-C141-4799-B021-7527B39D5CE7}" PersistMode="Reference"/>
+				<WorkUnit Name="MC" ID="{4C2487CF-A8D9-47D3-B83B-5218ACE56724}" PersistMode="Reference"/>
+				<WorkUnit Name="MISC" ID="{669A118C-43F9-4089-A7E9-C95AE887C8DD}" PersistMode="Reference"/>
+				<WorkUnit Name="MUSIC" ID="{79ED43D4-29B9-4FE2-9D31-2FC8CF8C0644}" PersistMode="Reference"/>
+				<WorkUnit Name="OBJIIS" ID="{2AD9ACC7-7E75-4E97-98FE-06CF6000C8EB}" PersistMode="Reference"/>
+				<WorkUnit Name="RADIOO" ID="{B26405AA-F6E8-4A0A-85A7-DE79AF14FDC4}" PersistMode="Reference"/>
+				<WorkUnit Name="UII" ID="{F579D094-8E81-497B-987A-7077222E7615}" PersistMode="Reference"/>
+				<WorkUnit Name="VOICE" ID="{0402BFD7-DB5E-4657-822A-DBDC1A8AF6F3}" PersistMode="Reference"/>
+				<WorkUnit Name="X_DEV" ID="{7EF74C82-5FF4-476F-B331-D2111AE61714}" PersistMode="Reference"/>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

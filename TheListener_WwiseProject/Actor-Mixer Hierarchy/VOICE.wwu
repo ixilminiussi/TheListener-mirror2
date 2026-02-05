@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{0402BFD7-DB5E-4657-822A-DBDC1A8AF6F3}" SchemaVersion="123" RootDocumentID="{268CC0FB-048E-4CF9-99B1-EE3D65440901}" ParentDocumentID="{268CC0FB-048E-4CF9-99B1-EE3D65440901}">
+	<AudioObjects>
+		<WorkUnit Name="VOICE" ID="{0402BFD7-DB5E-4657-822A-DBDC1A8AF6F3}" OwnerID="{268CC0FB-048E-4CF9-99B1-EE3D65440901}" PersistMode="Nested">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="24"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<ActorMixer Name="VOICE" ID="{B1056F73-6F50-4F41-B42A-AD5A998A9C86}" ShortID="209784775">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<WorkUnit Name="DIAL_COMMON" ID="{BE8F748D-DA7E-4336-9F85-05A34F5A127B}" PersistMode="Reference"/>
+						<WorkUnit Name="DIAL_D01" ID="{3CEFF608-9B3D-4EC9-AD5F-BFC40FA95F84}" PersistMode="Reference"/>
+						<WorkUnit Name="DIAL_D02" ID="{5072FD74-6679-425D-82F2-302633736F2C}" PersistMode="Reference"/>
+						<WorkUnit Name="DIAL_D03" ID="{7EDC42AB-B9B0-43D4-AD1E-B2F43434F45A}" PersistMode="Reference"/>
+						<WorkUnit Name="DIAL_D04" ID="{35456755-730B-461C-B376-CD6EEC923F85}" PersistMode="Reference"/>
+						<WorkUnit Name="DIAL_D05" ID="{AE93F859-FD7E-4892-A389-03B6ADE62C77}" PersistMode="Reference"/>
+					</ChildrenList>
+				</ActorMixer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

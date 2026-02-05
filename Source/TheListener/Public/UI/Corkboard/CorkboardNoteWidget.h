@@ -17,16 +17,10 @@ class THELISTENER_API UCorkboardNoteWidget : public UCommonUserWidget
 	GENERATED_BODY()
 
 	UPROPERTY(EditDefaultsOnly, Category = "Toy|Corkboard|UI", meta = (BindWidget))
-	class URichTextBlock* ClueTitleTextBox;
-
-	UPROPERTY(EditDefaultsOnly, Category = "Toy|Corkboard|UI", meta = (BindWidget))
-	class URichTextBlock* ClueShortDescTextBox;
-
-	UPROPERTY(EditDefaultsOnly, Category = "Toy|Corkboard|UI", meta = (BindWidget))
-	class UCanvasPanel* NoteCanvas;
-
-	UPROPERTY(EditDefaultsOnly, Category = "Toy|Corkboard|UI", meta = (BindWidget))
 	class UImage* ClueImage;
+
+	UPROPERTY(EditAnywhere, Category = "Toy|Corkboard|UI")
+	class UTexture2D* ClueTexture;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Toy|Corkboard|UI", meta = (BindWidget))
 	class UImage* PinImage;
@@ -34,8 +28,6 @@ class THELISTENER_API UCorkboardNoteWidget : public UCommonUserWidget
 	UPROPERTY(EditDefaultsOnly, Category = "Toy|Corkboard|UI", meta = (BindWidget))
 	class UImage* StateImage;
 
-	void SetTitleText(FString text);
-	void SetShortDescriptionText(FString text);
 	void SetClueImage(UTexture2D* tex);
 
 	UFUNCTION(BlueprintCallable)
@@ -47,7 +39,7 @@ public:
 	FVector2D GetPinPosition() const;
 
 	UImage* GetPin() const;
-	UImage* GetFakePin();
+	UImage* GetFakePin() const;
 	void SetFakePin(UImage* Pin);
 
 	UPROPERTY(EditAnywhere, Category = "Toy|Corkboard|Clue")
@@ -59,6 +51,10 @@ public:
 	UPROPERTY(EditDefaultsOnly, Category = "Toy|Corkboard|State")
 	UTexture2D* DisabledStateImage;
 
+	UPROPERTY(EditAnywhere, Category = "Toy|Corkboard|State")
+	bool bHasPin;
+
+	UPROPERTY()
 	UImage* FakePinImage;
 
 	void UpdateStateImage(EClueState state);

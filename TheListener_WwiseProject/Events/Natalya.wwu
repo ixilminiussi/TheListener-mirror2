@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{279A5096-AC03-4449-B12C-D98B027D8F3F}" SchemaVersion="123" RootDocumentID="{8EBA046C-25AE-4367-8B69-2AA0F43D32DB}" ParentDocumentID="{8EBA046C-25AE-4367-8B69-2AA0F43D32DB}">
+	<Events>
+		<WorkUnit Name="Natalya" ID="{279A5096-AC03-4449-B12C-D98B027D8F3F}" OwnerID="{8EBA046C-25AE-4367-8B69-2AA0F43D32DB}" PersistMode="Nested">
+			<ChildrenList>
+				<Event Name="play_2_4_1" ID="{CD654338-B6F8-4732-8A49-B6BE5837FC2B}">
+					<ChildrenList>
+						<Action Name="" ID="{725D7814-6184-465E-BA9C-E06AF9437B77}" ShortID="858932601">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Natalya_2_4_1" ID="{D6C13593-01F5-4E97-8A26-1EF0366E669D}" WorkUnitID="{227A4AB0-5384-4D87-B4DA-FC063A3A3AF5}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="play_2_5_1" ID="{D7E52B9F-9CDE-4F64-A32E-9CAE62D85500}">
+					<ChildrenList>
+						<Action Name="" ID="{1B67E86A-338E-42B0-A6FD-B6FB678F9470}" ShortID="415499565">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Natalya_2_5_1" ID="{59B29806-B3E5-4251-92E5-551353A22EED}" WorkUnitID="{227A4AB0-5384-4D87-B4DA-FC063A3A3AF5}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="play_2_6_1" ID="{D7BCD445-1FA5-40F9-9548-03A44644AD10}">
+					<ChildrenList>
+						<Action Name="" ID="{E27EFA1D-3E40-45EC-A467-A26693924398}" ShortID="778263204">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Natalya_2_6_1" ID="{26499C44-095D-438E-A145-625AE28540FE}" WorkUnitID="{227A4AB0-5384-4D87-B4DA-FC063A3A3AF5}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

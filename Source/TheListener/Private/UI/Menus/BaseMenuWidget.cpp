@@ -48,7 +48,6 @@ void UBaseMenuWidget::NativeConstruct()
 	check(NoQuitButton);
 	NoQuitButton->OnClicked().AddUObject(this, &UBaseMenuWidget::OnNoQuitClicked);
 
-
 	check(QuitPanel);
 	QuitPanel->SetVisibility(ESlateVisibility::Collapsed);
 }
@@ -69,18 +68,20 @@ void UBaseMenuWidget::OnSettingsClicked() const
 	{
 		if (ABaseHUD* HUD = Cast<ABaseHUD>(PC->GetHUD()))
 		{
+			HUD->OpenSettingsInBlueprint();
+
 			if (USettingsMenuWidget* Settings = HUD->GetSettingsMenuWidget())
 			{
-				if (Settings)
-				{
-					Settings->AddToViewport(TOP_LEVEL + 1);
-				}
-				HUD->GetPreviousWidget()->SetVisibility(ESlateVisibility::Collapsed);
-				Settings->GetSwitcherTabSettings()->SetIndex(0, 0.02f);
-				Settings->SetVisibility(ESlateVisibility::Visible);
-				HUD->GetPreviousWidget()->SetIsEnabled(false);
+				// TO DO -- REMOVE KEYBINDTAB FROM MAIN MENU
+				// USettingsTabBase* KeyBindTab = Settings->GetSwitcherTabSettings()->GetKeyBindingTab();
+				// check(KeyBindTab);
+				// if (KeyBindTab->bIsKeyBind)
+				// {
+				// 	KeyBindTab->RemoveFromParent();
+				// }
 
-				// SAVE
+				Settings->GetSwitcherTabSettings()->SetIndex(0, 0.02f);
+
 				UBaseGameInstance* GI = Cast<UBaseGameInstance>(GetWorld()->GetGameInstance());
 				check(GI);
 				USettingsSave* SettingsSave = GI->GetSettingsSave();

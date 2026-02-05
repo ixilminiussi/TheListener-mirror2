@@ -1,7 +1,6 @@
 #include "GPE/Radio/ScreenComponent.h"
 
 #include "ConstantQNRT.h"
-#include "UI/Dialogue/AnswerDataAsset.h"
 #include "GPE/Radio/Radio.h"
 #include "GPE/Radio/Station.h"
 #include "GPE/Radio/StationDataAsset.h"
@@ -99,9 +98,11 @@ void AScreenComponent::RefreshQNRT()
 					float CurrentPlayingPosition = NearestStation->GetPlayPosition() / 1000.f;
 					ConstantQNRT->GetNormalizedChannelConstantQAtTime(CurrentPlayingPosition, 0, QNRTAnalysisArray);
 
+					const float RawClarity = NearestStation->ComputeRawClarity(Parent->GetFrequency());
+
 					for (int i = 0; i < OutputArray.Num(); i++)
 					{
-						OutputArray[i] = FMath::Max(BackgroundNoiseArray[i], FMath::Lerp(StaticNoiseArray[i], QNRTAnalysisArray[i], NearestStation->ComputeRawClarity(Parent->GetFrequency())));
+						OutputArray[i] = FMath::Max(BackgroundNoiseArray[i], FMath::Lerp(StaticNoiseArray[i], QNRTAnalysisArray[i], RawClarity));
 					}
 				}
 			}

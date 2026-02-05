@@ -1,25 +1,15 @@
 #include "GPE/Interactable.h"
+#include "Components/ShapeComponent.h"
 #include "Components/BoxComponent.h"
+#include "Miscellaneous/TLUtils.h"
 #include "Player/LukaCharacter.h"
-#include "Player/LukaController.h"
-#include "UI/Prompt/CommandHUDComponent.h"
 
 AInteractable::AInteractable(const FObjectInitializer& ObjectInitializer) : Super{ObjectInitializer}
 {
 	PrimaryActorTick.bCanEverTick = true;
 
 	StaticMeshComponent = ObjectInitializer.CreateDefaultSubobject<UStaticMeshComponent>(this, "Mesh");
-	CollisionComponent = ObjectInitializer.CreateDefaultSubobject<UBoxComponent>(this, "Collision");
-
-	SetRootComponent(StaticMeshComponent);
-	CollisionComponent->SetupAttachment(StaticMeshComponent);
-
-	check(CollisionComponent);
-	CollisionComponent->SetCollisionProfileName(FName("Hitbox"));
-
 	check(StaticMeshComponent);
-
-	CommandHUDComponent = CreateDefaultSubobject<UCommandHUDComponent>(TEXT("CommandHUDComponent"));
 }
 
 class UStaticMeshComponent* AInteractable::GetStaticMeshComponent() const
@@ -27,15 +17,21 @@ class UStaticMeshComponent* AInteractable::GetStaticMeshComponent() const
 	return StaticMeshComponent;
 }
 
-void AInteractable::Interact(const class ALukaCharacter* Luka)
+bool AInteractable::Interact(AActor *Key)
 {
 	if (!bEnabled)
 	{
-		return;
+		return false;
 	}
 
-	check(Luka);
-	OnInteract(Luka->GetController());
+	OnInteract();
+	
+	if (Keys.Num() != 0 && Keys.Contains(Key))
+	{
+		return true;
+	}
+
+	return false;
 }
 
 bool AInteractable::IsEnabled() const
@@ -48,6 +44,16 @@ void AInteractable::Enable(bool bToggle)
 	bEnabled = bToggle;
 }
 
+bool AInteractable::TestKey(AActor* Key)
+{
+	if (Key && Keys.Num() > 0)
+	{
+		return Keys.Contains(Key);
+	}
+	
+	return Keys.Num() == 0;
+}
+
 void AInteractable::BeginPlay()
 {
 	Super::BeginPlay();
@@ -56,47 +62,14 @@ void AInteractable::BeginPlay()
 	StaticMeshComponent->SetEnableGravity(false);
 	StaticMeshComponent->SetSimulatePhysics(false);
 	StaticMeshComponent->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
-
-	check(CommandHUDComponent);
-	CommandHUDComponent->Generate(InputMappingContext);
 }
 
-void AInteractable::OnInteract(class AController* NewController)
+void AInteractable::OnInteract()
 {
-	check(NewController);
-	LukaController = Cast<ALukaController>(NewController);
-	check(LukaController);
-
 	OnInteract_();
 }
 
 UInputMappingContext* AInteractable::GetInputMappingContext() const
 {
 	return InputMappingContext;
-}
-
-void AInteractable::SetHoverWidgetVisibility(const bool bIsVisible) const
-{
-	check(CommandHUDComponent);
-	if (bIsVisible)
-	{
-		CommandHUDComponent->AddHoverToHUD();
-	}
-	else
-	{
-		CommandHUDComponent->RemoveHoverFromHUD();
-	}
-}
-
-void AInteractable::SetActiveWidgetVisibility(const bool bIsVisible) const
-{
-	check(CommandHUDComponent);
-	if (bIsVisible)
-	{
-		CommandHUDComponent->AddActiveToHUD();
-	}
-	else
-	{
-		CommandHUDComponent->RemoveActiveFromHUD();
-	}
 }

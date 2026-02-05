@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{29CE129C-D577-4070-8A15-18E84107652F}" SchemaVersion="123" RootDocumentID="{268CC0FB-048E-4CF9-99B1-EE3D65440901}" ParentDocumentID="{94849E9E-C141-4799-B021-7527B39D5CE7}">
+	<AudioObjects>
+		<WorkUnit Name="OUTDOOR" ID="{29CE129C-D577-4070-8A15-18E84107652F}" OwnerID="{F620AF17-3CEC-48A4-ABE0-435659A6B589}" PersistMode="Nested">
+			<ChildrenList>
+				<ActorMixer Name="OUTDOOR" ID="{DC5AD3EB-6780-4E57-8010-3A636773BD75}" ShortID="432661563">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<WorkUnit Name="IN_COMMON_01" ID="{B38D4A06-8253-4BD3-AC87-ED5DC808B9ED}" PersistMode="Reference"/>
+						<WorkUnit Name="IN_D01_01" ID="{7A178F6A-394B-4C71-BD3B-49C3330F9B43}" PersistMode="Reference"/>
+						<WorkUnit Name="IN_D02_01" ID="{34B7A875-73A4-4F50-B596-CF66BF77D869}" PersistMode="Reference"/>
+					</ChildrenList>
+				</ActorMixer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

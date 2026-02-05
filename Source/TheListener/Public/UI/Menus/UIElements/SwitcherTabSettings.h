@@ -36,6 +36,8 @@ protected:
 	class USettingsTabBase* GraphicsTab;
 	UPROPERTY(meta = (BindWidget))
 	class USettingsTabBase* AccessibilityTab;
+	/*UPROPERTY(meta = (BindWidget))
+	class USettingsTabBase* KeyBindingTab;*/
 
 	//Tab Header
 	UPROPERTY(meta = (BindWidget))
@@ -46,6 +48,8 @@ protected:
 	class UWidgetTab* GraphicsTabHeader;
 	UPROPERTY(meta = (BindWidget))
 	class UWidgetTab* AccessibilityTabHeader;
+	/*UPROPERTY(meta = (BindWidget))
+	class UWidgetTab* KeyBindingTabHeader;*/
 	UPROPERTY(meta = (BindWidget))
 	class UHorizontalBox* TabHeaderBox;
 
@@ -67,6 +71,8 @@ public:
 	USettingsTabBase* GetGraphicsTab() const;
 	UFUNCTION()
 	USettingsTabBase* GetAccessibilityTab() const;
+	/*UFUNCTION()
+	USettingsTabBase* GetKeyBindingTab() const;*/
 
 	UFUNCTION()
 	UWidgetTab* GetGameplayTabHeader() const;
@@ -76,4 +82,6 @@ public:
 	UWidgetTab* GetGraphicsTabHeader() const;
 	UFUNCTION()
 	UWidgetTab* GetAccessibilityTabHeader() const;
+	/*UFUNCTION()
+	UWidgetTab* GetKeyBindingTabHeader() const;*/
 };

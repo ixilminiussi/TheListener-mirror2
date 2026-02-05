@@ -17,6 +17,10 @@ public:
 
 	virtual void BeginPlay() override;
 	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
+
+#if !UE_BUILD_SHIPPING
+	virtual void Tick(float DeltaSeconds) override;
+#endif
 	
 	virtual void SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) override;
 
@@ -42,15 +46,17 @@ protected:
 
 	//Call Begin
 public:
-	void PushCall(class UDialogueTreeData* DialogueTree, bool bImportant, float RingDuration, bool bSkipQueue);
-	void UnlockCall(TArray<int> const &Number, class UDialogueTreeData *DialogueTree, float InWaitTime, bool bOverrideAll);
+	void PushCall(class UDialogueGraphAsset* DialogueTree, bool bImportant, float RingDuration, bool bSkipQueue);
+	void UnlockCall(TArray<int> const &Number, class UDialogueGraphAsset* DialogueTree, float InWaitTime, bool bOverrideAll);
 	
 protected:
 	struct FCallInfo
 	{
-		class ADialogue *Dialogue;
+		class ADialogue *Dialogue = nullptr;
 		float CallTime;
 		bool bImportant;
+		
+		bool IsValid() const { return Dialogue != nullptr; }
 	};
 
 	void StartCall(ADialogue *Dialogue);
@@ -62,7 +68,8 @@ protected:
 	void QueueNext();
 	
 	bool bCallMutex;
-	
+
+	FCallInfo CurrentCallInfo = FCallInfo();
 	UPROPERTY()
 	TObjectPtr<class ADialogue> StandbyDialogue;
 	

@@ -20,6 +20,8 @@ class THELISTENER_API ACorkboard : public AToy
 	virtual void BeginPlay() override;
 	virtual void SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) override;
 
+	virtual void OnUnpossessToyTransition() override;
+
 protected:
 
 	UPROPERTY(EditDefaultsOnly, Category = "Toy|Corkboard|Mesh")
@@ -31,7 +33,7 @@ protected:
 	class UCorkboardWidget* CorkboardWidget;
 
 	virtual void PossessedBy(AController* NewController) override;
-	virtual void UnPossessed() override;
+	void RemoveWidget();
 
 	UPROPERTY(EditDefaultsOnly, Category = "Toy|Corkboard|Enhanced Input")
 	class UInputAction* InputActionZoom = nullptr;

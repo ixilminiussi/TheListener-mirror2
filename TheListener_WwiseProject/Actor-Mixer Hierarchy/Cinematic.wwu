@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{8311E267-A2C3-45B3-871F-2B67E44F9718}" SchemaVersion="123" RootDocumentID="{29C5AB43-C928-4CD8-9FC7-35647B0068A2}" ParentDocumentID="{29C5AB43-C928-4CD8-9FC7-35647B0068A2}">
+	<AudioObjects>
+		<WorkUnit Name="Cinematic" ID="{8311E267-A2C3-45B3-871F-2B67E44F9718}" OwnerID="{29C5AB43-C928-4CD8-9FC7-35647B0068A2}" PersistMode="Nested">
+			<ChildrenList>
+				<Sound Name="Intro" ID="{37226C05-287C-4C99-9AC4-2FC0A6889425}" ShortID="981609237">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Intro" ID="{AB66C5D4-3AC5-431A-8F88-DC060AF55CC0}">
+							<Language>SFX</Language>
+							<AudioFile>DAY 1\Cinematics\Intro.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="542540810"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Intro" ID="{AB66C5D4-3AC5-431A-8F88-DC060AF55CC0}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="SignalEnd" ID="{A5A90F7F-775B-4FA2-BAAA-389AFC8CBC13}" ShortID="190670075">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="SignalEnd" ID="{6A54E1F8-632E-4157-A3FC-1CD26B9CE2CD}">
+							<Language>SFX</Language>
+							<AudioFile>DAY 1\Signal\SignalEnd.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="923231404"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="SignalEnd" ID="{6A54E1F8-632E-4157-A3FC-1CD26B9CE2CD}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

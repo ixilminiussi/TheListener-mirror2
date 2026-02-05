@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{935F540D-6F14-42CE-BA85-AADEC1508146}" SchemaVersion="123">
+	<Events>
+		<WorkUnit Name="FOLEYS" ID="{935F540D-6F14-42CE-BA85-AADEC1508146}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="play_footsteps_inside" ID="{FA209954-5071-476B-8370-8049997E9BE0}">
+					<ChildrenList>
+						<Action Name="" ID="{FF166BB3-295F-4DC0-8C6B-CE47B569818D}" ShortID="779018518">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="footsteps_inside" ID="{C7C2DCC0-22FB-4ADE-83FB-3A5AB9C18666}" WorkUnitID="{5635095C-3F17-460D-8472-701492E2CD5A}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="play_footsteps_snow" ID="{01CE5010-F65C-4752-91CE-898A05796971}">
+					<ChildrenList>
+						<Action Name="" ID="{4D247DBC-E4FF-4415-BC86-85156ACC0773}" ShortID="354320352">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="footsteps_snow" ID="{A50916F7-9271-4868-BB56-06758FAF4571}" WorkUnitID="{5635095C-3F17-460D-8472-701492E2CD5A}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

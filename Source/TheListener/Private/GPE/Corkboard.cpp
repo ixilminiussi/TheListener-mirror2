@@ -57,16 +57,22 @@ void ACorkboard::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent
 	}
 }
 
+void ACorkboard::OnUnpossessToyTransition()
+{
+	RemoveWidget();
+	Super::OnUnpossessToyTransition();
+}
+
 void ACorkboard::PossessedBy(AController* NewController)
 {
 	Super::PossessedBy(NewController);
 	if (NewController != UGameplayStatics::GetPlayerController(GetWorld(), 0)) { return; }
 	GetCorkboardWidget()->SetVisibility(ESlateVisibility::Visible);
+	
 }
 
-void ACorkboard::UnPossessed()
+void ACorkboard::RemoveWidget()
 {
-	Super::UnPossessed();
 	CorkboardWidget->SetVisibility(ESlateVisibility::Hidden);
 	CorkboardWidget->Reset();
 }

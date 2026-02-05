@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{971FED9A-43E6-49B7-83AF-E8C048F326F4}" SchemaVersion="123" RootDocumentID="{61CDF67E-D35C-4735-A80C-49ECCF7CE674}" ParentDocumentID="{61CDF67E-D35C-4735-A80C-49ECCF7CE674}">
+	<AudioObjects>
+		<WorkUnit Name="DOOR" ID="{971FED9A-43E6-49B7-83AF-E8C048F326F4}" OwnerID="{61CDF67E-D35C-4735-A80C-49ECCF7CE674}" PersistMode="Nested">
+			<ChildrenList>
+				<Sound Name="CloseDoor" ID="{9CA3C043-4662-48FD-8D1B-F4F1817FE436}" ShortID="258763183">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1F16A1F8-60B8-4227-AF46-35E4F3C0380C}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="SFX" ID="{A225F6D7-0B96-4F97-A9AA-8DE711946649}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="CloseDoor" ID="{BEBF35F5-F767-48C7-BD4C-2E39ECFB451D}">
+							<Language>SFX</Language>
+							<AudioFile>CloseDoor.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="349806699"/>
+							</MediaIDList>
+						</AudioFileSource>
+						<AudioFileSource Name="CloseDoor_01" ID="{17425FDD-718C-4516-BE4D-415AEDA3788F}">
+							<Language>SFX</Language>
+							<AudioFile>SFX\Interactables\CloseDoor.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="1069361891"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="CloseDoor_01" ID="{17425FDD-718C-4516-BE4D-415AEDA3788F}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="OpenDoor" ID="{5667E938-2A63-403F-B127-4668708D2253}" ShortID="169082160">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1F16A1F8-60B8-4227-AF46-35E4F3C0380C}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="SFX" ID="{A225F6D7-0B96-4F97-A9AA-8DE711946649}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="OpenDoor" ID="{2C1CC4F5-86A7-4039-B798-95B3FA1FBAB4}">
+							<Language>SFX</Language>
+							<AudioFile>OpenDoor.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="350238801"/>
+							</MediaIDList>
+						</AudioFileSource>
+						<AudioFileSource Name="OpenDoor_01" ID="{1722E929-C5E4-4E8C-B9B5-E1E00ABF6AE0}">
+							<Language>SFX</Language>
+							<AudioFile>SFX\Interactables\OpenDoor.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="278003319"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="OpenDoor_01" ID="{1722E929-C5E4-4E8C-B9B5-E1E00ABF6AE0}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

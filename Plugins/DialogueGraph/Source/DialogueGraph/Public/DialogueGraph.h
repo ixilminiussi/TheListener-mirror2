@@ -17,4 +17,6 @@ public:
 private:
 	TSharedPtr<FSlateStyleSet> StyleSet = nullptr;
 	TSharedPtr<class DialogueGraphAction> DGraphAction = nullptr;
+	TSharedPtr<struct FDialoguePinFactory> PinFactory = nullptr;
+	TSharedPtr<struct FGraphPanelNodeFactory> NodeFactory = nullptr;
 };

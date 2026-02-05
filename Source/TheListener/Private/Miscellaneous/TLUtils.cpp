@@ -1,12 +1,15 @@
 #include "Miscellaneous/TLUtils.h"
 
 #include "AkGameplayStatics.h"
+#include "EnhancedInputSubsystems.h"
 #include "AI/NavigationSystemBase.h"
 #include "Kismet/GameplayStatics.h"
 #include "UI/LukaHUD.h"
 #include "UI/Prompt/PromptsHolder.h"
 #include "Wwise/API/WwiseMusicEngineAPI.h"
 #include "Wwise/API/WwiseSoundEngineAPI.h"
+#include "EnhancedInput/Public/EnhancedActionKeyMapping.h"
+#include "System/Frequency/FrequencySubsystem.h"
 
 class ALukaHUD;
 
@@ -55,54 +58,35 @@ int32 UTLUtils::GetPlayPosition(const AkPlayingID PlayingID)
 	return -1;
 }
 
-TArray<AActor*> UTLUtils::GetAllActorsOfClass(UObject* WorldContextObject, TSubclassOf<AActor> Class)
+TArray<AActor*> UTLUtils::GetAllActorsOfClass(UObject const *WorldContextObject, TSubclassOf<AActor> Class)
 {
 	TArray<AActor*> OutActors;
 	UGameplayStatics::GetAllActorsOfClass(WorldContextObject, Class, OutActors);
 	return OutActors;
 }
 
-void UTLUtils::TogglePrompt(UObject* WorldContextObject, FName const& PromptName, bool bToggle)
+void UTLUtils::TogglePrompts(UObject* WorldContextObject, TArray<FName> const &PromptNames, bool bToggle)
 {
 	if (!ensure(WorldContextObject))
 	{
 		return;
 	}
-	if (const APlayerController *PlayerController = WorldContextObject->GetWorld()->GetFirstPlayerController(); ensure(PlayerController))
+	if (bToggle)
 	{
-		if (const ALukaHUD* LukaHUD = Cast<ALukaHUD>(PlayerController->GetHUD()); LukaHUD)
+		ULocalPlayer* LocalPlayer = WorldContextObject->GetWorld()->GetFirstLocalPlayerFromController();
+		const UEnhancedInputLocalPlayerSubsystem* EnhancedInputSubsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(LocalPlayer);
+		const TArray<FEnhancedActionKeyMapping> KeyMappings = EnhancedInputSubsystem->GetAllPlayerMappableActionKeyMappings();
+		for (FName const &Name : PromptNames)
 		{
-			UPromptsHolder *PromptsHolder = LukaHUD->GetPromptsHolder();
-			if (bToggle)
-			{
-				PromptsHolder->Show(PromptName);
-			} else
-			{
-				PromptsHolder->Hide(PromptName);
-			}
+			UPromptsHolder::ShowPrompt.Broadcast(Name, KeyMappings);
+		}
+	} else
+	{
+		for (FName const &Name : PromptNames)
+		{
+			UPromptsHolder::HidePrompt.Broadcast(Name);
 		}
 	}
-}
-
-UWidget * UTLUtils::GetPrompt(UObject* WorldContextObject, FName const& PromptName)
-{
-	if (!ensure(WorldContextObject))
-	{
-		return nullptr;
-	}
-	if (const APlayerController *PlayerController = WorldContextObject->GetWorld()->GetFirstPlayerController(); ensure(PlayerController))
-	{
-		if (const ALukaHUD* LukaHUD = Cast<ALukaHUD>(PlayerController->GetHUD()); LukaHUD)
-		{
-			UPromptsHolder *PromptsHolder = LukaHUD->GetPromptsHolder();
-			if (PromptsHolder)
-			{
-				return PromptsHolder->GetWidgetFromName(PromptName);
-			}
-		}
-	}
-
-	return nullptr;
 }
 
 void UTLUtils::OpenLevel(UObject* WorldContextObject, FName const& LevelName)
@@ -112,4 +96,36 @@ void UTLUtils::OpenLevel(UObject* WorldContextObject, FName const& LevelName)
 		return;
 	}
 	UGameplayStatics::OpenLevel(WorldContextObject->GetWorld(), LevelName);
+}
+
+/**
+ * 
+ * @param Start The place we start the step from
+ * @param RelativeStep What the step would be at 1000 
+ * @return What the new location is after the step
+ */
+float UTLUtils::FrequencyStep(const float Start, const float RelativeStep)
+{
+	const float Ratio = (1000.f + FMath::Abs(RelativeStep)) / 1000.f;
+
+	if (RelativeStep < 0.0f)
+	{
+		return Start / Ratio;
+	} else
+	{
+		return Start * Ratio;
+	}
+}
+
+void UTLUtils::AllowBand(UObject* WorldContextObject, const int InBand)
+{
+	if (!ensure(WorldContextObject))
+	{
+		return;
+	}
+	UFrequencySubsystem *FrequencySubsystem = WorldContextObject->GetWorld()->GetSubsystem<UFrequencySubsystem>();
+	if (ensure(FrequencySubsystem))
+	{
+		FrequencySubsystem->AllowBand(InBand);
+	}
 }

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{400A9D1D-384D-4875-9053-215589FA83F3}" SchemaVersion="123" RootDocumentID="{106A3FEF-5776-41DE-B9B1-BE4675AD4EAD}" ParentDocumentID="{106A3FEF-5776-41DE-B9B1-BE4675AD4EAD}">
+	<Events>
+		<WorkUnit Name="Radio" ID="{400A9D1D-384D-4875-9053-215589FA83F3}" OwnerID="{106A3FEF-5776-41DE-B9B1-BE4675AD4EAD}" PersistMode="Nested">
+			<ChildrenList>
+				<Event Name="play_radio_interference" ID="{40DFDB0F-F387-44DB-B029-6AC7170D5BED}">
+					<ChildrenList>
+						<Action Name="" ID="{636CCA1B-9A43-4FB2-AEFF-4DA4A5918210}" ShortID="792789206">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="radio_interference" ID="{D75AFED3-DD55-478D-9434-244A8D8CDC79}" WorkUnitID="{4F92CC5B-C405-457B-BE6E-33FBF50D3A4D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="play_radio_click" ID="{2B35F59D-FE17-4300-B234-E6986513769D}">
+					<ChildrenList>
+						<Action Name="" ID="{DCDA4693-D8B7-4941-B220-36052F424011}" ShortID="1066853355">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="click" ID="{0CC09BD8-BB93-4D03-9ABF-8D628BB3B145}" WorkUnitID="{4F92CC5B-C405-457B-BE6E-33FBF50D3A4D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="play_radio_interact" ID="{E514733C-5F72-498C-B0CF-AA6BA59DE2F6}">
+					<ChildrenList>
+						<Action Name="" ID="{5BE0ED14-2572-4803-A46F-5BA3B0CA3B77}" ShortID="610379180">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="radio_interact" ID="{1E905654-C904-4172-ADD7-16BF6783BBE1}" WorkUnitID="{4F92CC5B-C405-457B-BE6E-33FBF50D3A4D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="play_radio_leave" ID="{33A7E483-E6E9-4955-ACC6-87679789B76A}">
+					<ChildrenList>
+						<Action Name="" ID="{C7781984-53AC-44C3-97B2-C143B10DAF6E}" ShortID="519770015">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="radio_leave" ID="{D96FD389-90C7-483F-9F2B-709722B2DB55}" WorkUnitID="{4F92CC5B-C405-457B-BE6E-33FBF50D3A4D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="stop_radio_interference" ID="{40D5694A-B3A4-4591-A665-A8ECF85DBDF2}">
+					<ChildrenList>
+						<Action Name="" ID="{EF8F9CF7-9052-4202-BE4F-AB800B867CB4}" ShortID="971130958">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="radio_interference" ID="{D75AFED3-DD55-478D-9434-244A8D8CDC79}" WorkUnitID="{4F92CC5B-C405-457B-BE6E-33FBF50D3A4D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

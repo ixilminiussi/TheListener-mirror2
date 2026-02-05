@@ -5,6 +5,7 @@
 #include "KnobComponent.generated.h"
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnClick, bool, IsIncreasing);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnShiftFrequency, float, ShiftDelta);
 
 UCLASS(ClassGroup=(Custom), meta=(BlueprintSpawnableComponent))
 class THELISTENER_API UKnobComponent : public UStaticMeshComponent
@@ -26,6 +27,11 @@ public:
 	UFUNCTION(BlueprintCallable)
 	float GetValue() const;
 
+	bool bRatioBased = false;
+
+	UPROPERTY(BlueprintAssignable, Category = "Knob")
+	FOnShiftFrequency OnShiftFrequency;
+	
 protected:
 	virtual void BeginPlay() override;
 	void ApplyClamp();

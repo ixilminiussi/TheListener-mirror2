@@ -5,7 +5,15 @@
 #include "GameFramework/Actor.h"
 #include "Decoder.generated.h"
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnToggle, bool, bToggle);
+UENUM(BlueprintType)
+enum class ELedState : uint8
+{
+	Off = 0,
+	Right = 1,
+	Wrong = 2
+};
+
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnToggle, ELedState, bToggle);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnFinish);
 
 UCLASS()
@@ -101,9 +109,11 @@ protected:
 
 	// Feedbacks ==============================
 	UFUNCTION(BlueprintImplementableEvent, Category = "Decoder")
-	void OnLeftToggle(bool bToggle);
+	void OnLeftToggle(ELedState bToggle);
 	UFUNCTION(BlueprintImplementableEvent, Category = "Decoder")
-	void OnRightToggle(bool bToggle);
+	void OnRightToggle(ELedState bToggle);
+	UFUNCTION(BlueprintImplementableEvent, Category = "Decoder")
+	void OnScreenToggle(bool bToggle);
 
 	void ResetMaterial() const;
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Decoder")
@@ -113,14 +123,15 @@ protected:
 	TObjectPtr<class UMaterialInstance> RunningMaterial{nullptr};
 	UPROPERTY(EditDefaultsOnly, Category = "Decoder|Feedbacks", meta = (ClampMin = "1.0", ClampMax = "50.0"))
 	float Ratio = 40.f;
-	UPROPERTY();
+	UPROPERTY(BlueprintReadOnly);
 	TObjectPtr<class UMaterialInstanceDynamic> RunningMaterialInstance{nullptr};
 
 	UPROPERTY(EditDefaultsOnly, Category = "Decoder|Feedbacks")
 	TObjectPtr<class UMaterial> CompletedMaterial{nullptr};
 
-	void SetActiveWidgetVisibility(bool bIsVisible) const;
-	UPROPERTY(EditDefaultsOnly, Category = "Decoder|Feedbacks")
-	TObjectPtr<class UCommandHUDComponent> CommandHUDComponent = nullptr;
+	void TogglePrompt(bool bIsVisible) const;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Decoder")
+	TArray<FName> ActivePrompts;
 	// Feedbacks End ========================== 
 };

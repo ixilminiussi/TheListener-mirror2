@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{F5AAA147-9F55-4207-A1A4-68EFCC65AE83}" SchemaVersion="123">
+	<AudioObjects>
+		<WorkUnit Name="FOLEYS" ID="{F5AAA147-9F55-4207-A1A4-68EFCC65AE83}" PersistMode="Standalone">
+			<ChildrenList>
+				<WorkUnit Name="FOOTSTEPS" ID="{5635095C-3F17-460D-8472-701492E2CD5A}" PersistMode="Reference"/>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

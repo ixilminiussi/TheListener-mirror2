@@ -29,12 +29,6 @@ protected:
 	UPROPERTY(meta = (BindWidget))
 	UButtonPrimary* GymButton;
 
-	UFUNCTION(BlueprintCallable)
-	void SetFocusOnMainMenu();
-	
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
-	class UOverlay* PreMenuOverlay;
-
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Menus", meta = (AllowedClasses="World"))
 	TSoftObjectPtr<UWorld> GymLevel;
 };

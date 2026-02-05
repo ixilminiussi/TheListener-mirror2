@@ -1,0 +1,1155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{454E63CE-C6FB-4E0B-811A-4F4859DC6D34}" SchemaVersion="123" RootDocumentID="{29C5AB43-C928-4CD8-9FC7-35647B0068A2}" ParentDocumentID="{29C5AB43-C928-4CD8-9FC7-35647B0068A2}">
+	<AudioObjects>
+		<WorkUnit Name="Lone Lenny" ID="{454E63CE-C6FB-4E0B-811A-4F4859DC6D34}" OwnerID="{29C5AB43-C928-4CD8-9FC7-35647B0068A2}" PersistMode="Nested">
+			<ChildrenList>
+				<ActorMixer Name="lone_lenny" ID="{6FAC0E13-BE55-4784-8A0D-1B39B29E1614}" ShortID="840206700">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1F16A1F8-60B8-4227-AF46-35E4F3C0380C}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="STATIONS" ID="{AAC500AE-754A-49D2-AFC4-622281209439}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="LL_Choice1_Music" ID="{B38CB7F9-0279-4C37-BAC3-FF398CA56C3D}" ShortID="592498838">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="LL_Choice1_Music" ID="{D50B5CCE-5F14-4AAC-A5F5-DA60F059C310}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Lone Lenny\LL_Choice1_Music.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="751976733"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{B0291323-4FA9-437A-9024-BF723059CFFD}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.C1M"/>
+															<Property Name="Time" Type="Real64" Value="6.41148487572531"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="LL_Choice1_Music" ID="{D50B5CCE-5F14-4AAC-A5F5-DA60F059C310}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="LL_Choice2_Intro" ID="{877D05B3-937D-465F-83C0-9CCA7829EF18}" ShortID="67642160">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="LL_Choice2_Intro" ID="{4403AA13-37CF-4635-940C-59EA1528C340}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Lone Lenny\LL_Choice2_Intro.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="80076673"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{0002DE43-E57B-4B04-B0E6-6E65AA786866}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.C2.3"/>
+															<Property Name="Time" Type="Real64" Value="6.35747129569933"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="LL_Choice2_Intro" ID="{4403AA13-37CF-4635-940C-59EA1528C340}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="LL_Choice2_Music" ID="{2162B8D3-6E23-457B-B382-A6483EC7FB0A}" ShortID="73319633">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="LL_Choice2_Music" ID="{8E050DA1-0650-447B-98A2-8C620FF8C765}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+										<Property Name="VolumeOffset" Type="Real64">
+											<ValueList>
+												<Value>24</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Lone Lenny\LL_Choice2_Music.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="586959084"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{D37CE13A-0EAA-4E27-BE1E-36911BDED402}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.C2.3"/>
+															<Property Name="Time" Type="Real64" Value="5.99232841417627"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{8DC3033E-FC4B-4C42-BF60-4C7D2B341C00}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.C2M"/>
+															<Property Name="Time" Type="Real64" Value="25.7621598906485"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="LL_Choice2_Music" ID="{8E050DA1-0650-447B-98A2-8C620FF8C765}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="LL_Choice3_Intro" ID="{A93EF343-30AE-4E42-8640-347BEF5989D1}" ShortID="911286950">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="LL_Choice3_Intro" ID="{8174D5BE-8A70-4291-AFDD-9EECC01FAD35}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Lone Lenny\LL_Choice3_Intro.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="324444418"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{4E95E67B-F223-4A50-B446-8E4461AAF1D3}">
+														<PropertyList>
+															<Property Name="Color" Type="int16" Value="3"/>
+															<Property Name="Label" Type="string" Value="1.1.LL.C3.3"/>
+															<Property Name="OverrideColor" Type="bool" Value="True"/>
+															<Property Name="Time" Type="Real64" Value="7.21160991631665"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{80F3CD2B-8404-4479-B17E-ECBA33E1FA9D}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.C3.4"/>
+															<Property Name="Time" Type="Real64" Value="10.392780949988"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{E84F2FCA-AE87-4B73-8878-A43119E1E5EC}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.C3.5"/>
+															<Property Name="Time" Type="Real64" Value="14.627653473895"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{ACBD704E-90CD-4D75-898C-EA3B239CA4A0}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.C3.6"/>
+															<Property Name="Time" Type="Real64" Value="20.8793016880693"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{06DDA319-19C0-479C-82FD-BEAA38F78D5C}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.C3.7"/>
+															<Property Name="Time" Type="Real64" Value="24.4015640180488"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{D0723043-F63E-4A91-ACF5-D74FC0587A2B}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.C3.8"/>
+															<Property Name="Time" Type="Real64" Value="29.3607590757739"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{2A323B8F-63C9-4A26-8B33-035633D2088B}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.C3.9"/>
+															<Property Name="Time" Type="Real64" Value="34.6169808112693"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{3925D96B-189B-4F97-AC05-A81B54EC2279}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.C3.10"/>
+															<Property Name="Time" Type="Real64" Value="38.5260781145033"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="LL_Choice3_Intro" ID="{8174D5BE-8A70-4291-AFDD-9EECC01FAD35}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="LL_Choice3_Music" ID="{0540D7E2-E366-479C-AD2E-015D2076EF33}" ShortID="296601927">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="LL_Choice3_Music" ID="{7B4D8F9C-5ECC-46AC-9D02-FD9B801900CD}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Lone Lenny\LL_Choice3_Music.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="131086278"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{E339D007-3D57-4741-A3BC-841B8B6D6C8B}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.C3.3"/>
+															<Property Name="Time" Type="Real64" Value="7.26145349137348"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{8DBAC148-59D7-4232-873F-A68C014824F2}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.C3.4"/>
+															<Property Name="Time" Type="Real64" Value="10.4942753946622"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{D41A4A21-0E2B-4E8C-8B48-11FA2EF7B567}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.C3.5"/>
+															<Property Name="Time" Type="Real64" Value="14.5503785249501"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{16EB6E16-8B7B-4604-9BF7-8DBCA7599BFA}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.C3.6"/>
+															<Property Name="Time" Type="Real64" Value="20.8221609680198"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{7E8950E1-9960-425A-A1D3-7FBB85934701}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.C3.7"/>
+															<Property Name="Time" Type="Real64" Value="24.205064941607"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{8E955E71-2B28-4D89-A7FA-3A5E12328E2D}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.C3.8"/>
+															<Property Name="Time" Type="Real64" Value="29.175517878347"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{9C44A8F7-5613-4C68-A9D1-5D0C9A78BFA6}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.C3.9"/>
+															<Property Name="Time" Type="Real64" Value="34.5445674754008"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{4E488C1D-B88F-4931-A0F2-A38F210055C5}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.C3.10"/>
+															<Property Name="Time" Type="Real64" Value="38.4958649420174"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{6F87F06C-FDD0-4E09-82AA-514BF0518D76}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.C3M"/>
+															<Property Name="Time" Type="Real64" Value="55.222557886966"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="LL_Choice3_Music" ID="{7B4D8F9C-5ECC-46AC-9D02-FD9B801900CD}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="LL_EndOne" ID="{0F7817EA-3C48-4071-A991-6EEE09B26F57}" ShortID="810964726">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="LL_EndOne" ID="{A1D8515A-21EC-4FCC-B192-E9DC3E1582D7}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+										<Property Name="VolumeOffset" Type="Real64">
+											<ValueList>
+												<Value>24</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Lone Lenny\LL_EndOne.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="228701290"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{3F1396B3-A01E-455C-A316-646007A9CB2C}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E1.1"/>
+															<Property Name="Time" Type="Real64" Value="118.684840272616"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{094AF797-AC82-4426-8475-5AC3CF4FA66D}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E1.2"/>
+															<Property Name="Time" Type="Real64" Value="125.615899951337"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{91712A4E-15CD-481E-A16B-275B74597ECC}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E1.3"/>
+															<Property Name="Time" Type="Real64" Value="129.926973537665"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{BB14DEEE-263B-43C3-8847-75BBFE15AE39}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E1.4"/>
+															<Property Name="Time" Type="Real64" Value="136.464182722364"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{C3AF4344-5B87-48C4-B5B5-82324F3D6BF0}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E1.5"/>
+															<Property Name="Time" Type="Real64" Value="142.177100640829"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{8E2D11AB-5189-4077-BD6E-DD266E7C2F4C}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E1.6"/>
+															<Property Name="Time" Type="Real64" Value="146.996520290499"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{F79C20D8-3C3D-4CBA-B443-B13577EBACEA}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E1.7"/>
+															<Property Name="Time" Type="Real64" Value="150.922819848533"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{B044A72B-617B-444E-A051-930BCA5B4CE2}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E1.8"/>
+															<Property Name="Time" Type="Real64" Value="155.664444854674"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{8B9B757C-42D6-4986-AD12-BBF5DB19D271}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E1.9"/>
+															<Property Name="Time" Type="Real64" Value="160.712410971944"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{DD4AE632-192D-4F2E-9D8A-5755DAD88C0D}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E1.10"/>
+															<Property Name="Time" Type="Real64" Value="166.050753824868"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{9A42E788-345A-4260-9856-9AD3C6B9F063}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E1.11"/>
+															<Property Name="Time" Type="Real64" Value="168.394257971619"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{9260B72C-4DBD-4F23-A555-611E456E70D7}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E1.12"/>
+															<Property Name="Time" Type="Real64" Value="172.737187827247"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{E545283D-99F3-4795-9DB5-72D37604F142}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E1.13"/>
+															<Property Name="Time" Type="Real64" Value="178.236343930289"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{50291EC3-C149-4A85-ACF3-244746FDFD64}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E1.14"/>
+															<Property Name="Time" Type="Real64" Value="184.241712052562"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{490DC8A4-C3F6-46BB-9D35-7E479A083173}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E1.15"/>
+															<Property Name="Time" Type="Real64" Value="189.512001015569"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{C9217546-62B4-4FC3-8D82-B94EAE8865F4}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E1.16"/>
+															<Property Name="Time" Type="Real64" Value="195.173696020788"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{7A93AFD2-1355-47BE-B56D-948BDC841BEE}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E1.17"/>
+															<Property Name="Time" Type="Real64" Value="197.37472738532"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{D965B480-421E-465D-A6D7-02CBB3999C91}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E1.18"/>
+															<Property Name="Time" Type="Real64" Value="205.079534752718"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="LL_EndOne" ID="{A1D8515A-21EC-4FCC-B192-E9DC3E1582D7}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="LL_End" ID="{5E596C38-8041-49EA-B7CE-A2C03AD83E3A}" ShortID="767846638">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="LL_EndTwo" ID="{AD76B9DE-BA22-45E3-B4E4-DCEAB33AA476}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+										<Property Name="VolumeOffset" Type="Real64">
+											<ValueList>
+												<Value>24</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Lone Lenny\LL_EndTwo.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="543624040"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{4E0B1D55-CD0D-4544-939C-C81ABABAAA41}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E2.1"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{FA6C5306-6F26-43EC-B294-7659916AD008}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E2.2"/>
+															<Property Name="Time" Type="Real64" Value="7.8453537579879"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{3838C4C1-95C9-467A-B5C7-46C7993784B6}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E2.3"/>
+															<Property Name="Time" Type="Real64" Value="13.111413129788"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{459C56C5-31CB-48EC-8752-B59808326D83}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E2.4"/>
+															<Property Name="Time" Type="Real64" Value="20.8492962883514"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{2A5E9F43-5EB7-4DD7-87AD-79E2363C76FE}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E2.5"/>
+															<Property Name="Time" Type="Real64" Value="24.4592593185138"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{CD955E9F-EA78-4867-ADB4-ACCA33BE2BE0}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E2.6"/>
+															<Property Name="Time" Type="Real64" Value="28.4253103558152"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{1E278061-1D76-41DA-8F6E-D3DE7757CCB7}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E2.7"/>
+															<Property Name="Time" Type="Real64" Value="31.308538288243"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{18D4140F-29C8-4C2B-8CE8-015EFC987698}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E2.8"/>
+															<Property Name="Time" Type="Real64" Value="35.8334112171229"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{9523380F-BE10-4393-9ACE-C213EE8E8AA9}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E2.10"/>
+															<Property Name="Time" Type="Real64" Value="46.974980923379"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{1ED0B070-08E6-43C0-9E6B-CB2FFF3C52B1}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E2.11"/>
+															<Property Name="Time" Type="Real64" Value="56.015955362613"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{8444A5E5-9DFD-47BB-978C-95270BE3DA8E}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E2.12"/>
+															<Property Name="Time" Type="Real64" Value="63.126844721469"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{27BBABBC-4C6F-41A9-B139-760C81EBEF08}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E2.13"/>
+															<Property Name="Time" Type="Real64" Value="67.6598537705936"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{26839460-E197-4FB9-AF46-A614B1D1DE48}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E2.14"/>
+															<Property Name="Time" Type="Real64" Value="71.9860577411137"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{A3573630-8D15-416C-B796-AB53F9D76181}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E2.15"/>
+															<Property Name="Time" Type="Real64" Value="79.0636238408161"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{32AC5462-2E2B-40F5-95EE-D47A38F83D6C}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E2.16"/>
+															<Property Name="Time" Type="Real64" Value="82.9799680651092"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{41F8B01C-DD83-4684-9D09-A3E3F583A53E}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E2.17"/>
+															<Property Name="Time" Type="Real64" Value="86.6480478313998"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{729643D0-0322-403D-81A9-B38B52C5A507}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E2.18"/>
+															<Property Name="Time" Type="Real64" Value="93.1630737950706"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{75814AD3-8766-41CB-BE08-4A6B47C2A6FF}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E2.19"/>
+															<Property Name="Time" Type="Real64" Value="97.7961961015502"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{AF59EB89-4060-4BC6-A0A0-67D6A2604295}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E2.20"/>
+															<Property Name="Time" Type="Real64" Value="103.199442400841"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{3E63E67A-DC46-4C3E-9284-2933EDBFC673}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E2.21"/>
+															<Property Name="Time" Type="Real64" Value="106.724391974028"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{81F1CBB5-5B60-4D46-9FCE-0640AA6DA55B}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E2.9"/>
+															<Property Name="Time" Type="Real64" Value="42.119437318571"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="LL_EndTwo" ID="{AD76B9DE-BA22-45E3-B4E4-DCEAB33AA476}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="LL_FirstMusic" ID="{6FFD95E4-AC6D-467E-AC0F-5BF1AEF99673}" ShortID="166101761">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="LL_FirstMusic" ID="{B8BB73AC-60AB-4040-B2F7-BF9B2A0EF5F2}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Lone Lenny\LL_FirstMusic.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="318326580"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{7E681F5D-701D-404D-A10E-9CCF57E6D600}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.M1.1"/>
+															<Property Name="Time" Type="Real64" Value="1.26097490625474"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="LL_FirstMusic" ID="{B8BB73AC-60AB-4040-B2F7-BF9B2A0EF5F2}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="LL_Intro" ID="{CC11082E-78DF-4379-A4BB-538CECB82C0A}" ShortID="45827259">
+							<PropertyList>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="LL_Intro" ID="{26B01DC7-8D0F-49AF-BDBF-0ACA6B73B927}">
+									<PropertyList>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>DAY 1\Lone Lenny\LL_Intro.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="256422082"/>
+									</MediaIDList>
+									<ObjectLists>
+										<ObjectList Name="Markers">
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{9BD1795D-67E1-485B-809D-6942E7634CB2}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.M1.1"/>
+															<Property Name="Time" Type="Real64" Value="1.66125571241657"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{4E434066-DAB2-4F4C-B95E-B35E8AD7114E}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.M1.2"/>
+															<Property Name="Time" Type="Real64" Value="111.563376884579"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{893F0BBE-8813-4BDA-927C-F7F8A6BEF443}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.M1.3"/>
+															<Property Name="Time" Type="Real64" Value="112.411191031949"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{EF93BBB2-2BC8-4733-AB0F-C436B45C6EB5}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.M1.4"/>
+															<Property Name="Time" Type="Real64" Value="115.819904159092"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{1E9E1702-103D-4297-988E-CE610D11C8A3}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E1.1"/>
+															<Property Name="Time" Type="Real64" Value="119.194289005024"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{EE0568CA-0361-4213-9D6A-FFB9147AE0FB}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E1.2"/>
+															<Property Name="Time" Type="Real64" Value="127.942115093869"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{9B4FD7F0-97B4-4049-A8C4-7CE00348EE0D}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E1.3"/>
+															<Property Name="Time" Type="Real64" Value="130.346839270548"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{5F8D1949-1A81-4288-9462-1EFF06955E4A}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E1.4"/>
+															<Property Name="Time" Type="Real64" Value="136.827771219589"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{50E24B92-B775-4A77-9661-E02EF2945012}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E1.5"/>
+															<Property Name="Time" Type="Real64" Value="142.672841344315"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{787FA63D-1524-42E0-B7AE-878E97CEF270}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E1.6"/>
+															<Property Name="Time" Type="Real64" Value="147.453746406682"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{29B63F61-68DF-4268-8260-77BE4874EC5F}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E1.7"/>
+															<Property Name="Time" Type="Real64" Value="151.433119520442"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{CE32CDA7-275F-4732-AF08-15E35C65552A}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E1.8"/>
+															<Property Name="Time" Type="Real64" Value="156.207351997312"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{2CDD7D67-A3F3-4ECB-9269-D240016E6823}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E1.9"/>
+															<Property Name="Time" Type="Real64" Value="158.982399746342"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{03E961AB-0C23-412F-B55D-857465C20787}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E1.10"/>
+															<Property Name="Time" Type="Real64" Value="166.743865570652"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{AD1E0DE4-866E-46C7-93EA-49BF52D84DDC}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E1.11"/>
+															<Property Name="Time" Type="Real64" Value="169.024310970761"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{F6D9815D-59EB-4AA1-ABE9-227D70B503A0}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E1.12"/>
+															<Property Name="Time" Type="Real64" Value="173.447319472949"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{535B5257-9D41-4E4A-8D3F-A8C80121D694}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E1.13"/>
+															<Property Name="Time" Type="Real64" Value="178.918167080774"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{F5A6CAF8-4E43-4BEF-9D8E-BF076A787E4E}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E1.14"/>
+															<Property Name="Time" Type="Real64" Value="184.506726246358"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{B3C7570A-94AA-408B-BD7E-02A7180A78AA}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E1.15"/>
+															<Property Name="Time" Type="Real64" Value="189.911771097629"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{11F4BF48-DF63-4AF1-83FE-D598AF9A525C}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E1.16"/>
+															<Property Name="Time" Type="Real64" Value="195.781330854046"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{0C3F33D9-C423-40F0-BB0E-BC1840C7F564}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E1.17"/>
+															<Property Name="Time" Type="Real64" Value="198.033120467325"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<Marker Name="" ID="{2936D1B2-C93A-4D4E-9F98-A808EFE719B2}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="1.1.LL.E1.18"/>
+															<Property Name="Time" Type="Real64" Value="205.781035140513"/>
+														</PropertyList>
+													</Marker>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="LL_Intro" ID="{26B01DC7-8D0F-49AF-BDBF-0ACA6B73B927}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</ActorMixer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{3D64F326-E136-4343-95C7-3ECA2A22DA19}" SchemaVersion="123" RootDocumentID="{268CC0FB-048E-4CF9-99B1-EE3D65440901}" ParentDocumentID="{3CEFF608-9B3D-4EC9-AD5F-BFC40FA95F84}">
+	<AudioObjects>
+		<WorkUnit Name="D01_PHONE" ID="{3D64F326-E136-4343-95C7-3ECA2A22DA19}" OwnerID="{D974A136-7608-441F-9230-851F137A592C}" PersistMode="Nested">
+			<ChildrenList>
+				<ActorMixer Name="D01_PHONE" ID="{1AE05E6F-18D5-42ED-ACFA-91EB504EEEC2}" ShortID="511972622">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+				</ActorMixer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

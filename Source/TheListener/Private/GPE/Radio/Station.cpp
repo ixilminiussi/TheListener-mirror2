@@ -7,7 +7,6 @@
 #include "EventSubsystem.h"
 #include "GPE/Radio/Decoder.h"
 #include "Player/LukaController.h"
-#include "UI/Dialogue/AnswerDataAsset.h"
 #include "System/Events/EventCondition.h"
 #include "System/Frequency/FrequencySubsystem.h"
 #include "UI/LukaHUD.h"
@@ -30,11 +29,23 @@ void AStation::Destroyed()
 	{
 		AkComponent->Stop();
 	}
+
+	// send condition
+	const FConditionKey Key = UStationFinishedCondition::GenerateKey(StationAsset);
+	if (UGameInstance *GameInstance = GetWorld()->GetGameInstance())
+	{
+		if (const auto EventSubsystem = GameInstance->GetSubsystem<UEventSubsystem>(); EventSubsystem)
+		{
+			EventSubsystem->SetConditionValue(Key, true);
+		}
+	}
 }
 
 void AStation::BeginPlay()
 {
 	Super::BeginPlay();
+
+	UpdateSubtitlesClarity(0.f);
 }
 
 void AStation::EndPlay(const EEndPlayReason::Type EndPlayReason)
@@ -53,7 +64,7 @@ void AStation::StartStation()
 	check(AkComponent);
 	check(StationAsset);
 
-	if (DialogueTree) // Use Answer Runtime
+	if (DialogueAsset ) // Use Answer Runtime
 	{
 		StartDialogue();
 	}
@@ -69,12 +80,6 @@ void AStation::StartStation()
 
 void AStation::StopStation()
 {
-	// send condition
-	const FConditionKey Key = UStationFinishedCondition::GenerateKey(StationAsset);
-	if (const auto EventSubsystem = GetWorld()->GetSubsystem<UEventSubsystem>())
-	{
-		EventSubsystem->SetConditionValue(Key, true);
-	}
 
 	check(AkComponent)
 	AkComponent->Stop();
@@ -88,9 +93,9 @@ void AStation::SetClarity(float const InSubtitleClarity, float const InAudioClar
 {
 	SubtitleClarity = FMath::Clamp(InSubtitleClarity, 0.0f, MaxClarity);
 	AudioClarity = FMath::Clamp(InAudioClarity, 0.0f, MaxClarity);
-	
-	bIsHeard = AudioClarity > 0.f;
 
+	bIsHeard = InAudioClarity > ClarityThreshold;
+	
 	check(StationAsset);
 
 	if (!ensure(StationAsset->Rtpc))
@@ -106,7 +111,23 @@ void AStation::SetClarity(float const InSubtitleClarity, float const InAudioClar
 
 float AStation::ComputeRawClarity(const float InFrequency) const
 {
-	float Clarity = 1.0f - (FMath::Abs(StationAsset->Frequency - InFrequency) / StationAsset->ReceptionBand);
+	const float ReceptionBand = StationAsset->ReceptionBand / 2.f;
+	
+	const float BeginRange = UTLUtils::FrequencyStep(StationAsset->Frequency, -ReceptionBand);
+	const float EndRange = UTLUtils::FrequencyStep(StationAsset->Frequency, ReceptionBand);
+
+	if (InFrequency < BeginRange || InFrequency > EndRange)
+	{
+		return 0.0f;
+	}
+
+	const float LogBegin = FMath::Log2(BeginRange);
+	const float LogEnd = FMath::Log2(EndRange);
+
+	const float LogInFrequency = FMath::Log2(InFrequency);
+	const float NormalizedLog = (LogInFrequency - LogBegin) / (LogEnd - LogBegin);
+	
+	float Clarity = 1. - FMath::Abs((0.5 - NormalizedLog) * 2.);
 	Clarity = FMath::Clamp(Clarity, 0.f, 1.f);
 
 	return Clarity;
@@ -116,10 +137,11 @@ void AStation::SetupStation(UStationAsset* InStationAsset, ARadio* RadioActor)
 {
 	StationAsset = InStationAsset;
 	Radio = RadioActor;
-
-	if (StationAsset->DialogueTreeData)
+	Parent = RadioActor;
+	
+	if (StationAsset->DialogueAsset)
 	{
-		SetupDialogue(StationAsset->DialogueTreeData, Radio);
+		SetupDialogue(StationAsset->DialogueAsset, Radio);
 	}
 }
 
@@ -140,7 +162,7 @@ float AStation::GetFrequency() const
 
 void AStation::OnAnswerQuestion_Implementation()
 {
-	Lock(true);
+	Radio->Lock(true,this);
 }
 
 void AStation::HandleMarker(FString const& Marker)
@@ -158,6 +180,14 @@ void AStation::HandleMarker(FString const& Marker)
 			MaxClarity = FCString::Atof(*(ChoppedMarker.RightChop(MaxClarityMarker.Len())));
 			return;
 		}
+		
+        if (ChoppedMarker.StartsWith("END"))
+        {
+        	StopStation();
+        	return;
+        }
+
+		OnModMarkerReceived(ChoppedMarker);
 	}
 }
 
@@ -179,7 +209,7 @@ void AStation::OnEndDialogue_Implementation()
 
 void AStation::OnFinishDialogue()
 {
-	if (!DialogueTree)
+	if (!DialogueAsset)
 	{
 		StopStation();
 		return;
@@ -197,15 +227,12 @@ int32 AStation::GetPlayPosition() const
 
 bool AStation::IsInRange(float InFrequency) const
 {
-	check(StationAsset)
-
-	const float DistanceCurrentFrequency = FMath::Abs(StationAsset->Frequency - InFrequency);
-	return DistanceCurrentFrequency <= StationAsset->ReceptionBand;
+	return ComputeRawClarity(InFrequency) > 0.;
 }
 
 void AStation::EnterRange()
 {
-	const auto EventSubsystem = GetWorld()->GetSubsystem<UEventSubsystem>();
+	const auto EventSubsystem = GetWorld()->GetGameInstance()->GetSubsystem<UEventSubsystem>();
 	check(EventSubsystem)
 
 	const FConditionKey Key = UStationListenedCondition::GenerateKey(StationAsset);
@@ -270,8 +297,7 @@ void AStation::StopDecoder()
 {
 	if (StationAsset->bIsEncoded)
 	{
-		ALukaController *LukaController = Cast<ALukaController>(Radio->GetController());
-		check(LukaController)
+
 		ADecoder *Decoder = Radio->GetDecoder();
 		if (ensure(Decoder))
 		{
@@ -279,6 +305,11 @@ void AStation::StopDecoder()
 			Decoder->OnFinish.RemoveDynamic(this, &AStation::Decode);
 		}
 	}
+}
+
+void AStation::PreventEndDialogue()
+{
+	bEarlyDialogueFlag = true;
 }
 
 void AStation::OnDecoded_Implementation()
@@ -290,10 +321,14 @@ void AStation::OnEnteringStationRange_Implementation()
 {
 	check(StationAsset)
 	check(Radio)
-
-	StartDecoder();
 }
 
 void AStation::OnLeavingStationRange_Implementation()
 {
 }
+
+void AStation::OnModMarkerReceived_Implementation(const FString& Marker)
+{
+	return;
+}
+

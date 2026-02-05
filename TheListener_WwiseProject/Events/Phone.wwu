@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{540AC76E-9A80-4D01-A607-E86E6B727E1B}" SchemaVersion="123" RootDocumentID="{F5518E82-AF38-49C8-92F8-5226EA1B8214}" ParentDocumentID="{106A3FEF-5776-41DE-B9B1-BE4675AD4EAD}">
+	<Events>
+		<WorkUnit Name="Phone" ID="{540AC76E-9A80-4D01-A607-E86E6B727E1B}" OwnerID="{106A3FEF-5776-41DE-B9B1-BE4675AD4EAD}" PersistMode="Nested">
+			<ChildrenList>
+				<Event Name="incoming_call_expired" ID="{D3C650EC-F1B7-4D73-A5F1-8BE260708345}">
+					<ChildrenList>
+						<Action Name="" ID="{84EB4367-4E5F-44D2-86A4-D62AB83C2192}" ShortID="529786207">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="phone_ring" ID="{8084209E-B85F-4894-BE55-71BC73D029A0}" WorkUnitID="{A49BF57D-72B8-40FD-A09C-AB956AC5151D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="phone_interact" ID="{66D73F3C-49A7-4277-BFD6-14E0F900B811}">
+					<ChildrenList>
+						<Action Name="" ID="{44871297-28D8-43DC-BCFF-06B09D605C46}" ShortID="149430567">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="phone_interact" ID="{75D7A1AB-27AA-4082-A639-B30DB531D2A8}" WorkUnitID="{A49BF57D-72B8-40FD-A09C-AB956AC5151D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="phone_leave" ID="{584EBCC4-9027-4650-A14A-65D3E0FBC7EF}">
+					<ChildrenList>
+						<Action Name="" ID="{A6E03263-9EA7-4C36-8F08-90D2F34B866F}" ShortID="222796583">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="phone_hangup" ID="{A7D54920-012D-4B3E-8802-4B36B791405B}" WorkUnitID="{A49BF57D-72B8-40FD-A09C-AB956AC5151D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="incoming_call" ID="{D4DF5475-946E-4129-990D-6989E094EEF5}">
+					<ChildrenList>
+						<Action Name="" ID="{B4392F8B-ECDA-4609-B3F1-AC218B726A26}" ShortID="631143127">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="phone_ring" ID="{8084209E-B85F-4894-BE55-71BC73D029A0}" WorkUnitID="{A49BF57D-72B8-40FD-A09C-AB956AC5151D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

@@ -46,16 +46,13 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void KickFromCurrentToy();
 
-	UPROPERTY(EditDefaultsOnly, Category = "Luka")
-	class UInspectingComponent* InspectingComponent;
-
 protected:
 	UPROPERTY()
 	TObjectPtr<class ALukaCharacter> Luka;
 	UPROPERTY()
 	TObjectPtr<class AToy> PossessedToy;
-	UPROPERTY()
-	TObjectPtr<class AFile> ActiveFileReading = nullptr;
+	// UPROPERTY()
+	// TObjectPtr<class AFile> ActiveFileReading = nullptr;
 	UPROPERTY()
 	TObjectPtr<class ALukaHUD> LukaHUD = nullptr;
 
@@ -89,4 +86,5 @@ protected:
 	float CameraBlendTime;
 	float TransitionExponential;
 	FTimerHandle CameraDelayHandle;
+	
 };

@@ -1,19 +1,15 @@
 
 #include "System/Events/EventAction.h"
 #include "CogCommon.h"
-#include "DialogueLineData.h"
+#include "DialogueGraphAsset.h"
 #include "EventSubsystem.h"
-#include "Asset/InkpotStoryAsset.h"
 #include "GPE/Phone.h"
 #include "GPE/Radio/StationDataAsset.h"
-#include "Kismet/GameplayStatics.h"
+#include "Miscellaneous/TLUtils.h"
 #include "Player/LukaController.h"
-#include "ProfilingDebugging/AssetMetadataTrace.h"
 #include "System/Clues/ClueAsset.h"
 #include "System/Clues/ClueSubsystem.h"
 
-#include "System/Core/PlayGameMode.h"
-#include "System/Dialogue/DialogueSubsystem.h"
 #include "System/Frequency/FrequencySubsystem.h"
 
 void UCustomAction::LaunchEvent(const UObject* InWorldContextObject)
@@ -40,24 +36,48 @@ struct FActionKey UCustomAction::GetKey() const
 	return UCustomAction::GenerateKey();
 }
 
+void UAllowBandsAction::LaunchEvent(const UObject* InWorldContextObject)
+{
+	UFrequencySubsystem *FrequencySubsystem = InWorldContextObject->GetWorld()->GetSubsystem<UFrequencySubsystem>();
+
+	if (FrequencySubsystem)
+	{
+		FrequencySubsystem->SetAllowedBands(AllowedBands);
+	}
+}
+
+struct FActionKey UAllowBandsAction::GenerateKey(TArray<int> InAllowed)
+{
+	FString Data;
+	for (int Number: InAllowed)
+	{
+		Data.AppendInt(Number);
+	}
+	return FActionKey(UAllowBandsAction::StaticClass(), Data);
+}
+
+struct FActionKey UAllowBandsAction::GetKey() const
+{
+	return GenerateKey(AllowedBands);
+}
+
 void URingPhoneAction::LaunchEvent(const UObject* InWorldContextObject)
 {
 	check(InWorldContextObject);
 
-	if (UDialogueSubsystem* DialogueSubsystem = InWorldContextObject->GetWorld()->GetSubsystem<UDialogueSubsystem>();
-		ensure(
-			DialogueSubsystem))
+	TArray<AActor*> PhoneActors = UTLUtils::GetAllActorsOfClass(InWorldContextObject, APhone::StaticClass());
+	if (APhone *Phone = Cast<APhone>(PhoneActors[0]); ensure(Phone))
 	{
-		DialogueSubsystem->GetPhone()->PushCall(DialogueTree, bIsImportant, RingDuration, bSkipQueue);
+		Phone->PushCall(DialogueAsset, bIsImportant, RingDuration, bSkipQueue);
 	}
 }
 
 struct FActionKey URingPhoneAction::GetKey() const
 {
-	return URingPhoneAction::GenerateKey(DialogueTree);
+	return URingPhoneAction::GenerateKey(DialogueAsset);
 }
 
-struct FActionKey URingPhoneAction::GenerateKey(class UDialogueTreeData* Dialogue)
+struct FActionKey URingPhoneAction::GenerateKey(class UDialogueGraphAsset* Dialogue)
 {
 	return FActionKey(URingPhoneAction::StaticClass(), Dialogue->GetName()); 
 }
@@ -88,20 +108,19 @@ void UUnlockPhoneAction::LaunchEvent(const UObject* InWorldContextObject)
 {
 	check(InWorldContextObject);
 
-	if (UDialogueSubsystem* DialogueSubsystem = InWorldContextObject->GetWorld()->GetSubsystem<UDialogueSubsystem>();
-		ensure(
-			DialogueSubsystem))
+	TArray<AActor*> PhoneActors = UTLUtils::GetAllActorsOfClass(InWorldContextObject, APhone::StaticClass());
+	if (APhone *Phone = Cast<APhone>(PhoneActors[0]); ensure(Phone))
 	{
-		DialogueSubsystem->GetPhone()->UnlockCall(NumberToCall, DialogueTree, AnswerDelay, bOverrideAll);
+		Phone->UnlockCall(NumberToCall, DialogueAsset, AnswerDelay, bOverrideAll);
 	}
 }
 
 struct FActionKey UUnlockPhoneAction::GetKey() const
 {
-	return UUnlockPhoneAction::GenerateKey(NumberToCall, DialogueTree);
+	return UUnlockPhoneAction::GenerateKey(NumberToCall, DialogueAsset);
 }
 
-struct FActionKey UUnlockPhoneAction::GenerateKey(TArray<int> Numbers, class UDialogueTreeData* DialogueTree)
+struct FActionKey UUnlockPhoneAction::GenerateKey(TArray<int> Numbers, class UDialogueGraphAsset* DialogueAsset)
 {
 	FString Data;
 	for (int Number: Numbers)
@@ -109,7 +128,7 @@ struct FActionKey UUnlockPhoneAction::GenerateKey(TArray<int> Numbers, class UDi
 		Data.AppendInt(Number);
 	}
 	Data.Append("|");
-	Data.Append(DialogueTree->GetName());
+	Data.Append(DialogueAsset->GetName());
 	return FActionKey(UUnlockPhoneAction::StaticClass(),Data);
 }
 

@@ -11,10 +11,8 @@
 #include "Components/VerticalBox.h"
 #include "Kismet/GameplayStatics.h"
 #include "Miscellaneous/TLUtils.h"
-#include "System/Dialogue/DialogueSubsystem.h"
 #include "UI/Dialogue/AnswerButtonWidget.h"
-#include "UI/Dialogue/AnswerDataAsset.h"
-#include "UI/Prompt/TimedPromptWidget.h"
+//#include "UI/Prompt/TimedPromptWidget.h"
 
 void UAnswerWidget::NativeConstruct()
 {
@@ -25,37 +23,38 @@ void UAnswerWidget::NativeConstruct()
 	check(AnswerButtonClass);
 }
 
-int32 UAnswerWidget::Ask(FAnswerList const &AnswerList)
+int32 UAnswerWidget::Ask( const UDialogueLineData* LineData)
 {
 	static uint32 IDDispenser = 0;
 	IDDispenser++;
 
-	check(static_cast<int32>(AnswerList.DefaultAnswer) < AnswerList.Answers.Num()); // Dude, your default answer is too high for the answers you have
+	check(static_cast<int32>(LineData->GetDefaultAnswer()) < LineData->GetAnswers().Num()); // Dude, your default answer is too high for the answers you have
 	
 	uint32 QuestionID = IDDispenser;
 
 	FAnswerOptionsContainer AnswerOptionsContainer{};
-	AnswerOptionsContainer.AnswerList = AnswerList;
+	AnswerOptionsContainer.AnswerList = LineData->GetAnswers();
+	AnswerOptionsContainer.Duration = LineData->GetDuration();
 
 	constexpr float Interval = 0.01f;
 
-	if (AnswerList.Duration != -1.f)
+	if (LineData->GetDuration() != -1.f)
 	{
 		GetWorld()->GetTimerManager().SetTimer(AnswerOptionsContainer.ProgressHandle, [this, QuestionID]()
 		{
 			OnTimerUpdate(QuestionID);
 		}, Interval, true);
 	
-		GetWorld()->GetTimerManager().SetTimer(AnswerOptionsContainer.TimeoutHandle, [this, QuestionID, AnswerList]()
+		GetWorld()->GetTimerManager().SetTimer(AnswerOptionsContainer.TimeoutHandle, [this, QuestionID, LineData]()
 		{
-				SelectAnswer(QuestionID, AnswerList.DefaultAnswer); // Clears Timer
-		}, AnswerList.Duration, false);
+				SelectAnswer(QuestionID, LineData->GetDefaultAnswer()); // Clears Timer
+		}, LineData->GetDuration(), false);
 	}
 
 	uint32 i = 0;
-	for (const auto& [Answer, NextState] : AnswerList.Answers)
+	for (const UAnswer* Answer : LineData->GetAnswers())
 	{
-		if (Answer.Equals("hidden"))
+		if (Answer->Text.Equals("hidden"))
 		{
 			continue;
 		}
@@ -66,7 +65,7 @@ int32 UAnswerWidget::Ask(FAnswerList const &AnswerList)
 		}
 
 		ButtonWidget->SetPadding(FMargin{0.0f, Spacing, 0.0f, 0.0f});
-		ButtonWidget->SetText(FText::FromString(Answer));
+		ButtonWidget->SetText(FText::FromString(Answer->Text));
 		ButtonWidget->OnClicked().AddLambda([this, QuestionID, i]()
 		{
 			SelectAnswer(QuestionID, i);
@@ -129,7 +128,7 @@ void UAnswerWidget::Toggle(const int32 QuestionID)
 		PlayerController->SetInputMode(InputMode);
 	}
 
-	if (ensure(ProgressBar) && ChoiceContainer.AnswerList.Duration > 0)
+	if (ensure(ProgressBar) && ChoiceContainer.Duration > 0)
 	{
 		ProgressBar->SetVisibility(ESlateVisibility::Visible);
 	} else
@@ -165,16 +164,16 @@ void UAnswerWidget::OnTimerUpdate(const int32 QuestionID) const
 			}
 	
 			auto &ChoiceContainer = ChoiceContainers[QuestionID];	
-			float Percentage = 1.0f - GetWorld()->GetTimerManager().GetTimerElapsed(ChoiceContainer.TimeoutHandle) / ChoiceContainer.AnswerList.Duration;
+			float Percentage = 1.0f - GetWorld()->GetTimerManager().GetTimerElapsed(ChoiceContainer.TimeoutHandle) / ChoiceContainer.Duration;
 			UE_LOG(LogTemp, Warning, TEXT("Progress percentage: %f"), GetWorld()->GetTimerManager().GetTimerElapsed(ChoiceContainer.ProgressHandle));
 			
 			ProgressBar->SetPercent(Percentage);
 
 			FName RadioAnswerWidgetName = "PRT_RadioAnswer";
-			if (UTimedPromptWidget *RadioAnswerWidget = Cast<UTimedPromptWidget>(UTLUtils::GetPrompt(GetWorld(), RadioAnswerWidgetName)))
-			{
-				RadioAnswerWidget->SetPercentage(Percentage);
-			}
+			//if (UTimedPromptWidget *RadioAnswerWidget = Cast<UTimedPromptWidget>(UTLUtils::GetPrompt(GetWorld(), RadioAnswerWidgetName)))
+			//{
+			//	RadioAnswerWidget->SetPercentage(Percentage);
+			//}
 		}
 	}
 
@@ -191,16 +190,16 @@ void UAnswerWidget::SelectAnswer(const int32 QuestionID, const int32 Choice)
 	GetWorld()->GetTimerManager().ClearTimer(ChoiceContainer.ProgressHandle);
 	GetWorld()->GetTimerManager().ClearTimer(ChoiceContainer.TimeoutHandle);
 
-	if (!ensure(static_cast<int32>(Choice) < ChoiceContainer.AnswerList.Answers.Num()))
+	if (!ensure(static_cast<int32>(Choice) < ChoiceContainer.AnswerList.Num()))
 	{
 		return;
 	}
 
-	FAnswer const &Answer = ChoiceContainer.AnswerList.Answers[Choice];
+	UAnswer* const Answer = ChoiceContainer.AnswerList[Choice];
 
 	if (ensure(OnAnswerEvents.Contains(QuestionID)))
 	{
-		OnAnswerEvents[QuestionID].Execute(ChoiceContainer.AnswerList.Answers[Choice]);
+		OnAnswerEvents[QuestionID].Execute(ChoiceContainer.AnswerList[Choice]);
 	}
 
 	for (UAnswerButtonWidget* AnswerButton : ChoiceContainer.AnswerButtons)

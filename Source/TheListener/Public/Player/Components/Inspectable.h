@@ -2,6 +2,7 @@
 
 #include "Inspectable.generated.h"
 
+/*
 UINTERFACE(MinimalAPI)
 class UInspectable : public UInterface
 {
@@ -21,4 +22,4 @@ public:
 
 	virtual class UInspectWidget* GetInspectWidget() = 0;
 };
-
+*/

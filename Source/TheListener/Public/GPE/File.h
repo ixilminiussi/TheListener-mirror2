@@ -3,10 +3,8 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GPE/Obji.h"
-#include "Player/Components/Inspectable.h"
-#include "File.generated.h"
 
+/*
 UENUM()
 enum class ELukaTextVisibility : uint8
 {
@@ -50,3 +48,4 @@ protected:
 	UPROPERTY(BlueprintReadOnly, Category = "Obji|File|Audio")
 	class UAkComponent* AkComponent = nullptr;
 };
+*/

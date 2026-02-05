@@ -38,6 +38,8 @@ class THELISTENER_API USubtitleTextWidget : public UCommonUserWidget
 {
 	GENERATED_BODY()
 public:
+	virtual void NativeConstruct() override;
+	
 	void SetSubtitleInfo(FSubtitleInfo const* InSubtitleInfo);
 	void SetClarity(float InClarity);
 
@@ -46,8 +48,12 @@ public:
 protected:
 	UPROPERTY(EditAnywhere, meta = (BindWidget))
 	class URichTextBlock* SubtitleText;
-	
+	UPROPERTY()
+	UDataTable* StyleTable;
+	UPROPERTY()
 	FSubtitleInfo SubtitleInfo;
+	UPROPERTY()
+	FString CurrentStyle;
 
 	float Clarity;
 

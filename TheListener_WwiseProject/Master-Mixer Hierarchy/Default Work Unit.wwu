@@ -17,7 +17,7 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<Bus Name="music" ID="{D7BA3245-5F29-4B75-B8AC-0D2A92101C79}">
+						<Bus Name="MUSIC" ID="{D7BA3245-5F29-4B75-B8AC-0D2A92101C79}">
 							<PropertyList>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
@@ -65,7 +65,7 @@
 								</ObjectList>
 							</ObjectLists>
 						</Bus>
-						<Bus Name="stations" ID="{AAC500AE-754A-49D2-AFC4-622281209439}">
+						<Bus Name="STATIONS" ID="{AAC500AE-754A-49D2-AFC4-622281209439}">
 							<PropertyList>
 								<Property Name="BusVolume" Type="Real64">
 									<ValueList>
@@ -464,7 +464,7 @@
 								</ObjectList>
 							</ObjectLists>
 						</Bus>
-						<Bus Name="ambient" ID="{281C5B8A-9F04-45B2-8D52-2F39AFFB0D38}">
+						<Bus Name="AMBIENT" ID="{281C5B8A-9F04-45B2-8D52-2F39AFFB0D38}">
 							<ObjectLists>
 								<ObjectList Name="RTPC">
 									<Reference>
@@ -505,7 +505,7 @@
 								</ObjectList>
 							</ObjectLists>
 						</Bus>
-						<Bus Name="sfx" ID="{A225F6D7-0B96-4F97-A9AA-8DE711946649}">
+						<Bus Name="SFX" ID="{A225F6D7-0B96-4F97-A9AA-8DE711946649}">
 							<ObjectLists>
 								<ObjectList Name="RTPC">
 									<Reference>
@@ -546,52 +546,7 @@
 								</ObjectList>
 							</ObjectLists>
 						</Bus>
-						<Bus Name="voices" ID="{62EE8B5D-7431-405E-A0AE-5C788B526C6E}">
-							<ChildrenList>
-								<Bus Name="luka" ID="{35091A99-9BF0-4ECA-A61D-08AD689AEF67}">
-									<ObjectLists>
-										<ObjectList Name="RTPC">
-											<Reference>
-												<Local>
-													<RTPC Name="" ID="{C16855A9-5342-4955-82E2-271B8DDA0107}" ShortID="299171542">
-														<PropertyList>
-															<Property Name="PropertyName" Type="string" Value="BusVolume"/>
-														</PropertyList>
-														<ReferenceList>
-															<Reference Name="ControlInput">
-																<ObjectRef Name="LukaBus" ID="{50E14302-E78D-442D-8A2C-B15F3FB63C2C}" WorkUnitID="{4B9C005B-E9F5-41B8-821C-6FF1FDF65A1A}"/>
-															</Reference>
-															<Reference Name="Curve">
-																<Custom>
-																	<Curve Name="" ID="{13C0FE9D-DC4E-49BF-A52E-17A4D475A2CB}">
-																		<PropertyList>
-																			<Property Name="Flags" Type="int32" Value="3"/>
-																		</PropertyList>
-																		<PointList>
-																			<Point>
-																				<XPos>0</XPos>
-																				<YPos>-200</YPos>
-																				<Flags>5</Flags>
-																			</Point>
-																			<Point>
-																				<XPos>100</XPos>
-																				<YPos>0</YPos>
-																				<Flags>37</Flags>
-																			</Point>
-																		</PointList>
-																	</Curve>
-																</Custom>
-															</Reference>
-														</ReferenceList>
-													</RTPC>
-												</Local>
-											</Reference>
-										</ObjectList>
-									</ObjectLists>
-								</Bus>
-							</ChildrenList>
-						</Bus>
-						<Bus Name="stations_outside" ID="{81828A51-CDFB-47C4-AB80-BE346840A0EB}">
+						<Bus Name="STATIONS_OUTSIDE" ID="{81828A51-CDFB-47C4-AB80-BE346840A0EB}">
 							<PropertyList>
 								<Property Name="BusVolume" Type="Real64">
 									<ValueList>
@@ -936,6 +891,7 @@
 								</ObjectList>
 							</ObjectLists>
 						</Bus>
+						<WorkUnit Name="Z_TMP MIXER SLOPE" ID="{B13B0642-8120-42F0-9EEA-A2A7115277D5}" PersistMode="Reference"/>
 					</ChildrenList>
 					<ObjectLists>
 						<ObjectList Name="RTPC">

@@ -3,6 +3,11 @@
 #include "UI/Prompt/PromptsHolder.h"
 
 #include "Blueprint/WidgetTree.h"
+#include "UI/Prompt/PromptImage.h"
+#include "UI/Prompt/PromptWidget.h"
+
+FShowPrompt UPromptsHolder::ShowPrompt;
+FHidePrompt UPromptsHolder::HidePrompt;
 
 void UPromptsHolder::NativeConstruct()
 {
@@ -18,15 +23,40 @@ void UPromptsHolder::NativeConstruct()
 			Widget->SetVisibility(ESlateVisibility::Collapsed);
 		}
 	}
+
+	ShowPrompt.AddUFunction(this, FName("Show"));
+	HidePrompt.AddUFunction(this, FName("Hide"));
 }
 
-void UPromptsHolder::Show(FName const& Name) const
+void UPromptsHolder::NativeDestruct()
+{
+	Super::NativeDestruct();
+
+	ShowPrompt.RemoveAll(this);
+	HidePrompt.RemoveAll(this);
+}
+
+void UPromptsHolder::Show(FName const& Name, TArray<FEnhancedActionKeyMapping> const &Mapping) const
 {
 	UWidget *Widget = GetWidgetFromName(Name);
-
-	if (ensure(Widget)) // Most likely you forgot to write the name of a prompt in parameters
+	if (!ensure(Widget)) 
 	{
-		Widget->SetVisibility(ESlateVisibility::Visible);
+		// WARN: YOU FORGOT TO WRITE THE NAME OF A PROMPT IN PARAMETERS OR ITS THE WRONG NAME
+		return;
+	}
+	
+	Widget->SetVisibility(ESlateVisibility::Visible);
+	
+	UPromptWidget *Prompt = Cast<UPromptWidget>(Widget);
+	if (!ensure(Prompt)) 
+	{
+		// WARN: YOU ARE TOGGLING A PROMPT WHICH ISNT OF TYPE PROMPT WIDGET
+		return;
+	}
+
+	for (UPromptImage *PromptImage : Prompt->GetPromptsImages())
+	{
+		PromptImage->Refresh(Mapping);
 	}
 }
 

@@ -1,106 +1,110 @@
 // Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "Player/Components/InspectingComponent.h"
 
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
-#include "Blueprint/UserWidget.h"
-#include "Components/CanvasPanel.h"
-#include "GPE/File.h"
-#include "GPE/Toy.h"
-#include "Player/LukaCharacter.h"
-#include "Player/LukaController.h"
-#include "Rendering/StaticLightingSystemInterface.h"
-#include "UI/InspectWidget.h"
-#include "UI/Prompt/CommandHUDComponent.h"
+#include "GPE/InspectableComponent.h"
+#include "Miscellaneous/TLUtils.h"
+#include "Player/Components/PickupComponent.h"
 
 class UEnhancedInputLocalPlayerSubsystem;
 
 UInspectingComponent::UInspectingComponent()
 {
-	PrimaryComponentTick.bCanEverTick = false;
-
-	CommandHUDComponent = CreateDefaultSubobject<UCommandHUDComponent>("CommandHUD");
-}
-
-UInputMappingContext* UInspectingComponent::GetInputMappingContext() const
-{
-	return InputMappingContext;
 }
 
 void UInspectingComponent::BeginPlay()
 {
 	Super::BeginPlay();
-
-	if (const ALukaController* LukaController = Cast<ALukaController>(GetOwner()); ensure(LukaController))
-	{
-		LukaCharacter = LukaController->GetLukaCharacter();
-		check(LukaCharacter);
-	}
-
-	check(CommandHUDComponent);
-	CommandHUDComponent->Generate(InputMappingContext);
 }
 
-void UInspectingComponent::ReadFile(TScriptInterface<IInspectable> InspectableToRead)
+void UInspectingComponent::OnRead()
 {
-	check(InspectableToRead.GetInterface() != nullptr);
-	
-	if (Inspectable.GetInterface() != nullptr)
+	if (UPickupComponent *PickupComponent = GetOwner()->FindComponentByClass<UPickupComponent>())
 	{
-		if (Inspectable->GetInspectWidget()->IsVisible())
-		{
-			return;
-		}
-
-		Inspectable->HideInspectable();
-		Inspectable.SetInterface(nullptr);
+		TryRead(PickupComponent->GetHeld());
 	}
-	Inspectable = InspectableToRead;
-	if (WeakInputLocalPlayerSubsystem.IsValid())
+}
+
+void UInspectingComponent::TryRead(AActor *Actor)
+{
+	if (!Actor)
 	{
-		check(LukaCharacter);
-		WeakInputLocalPlayerSubsystem.Get()->RemoveMappingContext(LukaCharacter->GetLukaMappingContext());
-		WeakInputLocalPlayerSubsystem.Get()->AddMappingContext(InputMappingContext, 1);
+		return;
+	}
+	
+	UInspectableComponent *InspectableComponent = Actor->FindComponentByClass<UInspectableComponent>();
+
+	if (InspectableComponent)
+	{
+		InspectableComponent->ShowWidget();
+
+		ULocalPlayer *LocalPlayer = GetWorld()->GetFirstLocalPlayerFromController();
+		if (LocalPlayer)
+		{
+			UEnhancedInputLocalPlayerSubsystem *InputSubsystem = LocalPlayer->GetSubsystem<UEnhancedInputLocalPlayerSubsystem>();
+
+			InputSubsystem->AddMappingContext(InputMappingContext, 5);
+
+			UTLUtils::TogglePrompts(GetWorld(), ActivePrompts, true);
+		}
 	}
 
-	
-	if (Inspectable.GetInterface() != nullptr)
+	Inspectable = Actor;
+}
+
+void UInspectingComponent::TryLeave()
+{
+	if (!Inspectable)
 	{
-		Inspectable->ShowInspectable();
+		return;
+	}
+	
+	UInspectableComponent *InspectableComponent = Inspectable->FindComponentByClass<UInspectableComponent>();
 
-		if (const AObji* Obji = LukaCharacter->GetHeldObji(); Obji != nullptr)
-		{
-			Obji->SetActiveWidgetVisibility(false);
-		}
-		if (const AToy* Toy = Cast<AToy>(GetWorld()->GetFirstPlayerController()->GetPawn()); Toy != nullptr)
-		{
-			Toy->SetActiveWidgetVisibility(false);
-		}
+	Inspectable = nullptr;
+	
+	if (InspectableComponent)
+	{
+		InspectableComponent->HideWidget();
 
-		CommandHUDComponent->AddActiveToHUD();
+		ULocalPlayer *LocalPlayer = GetWorld()->GetFirstLocalPlayerFromController();
+		if (LocalPlayer)
+		{
+			UEnhancedInputLocalPlayerSubsystem *InputSubsystem = LocalPlayer->GetSubsystem<UEnhancedInputLocalPlayerSubsystem>();
+
+			InputSubsystem->RemoveMappingContext(InputMappingContext);
+		}
+		UTLUtils::TogglePrompts(GetWorld(), ActivePrompts, false);
 	}
 }
 
 void UInspectingComponent::MoveSelector(const struct FInputActionInstance& Value)
 {
-	if (Inspectable.GetInterface() != nullptr)
+	if (!Inspectable)
 	{
-		UInspectWidget* CurrentWidget = Inspectable->GetInspectWidget();
-		CurrentWidget->MoveSelector(Value.GetValue().Get<FVector2D>());
+		return;
+	}
+	
+	UInspectableComponent *InspectableComponent = Inspectable->FindComponentByClass<UInspectableComponent>();
+
+	if (InspectableComponent)
+	{
+		InspectableComponent->MoveSelector(Value.GetValue().Get<FVector2D>());
 	}
 }
 
 void UInspectingComponent::UseSelector(const struct FInputActionInstance&)
 {
-	if (Inspectable.GetInterface() != nullptr)
+	UInspectableComponent *InspectableComponent = Inspectable->FindComponentByClass<UInspectableComponent>();
+
+	if (InspectableComponent)
 	{
-		UInspectWidget* CurrentWidget = Inspectable->GetInspectWidget();
-		CurrentWidget->Select();
+		InspectableComponent->Select();
 	}
 }
 
+	/*
 void UInspectingComponent::Leave(const FInputActionInstance& Instance)
 {
 	if (Inspectable.GetInterface() != nullptr)
@@ -118,51 +122,29 @@ void UInspectingComponent::Leave(const FInputActionInstance& Instance)
 		}
 	}
 
-	if (const AObji* Obji = LukaCharacter->GetHeldObji(); Obji != nullptr)
-	{
-		Obji->SetActiveWidgetVisibility(true);
-	}
-	if (const AToy* Toy = Cast<AToy>(GetWorld()->GetFirstPlayerController()->GetPawn()); Toy != nullptr)
-	{
-		Toy->SetActiveWidgetVisibility(true);
-	}
-	CommandHUDComponent->RemoveActiveFromHUD();
+	UTLUtils::TogglePrompt(GetWorld(), {ActivePrompt}, false);
 }
+*/
 
+	/*
 void UInspectingComponent::Read(const FInputActionInstance& Instance)
 {
-	check(LukaCharacter);
-
-	
-	if (IInspectable* NewInspectable = Cast<IInspectable>(LukaCharacter->GetHeldObji()); NewInspectable != nullptr)
-	{
-		ReadFile(TScriptInterface<IInspectable>(LukaCharacter->GetHeldObji()));
-		return;
-	}
-
-	if (IInspectable* NewInspectable = Cast<IInspectable>(LukaCharacter->GetInteractableInView()); NewInspectable != nullptr)
-	{
-		ReadFile(TScriptInterface<IInspectable>(LukaCharacter->GetInteractableInView()));
-	}
 }
+*/
 
-void UInspectingComponent::SetupInput(UEnhancedInputComponent* EnhancedInputComponent,
-                                      UEnhancedInputLocalPlayerSubsystem* InputLocalPlayerSubsystem)
+void UInspectingComponent::SetupInput(UEnhancedInputComponent* EnhancedInputComponent)
 {
-	check(InputLocalPlayerSubsystem);
 	check(EnhancedInputComponent);
 
-	WeakInputLocalPlayerSubsystem = TWeakObjectPtr<UEnhancedInputLocalPlayerSubsystem>(InputLocalPlayerSubsystem);
-
-	if (ensure(InputActionLeave != nullptr))
+	if (ensure(InputActionReturn != nullptr))
 	{
-		EnhancedInputComponent->BindAction(InputActionLeave, ETriggerEvent::Triggered, this,
-		                                   &UInspectingComponent::Leave);
+		EnhancedInputComponent->BindAction(InputActionReturn, ETriggerEvent::Triggered, this,
+										   &UInspectingComponent::TryLeave);
 	}
-	if (ensure(InputActionRead != nullptr))
+	if (ensure(InputActionInspect != nullptr))
 	{
 		EnhancedInputComponent->BindAction(
-			InputActionRead, ETriggerEvent::Triggered, this, &UInspectingComponent::Read);
+			InputActionInspect, ETriggerEvent::Triggered, this, &UInspectingComponent::OnRead);
 	}
 	if (ensure(InputActionSelectorMove != nullptr))
 	{

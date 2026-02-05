@@ -4,6 +4,7 @@
 #include "Player/LukaCharacter.h"
 #include "GPE/Obji.h"
 
+/*
 UHandComponent::UHandComponent()
 {
 	PrimaryComponentTick.bCanEverTick = true;
@@ -24,9 +25,13 @@ void UHandComponent::BeginPlay()
 void UHandComponent::UpdatePreviewLocation()
 {
 	check(HeldObji);
-	check(IsValid(ObjiPreview));
 	check(HeadCamera);
 	check(LukaParent)
+
+	if (!ObjiPreview)
+	{
+		return;
+	}
 
 	const FVector StartLocation = HeadCamera->GetComponentLocation();
 	const FVector EndLocation = StartLocation + HeadCamera->GetForwardVector() * LukaParent->GetInteractiveMaxRange();
@@ -50,7 +55,6 @@ void UHandComponent::UpdatePreviewLocation()
 		ObjiPreview->SetActorLocation(FVector::UnitZ() * 10000.f);
 	}
 }
-
 
 void UHandComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
@@ -127,14 +131,22 @@ void UHandComponent::PickupObji(AObji* Obji)
 AObji* UHandComponent::ReleaseObji()
 {
 	check(HeldObji);
+	check(LukaParent);
 
-	if (HeldObji->Drop())
+	const FVector ForwardVector = LukaParent->GetActorForwardVector();
+	const FVector DropLocation = LukaParent->GetActorLocation() + ForwardVector;
+	const FVector DropImpulse = ForwardVector * ThrowStrength;
+
+	if (HeldObji->Drop(DropLocation, DropImpulse))
 	{
 		AObji* Ptr = HeldObji;
 		HeldObji = nullptr;
 
-		ObjiPreview->Destroy();
-		ObjiPreview = nullptr;
+		if (ObjiPreview)
+		{
+			ObjiPreview->Destroy();
+			ObjiPreview = nullptr;
+		}
 		return Ptr;
 	}
 
@@ -152,3 +164,4 @@ void UHandComponent::PrepareTraceParams(FCollisionQueryParams& QueryParams) cons
 		QueryParams.AddIgnoredActor(ObjiPreview);
 	}
 }
+*/

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{29C5AB43-C928-4CD8-9FC7-35647B0068A2}" SchemaVersion="123">
+	<AudioObjects>
+		<WorkUnit Name="DAY 1" ID="{29C5AB43-C928-4CD8-9FC7-35647B0068A2}" PersistMode="Standalone">
+			<ChildrenList>
+				<WorkUnit Name="Lone Lenny" ID="{454E63CE-C6FB-4E0B-811A-4F4859DC6D34}" PersistMode="Reference"/>
+				<WorkUnit Name="Anton" ID="{94E4A2E0-337E-482A-80EA-1BFC94B9FD31}" PersistMode="Reference"/>
+				<WorkUnit Name="Luka" ID="{A15E14DC-476F-401A-B44A-3CE3C8E900E3}" PersistMode="Reference"/>
+				<WorkUnit Name="Weather Report" ID="{9F0E491A-BA6A-46D3-9F5E-CF62F220F15B}" PersistMode="Reference"/>
+				<WorkUnit Name="Stations" ID="{01343662-56F3-433E-B918-A874754BAEF8}" PersistMode="Reference"/>
+				<WorkUnit Name="Cinematic" ID="{8311E267-A2C3-45B3-871F-2B67E44F9718}" PersistMode="Reference"/>
+				<WorkUnit Name="Skeleton" ID="{52775D9F-AC75-427D-8A62-406F5C522633}" PersistMode="Reference"/>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

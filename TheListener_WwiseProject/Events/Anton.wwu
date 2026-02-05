@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{F235B362-B9EF-492C-A5D0-6B5E56FBB73D}" SchemaVersion="123" RootDocumentID="{8EBA046C-25AE-4367-8B69-2AA0F43D32DB}" ParentDocumentID="{8EBA046C-25AE-4367-8B69-2AA0F43D32DB}">
+	<Events>
+		<WorkUnit Name="Anton" ID="{F235B362-B9EF-492C-A5D0-6B5E56FBB73D}" OwnerID="{8EBA046C-25AE-4367-8B69-2AA0F43D32DB}" PersistMode="Nested">
+			<ChildrenList>
+				<Event Name="play_2_1" ID="{2B01A1DA-1E37-4C78-B291-82BDA460C39C}">
+					<ChildrenList>
+						<Action Name="" ID="{DE295BE7-D00B-4C5B-88C9-DE7117950C62}" ShortID="326714553">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Anton_2_1" ID="{305448E6-0428-42FA-853F-80413FB7C309}" WorkUnitID="{E4705B36-5E11-4D0D-ACE4-CF57A5FE2E4E}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="play_2_3_1" ID="{67C28ABE-D911-4B88-A29F-D84F115E9DE3}">
+					<ChildrenList>
+						<Action Name="" ID="{861CF4D3-19F4-4EEB-870F-A52617870BBA}" ShortID="174361423">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Anton_2_3_1" ID="{D4A34387-DF79-433D-8D39-FE1DAA622360}" WorkUnitID="{E4705B36-5E11-4D0D-ACE4-CF57A5FE2E4E}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

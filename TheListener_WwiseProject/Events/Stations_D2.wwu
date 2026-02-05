@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{10357709-212A-475E-BF6E-A37649CE482E}" SchemaVersion="123" RootDocumentID="{8EBA046C-25AE-4367-8B69-2AA0F43D32DB}" ParentDocumentID="{8EBA046C-25AE-4367-8B69-2AA0F43D32DB}">
+	<Events>
+		<WorkUnit Name="Stations_D2" ID="{10357709-212A-475E-BF6E-A37649CE482E}" OwnerID="{8EBA046C-25AE-4367-8B69-2AA0F43D32DB}" PersistMode="Nested">
+			<ChildrenList>
+				<Event Name="play_number_station_coded" ID="{88BE2E14-A00E-41A7-932C-8E2FB8A83635}">
+					<ChildrenList>
+						<Action Name="" ID="{AC0AA8C6-D5A3-4B18-91BD-56E445FC2926}" ShortID="92460899">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="NumberStationCoded" ID="{25CDDD6A-9EB9-458D-A11D-86ECCD02789A}" WorkUnitID="{39A54B24-D7D7-4CD0-872A-510DE0E6C7E7}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="stop_number_station_coded" ID="{F092CA2C-867D-4BC3-8878-776D4CB3C9AA}">
+					<ChildrenList>
+						<Action Name="" ID="{CE01E01A-D67E-45F2-9B5E-6DBA233A580B}" ShortID="911653021">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="NumberStationCoded" ID="{25CDDD6A-9EB9-458D-A11D-86ECCD02789A}" WorkUnitID="{39A54B24-D7D7-4CD0-872A-510DE0E6C7E7}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="play_number_station_decoded" ID="{0662C7BF-0D85-46E1-BE73-F23742862799}">
+					<ChildrenList>
+						<Action Name="" ID="{738F336D-5F56-4863-9869-0C7E5C8C6F78}" ShortID="504199984">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="NumberStationDecoded" ID="{AAA2ECF0-CA71-49CD-A5D0-258743EF06AF}" WorkUnitID="{39A54B24-D7D7-4CD0-872A-510DE0E6C7E7}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="stop_number_station_decoded" ID="{58CEED8B-59EB-4AC4-9014-5A5948F9F078}">
+					<ChildrenList>
+						<Action Name="" ID="{5B2C416F-8CE1-46A0-B28D-520EC975CFCC}" ShortID="787284300">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="NumberStationDecoded" ID="{AAA2ECF0-CA71-49CD-A5D0-258743EF06AF}" WorkUnitID="{39A54B24-D7D7-4CD0-872A-510DE0E6C7E7}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="play_italian_fisherman_2_2" ID="{473A9009-D08E-48D5-999A-5E13AEDB611A}">
+					<ChildrenList>
+						<Action Name="" ID="{980BF232-4317-410C-B2F7-591876E016F8}" ShortID="511687095">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Italian_Fisherman_ 2_2" ID="{230F5673-9302-466C-97C2-4B7512730820}" WorkUnitID="{39A54B24-D7D7-4CD0-872A-510DE0E6C7E7}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="play_sismic_beacon_2_2" ID="{244FF490-68B0-4F6C-B9AD-2159B11BF922}">
+					<ChildrenList>
+						<Action Name="" ID="{B1F976D7-1E90-4D9B-ADDA-5C3A573665DD}" ShortID="132518383">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Sismic_Beacon_2_2" ID="{ED0F3EA2-76B0-4D82-85E7-6DCDEFF34137}" WorkUnitID="{39A54B24-D7D7-4CD0-872A-510DE0E6C7E7}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="play_montenegro_harbor_2_2" ID="{CC6728DD-86BB-4AD6-A36C-1EFFB4EB5AFD}">
+					<ChildrenList>
+						<Action Name="" ID="{D4B944B6-87C7-4669-B6A0-DD51471AEEA1}" ShortID="552520902">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Montenegro_Harbor_2_2" ID="{9ADF34B5-00EF-4C84-A706-33C021CFE24F}" WorkUnitID="{39A54B24-D7D7-4CD0-872A-510DE0E6C7E7}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="play_2_4_2_Military" ID="{52ECF7D9-45BE-4758-AD4C-8FA0F9CDCD46}">
+					<ChildrenList>
+						<Action Name="" ID="{FD7B8D88-1E63-485C-A6A5-F5C366786366}" ShortID="697417395">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="2_4_2_Military" ID="{5C0BDDC9-0B98-4F0E-883E-0B926F38C21F}" WorkUnitID="{39A54B24-D7D7-4CD0-872A-510DE0E6C7E7}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="play_2_5_2_Firefighter" ID="{B06989A4-089D-44A8-BC75-6D71825DC52A}">
+					<ChildrenList>
+						<Action Name="" ID="{8C15B937-3437-4177-B9DA-AD1D53C52607}" ShortID="73977190">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="2_5_2_Firefighter" ID="{0D61FEED-C43B-44E3-A89B-6A4D5C910726}" WorkUnitID="{39A54B24-D7D7-4CD0-872A-510DE0E6C7E7}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="play_2_5_2_TouristOffice_SSTV" ID="{00CB568E-1B15-485A-8EDA-1FD3D22918BE}">
+					<ChildrenList>
+						<Action Name="" ID="{ECD408AC-84B0-4DC9-A6EA-6AAA4A719508}" ShortID="227091925">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="2_5_2_TouristOffice_SSTV" ID="{5CDDAB69-4C70-4C85-B8E7-6515D6AFD32C}" WorkUnitID="{E67931F0-E341-4C0F-911A-32838CB2A2F6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

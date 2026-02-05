@@ -9,7 +9,6 @@
 #include "UI/LukaHUD.h"
 #include "UI/SelectorBox.h"
 
-
 USelectorBox* UInspectWidget::CheckSelectorBoxes(FVector2D SelectorPosition)
 {
 	bool SelectorBoxHovered = false;
@@ -63,7 +62,7 @@ void UInspectWidget::Select()
 				SelectedBox->Discover();
 			}
 			FConditionKey CKey = USelectorHighlightCondition::GenerateKey(GetClass(),GroupName);
-			GetWorld()->GetSubsystem<UEventSubsystem>()->SetConditionValue(CKey,true,false);
+			GetWorld()->GetGameInstance()->GetSubsystem<UEventSubsystem>()->SetConditionValue(CKey,true,false);
 			OnSelectorUse.Broadcast(GroupName);
 		}
 	}

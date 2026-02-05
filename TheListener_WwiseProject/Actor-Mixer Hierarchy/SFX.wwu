@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{61CDF67E-D35C-4735-A80C-49ECCF7CE674}" SchemaVersion="123">
+	<AudioObjects>
+		<WorkUnit Name="SFX" ID="{61CDF67E-D35C-4735-A80C-49ECCF7CE674}" PersistMode="Standalone">
+			<ChildrenList>
+				<WorkUnit Name="DOOR" ID="{971FED9A-43E6-49B7-83AF-E8C048F326F4}" PersistMode="Reference"/>
+				<WorkUnit Name="PHONE" ID="{A49BF57D-72B8-40FD-A09C-AB956AC5151D}" PersistMode="Reference"/>
+				<WorkUnit Name="RADIO" ID="{4F92CC5B-C405-457B-BE6E-33FBF50D3A4D}" PersistMode="Reference"/>
+				<WorkUnit Name="OBJIS" ID="{332B4E57-95A7-49DC-9B12-6432C586B70E}" PersistMode="Reference"/>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{5072FD74-6679-425D-82F2-302633736F2C}" SchemaVersion="123" RootDocumentID="{268CC0FB-048E-4CF9-99B1-EE3D65440901}" ParentDocumentID="{0402BFD7-DB5E-4657-822A-DBDC1A8AF6F3}">
+	<AudioObjects>
+		<WorkUnit Name="DIAL_D02" ID="{5072FD74-6679-425D-82F2-302633736F2C}" OwnerID="{B1056F73-6F50-4F41-B42A-AD5A998A9C86}" PersistMode="Nested">
+			<ChildrenList>
+				<ActorMixer Name="D02" ID="{F596098B-C134-4593-B67B-A47242174377}" ShortID="501322551">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<WorkUnit Name="D02_NATURAL" ID="{C2134EE6-0926-4909-8A74-5B70590D046D}" PersistMode="Reference"/>
+						<WorkUnit Name="D02_PHONE" ID="{A0B4DDD6-2CC3-44CD-830B-A1A488AD8642}" PersistMode="Reference"/>
+						<WorkUnit Name="D02_RADIO" ID="{043778E9-0D09-47EB-97CE-7E706DC512F4}" PersistMode="Reference"/>
+					</ChildrenList>
+				</ActorMixer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

@@ -1,10 +1,15 @@
 #include "GPE/Dialogue.h"
 
 #include "AkComponent.h"
+#include "DialogueLineDataFuture.h"
+#include "DialogueGraphAsset.h"
+#include "EventSubsystem.h"
 #include "Kismet/GameplayStatics.h"
 #include "Miscellaneous/TLUtils.h"
 #include "GPE/Toy.h"
-#include "UI/Dialogue/AnswerDataAsset.h"
+#include "GPE/Radio/Radio.h"
+#include "GPE/Radio/Station.h"
+#include "System/Events/EventCondition.h"
 #include "UI/LukaHUD.h"
 #include "UI/Subtitles/SubtitlesWidget.h"
 #include "UI/Dialogue/AnswerWidget.h"
@@ -20,6 +25,8 @@ ADialogue::ADialogue()
 void ADialogue::Destroyed()
 {
 	Super::Destroyed();
+
+	UTLUtils::TogglePrompts(GetWorld(), {PromptName}, false);
 
 	if (SubtitlesID != INVALID_ID)
 	{
@@ -56,7 +63,7 @@ void ADialogue::EndPlay(const EEndPlayReason::Type EndPlayReason)
 
 void ADialogue::Skip(bool bAll)
 {
-	if (!DialogueTree || bAll) // LEGACY / DEFAULT mode
+	if (!DialogueAsset || bAll) // LEGACY / DEFAULT mode
 	{
 		EndDialogue();
 	} else // DIALOGUE mode
@@ -72,14 +79,19 @@ void ADialogue::Initialize_Implementation()
 FDialogueExit &ADialogue::StartDialogue()
 {
 	check(AkComponent);
-	check(DialogueTree);
 
-	if (DialogueTree) // Use Answer Runtime
+	UPackage* Package = DialogueAsset->GetPackage();
+	if (!(Package && Package->IsFullyLoaded()))
 	{
-		check(DialogueTree->Nodes.Num() > DialogueTree->Root);
-		DialogueData = DialogueTree->Nodes[DialogueTree->Root];
+		Package->FullyLoad();
+	}
+
+	if (DialogueAsset) // Use Answer Runtime
+	{
+		check(DialogueAsset->Start != nullptr);
+		DialogueData = DialogueAsset->Start;
 		check(DialogueData); // TODO: BROKEN DIALOGUE TREE DATA
-		AudioEvent = DialogueData->GetStartAudioEvent();
+		AudioEvent = DialogueData->GetPlayAudioEvent();
 
 		if (!AudioEvent)
 		{
@@ -109,7 +121,7 @@ void ADialogue::PostAkEvent()
 	                                     AK_Marker | AK_MusicSyncUserCue | AK_EndOfEvent | AK_EnableGetMusicPlayPosition
 	                                     | AK_EnableGetSourcePlayPosition, AkPostEventCallback);
 
-	check(PlayingID != AK_INVALID_PLAYING_ID);
+	// check(PlayingID != AK_INVALID_PLAYING_ID);
 	/* alors gars, en faite, le son que t'as mis sur ta station il est pas valid
 	 * donc soit tu l'as pas mis du tous, soit ta oublie de regenerer tes soundbanks
 	 * c'est pas complique putain
@@ -145,9 +157,9 @@ void ADialogue::OnAkEventCallback(EAkCallbackType CallbackType, UAkCallbackInfo*
 	}
 }
 
-void ADialogue::SetupDialogue(UDialogueTreeData* InDialogueTree, AToy* InParent)
+void ADialogue::SetupDialogue(UDialogueGraphAsset* InDialogueAsset, AToy* InParent)
 {
-	DialogueTree = InDialogueTree;
+	DialogueAsset = InDialogueAsset;
 	Parent = InParent;
 
 	Initialize();
@@ -157,6 +169,7 @@ void ADialogue::Lock(bool bEnable)
 {
 	if (Parent)
 	{
+		if (ARadio* RadioParent = Cast<ARadio>(Parent) ) {RadioParent->Lock(bEnable,Cast<AStation>(this)); return;}
 		Parent->Lock(bEnable);
 	}
 }
@@ -192,16 +205,32 @@ void ADialogue::HandleMarker(FString const& Marker)
 		FString const EarlyAnswerMarker = "EARLYANSWER";
 		if (ChoppedMarker.StartsWith(EarlyAnswerMarker))
 		{
-			if (DialogueTree)
+			if (DialogueAsset)
 			{
 				OnFinishDialogue();
 			}
 			return;
 		}
+		if (ChoppedMarker.StartsWith("END"))
+		{
+			EndDialogue();
+			return;
+		}
 
 		return;
 	}
-	
+	FString const ConditionMarker = "CD_";
+	if (Marker.StartsWith(ConditionMarker) && bCanHear)  //It is a condition then :)
+	{
+		FString ChoppedMarker = Marker.Mid(ConditionMarker.Len());
+		if (UEventSubsystem* EventSubsystem = GetWorld()->GetGameInstance()->GetSubsystem<UEventSubsystem>(); ensure(EventSubsystem))
+		{
+			const FConditionKey Key = UDialogueCondition::GenerateKey(ChoppedMarker);
+			EventSubsystem->SetConditionValue(Key, true, true);
+		}
+
+		return;
+	}
 	if (const APlayerController *PlayerController = GetWorld()->GetFirstPlayerController(); PlayerController)
 	{
 		if (const ALukaHUD* LukaHUD = Cast<ALukaHUD>(PlayerController->GetHUD()); LukaHUD)
@@ -251,11 +280,16 @@ bool ADialogue::ProposeAnswer()
 	return false;
 }
 
+void ADialogue::PlayerQuitRadio()
+{
+	ClosePrompt();
+}
+
 void ADialogue::OpenPrompt() const
 {
 	if (bWaitingForPromptCheck)
 	{
-		UTLUtils::TogglePrompt(GetWorld(), PromptWidgetName, true);
+		UTLUtils::TogglePrompts(GetWorld(), {PromptName}, true);
 	} else
 	{
 		if (const APlayerController *PlayerController = GetWorld()->GetFirstPlayerController(); ensure(PlayerController))
@@ -272,8 +306,8 @@ void ADialogue::OpenPrompt() const
 
 void ADialogue::ClosePrompt()
 {
-	UTLUtils::TogglePrompt(GetWorld(), PromptWidgetName, false);
-	if (const APlayerController *PlayerController = GetWorld()->GetFirstPlayerController(); ensure(PlayerController))
+	UTLUtils::TogglePrompts(GetWorld(), {PromptName}, false);
+	if (const APlayerController *PlayerController = GetWorld()->GetFirstPlayerController(); PlayerController)
 	{
 		if (const ALukaHUD* LukaHUD = Cast<ALukaHUD>(PlayerController->GetHUD()); LukaHUD)
 		{
@@ -305,13 +339,11 @@ void ADialogue::AskQuestion()
 		{
 			if (const ALukaHUD* LukaHUD = Cast<ALukaHUD>(PlayerController->GetHUD()); LukaHUD)
 			{
-				const FAnswerList AnswerList = GetAnswerList(DialogueData);
-
 				UAnswerWidget *AnswerWidget = LukaHUD->GetAnswerWidget();
 
 				if (!AnswerWidget->IsValid(QuestionID))
 				{
-					QuestionID = AnswerWidget->Ask(AnswerList);
+					QuestionID = AnswerWidget->Ask(DialogueData);
 
 					if (!Parent->IsLocked())
 					{
@@ -331,27 +363,33 @@ void ADialogue::AskQuestion()
 	}
 }
 
-void ADialogue::EndDialogue()
+void ADialogue::EndDialogue(bool bRepeat)
 {
 	Lock(false);
 	OnEndDialogue();
+	
+	DialogueExit.ExecuteIfBound(this);
 
-	DialogueExit.Execute(this);
-
-	Destroy();
+	if (!bRepeat)
+	{
+		Destroy();
+	}
+	
 }
 
 void ADialogue::OnEndDialogue_Implementation()
 {
+	
 }
 
-void ADialogue::OnAnswerSelected(FAnswer Answer)
+void ADialogue::OnAnswerSelected(UAnswer* Answer)
 {
 	check(AkComponent)
 
 	QuestionID = INVALID_ID;
 
-	StepIntoDialogue(Answer.Next);
+	Lock(true);
+	StepIntoDialogue(Answer->NextLine);
 
 	// if (!StepNextDialogue())
 	// {
@@ -382,12 +420,11 @@ bool ADialogue::StepNextDialogue()
 
 		if (DialogueData->IsAutoChoice())
 		{
-			for (FAnswer const& Answer : DialogueData->GetAnswers())
+			for (UAnswer* const& Answer : DialogueData->GetAnswers())
 			{
-				TArray<TObjectPtr<UDialogueLineData>> const &Nodes = DialogueTree->Nodes;
-				if (ensure(Nodes.Num() > Answer.Next))
+				if (ensure(Answer->NextLine != nullptr))
 				{
-					StepIntoDialogue(Answer.Next);
+					StepIntoDialogue(Answer->NextLine);
 					break;
 				}
 			}
@@ -401,14 +438,8 @@ bool ADialogue::StepNextDialogue()
 	return false;
 }
 
-void ADialogue::StepIntoDialogue(int32 ID)
+void ADialogue::StepIntoDialogue(UDialogueLineData* NextLine)
 {
-	if (ID == INVALID_ID)
-	{
-		EndDialogue();
-		return;
-	}
-	
 	if (DialogueData) // end previous dialogue
 	{
 		if (DialogueData->GetStopAudioEvent())
@@ -419,21 +450,24 @@ void ADialogue::StepIntoDialogue(int32 ID)
 		}
 	}
 
-	if (ensure(DialogueTree))
+	if (NextLine != nullptr && NextLine->Type == LineType::LeaveNode)
 	{
-		if (ensure(DialogueTree->Nodes.Num() > ID))
-		{
-			DialogueData = DialogueTree->Nodes[ID];
-			AudioEvent = DialogueData->GetStartAudioEvent();
+		EndDialogue(true);
+		return;
+	}
 
-			if (AudioEvent)
-			{
-				PostAkEvent();
-			} else
-			{
-				OnFinishDialogue();
-				return;
-			}
+	if (ensure(DialogueAsset))
+	{
+		DialogueData = NextLine;
+		AudioEvent = DialogueData->GetPlayAudioEvent();
+
+		if (AudioEvent)
+		{
+			PostAkEvent();
+		} else
+		{
+			OnFinishDialogue();
+			return;
 		}
 	}
 
@@ -450,6 +484,7 @@ void ADialogue::SetClarity(float Clarity)
 			check(SubtitlesWidget);
 
 			SubtitlesWidget->UpdateSubtitle(SubtitlesID, Clarity);
+			bCanHear = Clarity > ClarityThreshold;
 		}
 	}
 }

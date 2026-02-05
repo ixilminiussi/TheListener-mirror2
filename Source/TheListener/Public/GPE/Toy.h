@@ -34,15 +34,22 @@ protected:
 	virtual void UnPossessed() override;
 
 	virtual void Tick(float DeltaTime) override;
-	
+
+	void Zoom(const struct FInputActionValue& Value);
 	void Look(const struct FInputActionValue& Value);
 	FRotator TargetRotation;
 	FRotator StartingRotation;
+	float TargetZoom;
+	float StartingZoom;
 	bool bLooking;
+	bool bZooming;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Toy|Camera")
+	float ZoomLerpStrength = 0.1f;
+	UPROPERTY(EditDefaultsOnly, Category = "Toy|Camera")
+	float ZoomAmount = 1.5f;
+	UPROPERTY(EditDefaultsOnly, Category = "Toy|Camera")
 	float LookLerpStrength = 0.1f;
-
 	UPROPERTY(EditDefaultsOnly, Category="Toy|Camera")
 	FVector2D MaxRotation;
 
@@ -60,9 +67,13 @@ protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Toy|Enhanced Input")
 	TObjectPtr<class UInputMappingContext> FunMappingContext;
 	UPROPERTY(EditDefaultsOnly, Category = "Toy|Enhanced Input")
-	TObjectPtr<class UInputAction> InputActionLook;
+	TObjectPtr<class UInputAction> InputActionCameraLook;
+	UPROPERTY(EditDefaultsOnly, Category = "Toy|Enhanced Input")
+	TObjectPtr<class UInputAction> InputActionCameraZoom;
 
 	bool bLocked{false};
+
+	UPROPERTY(EditAnywhere, Category = "Toy")
 	bool bEnabled{true};
 
 	bool bIsPossessed{false};
@@ -75,13 +86,21 @@ public:
 
 	// Feedbacks ==============================
 	void OnPossessToyTransition();
-	void OnUnpossessToyTransition();
-	void SetHoverWidgetVisibility(const bool bIsVisible) const;
-	void SetActiveWidgetVisibility(const bool bIsVisible) const;
+	virtual void OnUnpossessToyTransition();
+	void ShowActivePrompts(const bool bIsVisible) const;
+
+	UFUNCTION(BlueprintNativeEvent, Category = "Toy|Feedbacks")
+	void OnPossessBeforeTransition();
+	UFUNCTION(BlueprintNativeEvent, Category = "Toy|Feedbacks")
+	void OnPossessAfterTransition();
+	UFUNCTION(BlueprintNativeEvent, Category = "Toy|Feedbacks")
+	void OnUnPossessBeforeTransition();
+	UFUNCTION(BlueprintNativeEvent, Category = "Toy|Feedbacks")
+	void OnUnPossessAfterTransition();
 
 protected:
-	UPROPERTY(EditDefaultsOnly)
-	TObjectPtr<class UCommandHUDComponent> CommandHUDComponent = nullptr;
+	UPROPERTY(EditDefaultsOnly, Category = "Toy|Interactive")
+	TArray<FName> OnActivePrompts;
 
 	UPROPERTY()
 	TObjectPtr<class UAkComponent> AkComponent{nullptr};

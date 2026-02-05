@@ -13,7 +13,7 @@ UCLASS()
 class THELISTENER_API UBaseMenuWidget : public UCommonActivatableWidget
 {
 	GENERATED_BODY()
-	
+
 public:
 	virtual class UButtonPrimary* GetFocusedButton() const;
 
@@ -23,9 +23,8 @@ public:
 	virtual class UButton* GetPreMenuButton();
 
 protected:
-
 	// Buttons Functions
-	UFUNCTION(BlueprintCallable,BlueprintNativeEvent)
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
 	void OnChangeLevelClicked();
 
 	UFUNCTION()
@@ -40,27 +39,27 @@ protected:
 	UFUNCTION()
 	virtual void OnNoQuitClicked() const;
 
-	
+
 	// Widgets Button
-	UPROPERTY(EditAnywhere ,meta = (BindWidget))
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta = (BindWidget))
 	UButtonPrimary* ChangeLevelButton;
 
 	UPROPERTY(meta = (BindWidget))
 	UButtonPrimary* SettingsButton;
-	
+
 	UPROPERTY(meta = (BindWidget))
 	UButtonPrimary* QuitButton;
 
-	UPROPERTY(BlueprintReadWrite ,meta = (BindWidget))
+	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
 	class UCanvasPanel* MainPanel;
 
-	
+
 	// Variables for GD
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Menus", meta = (AllowedClasses="World"))
 	TSoftObjectPtr<UWorld> NewLevel;
 
 	// Quit Button
-	UPROPERTY(EditAnywhere ,meta = (BindWidget))
+	UPROPERTY(EditAnywhere, meta = (BindWidget))
 	UButtonPrimary* YesQuitButton;
 
 	UPROPERTY(meta = (BindWidget))
@@ -68,5 +67,4 @@ protected:
 
 	UPROPERTY(meta = (BindWidget))
 	class UCanvasPanel* QuitPanel;
-
 };

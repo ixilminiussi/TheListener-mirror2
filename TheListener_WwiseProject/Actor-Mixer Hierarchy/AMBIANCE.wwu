@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{C5B478CE-30C6-497D-BF7A-760F7A7109E2}" SchemaVersion="123">
+	<AudioObjects>
+		<WorkUnit Name="AMBIANCE" ID="{C5B478CE-30C6-497D-BF7A-760F7A7109E2}" PersistMode="Standalone">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="6"/>
+			</PropertyList>
+			<ChildrenList>
+				<Sound Name="snowstorm_loop" ID="{7CBF207E-9091-4B31-8249-171C7D580ECD}" ShortID="485001240">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1F16A1F8-60B8-4227-AF46-35E4F3C0380C}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="AMBIENT" ID="{281C5B8A-9F04-45B2-8D52-2F39AFFB0D38}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="snowstorm_loop" ID="{BFAE9DB5-6246-45D3-8E65-025B7E1771E4}">
+							<Language>SFX</Language>
+							<AudioFile>Environments\snowstorm_loop.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="332578034"/>
+							</MediaIDList>
+						</AudioFileSource>
+						<AudioFileSource Name="first_ambiance" ID="{EE182751-8A0E-4F38-AFF6-3B8F2905E0A6}">
+							<PropertyList>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimBegin" Type="Real64" Value="1.53164556962025"/>
+								<Property Name="TrimEnd" Type="Real64" Value="119.030741410488"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>Environments\first_ambiance.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="806758277"/>
+							</MediaIDList>
+						</AudioFileSource>
+						<AudioFileSource Name="snowstorm_loop_01" ID="{AD130681-D714-4BBF-9C48-4BEFE4769637}">
+							<PropertyList>
+								<Property Name="VolumeOffset" Type="Real64">
+									<ValueList>
+										<Value>-24</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>AMBIANCE\snowstorm_loop.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="382497890"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists>
+						<ObjectList Name="Effects">
+							<Reference>
+								<Local>
+									<EffectSlot Name="" ID="{E397BE02-0620-4DC2-8C21-BB03EB3133A5}" ShortID="674329393">
+										<ReferenceList>
+											<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+												<ObjectRef Name="Club_Music_Distant_04" ID="{9A14A831-C779-40C7-AFF7-8AF1723A90AF}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+											</Reference>
+										</ReferenceList>
+									</EffectSlot>
+								</Local>
+							</Reference>
+						</ObjectList>
+					</ObjectLists>
+					<ActiveSourceList>
+						<ActiveSource Name="snowstorm_loop_01" ID="{AD130681-D714-4BBF-9C48-4BEFE4769637}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="fireplace" ID="{DF24EF7D-30CB-41F8-8C78-8CF2E4F51D2C}" ShortID="708075736">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+						<Property Name="EnableDiffraction" Type="bool" Value="True"/>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Attenuation_Radio_From_Headset" ID="{423CF66F-8692-453A-869B-5A6AAE50F993}" WorkUnitID="{1ACDCC54-A528-4C8B-947C-ECCD823AC5BA}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1F16A1F8-60B8-4227-AF46-35E4F3C0380C}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="AMBIENT" ID="{281C5B8A-9F04-45B2-8D52-2F39AFFB0D38}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="fireplace" ID="{1710730A-C9AB-4B99-BF9F-A2506966FCAA}">
+							<PropertyList>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="VolumeOffset" Type="Real64">
+									<ValueList>
+										<Value>15</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>Environments\fireplace.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="1024361323"/>
+							</MediaIDList>
+						</AudioFileSource>
+						<AudioFileSource Name="fireplace_01" ID="{137C55E8-205A-48FD-BCBB-5C02CFD2066D}">
+							<Language>SFX</Language>
+							<AudioFile>AMBIANCE\fireplace.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="4124514"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="fireplace_01" ID="{137C55E8-205A-48FD-BCBB-5C02CFD2066D}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="snow_outside" ID="{E98FBE4A-649B-48A0-BABA-7B8D9102E120}" ShortID="117773541">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1F16A1F8-60B8-4227-AF46-35E4F3C0380C}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="AMBIENT" ID="{281C5B8A-9F04-45B2-8D52-2F39AFFB0D38}" WorkUnitID="{537ECABC-443B-4304-910C-48B0CA31D4F5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="snow_outside" ID="{5B83C1B5-E292-4454-A358-1C54B92BFA38}">
+							<PropertyList>
+								<Property Name="VolumeOffset" Type="Real64">
+									<ValueList>
+										<Value>-24</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>snow_outside.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="1073078364"/>
+							</MediaIDList>
+						</AudioFileSource>
+						<AudioFileSource Name="snow_outside_01" ID="{58C9AE67-EF12-4D22-91DC-9E272D2D2BFF}">
+							<PropertyList>
+								<Property Name="VolumeOffset" Type="Real64">
+									<ValueList>
+										<Value>-24</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>AMBIANCE\snow_outside.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="890376505"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="snow_outside_01" ID="{58C9AE67-EF12-4D22-91DC-9E272D2D2BFF}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>
