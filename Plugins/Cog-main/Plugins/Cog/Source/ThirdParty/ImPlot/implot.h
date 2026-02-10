@@ -44,6 +44,7 @@
 // [SECTION] Demo
 // [SECTION] Obsolete API
 
+/*
 #pragma once
 #include "imgui.h"
 #ifndef IMGUI_DISABLE
@@ -1298,3 +1299,5 @@ IMPLOT_DEPRECATED( IMPLOT_API bool BeginPlot(const char* title_id,
 
 #endif // #ifndef IMPLOT_DISABLE_OBSOLETE_FUNCTIONS
 #endif // #ifndef IMGUI_DISABLE
+
+*/

@@ -13,7 +13,7 @@ USTRUCT()
 struct FAnswerOptionsContainer
 {
 	GENERATED_BODY()
-	
+
 	UPROPERTY()
 	TArray<class UAnswerButtonWidget*> AnswerButtons;
 
@@ -24,8 +24,9 @@ struct FAnswerOptionsContainer
 	TArray<UAnswer*> AnswerList;
 
 	UPROPERTY()
-	float Duration;
+	float Duration = -1.f;
 };
+
 /**
  * 
  */
@@ -33,7 +34,7 @@ UCLASS()
 class THELISTENER_API UAnswerWidget : public UCommonUserWidget
 {
 	GENERATED_BODY()
-	
+
 public:
 	virtual void NativeConstruct() override;
 
@@ -47,7 +48,7 @@ public:
 	/**
 	 * Can only bind one function at a time
 	 */
-	template<typename UserClass>
+	template <typename UserClass>
 	void BindListener(int32 QuestionID, UserClass* Object, FName FuncName);
 
 protected:
@@ -59,7 +60,7 @@ protected:
 
 	UPROPERTY(EditDefaultsOnly, Category = "Answers")
 	TSubclassOf<class UAnswerButtonWidget> AnswerButtonClass;
-	
+
 	UPROPERTY(meta=(BindWidget))
 	TObjectPtr<class UVerticalBox> ButtonBox;
 
@@ -75,8 +76,8 @@ protected:
 	int32 ToggledQuestion = -1;
 };
 
-template<typename UserClass>
-	inline void UAnswerWidget::BindListener(int32 QuestionID, UserClass* Object, FName FuncName)
+template <typename UserClass>
+void UAnswerWidget::BindListener(int32 QuestionID, UserClass* Object, FName FuncName)
 {
 	if (ensure(OnAnswerEvents.Contains(QuestionID)))
 	{

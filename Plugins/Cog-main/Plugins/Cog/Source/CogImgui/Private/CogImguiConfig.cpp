@@ -9,9 +9,9 @@ THIRD_PARTY_INCLUDES_START
 #include <imgui_tables.cpp>
 #include <imgui_widgets.cpp>
 
-#include <implot.cpp>
-#include <implot_demo.cpp>
-#include <implot_items.cpp>
+// #include <implot.cpp>
+// #include <implot_demo.cpp>
+// #include <implot_items.cpp>
 
 #include "Private/NetImgui_Api.cpp"
 #include "Private/NetImgui_Client.cpp"

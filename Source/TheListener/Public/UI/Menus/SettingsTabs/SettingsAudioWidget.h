@@ -18,6 +18,8 @@ class THELISTENER_API USettingsAudioWidget : public USettingsTabBase
 public:
 	virtual void NativeConstruct() override;
 
+	virtual void SetupSettingsValues(class USettingsSave* SettingSave) override;
+
 protected:
 	UPROPERTY(BlueprintReadOnly, meta = (BindWidget))
 	class USliderSettings* MasterSlider;

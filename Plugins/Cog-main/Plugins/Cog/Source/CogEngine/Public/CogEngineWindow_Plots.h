@@ -1,9 +1,10 @@
+/*
 #pragma once
 
 #include "CoreMinimal.h"
 #include "CogCommonConfig.h"
 #include "CogWindow.h"
-#include "implot.h"
+// #include "implot.h"
 #include "CogEngineWindow_Plots.generated.h"
 
 struct FCogDebugTrack;
@@ -156,3 +157,4 @@ public:
         }
     }
 };
+*/

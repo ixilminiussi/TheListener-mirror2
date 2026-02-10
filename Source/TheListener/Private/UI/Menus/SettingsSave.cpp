@@ -16,6 +16,9 @@ void USettingsSave::InitializeFromDefaults(USettingsDataAsset* DefaultData)
 	//Gameplay
 	HorizontalSensitivity = DefaultData->HorizontalSensitivity;
 	VerticalSensitivity = DefaultData->VerticalSensitivity;
+	ControllerHapticFeedback = DefaultData->ControllerHapticFeedback;
+	ReticleSize = DefaultData->ReticleSize;
+
 	//Audio
 	MasterVolume = DefaultData->MasterVolume;
 	RadioStaticVolume = DefaultData->RadioStaticVolume;
@@ -24,9 +27,17 @@ void USettingsSave::InitializeFromDefaults(USettingsDataAsset* DefaultData)
 	SFXVolume = DefaultData->SFXVolume;
 	LukaVolume = DefaultData->LukaVolume;
 	AmbientVolume = DefaultData->AmbientVolume;
+
 	//Graphics
 	ResolutionDropdownIndex = DefaultData->ResolutionIndex;
 	DisplayDropdownIndex = DefaultData->DisplayIndex;
+	FramerateDropdownIndex = DefaultData->FramerateIndex;
+
+	//Accessibility
+	LangageIndex = DefaultData->Langage;
+	SubtitlesBackgroundOpacityValue = DefaultData->SubtitleBackgroundOpacity;
+	SubtitlesSizeValue = DefaultData->SubtitleSize;
+	HardOfEaringMod = DefaultData->HardOfEaringMode;
 
 	UGameplayStatics::SaveGameToSlot(this, TEXT("Settings"), 0);
 }
@@ -52,9 +63,24 @@ void USettingsSave::SetControllerHapticFeedback(bool bValue)
 	UGameplayStatics::SaveGameToSlot(this, TEXT("Settings"), 0);
 }
 
+
+void USettingsSave::SetReticleSize(float Value)
+{
+	ReticleSize = Value;
+	OnSettingsChanged.Broadcast();
+	UGameplayStatics::SaveGameToSlot(this, TEXT("Settings"), 0);
+}
+
 void USettingsSave::SetResolutionDropdownIndex(int32 Index)
 {
 	ResolutionDropdownIndex = Index;
+	OnSettingsChanged.Broadcast();
+	UGameplayStatics::SaveGameToSlot(this, TEXT("Settings"), 0);
+}
+
+void USettingsSave::SetFramerateDropdownIndex(int32 Index)
+{
+	FramerateDropdownIndex = Index;
 	OnSettingsChanged.Broadcast();
 	UGameplayStatics::SaveGameToSlot(this, TEXT("Settings"), 0);
 }
@@ -115,6 +141,34 @@ void USettingsSave::SetAmbientVolume(float Value)
 	UGameplayStatics::SaveGameToSlot(this, TEXT("Settings"), 0);
 }
 
+void USettingsSave::SetLanguageDropdownIndex(int32 Index)
+{
+	LangageIndex = Index;
+	OnSettingsChanged.Broadcast();
+	UGameplayStatics::SaveGameToSlot(this, TEXT("Settings"), 0);
+}
+
+void USettingsSave::SetSubtitlesBackgroundOpacityValue(float Value)
+{
+	SubtitlesBackgroundOpacityValue = Value;
+	OnSettingsChanged.Broadcast();
+	UGameplayStatics::SaveGameToSlot(this, TEXT("Settings"), 0);
+}
+
+void USettingsSave::SetSubtitlesSizeValue(float Value)
+{
+	SubtitlesSizeValue = Value;
+	OnSettingsChanged.Broadcast();
+	UGameplayStatics::SaveGameToSlot(this, TEXT("Settings"), 0);
+}
+
+void USettingsSave::SetHardOfEaringMod(bool bValue)
+{
+	HardOfEaringMod = bValue;
+	OnSettingsChanged.Broadcast();
+	UGameplayStatics::SaveGameToSlot(this, TEXT("Settings"), 0);
+}
+
 float USettingsSave::GetHorizontalSensitivity() const
 {
 	return HorizontalSensitivity;
@@ -130,9 +184,20 @@ bool USettingsSave::GetControllerHapticFeedback() const
 	return ControllerHapticFeedback;
 }
 
+
+float USettingsSave::GetReticleSize() const
+{
+	return ReticleSize;
+}
+
 int32 USettingsSave::GetResolutionDropdownIndex() const
 {
 	return ResolutionDropdownIndex;
+}
+
+int32 USettingsSave::GetFramerateDropdownIndex() const
+{
+	return FramerateDropdownIndex;
 }
 
 int32 USettingsSave::GetDisplayDropdownIndex() const
@@ -173,4 +238,24 @@ float USettingsSave::GetLukaVolume() const
 float USettingsSave::GetAmbientVolume() const
 {
 	return AmbientVolume;
+}
+
+int32 USettingsSave::GetLangageIndex() const
+{
+	return LangageIndex;
+}
+
+float USettingsSave::GetSubtitlesBackgroundOpacityValue() const
+{
+	return SubtitlesBackgroundOpacityValue;
+}
+
+float USettingsSave::GetSubtitlesSizeValue() const
+{
+	return SubtitlesSizeValue;
+}
+
+bool USettingsSave::GetHardOfEaringMod() const
+{
+	return HardOfEaringMod;
 }

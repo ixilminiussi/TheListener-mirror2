@@ -19,6 +19,7 @@ public:
 
 	class UCheckBox* GetCheckBox() const;
 
+	virtual void NativeOnClicked() override;
 
 	virtual void NativeOnHovered() override;
 
@@ -27,6 +28,9 @@ public:
 protected:
 	UPROPERTY(meta = (BindWidget))
 	class UCheckBox* CheckBox;
+
+	UPROPERTY()
+	bool bBoxIsChecked;
 
 	// Text
 	UPROPERTY(BlueprintReadOnly, meta = (BindWidget))

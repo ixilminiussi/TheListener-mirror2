@@ -47,6 +47,7 @@ void USettingsMenuWidget::Return() const
 	ABaseHUD* HUD = Cast<ABaseHUD>(PC->GetHUD());
 	if (ensure(HUD))
 	{
+		HUD->InitializeSettingsData();
 		HUD->CloseSettingsInBlueprint();
 	}
 }

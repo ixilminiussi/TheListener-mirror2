@@ -43,12 +43,13 @@ void UClueAsset::PostEditChangeProperty(struct FPropertyChangedEvent& PropertyCh
 #endif
 void UClueAsset::ResetClueState()
 {
-	State = EClueState::Hidden;
+	//State = EClueState::Hidden;
 }
 
 
 void UClueAsset::CheckClueState(bool hasBeenFound)
 {
+	/*
 	//Return if the clue is unavailable
 	if (State == EClueState::Disabled)
 	{
@@ -65,15 +66,16 @@ void UClueAsset::CheckClueState(bool hasBeenFound)
 			return;
 		}
 	}
-	State = EClueState::Complete;
+	State = EClueState::Complete;*/
 }
 
 void UClueAsset::MakeUnavailable()
 {
-	State = EClueState::Disabled;
+	//State = EClueState::Disabled;
 }
 
 bool UClueAsset::IsFound() const
 {
-	return (State == EClueState::Complete || State == EClueState::Partial);
+	return false;
+	//return (State == EClueState::Complete || State == EClueState::Partial);
 }

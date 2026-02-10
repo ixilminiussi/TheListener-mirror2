@@ -27,12 +27,13 @@ public:
 	class UCanvasPanel* GetInspectablePanel() const;
 	class UPromptsHolder* GetPromptsHolder() const;
 	void NotifyClue() const;
+	virtual void InitializeSettingsData() override;
 
 protected:
 	UFUNCTION()
 	void InViewUpdate(bool bToggle);
 	bool bInView;
-	
+
 	virtual void BeginPlay() override;
 
 	UPROPERTY(EditDefaultsOnly, Category = "LukaHUD|Widget")
@@ -68,10 +69,10 @@ public:
 protected:
 	UPROPERTY(EditDefaultsOnly, Category="LukaHUD|Pause")
 	TObjectPtr<class UAkAudioEvent> PauseEvent;
-	
+
 	UPROPERTY(EditDefaultsOnly, Category="LukaHUD|Pause")
 	TObjectPtr<class UAkAudioEvent> ResumeEvent;
-	
+
 	UPROPERTY(EditDefaultsOnly, Category="LukaHUD|Enhanced Inputs")
 	TObjectPtr<class UInputMappingContext> InputMappingContext;
 

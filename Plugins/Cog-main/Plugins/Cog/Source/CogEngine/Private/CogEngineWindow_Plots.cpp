@@ -1,3 +1,4 @@
+/*
 #include "CogEngineWindow_Plots.h"
 
 #include "CogCommon.h"
@@ -8,7 +9,7 @@
 #include "CogWidgets.h"
 #include "Engine/World.h"
 #include "imgui.h"
-#include "implot_internal.h"
+// #include "implot_internal.h"
 
 //--------------------------------------------------------------------------------------------------------------------------
 void FCogEngineWindow_Plots::Initialize()
@@ -571,6 +572,7 @@ void FCogEngineWindow_Plots::RenderPlots(FCogDebugTracker& InTracker)
 	ImGui::EndChild();
 }
 
+
 //--------------------------------------------------------------------------------------------------------------------------
 void FCogEngineWindow_Plots::RenderValues(FCogDebugPlotTrack& Timeline, const char* Label) const
 {
@@ -840,3 +842,4 @@ void FCogEngineWindow_Plots::UnassignToGraphAndAxis(FCogDebugTracker& InTracker,
 		GraphInfo.Entries.RemoveAt(Index);
 	}
 }
+*/

@@ -150,11 +150,11 @@ public:
 	virtual void LaunchEvent(const UObject* InWorldContextObject) override;
 
 	virtual struct FActionKey GetKey() const override;
-	static struct FActionKey GenerateKey(TObjectPtr<class UClueAsset> NewClue);
+	static struct FActionKey GenerateKey(FString NewClue);
 
 protected:
 	UPROPERTY(Category = "Action", EditAnywhere)
-	TObjectPtr<class UClueAsset> Clue = nullptr;
+	FString Clue = "Clue_";
 };
 
 UCLASS()
@@ -166,9 +166,9 @@ public:
 	virtual void LaunchEvent(const UObject* InWorldContextObject) override;
 
 	virtual struct FActionKey GetKey() const override;
-	static struct FActionKey GenerateKey(TObjectPtr<class UClueAsset> RemoveClue);
+	static struct FActionKey GenerateKey(FString RemoveClue);
 
 protected:
 	UPROPERTY(Category = "Action", EditAnywhere)
-	TObjectPtr<class UClueAsset> Clue = nullptr;
+	FString Clue = "Clue_";
 };

@@ -49,6 +49,19 @@ void USettingsAudioWidget::NativeConstruct()
 		this, &USettingsAudioWidget::OnAmbientSliderValueChanged);
 }
 
+void USettingsAudioWidget::SetupSettingsValues(class USettingsSave* SettingSave)
+{
+	Super::SetupSettingsValues(SettingSave);
+
+	MasterSlider->GetSlider()->SetValue(SettingSave->GetMasterVolume());
+	RadioStaticSlider->GetSlider()->SetValue(SettingSave->GetRadioStaticVolume());
+	MusicSlider->GetSlider()->SetValue(SettingSave->GetMusicVolume());
+	RadioSlider->GetSlider()->SetValue(SettingSave->GetRadioVolume());
+	SFXSlider->GetSlider()->SetValue(SettingSave->GetSFXVolume());
+	LukaSlider->GetSlider()->SetValue(SettingSave->GetLukaVolume());
+	AmbientSlider->GetSlider()->SetValue(SettingSave->GetAmbientVolume());
+}
+
 
 void USettingsAudioWidget::OnMasterSliderValueChanged(float Value)
 {
@@ -126,5 +139,3 @@ void USettingsAudioWidget::OnAmbientSliderValueChanged(float Value)
 
 	SettingsSave->SetAmbientVolume(Value);
 }
-
-

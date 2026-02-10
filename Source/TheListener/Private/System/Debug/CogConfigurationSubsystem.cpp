@@ -70,7 +70,7 @@ void UCogConfigurationSubsystem::PostInitialize()
 	CogSubsystemPtr->AddWindow<FCogEngineWindow_TimeScale>("Engine.TimeScale");
 	CogSubsystemPtr->AddWindow<FCogEngineWindow_Transform>("Engine.Transform");
 	CogSubsystemPtr->AddWindow<FCogEngineWindow_Stats>("Engine.Stats");
-	CogSubsystemPtr->AddWindow<FCogEngineWindow_Plots>("Engine.Plots");
+	// CogSubsystemPtr->AddWindow<FCogEngineWindow_Plots>("Engine.Plots");
 
 	CogSubsystemPtr->AddWindow<FCogInputWindow_Actions>("Input.Actions");
 	CogSubsystemPtr->AddWindow<FCogInputWindow_Gamepad>("Input.Gamepad");

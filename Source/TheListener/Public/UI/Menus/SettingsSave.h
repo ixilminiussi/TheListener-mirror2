@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/SaveGame.h"
 #include "Subsystems/GameInstanceSubsystem.h"
+#include "UIElements/DropdownSettings.h"
 #include "SettingsSave.generated.h"
 
 /**
@@ -25,11 +26,15 @@ protected:
 	UPROPERTY(EditDefaultsOnly, Category = "Gameplay")
 	float VerticalSensitivity;
 	UPROPERTY(EditDefaultsOnly, Category = "Gameplay")
-	bool ControllerHapticFeedback;
+	bool ControllerHapticFeedback = true;
+	UPROPERTY(EditDefaultsOnly, Category = "Gameplay")
+	float ReticleSize;
 
 	//Graphics
 	UPROPERTY(EditDefaultsOnly, Category = "Graphics")
 	int32 ResolutionDropdownIndex;
+	UPROPERTY(EditDefaultsOnly, Category = "Graphics")
+	int32 FramerateDropdownIndex;
 	UPROPERTY(EditDefaultsOnly, Category = "Graphics")
 	int32 DisplayDropdownIndex;
 
@@ -49,6 +54,16 @@ protected:
 	UPROPERTY(EditDefaultsOnly, Category = "Audio")
 	float AmbientVolume;
 
+	//Accessibility
+	UPROPERTY(EditDefaultsOnly, Category = "Accessibility")
+	int32 LangageIndex;
+	UPROPERTY(EditDefaultsOnly, Category = "Accessibility")
+	float SubtitlesBackgroundOpacityValue;
+	UPROPERTY(EditDefaultsOnly, Category = "Accessibility")
+	float SubtitlesSizeValue;
+	UPROPERTY(EditDefaultsOnly, Category = "Accessibility")
+	bool HardOfEaringMod;
+
 public:
 	UPROPERTY(EditDefaultsOnly, Category = "Events")
 	FOnSettingsChanged OnSettingsChanged;
@@ -66,10 +81,14 @@ public:
 	void SetVerticalSensitivity(float Value);
 	UFUNCTION()
 	void SetControllerHapticFeedback(bool bValue);
+	UFUNCTION()
+	void SetReticleSize(float Value);
 
 	//Graphics
 	UFUNCTION()
 	void SetResolutionDropdownIndex(int32 Index);
+	UFUNCTION()
+	void SetFramerateDropdownIndex(int32 Index);
 	UFUNCTION()
 	void SetDisplayDropdownIndex(int32 Index);
 
@@ -89,6 +108,15 @@ public:
 	UFUNCTION()
 	void SetAmbientVolume(float Value);
 
+	//Accessibility
+	UFUNCTION()
+	void SetLanguageDropdownIndex(int32 Index);
+	UFUNCTION()
+	void SetSubtitlesBackgroundOpacityValue(float Value);
+	UFUNCTION()
+	void SetSubtitlesSizeValue(float Value);
+	UFUNCTION()
+	void SetHardOfEaringMod(bool bValue);
 
 	// Getters
 	// Gameplay
@@ -96,12 +124,16 @@ public:
 	float GetHorizontalSensitivity() const;
 	UFUNCTION()
 	float GetVerticalSensitivity() const;
-	UFUNCTION()
+	UFUNCTION(BlueprintCallable)
 	bool GetControllerHapticFeedback() const;
+	UFUNCTION()
+	float GetReticleSize() const;
 
 	//Graphics
 	UFUNCTION()
 	int32 GetResolutionDropdownIndex() const;
+	UFUNCTION()
+	int32 GetFramerateDropdownIndex() const;
 	UFUNCTION()
 	int32 GetDisplayDropdownIndex() const;
 
@@ -120,4 +152,14 @@ public:
 	float GetLukaVolume() const;
 	UFUNCTION(BlueprintCallable)
 	float GetAmbientVolume() const;
+
+	//Accessibility
+	UFUNCTION(BlueprintCallable)
+	int32 GetLangageIndex() const;
+	UFUNCTION(BlueprintCallable)
+	float GetSubtitlesBackgroundOpacityValue() const;
+	UFUNCTION(BlueprintCallable)
+	float GetSubtitlesSizeValue() const;
+	UFUNCTION(BlueprintCallable)
+	bool GetHardOfEaringMod() const;
 };

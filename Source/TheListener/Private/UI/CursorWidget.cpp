@@ -4,13 +4,24 @@
 void UCursorWidget::Grow()
 {
 	StopAllAnimations();
-	if(!ensure(OnEnterPossibleInteractionAnim != nullptr)) return;
+	if (!ensure(OnEnterPossibleInteractionAnim != nullptr))
+	{
+		return;
+	}
 	PlayAnimation(OnEnterPossibleInteractionAnim);
 }
 
 void UCursorWidget::Shrink()
 {
 	StopAllAnimations();
-	if(!ensure(OnExitPossibleInteractionAnim != nullptr)) return;
+	if (!ensure(OnExitPossibleInteractionAnim != nullptr))
+	{
+		return;
+	}
 	PlayAnimation(OnExitPossibleInteractionAnim);
+}
+
+USizeBox* UCursorWidget::GetCursorSizeBox() const
+{
+	return CursorSizeBox;
 }

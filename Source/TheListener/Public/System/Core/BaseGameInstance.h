@@ -31,7 +31,7 @@ public:
 	void ApplyPlaystationVisuals();
 	UFUNCTION(BlueprintCallable)
 	void ApplyGenericVisuals();
-	
+
 	UFUNCTION(BlueprintNativeEvent)
 	void LoadRTPC(USettingsSave* Save);
 
@@ -61,7 +61,7 @@ public:
 	UPROPERTY(EditDefaultsOnly)
 	class USettingsDataAsset* SettingsDataAsset = nullptr;
 
-	UFUNCTION()
+	UFUNCTION(BlueprintCallable)
 	class USettingsSave* GetSettingsSave() const;
 
 protected:

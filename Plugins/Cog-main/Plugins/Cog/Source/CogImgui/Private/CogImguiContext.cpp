@@ -16,7 +16,7 @@
 #include "HAL/PlatformApplicationMisc.h"
 #include "imgui.h"
 #include "imgui_internal.h"
-#include "implot.h"
+// #include "implot.h"
 #include "Misc/EngineVersionComparison.h"
 #include "NetImgui_Api.h"
 #include "TextureResource.h"
@@ -28,27 +28,27 @@
 FCogImGuiContextScope::FCogImGuiContextScope(const FCogImguiContext& CogImguiContext)
 {
     PrevImGuiContext = ImGui::GetCurrentContext();
-    PrevPlotContext = ImPlot::GetCurrentContext();
+    // PrevPlotContext = ImPlot::GetCurrentContext();
 
     ImGui::SetCurrentContext(CogImguiContext.Context);
-    ImPlot::SetCurrentContext(CogImguiContext.PlotContext);
+    // ImPlot::SetCurrentContext(CogImguiContext.PlotContext);
 }
 
 //--------------------------------------------------------------------------------------------------------------------------
 FCogImGuiContextScope::FCogImGuiContextScope(ImGuiContext* GuiCtx, ImPlotContext* PlotCtx)
 {
     PrevImGuiContext = ImGui::GetCurrentContext();
-    PrevPlotContext = ImPlot::GetCurrentContext();
+    // PrevPlotContext = ImPlot::GetCurrentContext();
 
     ImGui::SetCurrentContext(GuiCtx);
-    ImPlot::SetCurrentContext(PlotCtx);
+    // ImPlot::SetCurrentContext(PlotCtx);
 }
 
 //--------------------------------------------------------------------------------------------------------------------------
 FCogImGuiContextScope::~FCogImGuiContextScope()
 {
     ImGui::SetCurrentContext(PrevImGuiContext);
-    ImPlot::SetCurrentContext(PrevPlotContext);
+    // ImPlot::SetCurrentContext(PrevPlotContext);
 }
 
 //--------------------------------------------------------------------------------------------------------------------------
@@ -70,10 +70,10 @@ void FCogImguiContext::Initialize(UGameViewportClient* InGameViewport)
 
     // ImGui Context must be created before creating widgets as widgets can receive events that uses the ImGui context right away.
     Context = ImGui::CreateContext();
-    PlotContext = ImPlot::CreateContext();
+    // PlotContext = ImPlot::CreateContext();
     ImGui::SetCurrentContext(Context);
-    ImPlot::SetImGuiContext(Context);
-    ImPlot::SetCurrentContext(PlotContext);
+    // ImPlot::SetImGuiContext(Context);
+    // ImPlot::SetCurrentContext(PlotContext);
 
     if (GameViewport != nullptr)
     {
@@ -207,7 +207,7 @@ void FCogImguiContext::Shutdown()
 
     if (PlotContext != nullptr)
     {
-        ImPlot::DestroyContext(PlotContext);
+        // ImPlot::DestroyContext(PlotContext);
         PlotContext = nullptr;
     }
 

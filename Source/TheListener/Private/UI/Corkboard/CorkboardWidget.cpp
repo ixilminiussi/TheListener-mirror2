@@ -122,6 +122,7 @@ void UCorkboardWidget::Reset()
 
 void UCorkboardWidget::UpdateClue(class UClueAsset* Clue)
 {
+	/*
 	if (!NoteWidgets.Contains(Clue)) { return; }
 	UCorkboardNoteWidget* ActualClueWidget = NoteWidgets[Clue];
 
@@ -159,7 +160,7 @@ void UCorkboardWidget::UpdateClue(class UClueAsset* Clue)
 		{
 			AddLink(NoteWidgets[Clue], NoteWidgets[Link]);
 		}
-	}
+	}*/
 }
 
 void UCorkboardWidget::Move(float delta)

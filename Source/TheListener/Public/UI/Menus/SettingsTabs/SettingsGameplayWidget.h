@@ -27,10 +27,6 @@ protected:
 	UPROPERTY(meta=(BindWidget))
 	class UCheckBoxSettings* ControllerHapticFeedback;
 	UPROPERTY(meta=(BindWidget))
-	class UCheckBoxSettings* RadioComplexMod;
-	UPROPERTY(meta=(BindWidget))
-	class UCheckBoxSettings* ReticleVisibility;
-	UPROPERTY(meta=(BindWidget))
 	class USliderSettings* ReticleSize;
 
 	UFUNCTION()
@@ -39,4 +35,6 @@ protected:
 	void OnHorizontalSensitivitySliderValueChanged(float Value);
 	UFUNCTION()
 	void OnControllerHapticFeedbackChanged(bool bValue);
+	UFUNCTION()
+	void OnReticleSizeChanged(float Value);
 };

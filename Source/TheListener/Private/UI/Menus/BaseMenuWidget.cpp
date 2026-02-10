@@ -89,6 +89,18 @@ void UBaseMenuWidget::OnSettingsClicked() const
 				USettingsTabBase* GameplayTab = Settings->GetSwitcherTabSettings()->GetGameplayTab();
 				check(GameplayTab);
 				GameplayTab->SetupSettingsValues(SettingsSave);
+
+				USettingsTabBase* AudioTab = Settings->GetSwitcherTabSettings()->GetAudioTab();
+				check(AudioTab);
+				AudioTab->SetupSettingsValues(SettingsSave);
+
+				USettingsTabBase* GraphicsTab = Settings->GetSwitcherTabSettings()->GetGraphicsTab();
+				check(GraphicsTab);
+				GraphicsTab->SetupSettingsValues(SettingsSave);
+
+				USettingsTabBase* AccessibilityTab = Settings->GetSwitcherTabSettings()->GetAccessibilityTab();
+				check(AccessibilityTab);
+				AccessibilityTab->SetupSettingsValues(SettingsSave);
 			}
 		}
 	}

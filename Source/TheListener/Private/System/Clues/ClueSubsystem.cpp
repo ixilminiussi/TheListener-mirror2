@@ -5,10 +5,8 @@
 
 #include "Engine/ObjectLibrary.h"
 #include "Kismet/GameplayStatics.h"
-#include "System/Clues/ClueAsset.h"
-#include "GPE/Corkboard.h"
+#include "GPE/CorkboardDiegetic.h"
 #include "System/Core/ListenerWorldSettings.h"
-#include "System/Clues/ClueSubsystemData.h"
 #include "UI/LukaHUD.h"
 
 bool UClueSubsystem::ShouldCreateSubsystem(UObject* Outer) const
@@ -62,11 +60,6 @@ void UClueSubsystem::Initialize(FSubsystemCollectionBase& Collection)
 		return;
 	}
 
-	if (UClueSubsystemData* ClueSubsystemData = WorldSettings->ClueSubsystemData.LoadSynchronous())
-	{
-		this->CluesList = ClueSubsystemData->CluesList;
-	}
-
 	FWorldDelegates::OnWorldInitializedActors.AddUObject(this, &UClueSubsystem::OnActorsInitialized);
 
 	UE_LOG(LogTemp, Log, TEXT("UFrequencySubsystem Initialized"));
@@ -74,24 +67,25 @@ void UClueSubsystem::Initialize(FSubsystemCollectionBase& Collection)
 
 void UClueSubsystem::OnActorsInitialized(const FActorsInitializedParams& Params)
 {
-	Corkboard = Cast<ACorkboard>(UGameplayStatics::GetActorOfClass(GetWorld(), ACorkboard::StaticClass()));
+	Corkboard = Cast<ACorkboardDiegetic>(UGameplayStatics::GetActorOfClass(GetWorld(), ACorkboardDiegetic::StaticClass()));
 
-	if (!ensure(Corkboard)) { UE_LOG(LogTemp, Warning, TEXT("Corkboard not found !")); }
-	for (UClueAsset* Clue : CluesList)
+	if (!ensure(Corkboard))
 	{
-		Clue->ResetClueState();
+		UE_LOG(LogTemp, Warning, TEXT("Corkboard not found !"));
+		return;
 	}
+	CluesList = TArray<FString>(Corkboard->GetClues());
 }
 
-void UClueSubsystem::GiveClue(UClueAsset* Clue)
+void UClueSubsystem::GiveClue(FString ClueName)
 {
-	FoundClues.AddUnique(Clue);
-	Clue->CheckClueState(true);
-	for (UClueAsset* Link : Clue->Links)
+	if (!Corkboard)
 	{
-		Link->CheckClueState(false);
+		return;
 	}
-	Corkboard->UpdateClue(Clue);
+	if (FoundClues.Contains(ClueName)) {return;}
+	FoundClues.AddUnique(ClueName);
+	Corkboard->UpdateClue(ClueName,true);
 	ALukaHUD* HUD = Cast<ALukaHUD>(GetWorld()->GetFirstPlayerController()->GetHUD());
 	HUD->NotifyClue();
 
@@ -100,14 +94,9 @@ void UClueSubsystem::GiveClue(UClueAsset* Clue)
 #endif
 }
 
-void UClueSubsystem::RemoveClue(class UClueAsset* Clue)
+void UClueSubsystem::RemoveClue(FString Clue)
 {
-	Clue->MakeUnavailable();
-	for (UClueAsset* Link : Clue->Links)
-	{
-		Link->CheckClueState(false);
-	}
-	Corkboard->UpdateClue(Clue);
+	Corkboard->UpdateClue(Clue,false);
 	CluesList.Remove(Clue);
 	FoundClues.Remove(Clue);
 
@@ -116,18 +105,3 @@ void UClueSubsystem::RemoveClue(class UClueAsset* Clue)
 #endif
 }
 
-#if UE_EDITOR
-void UClueSubsystem::DisplayClues()
-{
-	UE_LOG(LogTemp, Log, TEXT("Displaying Clues : "));
-	for (UClueAsset* Clue : CluesList)
-	{
-		UE_LOG(LogTemp, Log, TEXT(" | Hints Found : "));
-		if (Clue->Links.Num() > 0)
-		{
-			UE_LOG(LogTemp, Log, TEXT(" | Links : "));
-		}
-	}
-	UE_LOG(LogTemp, Log, TEXT("==========================================================="));
-}
-#endif

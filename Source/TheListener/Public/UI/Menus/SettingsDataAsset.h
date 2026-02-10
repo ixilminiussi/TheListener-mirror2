@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Engine/DataAsset.h"
+#include "UIElements/DropdownSettings.h"
 #include "SettingsDataAsset.generated.h"
 
 /**
@@ -34,8 +35,8 @@ public:
 	bool ReticleVisibility = true;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Gameplay"
-		, meta = (ClampMin = "0.", ClampMax = "100.0"))
-	float ReticleSize = 50.0f;
+		, meta = (ClampMin = "0.", ClampMax = "2.0"))
+	float ReticleSize = 1.0f;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Gameplay"
 		, meta = (ToolTip = "Non implémenté pour le moment"))
@@ -74,7 +75,7 @@ public:
 	UPROPERTY(EditDefaultsOnly, Category = "Audio"
 		, meta = (ClampMin = "0.", ClampMax = "100.0"))
 	float RadioVolume = 100.f;
-	
+
 	UPROPERTY(EditDefaultsOnly, Category = "Audio"
 		, meta = (ClampMin = "0.", ClampMax = "100.0"))
 	float SFXVolume = 100.f;
@@ -90,7 +91,7 @@ public:
 
 	//Accessibility
 	UPROPERTY(EditDefaultsOnly, Category = "Accessibility")
-	TArray<FString> Language;
+	int32 Langage;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Accessibility"
 		, meta = (ClampMin = "0.", ClampMax = "100.0"))

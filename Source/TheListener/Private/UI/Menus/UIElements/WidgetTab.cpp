@@ -46,10 +46,13 @@ void UWidgetTab::Toggle(bool bToggle)
 	{
 		check(LineImage);
 		LineImage->SetVisibility(ESlateVisibility::Visible);
+		SelectionLineImage->SetVisibility(ESlateVisibility::Visible);
 	}
 	else
 	{
 		check(LineImage);
 		LineImage->SetVisibility(ESlateVisibility::Hidden);
+		SelectionLineImage->SetVisibility(ESlateVisibility::Hidden);
+
 	}
 }

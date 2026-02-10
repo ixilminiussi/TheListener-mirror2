@@ -78,6 +78,7 @@ UImage* UCorkboardNoteWidget::GetFakePin() const
 
 void UCorkboardNoteWidget::UpdateStateImage(EClueState state)
 {
+	/*
 	StateImage->SetVisibility(ESlateVisibility::Visible);
 	switch (state)
 	{
@@ -93,5 +94,5 @@ void UCorkboardNoteWidget::UpdateStateImage(EClueState state)
 		break;
 	default:
 		break;
-	}
+	}*/
 }

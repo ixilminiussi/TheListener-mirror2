@@ -30,7 +30,7 @@ protected:
 	class UDropdownSettings* QualityPresetDropdown;
 
 	UFUNCTION()
-	void OnFramerateDropdownValueChanged(FText Text);
+	void OnFramerateDropdownValueChanged(UWidget* Widget, int32 Index);
 
 	UFUNCTION()
 	void OnResolutionDropdownValueChanged(UWidget* Widget, int32 Index);
@@ -39,5 +39,5 @@ protected:
 	void OnDisplayDropdownValueChanged(UWidget* Widget, int32 Index);
 
 	UFUNCTION()
-	void OnQualityPresetDropdownValueChanged(FText Text);
+	void OnQualityPresetDropdownValueChanged(UWidget* Widget, int32 Index);
 };

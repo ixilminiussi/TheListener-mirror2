@@ -9,17 +9,16 @@ void USubtitleTextWidget::NativeConstruct()
 	StyleTable = SubtitleText->GetTextStyleSet();
 }
 
-void USubtitleTextWidget::SetSubtitleInfo(FSubtitleInfo const* InSubtitleInfo)
+void USubtitleTextWidget::SetSubtitleInfo(const FSubtitleInfo* InSubtitleInfo)
 {
 	check(InSubtitleInfo);
 	SubtitleInfo = *InSubtitleInfo;
 	CurrentStyle = "DefaultName";
-	
-	if (FRichTextStyleRow* StyleRow = StyleTable->FindRow<FRichTextStyleRow>(FName(*SubtitleInfo.Speaker),""))
+
+	if (FRichTextStyleRow* StyleRow = StyleTable->FindRow<FRichTextStyleRow>(FName(*SubtitleInfo.Speaker), ""))
 	{
 		CurrentStyle = SubtitleInfo.Speaker;
 	}
-	
 }
 
 void USubtitleTextWidget::SetClarity(const float InClarity)
@@ -35,15 +34,16 @@ void USubtitleTextWidget::NativeTick(const FGeometry& MyGeometry, float InDeltaT
 		SubtitleText->SetText({});
 		return;
 	}
-	
-	
+
+
 	FString CurrentLine;
 	CurrentLine.Append("<");
 	CurrentLine.Append(CurrentStyle);
 	CurrentLine.Append(">");
 	CurrentLine.Append(SubtitleInfo.Speaker);
 	CurrentLine.Append("</>\n");
-	CurrentLine.Append(SubtitleInfo.SubtitleEn);
+	bool IsEnglish = false;
+	CurrentLine.Append(IsEnglish ? SubtitleInfo.SubtitleEn : SubtitleInfo.SubtitleFr);
 	if (Clarity != 1.0f && SubtitleInfo.Source == ESource::ESRadio)
 	{
 		//Get a "Unique" Seed for each subtitle
@@ -57,15 +57,15 @@ void USubtitleTextWidget::NativeTick(const FGeometry& MyGeometry, float InDeltaT
 			constexpr char RichTextTagIn = 60;
 			constexpr char RichTextTagOut = 62;
 			constexpr char Colon = 58;
-			if (CurrentLine[i] == RichTextTagIn) {NoCorrupt = true;}
-			if (CurrentLine[i] == RichTextTagOut) {NoCorrupt = false;}
+			if (CurrentLine[i] == RichTextTagIn) { NoCorrupt = true; }
+			if (CurrentLine[i] == RichTextTagOut) { NoCorrupt = false; }
 
 			if ((CurrentLine[i] == Colon || CurrentLine[i] == Space) || NoCorrupt)
 			{
 				ModifiedText.AppendChar(CurrentLine[i]);
 				continue;
 			}
-			
+
 			CurrentSeed = CurrentLine[i] * CurrentSeed % 1000000;
 			FMath::RandInit(CurrentSeed);
 
@@ -81,12 +81,23 @@ void USubtitleTextWidget::NativeTick(const FGeometry& MyGeometry, float InDeltaT
 				ModifiedText.AppendChar(CurrentLine[i]);
 			}
 		}
-		
+
 		if (!ensure(SubtitleText)) { return; }
 		SubtitleText->SetText(FText::FromString(ModifiedText));
-	} else
+	}
+	else
 	{
 		if (!ensure(SubtitleText)) { return; }
 		SubtitleText->SetText(FText::FromString(CurrentLine));
 	}
+}
+
+void USubtitleTextWidget::SetIsEnglish(bool InIsEnglish)
+{
+	bIsEnglish = InIsEnglish;
+}
+
+bool USubtitleTextWidget::GetIsEnglish() const
+{
+	return bIsEnglish;
 }

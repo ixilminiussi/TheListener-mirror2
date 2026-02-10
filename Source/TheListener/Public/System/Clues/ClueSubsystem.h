@@ -15,18 +15,13 @@ public:
 	virtual bool ShouldCreateSubsystem(UObject* Outer) const override;
 	virtual void Initialize(FSubsystemCollectionBase& Collection) override;
 	void OnActorsInitialized(const FActorsInitializedParams& Params);
-	void InitCorkboard();
 
-	void GiveClue(class UClueAsset* Clue);
-	void RemoveClue(class UClueAsset* Clue);
+	void GiveClue(FString Clue);
+	void RemoveClue(FString Clue);
 
 protected:
-	TObjectPtr<class ACorkboard> Corkboard;
+	TObjectPtr<class ACorkboardDiegetic> Corkboard;
 
-	TArray<class UClueAsset*> CluesList;
-	TArray<class UClueAsset*> FoundClues;
-
-#if UE_EDITOR
-	void DisplayClues();
-#endif
+	TArray<FString> CluesList;
+	TArray<FString> FoundClues;
 };

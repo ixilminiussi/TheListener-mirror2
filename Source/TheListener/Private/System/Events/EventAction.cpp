@@ -7,7 +7,6 @@
 #include "GPE/Radio/StationDataAsset.h"
 #include "Miscellaneous/TLUtils.h"
 #include "Player/LukaController.h"
-#include "System/Clues/ClueAsset.h"
 #include "System/Clues/ClueSubsystem.h"
 
 #include "System/Frequency/FrequencySubsystem.h"
@@ -198,15 +197,9 @@ void UGiveClueAction::LaunchEvent(const UObject* InWorldContextObject)
 	FCogDebugEvent& CogEvent = FCogDebug::StartEvent(this, "Events", "Give Clue", true, 7, FColor::Yellow)
 	                           .AddParam("Name", GetName())
 	                           .AddParam("Delay", ActionDelay);
+	
+	CogEvent.AddParam("Event", Clue);
 
-	if (Clue)
-	{
-		CogEvent.AddParam("Event", Clue->GetName());
-	}
-	else
-	{
-		CogEvent.AddParam("Event", FString("NaN"));
-	}
 	// #endif
 
 	if (UClueSubsystem* ClueSubsystem = InWorldContextObject->GetWorld()->GetSubsystem<UClueSubsystem>();
@@ -216,9 +209,9 @@ void UGiveClueAction::LaunchEvent(const UObject* InWorldContextObject)
 	}
 }
 
-struct FActionKey UGiveClueAction::GenerateKey(TObjectPtr<class UClueAsset> NewClue)
+struct FActionKey UGiveClueAction::GenerateKey(FString NewClue)
 {
-	return FActionKey(URingPhoneAction::StaticClass(), NewClue->GetName());
+	return FActionKey(UGiveClueAction::StaticClass(), NewClue);
 }
 
 struct FActionKey UGiveClueAction::GetKey() const
@@ -234,15 +227,8 @@ void URemoveClueAction::LaunchEvent(const UObject* InWorldContextObject)
 	FCogDebugEvent& CogEvent = FCogDebug::StartEvent(this, "Events", "Remove Clue", true, 8, FColor::Yellow)
 	                           .AddParam("Name", GetName())
 	                           .AddParam("Delay", ActionDelay);
-
-	if (Clue)
-	{
-		CogEvent.AddParam("Event", Clue->GetName());
-	}
-	else
-	{
-		CogEvent.AddParam("Event", FString("NaN"));
-	}
+	
+	CogEvent.AddParam("Event", Clue);
 	// #endif
 
 	if (UClueSubsystem* ClueSubsystem = InWorldContextObject->GetWorld()->GetSubsystem<UClueSubsystem>();
@@ -257,7 +243,7 @@ struct FActionKey URemoveClueAction::GetKey() const
 	return URemoveClueAction::GenerateKey(Clue);
 }
 
-struct FActionKey URemoveClueAction::GenerateKey(TObjectPtr<class UClueAsset> RemoveClue)
+struct FActionKey URemoveClueAction::GenerateKey(FString RemoveClue)
 {
-	return FActionKey(URingPhoneAction::StaticClass(), RemoveClue->GetName());
+	return FActionKey(URingPhoneAction::StaticClass(), RemoveClue);
 }

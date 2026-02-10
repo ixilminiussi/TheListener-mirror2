@@ -1,7 +1,7 @@
 #include "CogEngineWindow_ImGui.h"
 
 #include "imgui.h"
-#include "implot.h"
+// #include "implot.h"
 
 //--------------------------------------------------------------------------------------------------------------------------
 void FCogEngineWindow_ImGui::RenderTick(float DeltaTime)
@@ -30,10 +30,10 @@ void FCogEngineWindow_ImGui::RenderTick(float DeltaTime)
         ImGui::End();
     }
 
-    if (bShowImguiPlot)
+    /*if (bShowImguiPlot)
     {
         ImPlot::ShowDemoWindow(&bShowImguiPlot);
-    }
+    }*/
 }
 
 //--------------------------------------------------------------------------------------------------------------------------

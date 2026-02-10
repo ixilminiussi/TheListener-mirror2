@@ -27,17 +27,37 @@ void USettingsGraphicsWidget::NativeConstruct()
 	DisplayDropdown->GetSwitcher()->SetActiveWidgetIndex(SettingsSave->GetDisplayDropdownIndex());
 	DisplayDropdown->GetSwitcher()->OnActiveWidgetIndexChanged.AddUObject(
 		this, &USettingsGraphicsWidget::OnDisplayDropdownValueChanged);
+
+	check(FramerateDropdown);
+	FramerateDropdown->GetSwitcher()->SetActiveWidgetIndex(SettingsSave->GetFramerateDropdownIndex());
+	FramerateDropdown->GetSwitcher()->OnActiveWidgetIndexChanged.AddUObject(
+		this, &USettingsGraphicsWidget::OnFramerateDropdownValueChanged);
 }
 
 void USettingsGraphicsWidget::SetupSettingsValues(class USettingsSave* SettingSave)
 {
 	ResolutionDropdown->GetSwitcher()->SetActiveWidgetIndex(SettingSave->GetResolutionDropdownIndex());
 	DisplayDropdown->GetSwitcher()->SetActiveWidgetIndex(SettingSave->GetDisplayDropdownIndex());
+	FramerateDropdown->GetSwitcher()->SetActiveWidgetIndex(SettingSave->GetFramerateDropdownIndex());
 	Super::SetupSettingsValues(SettingSave);
 }
 
-void USettingsGraphicsWidget::OnFramerateDropdownValueChanged(FText Text)
+void USettingsGraphicsWidget::OnFramerateDropdownValueChanged(UWidget* Widget, int32 Index)
 {
+	UBaseGameInstance* GI = Cast<UBaseGameInstance>(GetWorld()->GetGameInstance());
+	check(GI);
+
+	USettingsSave* SettingsSave = GI->GetSettingsSave();
+	check(SettingsSave);
+	SettingsSave->SetFramerateDropdownIndex(Index);
+
+	UGameUserSettings* GameUserSettings = GEngine->GetGameUserSettings();
+	if (!GameUserSettings)
+	{
+		return;
+	}
+	GameUserSettings->SetFrameRateLimit(FramerateDropdown->GetSelectedOption().IntValue);
+	GameUserSettings->ApplySettings(false);
 }
 
 void USettingsGraphicsWidget::OnResolutionDropdownValueChanged(UWidget* Widget, int32 Index)
@@ -49,9 +69,6 @@ void USettingsGraphicsWidget::OnResolutionDropdownValueChanged(UWidget* Widget, 
 	check(SettingsSave);
 	SettingsSave->SetResolutionDropdownIndex(Index);
 
-
-	// TODO Set Resolution
-
 	UGameUserSettings* GameUserSettings = GEngine->GetGameUserSettings();
 	if (!GameUserSettings)
 	{
@@ -59,6 +76,10 @@ void USettingsGraphicsWidget::OnResolutionDropdownValueChanged(UWidget* Widget, 
 	}
 
 	GameUserSettings->SetScreenResolution(ResolutionDropdown->GetSelectedOption().IntPointValue);
+
+	GameUserSettings->ApplyResolutionSettings(false);
+
+	GameUserSettings->ConfirmVideoMode();
 }
 
 void USettingsGraphicsWidget::OnDisplayDropdownValueChanged(UWidget* Widget, int32 Index)
@@ -79,8 +100,33 @@ void USettingsGraphicsWidget::OnDisplayDropdownValueChanged(UWidget* Widget, int
 		return;
 	}
 	GameUserSettings->SetFullscreenMode(DisplayDropdown->GetSelectedOption().WindowModeValue);
+
+	GameUserSettings->ApplyResolutionSettings(false);
+
+	GameUserSettings->ConfirmVideoMode();
 }
 
-void USettingsGraphicsWidget::OnQualityPresetDropdownValueChanged(FText Text)
+void USettingsGraphicsWidget::OnQualityPresetDropdownValueChanged(UWidget* Widget, int32 Index)
 {
+	// 0 = Low, 1 = Medium, 2 = High, 3 = Epic
+	UBaseGameInstance* GI = Cast<UBaseGameInstance>(GetWorld()->GetGameInstance());
+	check(GI);
+
+	USettingsSave* SettingsSave = GI->GetSettingsSave();
+	check(SettingsSave);
+	SettingsSave->SetResolutionDropdownIndex(Index);
+
+	UGameUserSettings* GameUserSettings = GEngine->GetGameUserSettings();
+	if (GameUserSettings)
+	{
+		GameUserSettings->ScalabilityQuality.ResolutionQuality = QualityPresetDropdown->GetSelectedOption().IntValue;
+		GameUserSettings->ScalabilityQuality.ViewDistanceQuality = QualityPresetDropdown->GetSelectedOption().IntValue;
+		GameUserSettings->ScalabilityQuality.ShadowQuality = QualityPresetDropdown->GetSelectedOption().IntValue;
+		GameUserSettings->ScalabilityQuality.TextureQuality = QualityPresetDropdown->GetSelectedOption().IntValue;
+		GameUserSettings->ScalabilityQuality.EffectsQuality = QualityPresetDropdown->GetSelectedOption().IntValue;
+
+		GameUserSettings->ApplyNonResolutionSettings();
+
+		GameUserSettings->SaveSettings();
+	}
 }

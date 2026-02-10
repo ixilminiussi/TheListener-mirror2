@@ -14,6 +14,13 @@ enum class EDropdownValueType : uint8
 	IntPoint,
 	WindowMode,
 	Integer,
+	Langage,
+};
+UENUM(BlueprintType)
+enum class ELangage : uint8
+{
+	English,
+	French,
 };
 
 USTRUCT(BlueprintType)
@@ -38,6 +45,10 @@ struct FDropdownOption
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Dropdown Option",
 		meta=(EditCondition="ValueType == EDropdownValueType::Integer", EditConditionHides))
 	int32 IntValue = 0;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Dropdown Option",
+		meta=(EditCondition="ValueType==EDropdownValueType::Langage", EditConditionHides))
+	ELangage Langage = ELangage::English;
 
 	FDropdownOption()
 	{
@@ -67,6 +78,15 @@ struct FDropdownOption
 		Opt.DisplayName = Name;
 		Opt.ValueType = EDropdownValueType::Integer;
 		Opt.IntValue = Val;
+		return Opt;
+	}
+
+	static FDropdownOption MakeLangage(FText Name, ELangage Lang)
+	{
+		FDropdownOption Opt;
+		Opt.DisplayName = Name;
+		Opt.ValueType = EDropdownValueType::Langage;
+		Opt.Langage = Lang;
 		return Opt;
 	}
 };

@@ -26,3 +26,7 @@ USettingsMenuWidget* ABaseHUD::GetSettingsMenuWidget() const
 {
 	return nullptr;
 }
+
+void ABaseHUD::InitializeSettingsData()
+{
+}

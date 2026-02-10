@@ -2,11 +2,16 @@
 
 #include "AkGameplayStatics.h"
 #include "Blueprint/UserWidget.h"
+#include "Components/SizeBox.h"
+#include "GameFramework/GameUserSettings.h"
 #include "Kismet/GameplayStatics.h"
+#include "System/Core/BaseGameInstance.h"
 #include "UI/CursorWidget.h"
 #include "UI/PlayWidget.h"
 #include "UI/Menus/PauseMenuWidget.h"
 #include "UI/Menus/SettingsMenuWidget.h"
+#include "UI/Menus/SettingsSave.h"
+#include "UI/Subtitles/SubtitlesWidget.h"
 
 FInteractiveInView ALukaHUD::InteractiveInView;
 FOnShowCursor ALukaHUD::OnShowCursor;
@@ -39,6 +44,8 @@ void ALukaHUD::BeginPlay()
 		}
 	});
 	InteractiveInView.BindUFunction(this, FName("InViewUpdate"));
+
+	InitializeSettingsData();
 }
 
 UBaseMenuWidget* ALukaHUD::GetPreviousWidget()
@@ -62,13 +69,13 @@ class UCommonActivatableWidget* ALukaHUD::GetEndPanelWidget() const
 void ALukaHUD::PauseGame()
 {
 	PauseGameInBlueprint();
-	
-	if (ensure(PauseEvent)) 
+
+	if (ensure(PauseEvent))
 	{
 		FOnAkPostEventCallback NullCallback;
 		UAkGameplayStatics::PostEvent(PauseEvent, this, 0, NullCallback);
 	}
-	
+
 	UGameplayStatics::SetGamePaused(GetWorld(), true);
 	GetOwningPlayerController()->SetInputMode(FInputModeUIOnly());
 }
@@ -79,8 +86,8 @@ void ALukaHUD::ResumeGame()
 
 	UGameplayStatics::SetGamePaused(GetWorld(), false);
 	GetOwningPlayerController()->SetInputMode(FInputModeGameOnly());
-	
-	if (ensure(ResumeEvent)) 
+
+	if (ensure(ResumeEvent))
 	{
 		FOnAkPostEventCallback NullCallback;
 		UAkGameplayStatics::PostEvent(ResumeEvent, this, 0, NullCallback);
@@ -94,13 +101,14 @@ void ALukaHUD::HandleAnswerInput_Implementation() const
 void ALukaHUD::ToggleCursorVisibility(bool bVisible) const
 {
 	check(PlayWidget)
-	UCursorWidget *Cursor = PlayWidget->GetCursorWidget();
+	UCursorWidget* Cursor = PlayWidget->GetCursorWidget();
 	check(Cursor)
 
 	if (bVisible)
 	{
 		Cursor->SetVisibility(ESlateVisibility::Visible);
-	} else
+	}
+	else
 	{
 		Cursor->SetVisibility(ESlateVisibility::Collapsed);
 	}
@@ -136,12 +144,32 @@ void ALukaHUD::NotifyClue() const
 	PlayWidget->NotifyClue();
 }
 
+void ALukaHUD::InitializeSettingsData()
+{
+	UBaseGameInstance* GI = Cast<UBaseGameInstance>(GetWorld()->GetGameInstance());
+	check(GI);
+
+	USettingsSave* SettingsSave = GI->GetSettingsSave();
+	check(SettingsSave);
+
+	USizeBox* CursorSizeBox = PlayWidget->GetCursorWidget()->GetCursorSizeBox();
+	check(CursorSizeBox);
+	CursorSizeBox->SetHeightOverride(10 * SettingsSave->GetReticleSize());
+	CursorSizeBox->SetWidthOverride(10 * SettingsSave->GetReticleSize());
+
+	check(PlayWidget);
+	PlayWidget->GetSubtitlesWidget()->SetBakcgroundOpacity(SettingsSave->GetSubtitlesBackgroundOpacityValue());
+	PlayWidget->GetSubtitlesWidget()->SetSubtitlesTextStyle(SettingsSave->GetSubtitlesSizeValue());
+	PlayWidget->GetSubtitlesWidget()->SetLanguageBoolean(SettingsSave->GetLangageIndex());
+}
+
+
 void ALukaHUD::InViewUpdate(bool bToggle)
 {
 	check(PlayWidget)
-	UCursorWidget * Cursor = PlayWidget->GetCursorWidget();
+	UCursorWidget* Cursor = PlayWidget->GetCursorWidget();
 	check(Cursor)
-	
+
 	if (bInView && !bToggle)
 	{
 		Cursor->Shrink();

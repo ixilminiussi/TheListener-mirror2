@@ -9,15 +9,7 @@
 /**
  * 
  */
-UENUM()
-enum class EClueState : uint8
-{
-	Hidden,
-	Partial,
-	Complete,
-	Disabled,
-	Missing
-};
+
 
 
 UCLASS()
@@ -32,8 +24,8 @@ protected:
 #endif
 
 public:
-	UPROPERTY()
-	EClueState State;
+	//UPROPERTY()
+	//EClueState State;
 
 	UPROPERTY(EditAnywhere)
 	TArray<class UClueAsset*> Links;

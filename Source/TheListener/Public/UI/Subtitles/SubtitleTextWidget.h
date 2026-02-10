@@ -37,13 +37,17 @@ UCLASS()
 class THELISTENER_API USubtitleTextWidget : public UCommonUserWidget
 {
 	GENERATED_BODY()
+
 public:
 	virtual void NativeConstruct() override;
-	
-	void SetSubtitleInfo(FSubtitleInfo const* InSubtitleInfo);
+
+	void SetSubtitleInfo(const FSubtitleInfo* InSubtitleInfo);
 	void SetClarity(float InClarity);
 
 	virtual void NativeTick(const FGeometry&, float InDeltaTime) override;
+
+	void SetIsEnglish(bool InIsEnglish);
+	bool GetIsEnglish() const;
 
 protected:
 	UPROPERTY(EditAnywhere, meta = (BindWidget))
@@ -59,10 +63,11 @@ protected:
 
 	UPROPERTY(EditDefaultsOnly, Category = "Subtitles")
 	TObjectPtr<class UCurveFloat> CorruptionCurve;
-	
+
 	UPROPERTY(EditDefaultsOnly, Category = "Subtitles")
 	float TimeToScrambleLetter = 0.025f;
-	
-	FTimerHandle ScrambleTimer;
-};
 
+	FTimerHandle ScrambleTimer;
+
+	bool bIsEnglish;
+};

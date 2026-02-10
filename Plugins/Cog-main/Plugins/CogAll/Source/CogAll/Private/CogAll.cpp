@@ -84,7 +84,7 @@ void Cog::AddAllWindows(UCogSubsystem& CogSubsystem)
 
     CogSubsystem.AddWindow<FCogEngineWindow_OutputLog>("Engine.Output Log");
 
-    CogSubsystem.AddWindow<FCogEngineWindow_Plots>("Engine.Plots");
+    // CogSubsystem.AddWindow<FCogEngineWindow_Plots>("Engine.Plots");
 
     CogSubsystem.AddWindow<FCogEngineWindow_Selection>("Engine.Selection");
 

@@ -9,6 +9,7 @@
 #include "GPE/Toy.h"
 #include "GPE/Radio/Radio.h"
 #include "GPE/Radio/Station.h"
+#include "System/Clues/ClueSubsystem.h"
 #include "System/Events/EventCondition.h"
 #include "UI/LukaHUD.h"
 #include "UI/Subtitles/SubtitlesWidget.h"
@@ -223,6 +224,15 @@ void ADialogue::HandleMarker(FString const& Marker)
 	if (Marker.StartsWith(ConditionMarker) && bCanHear)  //It is a condition then :)
 	{
 		FString ChoppedMarker = Marker.Mid(ConditionMarker.Len());
+		if (ChoppedMarker.StartsWith("Clue_"))  //So it's a clue O.O
+		{
+			if (UClueSubsystem* ClueSubsystem = GetWorld()->GetSubsystem<UClueSubsystem>(); ensure(ClueSubsystem))
+			{
+				ClueSubsystem->GiveClue(ChoppedMarker);
+			}
+			return;
+		}
+		
 		if (UEventSubsystem* EventSubsystem = GetWorld()->GetGameInstance()->GetSubsystem<UEventSubsystem>(); ensure(EventSubsystem))
 		{
 			const FConditionKey Key = UDialogueCondition::GenerateKey(ChoppedMarker);

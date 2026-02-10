@@ -22,6 +22,9 @@ public:
 	UFUNCTION()
 	virtual class USettingsMenuWidget* GetSettingsMenuWidget() const;
 
+	UFUNCTION()
+	virtual void InitializeSettingsData();
+
 protected:
 	UPROPERTY(BlueprintReadWrite)
 	UBaseMenuWidget* PreviousWidgetInstance = nullptr;
@@ -36,7 +39,6 @@ protected:
 
 	UPROPERTY()
 	bool bIsPaused{false};
-
 
 public:
 	UFUNCTION(BlueprintImplementableEvent)

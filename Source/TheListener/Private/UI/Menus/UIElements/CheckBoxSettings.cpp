@@ -4,6 +4,7 @@
 #include "UI/Menus/UIElements/CheckBoxSettings.h"
 
 #include "CommonTextBlock.h"
+#include "Components/CheckBox.h"
 #include "Components/RichTextBlock.h"
 
 void UCheckBoxSettings::NativeConstruct()
@@ -15,6 +16,13 @@ void UCheckBoxSettings::NativeConstruct()
 		CommonTextBlock->SetText(Text);
 		CommonTextBlock->SetStyle(NormalTextStyle);
 	}
+}
+
+void UCheckBoxSettings::NativeOnClicked()
+{
+	Super::NativeOnClicked();
+
+	CheckBox->SetIsChecked(!CheckBox->IsChecked());
 }
 
 void UCheckBoxSettings::NativeOnHovered()

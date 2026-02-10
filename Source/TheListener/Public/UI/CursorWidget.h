@@ -14,10 +14,14 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void Grow();
 	void Shrink();
-	
+	class USizeBox* GetCursorSizeBox() const;
+
 protected:
 	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
 	class UImage* CursorImage = nullptr;
+
+	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
+	class USizeBox* CursorSizeBox = nullptr;
 
 	UPROPERTY(meta = (BindWidgetAnim), Transient)
 	class UWidgetAnimation* OnEnterPossibleInteractionAnim = nullptr;

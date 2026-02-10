@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Toy.h"
+#include "Components/TimelineComponent.h"
 #include "CorkboardDiegetic.generated.h"
 
 UCLASS()
@@ -17,6 +18,13 @@ class THELISTENER_API ACorkboardDiegetic : public AToy
 	virtual void SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) override;
 
 	virtual void Tick(float DeltaSeconds) override;
+
+	virtual void OnPossessAfterTransition_Implementation() override;
+	virtual void OnUnPossessAfterTransition_Implementation() override;
+
+	FVector FindClosestPositionOnPlane(FVector Point);
+	FVector2D FindPositionOnPlaneByRatio(FVector Point);
+	
 
 protected:
 
@@ -40,14 +48,53 @@ protected:
 	TObjectPtr<UCurveFloat> CamSpeedCurve;
 
 	FVector2D LastMoveInputValue;
-	FVector2D MoveRelativeLimitX;
-	FVector2D MoveRelativeLimitY;
+	FVector LocationDL ;
+	FVector LocationUL ;
+	FVector LocationDR ;
+	FVector LocationUR ;
+	FVector PlaneNormal;
+	FVector PlaneAxisX;
+	FVector PlaneAxisY;
+	float PlaneWidth;
+	float PlaneHeight;
+	float PlaneDistance;
+	
+	FVector2D CurrentPosition = FVector2D(0.5f,0.5f);
+
+	TMap<FString, TWeakObjectPtr<class ACorkboardNoteActor>> ClueActorsMap;
+	TMap<class ACorkboardNoteActor*,TArray<TWeakObjectPtr<class ACorkboardLinkActor>>> ClueLinkedMap;
 
 	float LastZoomInputValue;
 
+	TQueue<FString> CluesUpdated;
+	FString CurrentDiscoveringClue;
+	FVector DiscoverStartLocation;
+	FVector DiscoverEndLocation;
+
+	FOnTimelineFloat DiscoverInterpFunction{};
+	FOnTimelineEvent DiscoverFinishedFunction{};
+
 public:
-	void UpdateClue(class UClueAsset* Clue);
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UTimelineComponent* DiscoverTimelineComponent;
+	UPROPERTY(EditAnywhere, Category = "Timeline")
+	UCurveFloat* DiscoverTimelineCurve;
+
+public:
+	auto UpdateClue(FString ClueString, bool bActivate) -> void;
 
 	void MoveInput(const struct FInputActionValue& Value);
 	void ZoomInput(const struct FInputActionValue& Value);
+
+	TArray<FString> GetClues();
+
+	UFUNCTION()
+	void StartDiscoverTimeline();
+
+	UFUNCTION()
+	void ProgressDiscoverTimeline(float value);
+	
+	UFUNCTION()
+	void FinishDiscoverTimeline();
+	
 };

@@ -34,6 +34,11 @@ void USettingsGameplayWidget::NativeConstruct()
 	ControllerHapticFeedback->GetCheckBox()->SetIsChecked(SettingsSave->GetControllerHapticFeedback());
 	ControllerHapticFeedback->GetCheckBox()->OnCheckStateChanged.AddDynamic(
 		this, &USettingsGameplayWidget::OnControllerHapticFeedbackChanged);
+
+	check(ReticleSize);
+	ReticleSize->SetNumberSlider(SettingsSave->GetReticleSize());
+	ReticleSize->GetSlider()->OnValueChanged.AddDynamic(
+		this, &USettingsGameplayWidget::OnReticleSizeChanged);
 }
 
 void USettingsGameplayWidget::SetupSettingsValues(USettingsSave* SettingSave)
@@ -41,6 +46,7 @@ void USettingsGameplayWidget::SetupSettingsValues(USettingsSave* SettingSave)
 	VerticalSensibilitySlider->GetSlider()->SetValue(SettingSave->GetVerticalSensitivity());
 	HorizontalSensibilitySlider->GetSlider()->SetValue(SettingSave->GetHorizontalSensitivity());
 	ControllerHapticFeedback->GetCheckBox()->SetIsChecked(SettingSave->GetControllerHapticFeedback());
+	ReticleSize->GetSlider()->SetValue(SettingSave->GetReticleSize());
 }
 
 void USettingsGameplayWidget::OnVerticalSensitivitySliderValueChanged(float Value)
@@ -75,4 +81,16 @@ void USettingsGameplayWidget::OnControllerHapticFeedbackChanged(bool bValue)
 
 	SettingsSave->SetControllerHapticFeedback(bValue);
 	ControllerHapticFeedback->GetCheckBox()->SetIsChecked(bValue);
+}
+
+
+void USettingsGameplayWidget::OnReticleSizeChanged(float Value)
+{
+	UBaseGameInstance* GI = Cast<UBaseGameInstance>(GetWorld()->GetGameInstance());
+	check(GI);
+
+	USettingsSave* SettingsSave = GI->GetSettingsSave();
+	check(SettingsSave);
+
+	SettingsSave->SetReticleSize(Value);
 }

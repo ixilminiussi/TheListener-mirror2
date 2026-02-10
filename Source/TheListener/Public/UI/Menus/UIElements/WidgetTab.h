@@ -31,6 +31,8 @@ protected:
 	class URichTextBlock* RichTextBlock;
 	UPROPERTY(BlueprintReadOnly, meta = (BindWidget))
 	class UImage* LineImage;
+	UPROPERTY(BlueprintReadOnly, meta = (BindWidget))
+	class UImage* SelectionLineImage;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta = (BindWidget))
 	FText Text;

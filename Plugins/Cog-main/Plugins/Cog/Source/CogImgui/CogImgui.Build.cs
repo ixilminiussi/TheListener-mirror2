@@ -11,7 +11,7 @@ public class CogImgui : ModuleRules
         {
             "Core",
             "ImGui",
-            "ImPlot",
+            // "ImPlot",
             "NetImgui",
 			"CogCommon",
         });
